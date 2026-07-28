@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chronos — Privacy Policy</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font: -apple-system-body, -apple-system, system-ui, sans-serif;
+    line-height: 1.6; margin: 0 auto; padding: 20px 18px 60px;
+    max-width: 46em; color: #111; background: #fff;
+    -webkit-text-size-adjust: 100%;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e8e8ea; background: #000; }
+    code, .box { background: #1c1c1e !important; }
+    th { background: #1c1c1e !important; }
+    td, th { border-color: #333 !important; }
+  }
+  h1 { font-size: 1.7em; margin: 0 0 .2em; }
+  h2 { font-size: 1.2em; margin: 1.8em 0 .4em; }
+  .updated { color: #888; font-size: .9em; margin-bottom: 1.6em; }
+  .box { background: #f4f4f5; border-radius: 10px; padding: 12px 16px; margin: 1em 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; font-size: .92em; }
+  th, td { border: 1px solid #ddd; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: #f4f4f5; }
+  code { background: #f4f4f5; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  ul { padding-left: 1.3em; }
+  li { margin: .35em 0; }
+  .todo { color: #b30000; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy</h1>
+<p class="updated">App: Chronos · Last updated: 28 July 2026</p>
+
+<div class="box">
+<strong>In short:</strong> Chronos has no accounts, no servers, no analytics and no ads.
+Your data stays on your device and, if you choose, in <em>your own</em> iCloud account.
+We have no access to it.
+</div>
+
+<h2>1. Who is responsible</h2>
+<p>
+Data controller: <span class="todo">[FILL IN: name or company]</span>,
+<span class="todo">[FILL IN: address]</span>.<br>
+Contact: <a href="mailto:chronos.support@icloud.com">chronos.support@icloud.com</a>
+</p>
+
+<h2>2. We collect nothing</h2>
+<p>
+The app has <strong>no backend</strong>. You do not create an account, you do not provide
+an email address, and there is no analytics, crash reporting or advertising SDK embedded.
+We do not track you across apps or websites and we do not use the IDFA.
+</p>
+
+<h2>3. Data that stays on your device</h2>
+<p>The following is stored locally and never leaves your device, unless you enable iCloud
+sync (see section 5):</p>
+<table>
+<tr><th>Category</th><th>What it is</th><th>Why</th></tr>
+<tr><td>Calendar and Reminders</td><td>Your own events and tasks, via Apple's EventKit</td><td>So the app can display and edit them</td></tr>
+<tr><td>Contacts</td><td>Names and birth dates</td><td>Birthdays and name days in the calendar</td></tr>
+<tr><td>Medication</td><td>Names, dosages, times, intake history</td><td>Reminders and adherence tracking</td></tr>
+<tr><td>Tracking</td><td>Car, home maintenance, medical exams, subscriptions, loans</td><td>Renewal and expiry reminders</td></tr>
+<tr><td>Countdown</td><td>Titles, dates, photos you pick</td><td>Countdown cards</td></tr>
+<tr><td>Settings</td><td>Display preferences, favourite weather locations, time zones</td><td>App behaviour</td></tr>
+</table>
+
+<div class="box">
+<strong>Health data.</strong> Medication and intake history are health data, a special
+category under GDPR Article 9. They remain exclusively on your device and in your own
+iCloud account. <strong>They are never transmitted anywhere, to anyone.</strong>
+The app does not read from or write to Apple Health (HealthKit).
+</div>
+
+<h2>4. Permissions the app requests</h2>
+<ul>
+  <li><strong>Calendars and Reminders</strong> — to show and manage your events. Without it the app has no purpose.</li>
+  <li><strong>Contacts</strong> — only for birthdays and name days. Optional.</li>
+  <li><strong>Location (when in use)</strong> — for local weather and for the nearest on-duty pharmacies and hospitals. Optional.</li>
+  <li><strong>Notifications</strong> — for reminders. Optional.</li>
+  <li><strong>Photos</strong> — only the single image you pick each time, through Apple's picker. The app has no access to your library.</li>
+</ul>
+<p>Every permission can be revoked at any time in iOS Settings.</p>
+
+<h2>5. iCloud sync</h2>
+<p>
+If you enable "iCloud Sync", your Countdown and Tracking data, along with your settings,
+are stored in the <strong>private CloudKit database of your own Apple account</strong>.
+That is between you and Apple. We have neither access nor visibility. Apple's
+<a href="https://www.apple.com/legal/privacy/">Privacy Policy</a> applies.
+</p>
+
+<h2>6. What leaves the device, and where it goes</h2>
+<p>
+The app contacts the services below. None of them receives your name, email, device
+identifier, calendar content, contacts or medication data.
+</p>
+<table>
+<tr><th>Service</th><th>What is sent</th><th>Purpose</th></tr>
+<tr><td>Open-Meteo, MET Norway, Apple WeatherKit, weather.gov</td><td>Geographic coordinates (rounded)</td><td>Weather forecast</td></tr>
+<tr><td>Meteoalarm</td><td>Coordinates</td><td>Severe weather warnings</td></tr>
+<tr><td>Apple Maps / Nominatim (OpenStreetMap)</td><td>Coordinates</td><td>Turning coordinates into a place name</td></tr>
+<tr><td>Windy</td><td>Coordinates</td><td>Embedded weather map</td></tr>
+<tr><td>Greek Ministry of Health, regional health authorities, pharmacists' associations</td><td>Date and region</td><td>On-duty hospitals and pharmacies</td></tr>
+<tr><td>Greek Wikipedia</td><td>The date you are viewing</td><td>"On this day" and the name-day calendar</td></tr>
+<tr><td>GitHub (raw)</td><td>Nothing, a plain file download</td><td>Updated medicine list and source configuration</td></tr>
+</table>
+<p>
+Services that require it (MET Norway, Nominatim, Wikipedia) receive an application
+identifier together with our contact address, as their terms of use require.
+</p>
+<p>
+One source only, the on-duty system of the 7th Health Region of Crete, is available
+solely over an unencrypted connection (HTTP). No personal data is sent to it, only a date.
+</p>
+
+<h2>7. Retention</h2>
+<p>
+For as long as you want. There is no automatic deletion. You can delete individual
+records, the whole history of one medication, or everything older than a number of years
+you choose, from within the app. Uninstalling removes local data. iCloud data is deleted
+from iOS Settings.
+</p>
+
+<h2>8. Your rights (GDPR)</h2>
+<p>
+You have the right of access, rectification, erasure, restriction, portability and
+objection. Since we hold none of your data, these rights are exercised directly on your
+device and in your iCloud account. For anything else, write to us. You also have the
+right to lodge a complaint with your national supervisory authority.
+</p>
+
+<h2>9. Children</h2>
+<p>
+The app is not directed at children under 13 and does not knowingly collect data from
+them. Since we collect no data at all, no such risk arises.
+</p>
+
+<h2>10. Changes</h2>
+<p>
+If anything material changes, the date at the top will be updated and it will be noted
+in the release notes. This policy is always available inside the app, under Help.
+</p>
+
+</body>
+</html>
