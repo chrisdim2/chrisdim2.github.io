@@ -59,9 +59,8 @@ no video and no credential ever passes through a system of ours, because we do n
 
 <h2>3. What Apollo is</h2>
 <p>
-Apollo is a viewer for photos you already keep in your own cloud: pCloud, Google Drive, or
-your Photos library (iCloud Photos). The app connects directly from your device to the
-service you chose. No intermediate server is involved.
+Apollo is a viewer for photos you already keep in your own cloud: pCloud, or your Photos library (iCloud Photos). The app connects directly from your
+device to the service you chose. No intermediate server is involved.
 </p>
 
 <h2>4. Data that stays on your device</h2>
@@ -83,7 +82,7 @@ photos.
 
 <h2>5. Permissions the app requests</h2>
 <ul>
-  <li><strong>Photos</strong> — two uses. First, if you connect iCloud Photos as a source, to read and display your library. Second, to save photos you download from another cloud into your library. Optional if you only use pCloud or Google Drive.</li>
+  <li><strong>Photos</strong> — two uses. First, if you connect iCloud Photos as a source, to read and display your library. Second, to save photos you download from the cloud into your library. Optional if you only use pCloud.</li>
   <li><strong>Background processing</strong> — so syncing and EXIF reading can continue while the app is closed. Optional.</li>
 </ul>
 <p>
@@ -96,7 +95,6 @@ revoked at any time in iOS Settings.
 <table>
 <tr><th>Service</th><th>What is sent</th><th>Purpose</th></tr>
 <tr><td>pCloud</td><td>Your access token, file identifiers, and the files themselves when downloading or uploading</td><td>Reading your library, thumbnails, viewing, corrections</td></tr>
-<tr><td>Google Drive</td><td>The same, for the Google account you connected</td><td>The same</td></tr>
 <tr><td>Apple (Photos / iCloud Photos)</td><td>Nothing to us. Access happens locally through the system (PhotoKit)</td><td>Reading and updating your library</td></tr>
 <tr><td>Apple Maps (MapKit)</td><td>The GPS coordinates of your photos, one by one</td><td>Turning them into place names ("Athens", "Zakynthos") for the map and search</td></tr>
 <tr><td>Apple (iCloud key-value store)</td><td>Preferences only: theme, icon, zoom, sync switches</td><td>Same settings across your devices. Can be turned off in Settings</td></tr>
@@ -127,7 +125,6 @@ access token, kept in your device's Keychain, which you can revoke at any time:
 <p>
 The providers' policies apply:
 <a href="https://www.pcloud.com/privacy_policy.html">pCloud</a>,
-<a href="https://policies.google.com/privacy">Google</a>,
 <a href="https://www.apple.com/legal/privacy/">Apple</a>.
 </p>
 
