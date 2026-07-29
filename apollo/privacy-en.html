@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Apollo — Privacy Policy</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font: -apple-system-body, -apple-system, system-ui, sans-serif;
+    line-height: 1.6; margin: 0 auto; padding: 20px 18px 60px;
+    max-width: 46em; color: #111; background: #fff;
+    -webkit-text-size-adjust: 100%;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e8e8ea; background: #000; }
+    code, .box { background: #1c1c1e !important; }
+    th { background: #1c1c1e !important; }
+    td, th { border-color: #333 !important; }
+    .warn { background: #1c1c1e !important; }
+  }
+  h1 { font-size: 1.7em; margin: 0 0 .2em; }
+  h2 { font-size: 1.2em; margin: 1.8em 0 .4em; }
+  .updated { color: #888; font-size: .9em; margin-bottom: 1.6em; }
+  .box { background: #f4f4f5; border-radius: 10px; padding: 12px 16px; margin: 1em 0; }
+  .warn { background: #fff4e5; border-left: 4px solid #ff9500; border-radius: 6px; padding: 12px 16px; margin: 1em 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; font-size: .92em; }
+  th, td { border: 1px solid #ddd; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: #f4f4f5; }
+  code { background: #f4f4f5; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  ul { padding-left: 1.3em; }
+  li { margin: .35em 0; }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy</h1>
+<p class="updated">App: Apollo · Last updated: 29 July 2026</p>
+
+<div class="box">
+<strong>In short:</strong> Apollo has no accounts, no servers, no usage analytics and no ads.
+Your photos stay where they already are, in <em>your own</em> cloud account. The app keeps
+only a local index on your device. We have no access to your photos or your accounts.
+</div>
+
+<h2>1. Who is responsible</h2>
+<p>
+Data controller: <strong>Christos Dimakis</strong>, Peristeri, Attica, Greece.<br>
+Contact: <a href="mailto:apollo.support@icloud.com">apollo.support@icloud.com</a>
+</p>
+
+<h2>2. We collect nothing</h2>
+<p>
+The app <strong>has no server</strong>. You do not create an account with us, you do not
+give us an email address, and there is no analytics, crash reporting or advertising SDK
+embedded. We do not track you across apps or websites and we do not use the IDFA. No photo,
+no video and no credential ever passes through a system of ours, because we do not have one.
+</p>
+
+<h2>3. What Apollo is</h2>
+<p>
+Apollo is a viewer for photos you already keep in your own cloud: pCloud, Google Drive, or
+your Photos library (iCloud Photos). The app connects directly from your device to the
+service you chose. No intermediate server is involved.
+</p>
+
+<h2>4. Data that stays on your device</h2>
+<p>The following is stored locally:</p>
+<table>
+<tr><th>Category</th><th>What it is</th><th>Why</th></tr>
+<tr><td>Local index</td><td>File name, cloud path, size, dimensions, duration, capture date, GPS coordinates, camera model</td><td>So the timeline, albums and map can be shown without querying the cloud on every scroll</td></tr>
+<tr><td>Thumbnails</td><td>Small versions of your photos, up to 500 MB</td><td>Display speed. Cleared automatically and manually from Settings</td></tr>
+<tr><td>Temporary files</td><td>Files downloaded for viewing, editing or sharing</td><td>Deleted automatically</td></tr>
+<tr><td>Credentials</td><td>The access tokens for your cloud accounts</td><td>Stored in Apple's <strong>Keychain</strong>, not in a plain file</td></tr>
+<tr><td>Settings</td><td>Theme, icon, zoom level, album covers, place names</td><td>App functionality</td></tr>
+</table>
+
+<div class="box">
+<strong>We do not store the photos themselves.</strong> The index holds metadata and links,
+not the files. Your photos stay in your cloud. Deleting the app removes the index, not your
+photos.
+</div>
+
+<h2>5. Permissions the app requests</h2>
+<ul>
+  <li><strong>Photos</strong> — two uses. First, if you connect iCloud Photos as a source, to read and display your library. Second, to save photos you download from another cloud into your library. Optional if you only use pCloud or Google Drive.</li>
+  <li><strong>Background processing</strong> — so syncing and EXIF reading can continue while the app is closed. Optional.</li>
+</ul>
+<p>
+<strong>The app does not request location permission.</strong> The locations you see on the
+map come from your own files (EXIF GPS), not from where you are. Every permission can be
+revoked at any time in iOS Settings.
+</p>
+
+<h2>6. What leaves the device, and where it goes</h2>
+<table>
+<tr><th>Service</th><th>What is sent</th><th>Purpose</th></tr>
+<tr><td>pCloud</td><td>Your access token, file identifiers, and the files themselves when downloading or uploading</td><td>Reading your library, thumbnails, viewing, corrections</td></tr>
+<tr><td>Google Drive</td><td>The same, for the Google account you connected</td><td>The same</td></tr>
+<tr><td>Apple (Photos / iCloud Photos)</td><td>Nothing to us. Access happens locally through the system (PhotoKit)</td><td>Reading and updating your library</td></tr>
+<tr><td>Apple Maps (MapKit)</td><td>The GPS coordinates of your photos, one by one</td><td>Turning them into place names ("Athens", "Zakynthos") for the map and search</td></tr>
+<tr><td>Apple (iCloud key-value store)</td><td>Preferences only: theme, icon, zoom, sync switches</td><td>Same settings across your devices. Can be turned off in Settings</td></tr>
+</table>
+<p>
+We send no name, email or device identifier to any of them. Communication with the clouds
+uses encrypted connections (HTTPS).
+</p>
+
+<div class="warn">
+<strong>A note on turning coordinates into place names.</strong> For the map to show "Athens"
+instead of numbers, the coordinates of your photos are sent to Apple. This reveals to Apple
+<em>where</em> your photos were taken, though not the photos themselves.
+<a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a> applies. If you
+would rather avoid it, do not open the "Places" tab.
+</div>
+
+<h2>7. Connecting your cloud accounts</h2>
+<p>
+Sign-in uses OAuth, the standard that lets an app get access <strong>without ever seeing
+your password</strong>. You give the password directly to the provider. We receive only an
+access token, kept in your device's Keychain, which you can revoke at any time:
+</p>
+<ul>
+  <li>inside the app, Settings → the provider → Disconnect,</li>
+  <li>or from the provider's own security settings.</li>
+</ul>
+<p>
+The providers' policies apply:
+<a href="https://www.pcloud.com/privacy_policy.html">pCloud</a>,
+<a href="https://policies.google.com/privacy">Google</a>,
+<a href="https://www.apple.com/legal/privacy/">Apple</a>.
+</p>
+
+<h2>8. Family mode</h2>
+<p>
+If you enable it, the app writes <strong>two small files inside your own pCloud
+folder</strong>, so that anyone with access to the same folder can read them:
+</p>
+<ul>
+  <li><code>.photoapp-family.json</code> — album covers, year groupings, place names.</li>
+  <li><code>.photoapp-exif.json</code> — capture dates, <strong>GPS coordinates</strong> and camera models, so that each device does not have to read them again.</li>
+</ul>
+<div class="warn">
+<strong>The second file contains location data.</strong> Anyone with access to the shared
+pCloud folder can read it. Enable this feature only with people you already trust with your
+photos. You can turn it off, or keep only part of it, in Settings → Family mode. The files
+live in your own pCloud account, not with us, and you can delete them whenever you want.
+</div>
+
+<h2>9. How long data is kept</h2>
+<p>
+By us, not at all, because we hold nothing. On your device, as long as you want. You can
+clear thumbnails and temporary files from Settings, disconnect a provider (which also removes
+its entries from the index), or uninstall the app, which deletes everything. Your photos in
+the cloud are not affected.
+</p>
+
+<h2>10. Support</h2>
+<p>
+If you write to us from Help → Contact, the message is pre-filled with technical details
+that help diagnosis: app version, iOS version, device model, which clouds are connected,
+number of photos in the index, free space and language.
+<strong>No file names, locations, photos or credentials are included.</strong> You see them
+before sending and can delete them. Support emails are kept only as long as needed to resolve
+the issue.
+</p>
+
+<h2>11. Your rights (GDPR)</h2>
+<p>
+You have the right of access, rectification, erasure, restriction, portability and objection.
+Because we hold none of your data, these rights are exercised directly on your device and in
+your cloud accounts. For anything else, write to us. You also have the right to lodge a
+complaint with the Hellenic Data Protection Authority (<a href="https://www.dpa.gr">dpa.gr</a>)
+or your local supervisory authority.
+</p>
+
+<h2>12. Children</h2>
+<p>
+The app is not directed at children under 13 and does not knowingly collect data from them.
+Since we collect no data at all, no such risk exists.
+</p>
+
+<h2>13. Changes</h2>
+<p>
+If something material changes, the date at the top will be updated and it will be mentioned
+in the release notes. This policy is always available inside the app, under Help.
+</p>
+
+</body>
+</html>
