@@ -1,69 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="el">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Οι εφαρμογές μας</title>
-<style>
-  :root { color-scheme: light dark; }
-  * { box-sizing: border-box; }
-  body {
-    font: -apple-system-body, -apple-system, system-ui, "Segoe UI", sans-serif;
-    line-height: 1.6; margin: 0 auto; padding: 56px 20px 80px;
-    max-width: 40em; color: #111; background: #fff;
-  }
-  @media (prefers-color-scheme: dark) {
-    body { color: #e8e8ea; background: #000; }
-    .card { background: #1c1c1e !important; border-color: #2c2c2e !important; }
-    a.card:hover { background: #2c2c2e !important; }
-  }
-  header { text-align: center; margin-bottom: 40px; }
-  h1 { font-size: 2em; margin: 0 0 .1em; letter-spacing: -.02em; }
-  .tagline { color: #888; margin: 0; }
-  .card {
-    display: block; text-decoration: none; color: inherit;
-    background: #f6f6f7; border: 1px solid #e5e5e7; border-radius: 12px;
-    padding: 16px 18px; margin: 12px 0; transition: background .15s;
-  }
-  a.card:hover { background: #ececee; }
-  .card strong { display: block; font-size: 1.05em; }
-  .card span { color: #888; font-size: .9em; }
-  footer { margin-top: 48px; text-align: center; color: #888; font-size: .88em; }
-  a { color: #0a84ff; }
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dimakis — εφαρμογές για iPhone και Mac</title>
+<meta name="description" content="Πέντε εφαρμογές για iPhone και Mac, με ονόματα από την ελληνική μυθολογία.">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32">
+<link rel="icon" href="assets/favicon-16.png" sizes="16x16">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-
-<header>
-  <h1>Οι εφαρμογές μας</h1>
-  <p class="tagline">Υποστήριξη και νομικά κείμενα</p>
-</header>
-
-<a class="card" href="apollo/">
-  <strong>Apollo</strong>
-  <span>Άλμπουμ φωτογραφιών</span>
-</a>
-
-<a class="card" href="chronos/">
-  <strong>Chronos</strong>
-  <span>Ημερολόγιο &amp; Οργάνωση</span>
-</a>
-
-<!--
-  ΓΙΑ ΚΑΘΕ ΝΕΑ ΕΦΑΡΜΟΓΗ: αντίγραψε τον φάκελο chronos/, μετονόμασέ τον,
-  άλλαξε τα κείμενα, και πρόσθεσε εδώ μία ακόμη κάρτα:
-
-  <a class="card" href="athena/">
-    <strong>Athena</strong>
-    <span>Σύντομη περιγραφή</span>
+<header class="bar">
+  <a class="brand" href="index.html" aria-label="dimakis, αρχική">
+    <img src="assets/dimakis-logo.svg" alt="dimakis">
   </a>
--->
+  <nav class="bar-nav">
+    <a href="index.html#apps">Εφαρμογές</a>
+    <a href="mailto:support@dimakis.app">Επικοινωνία</a>
+  </nav>
+</header>
+<main>
+  <section class="hero">
+    <p class="eyebrow">iPhone και Mac</p>
+    <h1 class="hero-h">Πέντε εφαρμογές,<br>πέντε ονόματα<br>από τον ίδιο τόπο.</h1>
+    <p class="hero-p">Ημερολόγιο, αλληλογραφία, σημειώσεις, φωτογραφίες, σάρωση εγγράφων. Φτιαγμένες μία μία, από έναν άνθρωπο, στην Ελλάδα.</p>
+  </section>
 
-<footer>
-  <p>Κάθε εφαρμογή έχει τη δική της διεύθυνση υποστήριξης, στη σελίδα της.</p>
-  <p>© <span id="y">2026</span> Χρήστος Δημάκης</p>
+  <section id="apps" class="apps">
+    <ul class="app-list">
+    <li class="app">
+      <a class="app-link" href="chronos/index.html">
+        <span class="app-gr" aria-hidden="true">ΧΡΟΝΟΣ</span>
+        <span class="app-body">
+          <span class="app-kind">Ημερολόγιο</span>
+          <h2 class="app-name">Chronos</h2>
+          <p class="app-tag">Ο χρόνος υπό τον έλεγχό σου.</p>
+          <p class="app-origin">Από τον Χρόνο, την προσωποποίηση του χρόνου στην ελληνική μυθολογία.</p>
+          <span class="app-status">Σε ανάπτυξη</span>
+        </span>
+      </a>
+    </li>
+    <li class="app">
+      <a class="app-link" href="hermes/index.html">
+        <span class="app-gr" aria-hidden="true">ΕΡΜΗΣ</span>
+        <span class="app-body">
+          <span class="app-kind">Ηλεκτρονικό ταχυδρομείο</span>
+          <h2 class="app-name">Hermes</h2>
+          <p class="app-tag">Επικοινωνία με ταχύτητα θεού.</p>
+          <p class="app-origin">Από τον Ερμή, τον αγγελιοφόρο των θεών.</p>
+          <span class="app-status">Σε ανάπτυξη</span>
+        </span>
+      </a>
+    </li>
+    <li class="app">
+      <a class="app-link" href="athena/index.html">
+        <span class="app-gr" aria-hidden="true">ΑΘΗΝΑ</span>
+        <span class="app-body">
+          <span class="app-kind">Σημειώσεις και τετράδια</span>
+          <h2 class="app-name">Athena</h2>
+          <p class="app-tag">Η σοφία σου, οργανωμένη.</p>
+          <p class="app-origin">Από την Αθηνά, τη θεά της σοφίας και της στρατηγικής σκέψης.</p>
+          <span class="app-status">Σε ανάπτυξη</span>
+        </span>
+      </a>
+    </li>
+    <li class="app">
+      <a class="app-link" href="apollo/index.html">
+        <span class="app-gr" aria-hidden="true">ΑΠΟΛΛΩΝ</span>
+        <span class="app-body">
+          <span class="app-kind">Οικογενειακό άλμπουμ φωτογραφιών</span>
+          <h2 class="app-name">Apollo</h2>
+          <p class="app-tag">Φως στις αναμνήσεις.</p>
+          <p class="app-origin">Από τον Απόλλωνα, τον θεό του φωτός και της ομορφιάς.</p>
+          <span class="app-status">Σε ανάπτυξη</span>
+        </span>
+      </a>
+    </li>
+    <li class="app">
+      <a class="app-link" href="argus/index.html">
+        <span class="app-gr" aria-hidden="true">ΑΡΓΟΣ</span>
+        <span class="app-body">
+          <span class="app-kind">Σαρωτής εγγράφων</span>
+          <h2 class="app-name">Argus</h2>
+          <p class="app-tag">Καταγράφει τα πάντα.</p>
+          <p class="app-origin">Από τον Άργο Πανόπτη, τον γίγαντα με τα εκατό μάτια.</p>
+          <span class="app-status">Σε ανάπτυξη</span>
+        </span>
+      </a>
+    </li>
+    </ul>
+  </section>
+</main>
+<footer class="foot">
+  <div class="foot-in">
+    <img class="foot-logo" src="assets/dimakis-logo-dark.svg" alt="dimakis">
+    <ul class="foot-list">
+      <li><a href="chronos/index.html">Chronos</a></li>
+      <li><a href="hermes/index.html">Hermes</a></li>
+      <li><a href="athena/index.html">Athena</a></li>
+      <li><a href="apollo/index.html">Apollo</a></li>
+      <li><a href="argus/index.html">Argus</a></li>
+    </ul>
+    <div class="foot-meta">
+      <a href="mailto:support@dimakis.app">support@dimakis.app</a>
+      <p>Σχεδιασμός και ανάπτυξη από την Ελλάδα.</p>
+    </div>
+  </div>
 </footer>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-
 </body>
 </html>
