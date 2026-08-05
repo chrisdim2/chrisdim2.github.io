@@ -11,6 +11,30 @@
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
 <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+
+<style>
+/* Εικονίδια εφαρμογών.
+
+   Μπαίνει ΕΔΩ και όχι στο style.css, επίτηδες: έτσι το αρχείο είναι αυτοτελές
+   και δεν εξαρτάται από δεύτερη επεξεργασία ούτε από cache του browser.
+
+   Το height:auto είναι το κρίσιμο. Το style.css έχει img{max-width:100%} χωρίς
+   height, οπότε το πλάτος περιοριζόταν στη στήλη ενώ το ύψος έμενε στα 256 του
+   attribute, και οι εικόνες έβγαιναν τραβηγμένες. */
+.app-head{
+  display:flex; flex-direction:column; align-items:flex-start; gap:12px;
+}
+.app-icon{
+  width:88px; height:88px; max-width:88px;
+  border-radius:22.37%;              /* η αναλογία των εικονιδίων iOS */
+  border:1px solid rgba(22,35,43,.13);
+  object-fit:contain;                /* ποτέ παραμόρφωση, ό,τι κι αν συμβεί */
+}
+@media (max-width:720px){
+  .app-head{flex-direction:row; align-items:center; gap:14px}
+  .app-icon{width:64px; height:64px; max-width:64px}
+}
+</style>
 </head>
 <body>
 <header class="bar">
@@ -34,7 +58,7 @@
     <li class="app">
       <a class="app-link" href="chronos/index.html">
         <span class="app-head">
-          <img class="app-icon" src="assets/icons/chronos.png" alt="" width="256" height="256" loading="lazy">
+          <img class="app-icon" src="assets/icons/chronos.png" alt="" width="88" height="88" loading="lazy">
           <span class="app-gr" aria-hidden="true">ΧΡΟΝΟΣ</span>
         </span>
         <span class="app-body">
@@ -49,7 +73,7 @@
     <li class="app">
       <a class="app-link" href="hermes/index.html">
         <span class="app-head">
-          <img class="app-icon" src="assets/icons/hermes.png" alt="" width="256" height="256" loading="lazy">
+          <img class="app-icon" src="assets/icons/hermes.png" alt="" width="88" height="88" loading="lazy">
           <span class="app-gr" aria-hidden="true">ΕΡΜΗΣ</span>
         </span>
         <span class="app-body">
@@ -64,7 +88,7 @@
     <li class="app">
       <a class="app-link" href="athena/index.html">
         <span class="app-head">
-          <img class="app-icon" src="assets/icons/athena.png" alt="" width="256" height="256" loading="lazy">
+          <img class="app-icon" src="assets/icons/athena.png" alt="" width="88" height="88" loading="lazy">
           <span class="app-gr" aria-hidden="true">ΑΘΗΝΑ</span>
         </span>
         <span class="app-body">
@@ -79,7 +103,7 @@
     <li class="app">
       <a class="app-link" href="apollo/index.html">
         <span class="app-head">
-          <img class="app-icon" src="assets/icons/apollo.png" alt="" width="256" height="256" loading="lazy">
+          <img class="app-icon" src="assets/icons/apollo.png" alt="" width="88" height="88" loading="lazy">
           <span class="app-gr" aria-hidden="true">ΑΠΟΛΛΩΝ</span>
         </span>
         <span class="app-body">
@@ -96,7 +120,7 @@
         <span class="app-head">
           <!-- Όταν φτιάξεις το εικονίδιο του Argus, βγάλε τα σημάδια σχολίου
                από την επόμενη γραμμή και ανέβασε το assets/icons/argus.png -->
-          <!-- <img class="app-icon" src="assets/icons/argus.png" alt="" width="256" height="256" loading="lazy"> -->
+          <!-- <img class="app-icon" src="assets/icons/argus.png" alt="" width="88" height="88" loading="lazy"> -->
           <span class="app-gr" aria-hidden="true">ΑΡΓΟΣ</span>
         </span>
         <span class="app-body">
