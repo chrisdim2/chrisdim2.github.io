@@ -135,3 +135,28 @@ img{max-width:100%;display:block}
 .legal-list span{font-family:var(--util);font-size:12px;letter-spacing:.1em;
   text-transform:uppercase;color:var(--ink-45)}
 .legal-todo{color:var(--ink-70)}
+
+
+/* ── Εικονίδια εφαρμογών στη λίστα ─────────────────────────────
+   Μπαίνει ΣΤΟ ΤΕΛΟΣ του assets/style.css.
+
+   Η .app-link είναι grid δύο στηλών (132px | 1fr). Η .app-head είναι
+   ένα ΚΑΙΝΟΥΡΓΙΟ κουτί που μπαίνει στην πρώτη στήλη και κρατά μέσα του
+   το εικονίδιο και την ελληνική λέξη. Έτσι το grid μένει δύο στηλών
+   και δεν χαλάει τίποτα από όσα ήδη δουλεύουν.                        */
+
+.app-head{
+  display:flex; flex-direction:column; align-items:flex-start; gap:12px;
+}
+.app-icon{
+  width:96px; height:96px;
+  border-radius:22.37%;              /* η αναλογία των εικονιδίων iOS */
+  border:1px solid var(--line);
+}
+
+/* Στο κινητό η κάρτα γίνεται μονόστηλη, οπότε βάζουμε το εικονίδιο
+   δίπλα στη λέξη αντί από πάνω, για να μη μακραίνει η κάρτα. */
+@media (max-width:720px){
+  .app-head{flex-direction:row; align-items:center; gap:14px}
+  .app-icon{width:64px; height:64px}
+}
