@@ -1,41 +1,72 @@
 ---
 layout: default
 ---
-<article class="page">
-  <p class="eyebrow">{{ page.kind }}</p>
-  <h1 class="page-h"><span class="page-gr" aria-hidden="true">{{ page.greek }}</span>{{ page.title }}</h1>
-  <p class="lede">{{ page.tagline }}</p>
-  <p class="origin-note">{{ page.origin }}</p>
+{% assign L = site.data.site[page.lang] %}
+{% assign app = "" %}
+{% for a in site.data.apps.list %}{% if a.slug == page.app %}{% assign app = a %}{% endif %}{% endfor %}
+{% assign base = '/' %}
+{% if page.lang == 'en' %}{% assign base = '/en/' %}{% endif %}
 
-  {% if page.appstore_url and page.appstore_url != "" %}
-  <div class="page-links">
-    <a class="btn" href="{{ page.appstore_url }}">Λήψη από το App Store</a>
-  </div>
-  {% else %}
-  <p class="status-line">{{ page.status }}. Μόλις κυκλοφορήσει, ο σύνδεσμος του App Store θα εμφανιστεί εδώ.</p>
+<article class="app-page">
+  <header class="app-hero">
+    <span class="app-hero-gr" aria-hidden="true">{{ app.greek }}</span>
+    {% if app.icon and app.icon != "" %}
+    <img class="page-icon" src="{{ app.icon | relative_url }}" alt="{{ app.title }}" width="104" height="104">
+    {% endif %}
+    <p class="eyebrow">{% if page.lang == 'el' %}{{ app.kind_el }}{% else %}{{ app.kind_en }}{% endif %}</p>
+    <h1 class="page-h">{{ app.title }}</h1>
+    <p class="lede">{% if page.lang == 'el' %}{{ app.tagline_el }}{% else %}{{ app.tagline_en }}{% endif %}</p>
+    <div class="page-links">
+      {% if app.appstore_url and app.appstore_url != "" %}
+      <a class="btn" href="{{ app.appstore_url }}">{{ L.download }}</a>
+      {% else %}
+      <span class="app-status">{% if page.lang == 'el' %}{{ app.status_el }}{% else %}{{ app.status_en }}{% endif %}</span>
+      {% endif %}
+      <a class="btn btn-quiet" href="{{ base | relative_url }}#apps">{{ L.back }}</a>
+    </div>
+  </header>
+
+  {% if app.screenshots and app.screenshots.size > 0 %}
+  <section class="gallery">
+    {% for shot in app.screenshots %}
+    <img src="{{ shot | relative_url }}" alt="{{ app.title }}" loading="lazy">
+    {% endfor %}
+  </section>
   {% endif %}
 
-  {{ content }}
+  {% assign feats = app.features_el %}
+  {% if page.lang == 'en' %}{% assign feats = app.features_en %}{% endif %}
+  {% if feats and feats.size > 0 %}
+  <section class="block">
+    <h2>{{ L.features_title }}</h2>
+    <ul class="feat-grid">
+      {% for f in feats %}<li>{{ f }}</li>{% endfor %}
+    </ul>
+  </section>
+  {% endif %}
 
-  <section class="legal">
-    <h2>Υποστήριξη</h2>
-    <p>Γράψτε μου απευθείας, απαντώ σε κάθε μήνυμα.</p>
-    <p class="big-link"><a href="mailto:{{ page.support_email }}">{{ page.support_email }}</a></p>
-    <p>Βοηθά να αναφέρετε τη συσκευή σας, την έκδοση του λειτουργικού, την έκδοση της εφαρμογής, τι κάνατε όταν παρουσιάστηκε το πρόβλημα και τι περιμένατε να συμβεί. Απαντώ συνήθως εντός δύο εργάσιμων ημερών.</p>
-    <p lang="en">In English: write to <a href="mailto:{{ page.support_email }}">{{ page.support_email }}</a> with your device, OS version and app version. Replies usually within two working days.</p>
+  <section class="block">
+    <h2>{{ L.origin_title }}</h2>
+    <p class="origin-note">{% if page.lang == 'el' %}{{ app.origin_el }}{% else %}{{ app.origin_en }}{% endif %}</p>
   </section>
 
-  <section class="legal">
-    <h2>Νομικά κείμενα</h2>
-    {% if page.has_legal %}
+  <section class="block">
+    <h2>{{ L.support_title }}</h2>
+    <p class="big-link"><a href="mailto:{{ app.support_email }}">{{ app.support_email }}</a></p>
+    <p>{{ L.support_text }}</p>
+  </section>
+
+  <section class="block">
+    <h2>{{ L.legal_title }}</h2>
+    {% if app.has_legal %}
     <ul class="legal-list">
-      <li><a href="privacy-el.html">Πολιτική Απορρήτου</a> <span>Ελληνικά</span></li>
-      <li><a href="terms-el.html">Όροι Χρήσης</a> <span>Ελληνικά</span></li>
-      <li><a href="privacy-en.html">Privacy Policy</a> <span>English</span></li>
-      <li><a href="terms-en.html">Terms of Service</a> <span>English</span></li>
+      <li><a href="{{ '/' | append: app.slug | append: '/privacy-el.html' | relative_url }}">Πολιτική Απορρήτου</a> <span>Ελληνικά</span></li>
+      <li><a href="{{ '/' | append: app.slug | append: '/terms-el.html' | relative_url }}">Όροι Χρήσης</a> <span>Ελληνικά</span></li>
+      <li><a href="{{ '/' | append: app.slug | append: '/privacy-en.html' | relative_url }}">Privacy Policy</a> <span>English</span></li>
+      <li><a href="{{ '/' | append: app.slug | append: '/terms-en.html' | relative_url }}">Terms of Service</a> <span>English</span></li>
     </ul>
     {% else %}
-    <p class="legal-todo">Θα δημοσιευτούν πριν από την υποβολή της εφαρμογής στο App Store.</p>
+    <p class="legal-todo">{{ L.legal_todo }}</p>
     {% endif %}
   </section>
 </article>

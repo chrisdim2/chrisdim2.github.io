@@ -1,10 +1,15 @@
 <!doctype html>
-<html lang="el">
+{% assign L = site.data.site[page.lang] %}
+{% assign apps = site.data.apps.list | sort: "order" %}
+<html lang="{{ page.lang }}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ page.page_title | default: site.title }}</title>
-<meta name="description" content="{{ page.description | default: site.description }}">
+<meta name="theme-color" content="#101820">
+<meta name="color-scheme" content="dark">
+<title>{{ page.head_title | default: "dimakis" }}</title>
+<meta name="description" content="{{ page.head_desc | default: L.hero_text }}">
+<link rel="alternate" hreflang="{% if page.lang == 'el' %}en{% else %}el{% endif %}" href="{{ page.alt | absolute_url }}">
 <link rel="icon" href="{{ '/assets/favicon-32.png' | relative_url }}" sizes="32x32">
 <link rel="icon" href="{{ '/assets/favicon-16.png' | relative_url }}" sizes="16x16">
 <link rel="apple-touch-icon" href="{{ '/assets/favicon-180.png' | relative_url }}">
@@ -15,12 +20,13 @@
 </head>
 <body>
 <header class="bar">
-  <a class="brand" href="{{ '/' | relative_url }}" aria-label="dimakis, αρχική">
-    <img src="{{ '/assets/dimakis-logo.svg' | relative_url }}" alt="dimakis">
+  <a class="brand" href="{% if page.lang == 'el' %}{{ '/' | relative_url }}{% else %}{{ '/en/' | relative_url }}{% endif %}" aria-label="dimakis">
+    <img src="{{ '/assets/dimakis-logo-dark.svg' | relative_url }}" alt="dimakis">
   </a>
   <nav class="bar-nav">
-    <a href="{{ '/#apps' | relative_url }}">Εφαρμογές</a>
-    <a href="mailto:{{ site.data.site.contact_email }}">Επικοινωνία</a>
+    <a href="{% if page.lang == 'el' %}{{ '/#apps' | relative_url }}{% else %}{{ '/en/#apps' | relative_url }}{% endif %}">{{ L.nav_apps }}</a>
+    <a href="mailto:{{ site.data.site.contact_email }}">{{ L.nav_contact }}</a>
+    <a class="lang" href="{{ page.alt | relative_url }}">{{ L.lang_other }}</a>
   </nav>
 </header>
 
@@ -32,14 +38,14 @@
   <div class="foot-in">
     <img class="foot-logo" src="{{ '/assets/dimakis-logo-dark.svg' | relative_url }}" alt="dimakis">
     <ul class="foot-list">
-      {% assign sorted = site.apps | sort: "order" %}
-      {% for app in sorted %}
-      <li><a href="{{ app.url | relative_url }}">{{ app.title }}</a></li>
+      {% for app in apps %}
+      <li><a href="{% if page.lang == 'el' %}{{ '/' | append: app.slug | append: '/' | relative_url }}{% else %}{{ '/en/' | append: app.slug | append: '/' | relative_url }}{% endif %}">{{ app.title }}</a></li>
       {% endfor %}
     </ul>
     <div class="foot-meta">
       <a href="mailto:{{ site.data.site.contact_email }}">{{ site.data.site.contact_email }}</a>
-      <p>{{ site.data.site.footer_note }}</p>
+      <p>{{ L.footer_note }}</p>
+      <p class="foot-tm">Apple, the Apple logo, iPhone and Mac are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
     </div>
   </div>
 </footer>

@@ -1,0 +1,96 @@
+list:
+- slug: chronos
+  title: Chronos
+  greek: ΧΡΟΝΟΣ
+  icon: /assets/icons/chronos.png
+  order: 1
+  has_legal: true
+  support_email: chronos@dimakis.app
+  appstore_url: ''
+  kind_el: Ημερολόγιο
+  kind_en: Calendar
+  tagline_el: Ο χρόνος υπό τον έλεγχό σου.
+  tagline_en: Your time, under control.
+  origin_el: Από τον Χρόνο, την προσωποποίηση του χρόνου στην ελληνική μυθολογία.
+  origin_en: Named after Chronos, the personification of time in Greek mythology.
+  status_el: Σε ανάπτυξη
+  status_en: In development
+  features_el: []
+  features_en: []
+  screenshots: []
+- slug: hermes
+  title: Hermes
+  greek: ΕΡΜΗΣ
+  icon: /assets/icons/hermes.png
+  order: 2
+  has_legal: false
+  support_email: hermes@dimakis.app
+  appstore_url: ''
+  kind_el: Ηλεκτρονικό ταχυδρομείο
+  kind_en: Mail
+  tagline_el: Επικοινωνία με ταχύτητα θεού.
+  tagline_en: Communication at the speed of a god.
+  origin_el: Από τον Ερμή, τον αγγελιοφόρο των θεών.
+  origin_en: Named after Hermes, messenger of the gods.
+  status_el: Σε ανάπτυξη
+  status_en: In development
+  features_el: []
+  features_en: []
+  screenshots: []
+- slug: athena
+  title: Athena
+  greek: ΑΘΗΝΑ
+  icon: /assets/icons/athena.png
+  order: 3
+  has_legal: false
+  support_email: athena@dimakis.app
+  appstore_url: ''
+  kind_el: Σημειώσεις και τετράδια
+  kind_en: Notes & notebooks
+  tagline_el: Η σοφία σου, οργανωμένη.
+  tagline_en: Your wisdom, organised.
+  origin_el: Από την Αθηνά, τη θεά της σοφίας και της στρατηγικής σκέψης.
+  origin_en: Named after Athena, goddess of wisdom and strategic thought.
+  status_el: Σε ανάπτυξη
+  status_en: In development
+  features_el: []
+  features_en: []
+  screenshots: []
+- slug: apollo
+  title: Apollo
+  greek: ΑΠΟΛΛΩΝ
+  icon: /assets/icons/apollo.png
+  order: 4
+  has_legal: true
+  support_email: apollo@dimakis.app
+  appstore_url: ''
+  kind_el: Οικογενειακό άλμπουμ φωτογραφιών
+  kind_en: Family photo album
+  tagline_el: Φως στις αναμνήσεις.
+  tagline_en: Light on your memories.
+  origin_el: Από τον Απόλλωνα, τον θεό του φωτός και της ομορφιάς.
+  origin_en: Named after Apollo, god of light and beauty.
+  status_el: Σε ανάπτυξη
+  status_en: In development
+  features_el: []
+  features_en: []
+  screenshots: []
+- slug: argus
+  title: Argus - Scanner
+  greek: ΑΡΓΟΣ
+  icon: ''
+  order: 5
+  has_legal: false
+  support_email: argus@dimakis.app
+  appstore_url: ''
+  kind_el: Σαρωτής εγγράφων
+  kind_en: Document scanner
+  tagline_el: Καταγράφει τα πάντα.
+  tagline_en: It records everything.
+  origin_el: Από τον Άργο Πανόπτη, τον γίγαντα με τα εκατό μάτια.
+  origin_en: Named after Argus Panoptes, the giant with a hundred eyes.
+  status_el: Σε ανάπτυξη
+  status_en: In development
+  features_el: []
+  features_en: []
+  screenshots: []

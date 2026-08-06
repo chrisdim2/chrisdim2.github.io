@@ -1,9 +1,56 @@
-eyebrow: iPhone και Mac
-hero_title: |
-  Πέντε εφαρμογές,
-  πέντε ονόματα
-  από τον ίδιο τόπο.
-hero_text: Ημερολόγιο, αλληλογραφία, σημειώσεις, φωτογραφίες, σάρωση εγγράφων. Φτιαγμένες μία μία, από έναν άνθρωπο, στην Ελλάδα.
-footer_note: Σχεδιασμός και ανάπτυξη από την Ελλάδα.
+accent: '#E14B41'
 contact_email: support@dimakis.app
-accent: "#C72A2C"
+el:
+  eyebrow: iPhone και Mac
+  hero_title: 'Πέντε εφαρμογές,
+
+    πέντε ονόματα
+
+    από τον ίδιο τόπο.'
+  hero_text: Ημερολόγιο, αλληλογραφία, σημειώσεις, φωτογραφίες, σάρωση εγγράφων. Φτιαγμένες
+    μία μία, από έναν άνθρωπο, στην Ελλάδα.
+  apps_title: Οι εφαρμογές
+  apps_text: Καθεμία κάνει ένα πράγμα και το κάνει σωστά. Κοινή σχεδίαση, κοινή λογική,
+    κανένας λογαριασμός, καμία παρακολούθηση.
+  nav_apps: Εφαρμογές
+  nav_contact: Επικοινωνία
+  footer_note: Σχεδιασμός και ανάπτυξη από την Ελλάδα.
+  support_title: Υποστήριξη
+  support_text: Γράψτε μου απευθείας, απαντώ σε κάθε μήνυμα. Βοηθά να αναφέρετε τη
+    συσκευή σας, την έκδοση του λειτουργικού και την έκδοση της εφαρμογής. Απαντώ
+    συνήθως εντός δύο εργάσιμων ημερών.
+  legal_title: Νομικά κείμενα
+  legal_todo: Θα δημοσιευτούν πριν από την υποβολή της εφαρμογής στο App Store.
+  features_title: Τι κάνει
+  origin_title: Το όνομα
+  status_soon: Μόλις κυκλοφορήσει, ο σύνδεσμος του App Store θα εμφανιστεί εδώ.
+  download: Λήψη από το App Store
+  back: Όλες οι εφαρμογές
+  lang_other: English
+en:
+  eyebrow: iPhone and Mac
+  hero_title: 'Five apps,
+
+    five names
+
+    from the same place.'
+  hero_text: Calendar, mail, notes, photos, document scanning. Built one at a time,
+    by one person, in Greece.
+  apps_title: The apps
+  apps_text: Each one does a single thing and does it properly. Shared design, shared
+    logic, no accounts, no tracking.
+  nav_apps: Apps
+  nav_contact: Contact
+  footer_note: Designed and developed in Greece.
+  support_title: Support
+  support_text: Write to me directly, I answer every message. Please include your
+    device, your OS version and the app version. Replies usually within two working
+    days.
+  legal_title: Legal
+  legal_todo: Will be published before the app is submitted to the App Store.
+  features_title: What it does
+  origin_title: The name
+  status_soon: Once released, the App Store link will appear here.
+  download: Download on the App Store
+  back: All apps
+  lang_other: Ελληνικά

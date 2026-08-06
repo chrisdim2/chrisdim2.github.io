@@ -1,18 +1,5 @@
 title: dimakis
 description: Εφαρμογές για iPhone και Mac
 url: https://dimakis.app
-
-collections:
-  apps:
-    output: true
-    permalink: /:name/
-
-defaults:
-  - scope:
-      path: ""
-      type: apps
-    values:
-      layout: app
-
 exclude:
   - README.md

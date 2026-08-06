@@ -3,43 +3,92 @@ backend:
   repo: chrisdim2/chrisdim2.github.io
   branch: main
 
-media_folder: assets/uploads
-public_folder: /assets/uploads
+media_folder: assets/icons
+public_folder: /assets/icons
 
 collections:
   - name: apps
     label: Εφαρμογές
-    label_singular: Εφαρμογή
-    folder: _apps
-    create: true
-    extension: md
-    format: yaml-frontmatter
-    slug: "{{fields.slug}}"
-    summary: "{{title}} — {{kind}}"
-    sortable_fields: [order, title]
-    fields:
-      - { name: title, label: Όνομα, widget: string }
-      - { name: greek, label: Ελληνικό όνομα, widget: string, hint: "Κεφαλαία, π.χ. ΧΡΟΝΟΣ" }
-      - { name: kind, label: Κατηγορία, widget: string }
-      - { name: tagline, label: Ατάκα, widget: string }
-      - { name: origin, label: Προέλευση ονόματος, widget: text }
-      - { name: order, label: Σειρά εμφάνισης, widget: number, value_type: int }
-      - { name: status, label: Κατάσταση, widget: string, default: "Σε ανάπτυξη" }
-      - { name: appstore_url, label: Σύνδεσμος App Store, widget: string, required: false, hint: "Άφησέ το κενό όσο δεν έχει κυκλοφορήσει" }
-      - { name: support_email, label: Email υποστήριξης, widget: string }
-      - { name: has_legal, label: Έχει νομικά κείμενα, widget: boolean, default: false }
-      - { name: body, label: Επιπλέον κείμενο, widget: markdown, required: false }
+    files:
+      - name: list
+        label: Όλες οι εφαρμογές
+        file: _data/apps.yml
+        fields:
+          - name: list
+            label: Εφαρμογές
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: slug, label: Φάκελος (URL), widget: string }
+              - { name: title, label: Όνομα, widget: string }
+              - { name: greek, label: Ελληνικό όνομα, widget: string }
+              - { name: order, label: Σειρά, widget: number, value_type: int }
+              - { name: icon, label: Εικονίδιο, widget: image, required: false }
+              - { name: kind_el, label: Κατηγορία, widget: string }
+              - { name: kind_en, label: Category (EN), widget: string }
+              - { name: tagline_el, label: Ατάκα, widget: string }
+              - { name: tagline_en, label: Tagline (EN), widget: string }
+              - { name: origin_el, label: Προέλευση ονόματος, widget: text }
+              - { name: origin_en, label: Origin of the name (EN), widget: text }
+              - { name: features_el, label: Χαρακτηριστικά, widget: list, required: false, field: { name: item, label: Χαρακτηριστικό, widget: string } }
+              - { name: features_en, label: Features (EN), widget: list, required: false, field: { name: item, label: Feature, widget: string } }
+              - { name: screenshots, label: Στιγμιότυπα, widget: list, required: false, field: { name: image, label: Εικόνα, widget: image } }
+              - { name: status_el, label: Κατάσταση, widget: string }
+              - { name: status_en, label: Status (EN), widget: string }
+              - { name: appstore_url, label: Σύνδεσμος App Store, widget: string, required: false }
+              - { name: support_email, label: Email υποστήριξης, widget: string }
+              - { name: has_legal, label: Έχει νομικά κείμενα, widget: boolean, default: false }
 
   - name: settings
-    label: Ρυθμίσεις site
+    label: Κείμενα site
     files:
       - name: site
-        label: Αρχική και υποσέλιδο
+        label: Γενικά και δύο γλώσσες
         file: _data/site.yml
         fields:
-          - { name: eyebrow, label: Μικρός τίτλος, widget: string }
-          - { name: hero_title, label: Κύριος τίτλος, widget: text }
-          - { name: hero_text, label: Εισαγωγικό κείμενο, widget: text }
-          - { name: footer_note, label: Σημείωση υποσέλιδου, widget: string }
-          - { name: contact_email, label: Γενικό email, widget: string }
           - { name: accent, label: Χρώμα τόνου, widget: color }
+          - { name: contact_email, label: Γενικό email, widget: string }
+          - name: el
+            label: Ελληνικά
+            widget: object
+            fields:
+              - { name: eyebrow, label: Μικρός τίτλος, widget: string }
+              - { name: hero_title, label: Κύριος τίτλος, widget: text }
+              - { name: hero_text, label: Εισαγωγή, widget: text }
+              - { name: apps_title, label: Τίτλος ενότητας εφαρμογών, widget: string }
+              - { name: apps_text, label: Κείμενο ενότητας, widget: text }
+              - { name: nav_apps, label: Μενού, εφαρμογές, widget: string }
+              - { name: nav_contact, label: Μενού, επικοινωνία, widget: string }
+              - { name: footer_note, label: Υποσέλιδο, widget: string }
+              - { name: support_title, label: Τίτλος υποστήριξης, widget: string }
+              - { name: support_text, label: Κείμενο υποστήριξης, widget: text }
+              - { name: legal_title, label: Τίτλος νομικών, widget: string }
+              - { name: legal_todo, label: Κείμενο εκκρεμών νομικών, widget: string }
+              - { name: features_title, label: Τίτλος χαρακτηριστικών, widget: string }
+              - { name: origin_title, label: Τίτλος προέλευσης, widget: string }
+              - { name: status_soon, label: Κείμενο πριν την κυκλοφορία, widget: string }
+              - { name: download, label: Κουμπί λήψης, widget: string }
+              - { name: back, label: Επιστροφή, widget: string }
+              - { name: lang_other, label: Άλλη γλώσσα, widget: string }
+          - name: en
+            label: English
+            widget: object
+            fields:
+              - { name: eyebrow, label: Eyebrow, widget: string }
+              - { name: hero_title, label: Hero title, widget: text }
+              - { name: hero_text, label: Hero text, widget: text }
+              - { name: apps_title, label: Apps section title, widget: string }
+              - { name: apps_text, label: Apps section text, widget: text }
+              - { name: nav_apps, label: Nav, apps, widget: string }
+              - { name: nav_contact, label: Nav, contact, widget: string }
+              - { name: footer_note, label: Footer note, widget: string }
+              - { name: support_title, label: Support title, widget: string }
+              - { name: support_text, label: Support text, widget: text }
+              - { name: legal_title, label: Legal title, widget: string }
+              - { name: legal_todo, label: Legal pending text, widget: string }
+              - { name: features_title, label: Features title, widget: string }
+              - { name: origin_title, label: Origin title, widget: string }
+              - { name: status_soon, label: Pre-release text, widget: string }
+              - { name: download, label: Download button, widget: string }
+              - { name: back, label: Back link, widget: string }
+              - { name: lang_other, label: Other language, widget: string }

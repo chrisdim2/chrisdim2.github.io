@@ -1,0 +1,74 @@
+---
+layout: default
+---
+{% assign L = site.data.site[page.lang] %}
+{% assign apps = site.data.apps.list | sort: "order" %}
+{% assign base = '/' %}
+{% if page.lang == 'en' %}{% assign base = '/en/' %}{% endif %}
+
+<section class="hero">
+  <div class="hero-in">
+    <p class="eyebrow">{{ L.eyebrow }}</p>
+    <h1 class="hero-h">{{ L.hero_title | newline_to_br }}</h1>
+    <p class="hero-p">{{ L.hero_text }}</p>
+    <ul class="icon-row">
+      {% for app in apps %}
+      <li>
+        <a href="{{ base | append: app.slug | append: '/' | relative_url }}" title="{{ app.title }}">
+          {% if app.icon and app.icon != "" %}
+          <img src="{{ app.icon | relative_url }}" alt="{{ app.title }}" width="64" height="64" loading="lazy">
+          {% else %}
+          <span class="icon-blank" aria-hidden="true">{{ app.title | slice: 0 }}</span>
+          {% endif %}
+          <span class="icon-name">{{ app.title }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section id="apps" class="section-head">
+  <h2>{{ L.apps_title }}</h2>
+  <p>{{ L.apps_text }}</p>
+</section>
+
+{% for app in apps %}
+{% assign i = forloop.index0 | modulo: 2 %}
+<section class="showcase {% if i == 1 %}showcase-alt{% endif %}">
+  <span class="showcase-gr" aria-hidden="true">{{ app.greek }}</span>
+  <div class="showcase-in">
+    <div class="showcase-text">
+      {% if app.icon and app.icon != "" %}
+      <img class="showcase-icon" src="{{ app.icon | relative_url }}" alt="" width="80" height="80" loading="lazy">
+      {% endif %}
+      <p class="eyebrow">{% if page.lang == 'el' %}{{ app.kind_el }}{% else %}{{ app.kind_en }}{% endif %}</p>
+      <h3>{{ app.title }}</h3>
+      <p class="showcase-tag">{% if page.lang == 'el' %}{{ app.tagline_el }}{% else %}{{ app.tagline_en }}{% endif %}</p>
+      {% assign feats = app.features_el %}
+      {% if page.lang == 'en' %}{% assign feats = app.features_en %}{% endif %}
+      {% if feats and feats.size > 0 %}
+      <ul class="feat-list">
+        {% for f in feats %}<li>{{ f }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+      <p class="showcase-origin">{% if page.lang == 'el' %}{{ app.origin_el }}{% else %}{{ app.origin_en }}{% endif %}</p>
+      <div class="page-links">
+        {% if app.appstore_url and app.appstore_url != "" %}
+        <a class="btn" href="{{ app.appstore_url }}">{{ L.download }}</a>
+        {% else %}
+        <span class="app-status">{% if page.lang == 'el' %}{{ app.status_el }}{% else %}{{ app.status_en }}{% endif %}</span>
+        {% endif %}
+        <a class="btn btn-quiet" href="{{ base | append: app.slug | append: '/' | relative_url }}">{{ app.title }} &rarr;</a>
+      </div>
+    </div>
+    <div class="showcase-shot">
+      {% if app.screenshots and app.screenshots.size > 0 %}
+      <img src="{{ app.screenshots[0] | relative_url }}" alt="{{ app.title }}" loading="lazy">
+      {% else %}
+      <div class="shot-empty" aria-hidden="true"></div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endfor %}
