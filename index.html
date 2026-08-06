@@ -1,155 +1,34 @@
-<!doctype html>
-<html lang="el">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>dimakis — εφαρμογές για iPhone και Mac</title>
-<meta name="description" content="Πέντε εφαρμογές για iPhone και Mac, με ονόματα από την ελληνική μυθολογία.">
-<link rel="icon" href="assets/favicon-32.png" sizes="32x32">
-<link rel="icon" href="assets/favicon-16.png" sizes="16x16">
-<link rel="apple-touch-icon" href="assets/favicon-180.png">
-<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
-<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+---
+layout: default
+page_title: dimakis — εφαρμογές για iPhone και Mac
+description: Πέντε εφαρμογές για iPhone και Mac, με ονόματα από την ελληνική μυθολογία.
+---
+<section class="hero">
+  <p class="eyebrow">{{ site.data.site.eyebrow }}</p>
+  <h1 class="hero-h">{{ site.data.site.hero_title | newline_to_br }}</h1>
+  <p class="hero-p">{{ site.data.site.hero_text }}</p>
+</section>
 
-<style>
-/* Εικονίδια εφαρμογών.
-
-   Μπαίνει ΕΔΩ και όχι στο style.css, επίτηδες: έτσι το αρχείο είναι αυτοτελές
-   και δεν εξαρτάται από δεύτερη επεξεργασία ούτε από cache του browser.
-
-   Το height:auto είναι το κρίσιμο. Το style.css έχει img{max-width:100%} χωρίς
-   height, οπότε το πλάτος περιοριζόταν στη στήλη ενώ το ύψος έμενε στα 256 του
-   attribute, και οι εικόνες έβγαιναν τραβηγμένες. */
-.app-head{
-  display:flex; flex-direction:column; align-items:flex-start; gap:12px;
-}
-.app-icon{
-  width:88px; height:88px; max-width:88px;
-  border-radius:22.37%;              /* η αναλογία των εικονιδίων iOS */
-  border:1px solid rgba(22,35,43,.13);
-  object-fit:contain;                /* ποτέ παραμόρφωση, ό,τι κι αν συμβεί */
-}
-@media (max-width:720px){
-  .app-head{flex-direction:row; align-items:center; gap:14px}
-  .app-icon{width:64px; height:64px; max-width:64px}
-}
-</style>
-</head>
-<body>
-<header class="bar">
-  <a class="brand" href="index.html" aria-label="dimakis, αρχική">
-    <img src="assets/dimakis-logo.svg" alt="dimakis">
-  </a>
-  <nav class="bar-nav">
-    <a href="index.html#apps">Εφαρμογές</a>
-    <a href="mailto:support@dimakis.app">Επικοινωνία</a>
-  </nav>
-</header>
-<main>
-  <section class="hero">
-    <p class="eyebrow">iPhone και Mac</p>
-    <h1 class="hero-h">Πέντε εφαρμογές,<br>πέντε ονόματα<br>από τον ίδιο τόπο.</h1>
-    <p class="hero-p">Ημερολόγιο, αλληλογραφία, σημειώσεις, φωτογραφίες, σάρωση εγγράφων. Φτιαγμένες μία μία, από έναν άνθρωπο, στην Ελλάδα.</p>
-  </section>
-
-  <section id="apps" class="apps">
-    <ul class="app-list">
+<section id="apps" class="apps">
+  <ul class="app-list">
+    {% assign sorted = site.apps | sort: "order" %}
+    {% for app in sorted %}
     <li class="app">
-      <a class="app-link" href="chronos/index.html">
-        <span class="app-head">
-          <img class="app-icon" src="assets/icons/chronos.png" alt="" width="88" height="88" loading="lazy">
-          <span class="app-gr" aria-hidden="true">ΧΡΟΝΟΣ</span>
-        </span>
+      <a class="app-link" href="{{ app.url | relative_url }}">
+        <span class="app-gr" aria-hidden="true">{{ app.greek }}</span>
         <span class="app-body">
-          <span class="app-kind">Ημερολόγιο</span>
-          <h2 class="app-name">Chronos</h2>
-          <p class="app-tag">Ο χρόνος υπό τον έλεγχό σου.</p>
-          <p class="app-origin">Από τον Χρόνο, την προσωποποίηση του χρόνου στην ελληνική μυθολογία.</p>
-          <span class="app-status">Σε ανάπτυξη</span>
+          <span class="app-kind">{{ app.kind }}</span>
+          <h2 class="app-name">{{ app.title }}</h2>
+          <p class="app-tag">{{ app.tagline }}</p>
+          <p class="app-origin">{{ app.origin }}</p>
+          {% if app.appstore_url and app.appstore_url != "" %}
+          <span class="app-status">Διαθέσιμο</span>
+          {% else %}
+          <span class="app-status">{{ app.status }}</span>
+          {% endif %}
         </span>
       </a>
     </li>
-    <li class="app">
-      <a class="app-link" href="hermes/index.html">
-        <span class="app-head">
-          <img class="app-icon" src="assets/icons/hermes.png" alt="" width="88" height="88" loading="lazy">
-          <span class="app-gr" aria-hidden="true">ΕΡΜΗΣ</span>
-        </span>
-        <span class="app-body">
-          <span class="app-kind">Ηλεκτρονικό ταχυδρομείο</span>
-          <h2 class="app-name">Hermes</h2>
-          <p class="app-tag">Επικοινωνία με ταχύτητα θεού.</p>
-          <p class="app-origin">Από τον Ερμή, τον αγγελιοφόρο των θεών.</p>
-          <span class="app-status">Σε ανάπτυξη</span>
-        </span>
-      </a>
-    </li>
-    <li class="app">
-      <a class="app-link" href="athena/index.html">
-        <span class="app-head">
-          <img class="app-icon" src="assets/icons/athena.png" alt="" width="88" height="88" loading="lazy">
-          <span class="app-gr" aria-hidden="true">ΑΘΗΝΑ</span>
-        </span>
-        <span class="app-body">
-          <span class="app-kind">Σημειώσεις και τετράδια</span>
-          <h2 class="app-name">Athena</h2>
-          <p class="app-tag">Η σοφία σου, οργανωμένη.</p>
-          <p class="app-origin">Από την Αθηνά, τη θεά της σοφίας και της στρατηγικής σκέψης.</p>
-          <span class="app-status">Σε ανάπτυξη</span>
-        </span>
-      </a>
-    </li>
-    <li class="app">
-      <a class="app-link" href="apollo/index.html">
-        <span class="app-head">
-          <img class="app-icon" src="assets/icons/apollo.png" alt="" width="88" height="88" loading="lazy">
-          <span class="app-gr" aria-hidden="true">ΑΠΟΛΛΩΝ</span>
-        </span>
-        <span class="app-body">
-          <span class="app-kind">Οικογενειακό άλμπουμ φωτογραφιών</span>
-          <h2 class="app-name">Apollo</h2>
-          <p class="app-tag">Φως στις αναμνήσεις.</p>
-          <p class="app-origin">Από τον Απόλλωνα, τον θεό του φωτός και της ομορφιάς.</p>
-          <span class="app-status">Σε ανάπτυξη</span>
-        </span>
-      </a>
-    </li>
-    <li class="app">
-      <a class="app-link" href="argus/index.html">
-        <span class="app-head">
-          <!-- Όταν φτιάξεις το εικονίδιο του Argus, βγάλε τα σημάδια σχολίου
-               από την επόμενη γραμμή και ανέβασε το assets/icons/argus.png -->
-          <!-- <img class="app-icon" src="assets/icons/argus.png" alt="" width="88" height="88" loading="lazy"> -->
-          <span class="app-gr" aria-hidden="true">ΑΡΓΟΣ</span>
-        </span>
-        <span class="app-body">
-          <span class="app-kind">Σαρωτής εγγράφων</span>
-          <h2 class="app-name">Argus</h2>
-          <p class="app-tag">Καταγράφει τα πάντα.</p>
-          <p class="app-origin">Από τον Άργο Πανόπτη, τον γίγαντα με τα εκατό μάτια.</p>
-          <span class="app-status">Σε ανάπτυξη</span>
-        </span>
-      </a>
-    </li>
-    </ul>
-  </section>
-</main>
-<footer class="foot">
-  <div class="foot-in">
-    <img class="foot-logo" src="assets/dimakis-logo-dark.svg" alt="dimakis">
-    <ul class="foot-list">
-      <li><a href="chronos/index.html">Chronos</a></li>
-      <li><a href="hermes/index.html">Hermes</a></li>
-      <li><a href="athena/index.html">Athena</a></li>
-      <li><a href="apollo/index.html">Apollo</a></li>
-      <li><a href="argus/index.html">Argus</a></li>
-    </ul>
-    <div class="foot-meta">
-      <a href="mailto:support@dimakis.app">support@dimakis.app</a>
-      <p>Σχεδιασμός και ανάπτυξη από την Ελλάδα.</p>
-    </div>
-  </div>
-</footer>
-</body>
-</html>
+    {% endfor %}
+  </ul>
+</section>

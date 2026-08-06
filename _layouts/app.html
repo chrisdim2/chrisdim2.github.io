@@ -1,0 +1,41 @@
+---
+layout: default
+---
+<article class="page">
+  <p class="eyebrow">{{ page.kind }}</p>
+  <h1 class="page-h"><span class="page-gr" aria-hidden="true">{{ page.greek }}</span>{{ page.title }}</h1>
+  <p class="lede">{{ page.tagline }}</p>
+  <p class="origin-note">{{ page.origin }}</p>
+
+  {% if page.appstore_url and page.appstore_url != "" %}
+  <div class="page-links">
+    <a class="btn" href="{{ page.appstore_url }}">Λήψη από το App Store</a>
+  </div>
+  {% else %}
+  <p class="status-line">{{ page.status }}. Μόλις κυκλοφορήσει, ο σύνδεσμος του App Store θα εμφανιστεί εδώ.</p>
+  {% endif %}
+
+  {{ content }}
+
+  <section class="legal">
+    <h2>Υποστήριξη</h2>
+    <p>Γράψτε μου απευθείας, απαντώ σε κάθε μήνυμα.</p>
+    <p class="big-link"><a href="mailto:{{ page.support_email }}">{{ page.support_email }}</a></p>
+    <p>Βοηθά να αναφέρετε τη συσκευή σας, την έκδοση του λειτουργικού, την έκδοση της εφαρμογής, τι κάνατε όταν παρουσιάστηκε το πρόβλημα και τι περιμένατε να συμβεί. Απαντώ συνήθως εντός δύο εργάσιμων ημερών.</p>
+    <p lang="en">In English: write to <a href="mailto:{{ page.support_email }}">{{ page.support_email }}</a> with your device, OS version and app version. Replies usually within two working days.</p>
+  </section>
+
+  <section class="legal">
+    <h2>Νομικά κείμενα</h2>
+    {% if page.has_legal %}
+    <ul class="legal-list">
+      <li><a href="privacy-el.html">Πολιτική Απορρήτου</a> <span>Ελληνικά</span></li>
+      <li><a href="terms-el.html">Όροι Χρήσης</a> <span>Ελληνικά</span></li>
+      <li><a href="privacy-en.html">Privacy Policy</a> <span>English</span></li>
+      <li><a href="terms-en.html">Terms of Service</a> <span>English</span></li>
+    </ul>
+    {% else %}
+    <p class="legal-todo">Θα δημοσιευτούν πριν από την υποβολή της εφαρμογής στο App Store.</p>
+    {% endif %}
+  </section>
+</article>

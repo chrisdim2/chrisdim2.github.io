@@ -1,0 +1,45 @@
+backend:
+  name: github
+  repo: chrisdim2/chrisdim2.github.io
+  branch: main
+
+media_folder: assets/uploads
+public_folder: /assets/uploads
+
+collections:
+  - name: apps
+    label: Εφαρμογές
+    label_singular: Εφαρμογή
+    folder: _apps
+    create: true
+    extension: md
+    format: yaml-frontmatter
+    slug: "{{fields.slug}}"
+    summary: "{{title}} — {{kind}}"
+    sortable_fields: [order, title]
+    fields:
+      - { name: title, label: Όνομα, widget: string }
+      - { name: greek, label: Ελληνικό όνομα, widget: string, hint: "Κεφαλαία, π.χ. ΧΡΟΝΟΣ" }
+      - { name: kind, label: Κατηγορία, widget: string }
+      - { name: tagline, label: Ατάκα, widget: string }
+      - { name: origin, label: Προέλευση ονόματος, widget: text }
+      - { name: order, label: Σειρά εμφάνισης, widget: number, value_type: int }
+      - { name: status, label: Κατάσταση, widget: string, default: "Σε ανάπτυξη" }
+      - { name: appstore_url, label: Σύνδεσμος App Store, widget: string, required: false, hint: "Άφησέ το κενό όσο δεν έχει κυκλοφορήσει" }
+      - { name: support_email, label: Email υποστήριξης, widget: string }
+      - { name: has_legal, label: Έχει νομικά κείμενα, widget: boolean, default: false }
+      - { name: body, label: Επιπλέον κείμενο, widget: markdown, required: false }
+
+  - name: settings
+    label: Ρυθμίσεις site
+    files:
+      - name: site
+        label: Αρχική και υποσέλιδο
+        file: _data/site.yml
+        fields:
+          - { name: eyebrow, label: Μικρός τίτλος, widget: string }
+          - { name: hero_title, label: Κύριος τίτλος, widget: text }
+          - { name: hero_text, label: Εισαγωγικό κείμενο, widget: text }
+          - { name: footer_note, label: Σημείωση υποσέλιδου, widget: string }
+          - { name: contact_email, label: Γενικό email, widget: string }
+          - { name: accent, label: Χρώμα τόνου, widget: color }
