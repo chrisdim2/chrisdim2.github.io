@@ -35,7 +35,7 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="updated">App: Apollo · Last updated: 29 July 2026</p>
+<p class="updated">App: Apollo · Last updated: 3 September 2026</p>
 
 <div class="box">
 <strong>In short:</strong> Apollo has no accounts, no servers, no usage analytics and no ads.
@@ -59,8 +59,12 @@ no video and no credential ever passes through a system of ours, because we do n
 
 <h2>3. What Apollo is</h2>
 <p>
-Apollo is a viewer for photos you already keep in your own cloud: pCloud, or your Photos library (iCloud Photos). The app connects directly from your
-device to the service you chose. No intermediate server is involved.
+Apollo is a viewer for photos you already keep in your own cloud: pCloud, Dropbox,
+OneDrive, Box, WebDAV, or any S3-compatible service, or your device's Photos library.
+The app connects directly from your
+device to the service you chose. No intermediate server is involved. You can also transfer
+photos directly from one of your own accounts to another (see section 6) — again with no
+intermediary.
 </p>
 
 <h2>4. Data that stays on your device</h2>
@@ -82,7 +86,7 @@ photos.
 
 <h2>5. Permissions the app requests</h2>
 <ul>
-  <li><strong>Photos</strong> — two uses. First, if you connect iCloud Photos as a source, to read and display your library. Second, to save photos you download from the cloud into your library. Optional if you only use pCloud.</li>
+  <li><strong>Photos</strong> — two uses. First, if you connect your device's Photos library as a source, to read and display it. Second, to save photos you download or transfer from a cloud into it. Optional if you only use cloud services.</li>
   <li><strong>Background processing</strong> — so syncing and EXIF reading can continue while the app is closed. Optional.</li>
 </ul>
 <p>
@@ -94,14 +98,22 @@ revoked at any time in iOS Settings.
 <h2>6. What leaves the device, and where it goes</h2>
 <table>
 <tr><th>Service</th><th>What is sent</th><th>Purpose</th></tr>
-<tr><td>pCloud</td><td>Your access token, file identifiers, and the files themselves when downloading or uploading</td><td>Reading your library, thumbnails, viewing, corrections</td></tr>
-<tr><td>Apple (Photos / iCloud Photos)</td><td>Nothing to us. Access happens locally through the system (PhotoKit)</td><td>Reading and updating your library</td></tr>
+<tr><td>pCloud, Dropbox, OneDrive, Box, WebDAV, S3-compatible</td><td>Your access token (or credentials, for WebDAV/S3), file identifiers, and the files themselves when downloading or uploading — only for the ones you have connected</td><td>Reading your library, thumbnails, viewing, corrections</td></tr>
+<tr><td>Apple (device Photos library)</td><td>Nothing to us. Access happens locally through the system (PhotoKit)</td><td>Reading and updating your library</td></tr>
 <tr><td>Apple Maps (MapKit)</td><td>The GPS coordinates of your photos, one by one</td><td>Turning them into place names ("Athens", "Zakynthos") for the map and search</td></tr>
+<tr><td>Wikipedia (Wikimedia)</td><td>Up to four coordinate pairs per trip. <strong>Not the trip name, not photos, no identifiers.</strong></td><td>Finding the names of landmarks around those points, so that <em>your own</em> photo taken closest to the best known one can be used as the cover. <strong>No image is downloaded.</strong> Happens only when you open the editor of a trip that has no cover, or when you tap the corresponding button</td></tr>
 <tr><td>Apple (iCloud key-value store)</td><td>Preferences only: theme, icon, zoom, sync switches</td><td>Same settings across your devices. Can be turned off in Settings</td></tr>
 </table>
 <p>
 We send no name, email or device identifier to any of them. Communication with the clouds
 uses encrypted connections (HTTPS).
+</p>
+<p>
+<strong>Transferring between your own accounts.</strong> If you choose to transfer photos
+from one of your connected accounts to another (e.g. from your device's library to pCloud,
+or from Dropbox to OneDrive), the file is downloaded from the first and uploaded to the
+second directly through your device. Again, it does not pass through a system of ours — it
+is simply sent to two services instead of one.
 </p>
 
 <div class="warn">
@@ -125,7 +137,11 @@ access token, kept in your device's Keychain, which you can revoke at any time:
 <p>
 The providers' policies apply:
 <a href="https://www.pcloud.com/privacy_policy.html">pCloud</a>,
-<a href="https://www.apple.com/legal/privacy/">Apple</a>.
+<a href="https://www.apple.com/legal/privacy/">Apple</a>,
+<a href="https://www.dropbox.com/privacy">Dropbox</a>,
+<a href="https://privacy.microsoft.com/">Microsoft (OneDrive)</a>,
+<a href="https://www.box.com/legal/privacypolicy">Box</a>, or the policy of your own
+WebDAV/S3-compatible provider.
 </p>
 
 <h2>8. Family mode</h2>
@@ -134,15 +150,21 @@ If you enable it, the app writes <strong>two small files inside your own pCloud
 folder</strong>, so that anyone with access to the same folder can read them:
 </p>
 <ul>
-  <li><code>.photoapp-family.json</code> — album covers, year groupings, place names.</li>
+  <li><code>.photoapp-family.json</code> — album covers, year groupings, place names, <strong>the member names</strong> you define and your <strong>trips</strong> (name, dates, who went).</li>
   <li><code>.photoapp-exif.json</code> — capture dates, <strong>GPS coordinates</strong> and camera models, so that each device does not have to read them again.</li>
 </ul>
 <div class="warn">
-<strong>The second file contains location data.</strong> Anyone with access to the shared
-pCloud folder can read it. Enable this feature only with people you already trust with your
-photos. You can turn it off, or keep only part of it, in Settings → Family mode. The files
-live in your own pCloud account, not with us, and you can delete them whenever you want.
+<strong>These files contain location data and people's names.</strong> Anyone with access to
+the shared pCloud folder can read them. "Members" are plain labels you type yourself, not
+accounts, and there is no sign-in: if you write someone's name there, everyone sharing the
+folder sees it. Enable this feature only with people you already trust with your photos. You
+can turn it off, or keep only part of it, in Settings → Family mode. The files live in your
+own pCloud account, not with us, and you can delete them whenever you want.
 </div>
+<p>
+The "I am…" setting (which member you are on this device) is <strong>not</strong> synced; it
+stays on the device only.
+</p>
 
 <h2>9. How long data is kept</h2>
 <p>
