@@ -16,7 +16,8 @@
 <strong>In short:</strong> Iris has no accounts, no servers, collects no usage analytics and
 shows no ads. It only works on the files you choose or drag into it, and all processing
 happens on your Mac. Your photos and videos never leave your computer. The only contact
-with the internet is the map and place search, which go through Apple (see section 6).
+with the internet is the map and place search, which go through Apple, and opening these
+pages from inside the app (see section 6).
 </div>
 
 <h2>1. Who is responsible</h2>
@@ -66,14 +67,15 @@ your files.
 Iris <strong>does not ask</strong> for access to your Photos library, camera, contacts or
 location. The locations you see come from the files themselves (GPS) or from what you pick
 on the map, not from where you are. The only access is to files and folders you choose in
-the system's open panel or by dragging. The app itself has no network entitlement; the map
-works through a system service.
+the system's open panel or by dragging. The app has permission to connect to the internet only to load these pages
+(section 6); the map works through a system service.
 </p>
 
 <h2>6. What leaves your Mac and where it goes</h2>
 <table>
 <tr><th>Service</th><th>What is sent</th><th>Purpose</th></tr>
 <tr><td>Apple Maps (MapKit)</td><td>The map area you are viewing and, when you press "Search", the text you typed (e.g. "Chalkida")</td><td>Showing the map and finding coordinates for a place name</td></tr>
+<tr><td>The app's website (dimakis.app, hosted on GitHub Pages)</td><td>One request for the page, like any browsing, <strong>only</strong> when you open the Privacy Policy or Terms of Use from Settings. The server sees your IP address and the technical details of the request</td><td>Showing these texts always in their current form. <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a> also applies</td></tr>
 </table>
 <p>
 Nothing else. Not your files, their names, their metadata, nor any name, email or device
