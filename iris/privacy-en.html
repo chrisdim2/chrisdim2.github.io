@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Iris — Privacy Policy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="lang" href="privacy-el.html">Ελληνικά</a>
+<h1>Privacy Policy</h1>
+<p class="updated">App: Iris (macOS) · Last updated: 21 September 2026</p>
+
+<div class="box">
+<strong>In short:</strong> Iris has no accounts, no servers, collects no usage analytics and
+shows no ads. It only works on the files you choose or drag into it, and all processing
+happens on your Mac. Your photos and videos never leave your computer. The only contact
+with the internet is the map and place search, which go through Apple (see section 6).
+</div>
+
+<h2>1. Who is responsible</h2>
+<p>
+Data controller: <strong>Christos Dimakis</strong>, Peristeri, Attica, Greece.<br>
+Contact: <a href="mailto:iris@dimakis.app">iris@dimakis.app</a>
+</p>
+
+<h2>2. We collect nothing</h2>
+<p>
+The app <strong>has no server</strong>. You don't create an account with us, you don't give
+an email, and there is no analytics, crash reporting or advertising network built in. We
+don't track you across apps or websites. No photo, no video and no metadata ever passes
+through a system of ours, because we have no such system.
+</p>
+
+<h2>3. What Iris does</h2>
+<p>
+Iris prepares photos and videos before they go into your library: it fixes the capture date
+and location, writes title, description and keywords, renames in bulk and finds duplicates.
+It uses the macOS frameworks (ImageIO and AVFoundation) and runs inside Apple's
+<strong>sandbox</strong>, which only lets it touch the files and folders you chose or
+dragged in.
+</p>
+
+<h2>4. Data that stays on your Mac</h2>
+<p>The following is stored locally and is not sent anywhere:</p>
+<table>
+<tr><th>Category</th><th>What it is</th><th>Why</th></tr>
+<tr><td>File access</td><td>The macOS "bookmarks" for the folders and files you chose</td><td>So the app remembers access between launches</td></tr>
+<tr><td>Undo journal</td><td>One JSON file per batch: file path and the previous values (date, GPS, title, description, keywords, name)</td><td>So you can undo a change. Keeps the latest 50 batches; older ones are removed automatically. It lives in the app's own space (Application Support), not inside your folders</td></tr>
+<tr><td>Rename recovery record</td><td>The paths of a rename that is in progress</td><td>To put files back if the app quits abruptly. Removed as soon as the rename finishes</td></tr>
+<tr><td>Recent places</td><td>Up to 12 places you used: name and coordinates</td><td>So you don't retype the same coordinates</td></tr>
+<tr><td>Settings</td><td>The "Subfolders" and "Verify" switches</td><td>App behaviour</td></tr>
+<tr><td>Activity log</td><td>The latest 500 log lines, in memory only</td><td>To show what happened and any errors. Lost when you quit the app</td></tr>
+<tr><td>Temporary files</td><td>A temporary file and a rescue copy next to the file being written</td><td>Write safety. Deleted automatically when the write completes</td></tr>
+</table>
+
+<div class="box">
+<strong>We don't keep copies of your photos.</strong> Changes are made to the files
+themselves, where they are. If you delete the app, its journals and settings go away, not
+your files.
+</div>
+
+<h2>5. Permissions the app asks for</h2>
+<p>
+Iris <strong>does not ask</strong> for access to your Photos library, camera, contacts or
+location. The locations you see come from the files themselves (GPS) or from what you pick
+on the map, not from where you are. The only access is to files and folders you choose in
+the system's open panel or by dragging. The app itself has no network entitlement; the map
+works through a system service.
+</p>
+
+<h2>6. What leaves your Mac and where it goes</h2>
+<table>
+<tr><th>Service</th><th>What is sent</th><th>Purpose</th></tr>
+<tr><td>Apple Maps (MapKit)</td><td>The map area you are viewing and, when you press "Search", the text you typed (e.g. "Chalkida")</td><td>Showing the map and finding coordinates for a place name</td></tr>
+</table>
+<p>
+Nothing else. Not your files, their names, their metadata, nor any name, email or device
+identifier from us.
+</p>
+
+<div class="warn">
+<strong>The map reveals to Apple the area you are looking at.</strong> When you select a
+file that has GPS, the map centres on that point, so Apple sees that this area was
+requested, though not the photo itself. Apple's
+<a href="https://www.apple.com/legal/privacy/">Privacy Policy</a> applies. If you don't want
+that, don't open the map or the place search; everything else works without them, by typing
+the coordinates yourself.
+</div>
+
+<h2>7. How long we keep data</h2>
+<p>
+We don't, because we hold nothing. On your Mac, as long as you want. The undo journal keeps
+the latest 50 batches and automatically removes older ones; it goes away entirely if you
+delete the app. Your photos are not affected by either.
+</p>
+
+<h2>8. Support</h2>
+<p>
+If you write to us from Settings → Contact, your email app opens with only the subject
+prefilled: app name and version. <strong>Nothing else is attached</strong>: no file names,
+locations or photos. We keep support emails for as long as needed to resolve the issue.
+</p>
+
+<h2>9. Your rights (GDPR)</h2>
+<p>
+You have the right of access, rectification, erasure, restriction, portability and
+objection. Since we hold none of your data, these rights are exercised directly on your Mac.
+For anything else, write to us. You also have the right to lodge a complaint with the Hellenic
+Data Protection Authority (<a href="https://www.dpa.gr">dpa.gr</a>).
+</p>
+
+<h2>10. Children</h2>
+<p>
+The app is not directed at children under 13 and does not knowingly collect data from them.
+Since we collect no data at all, there is no such risk.
+</p>
+
+<h2>11. Changes</h2>
+<p>
+If anything material changes, the date at the top will be updated and we'll mention it in the
+release notes. This policy is always available inside the app, in Settings.
+</p>
+
+</body>
+</html>
