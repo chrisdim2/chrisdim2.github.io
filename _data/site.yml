@@ -2,9 +2,9 @@ accent: '#E14B41'
 contact_email: support@dimakis.app
 el:
   eyebrow: iPhone και Mac
-  hero_title: 'Πέντε εφαρμογές,
+  hero_title: 'Έξι εφαρμογές,
 
-    πέντε ονόματα
+    έξι ονόματα
 
     από τον ίδιο τόπο.'
   hero_text: Ημερολόγιο, αλληλογραφία, σημειώσεις, φωτογραφίες, σάρωση εγγράφων. Φτιαγμένες
@@ -29,9 +29,9 @@ el:
   lang_other: English
 en:
   eyebrow: iPhone and Mac
-  hero_title: 'Five apps,
+  hero_title: 'Six apps,
 
-    five names
+    six names
 
     from the same place.'
   hero_text: Calendar, mail, notes, photos, document scanning. Built one at a time,

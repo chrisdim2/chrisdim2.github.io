@@ -15,14 +15,26 @@ list:
   origin_en: Named after Chronos, the personification of time in Greek mythology.
   status_el: Σε ανάπτυξη
   status_en: In development
-  features_el: []
-  features_en: []
+  features_el:
+    - Έξι όψεις ημερολογίου — Λίστα, Ημέρα, Εβδομάδα, Μήνας, Έτος, και συνδυαστική αρχική
+    - Αντίστροφη μέτρηση για γενέθλια, επετείους και ό,τι περιμένεις, με δυνατότητα να τη στείλεις σε φίλο
+    - Παρακολούθηση συντήρησης αυτοκινήτου — service, λάδια, ΚΤΕΟ, ασφάλεια, με πλήρες ιστορικό
+    - Υπενθυμίσεις φαρμάκων με έλεγχο πιθανών αλληλεπιδράσεων
+    - Εφημερεύοντα φαρμακεία και νοσοκομεία κοντά σου, σε πραγματικό χρόνο
+    - Δάνεια, συντήρηση σπιτιού και συνδρομές — όλη η καθημερινότητα, σε ένα μέρος
+  features_en:
+    - Six calendar views — List, Day, Week, Month, Year, and a combined Home view
+    - Countdown for birthdays, anniversaries and anything you're waiting for — share it with a friend
+    - Car maintenance tracking — service, oil, MOT, insurance, with full history
+    - Medication reminders with interaction checks
+    - Nearby on-duty pharmacies and hospitals, in real time
+    - Loans, home maintenance and subscriptions — your whole life admin, in one place
   screenshots: []
 - slug: hermes
   title: Hermes
   greek: ΕΡΜΗΣ
   icon: /assets/icons/hermes.png
-  order: 2
+  order: 6
   has_legal: false
   support_email: hermes@dimakis.app
   appstore_url: ''
@@ -41,7 +53,7 @@ list:
   title: Athena
   greek: ΑΘΗΝΑ
   icon: /assets/icons/athena.png
-  order: 3
+  order: 4
   has_legal: false
   support_email: athena@dimakis.app
   appstore_url: ''
@@ -53,14 +65,26 @@ list:
   origin_en: Named after Athena, goddess of wisdom and strategic thought.
   status_el: Σε ανάπτυξη
   status_en: In development
-  features_el: []
-  features_en: []
+  features_el:
+    - Οι σημειώσεις σου είναι απλά αρχεία Markdown μέσα στο δικό σου cloud — ανοίγουν με οποιοδήποτε εργαλείο
+    - Ιεραρχία σαν το OneNote, καθαρότητα σαν τις Σημειώσεις της Apple, views σαν το Trello
+    - Πίνακες με τύπους (SUM, AVERAGE...) και υπολογισμοί μέσα στο κείμενο, σαν μίνι υπολογιστικό φύλλο
+    - Ηχητικές σημειώσεις με μεταγραφή ομιλίας σε κείμενο, τοπικά στη συσκευή
+    - Σάρωση εγγράφων και OCR — το κείμενο μπαίνει αυτόματα στην αναζήτηση
+    - Εισαγωγή από OneNote, Apple Notes και άλλα, ώστε να μη χάσεις τίποτα από ό,τι έχεις ήδη
+  features_en:
+    - Your notes are plain Markdown files in your own cloud — they open in any tool
+    - OneNote-style hierarchy, Apple Notes-style clarity, Trello-style views
+    - Typed tables (SUM, AVERAGE...) and inline calculations, like a mini spreadsheet
+    - Voice notes with on-device speech-to-text transcription
+    - Document scanning and OCR — text is instantly searchable
+    - Import from OneNote, Apple Notes and more, so you don't lose what you already have
   screenshots: []
 - slug: apollo
   title: Apollo
   greek: ΑΠΟΛΛΩΝ
   icon: /assets/icons/apollo.png
-  order: 4
+  order: 2
   has_legal: true
   support_email: apollo@dimakis.app
   appstore_url: ''
@@ -72,13 +96,25 @@ list:
   origin_en: Named after Apollo, god of light and beauty.
   status_el: Σε ανάπτυξη
   status_en: In development
-  features_el: []
-  features_en: []
+  features_el:
+    - Δεν αντιγράφει τις φωτογραφίες σου — δουλεύει απευθείας πάνω στο δικό σου cloud (pCloud, Dropbox, OneDrive κ.ά.)
+    - Άλμπουμ ανά έτος, χάρτης τοποθεσιών, αναζήτηση με πραγματικές ημερομηνίες και GPS από τα EXIF
+    - Ταξίδια που βγαίνουν μόνα τους από τις φωτογραφίες σου — τα εντοπίζει, εσύ απλώς τα ονομάζεις
+    - Σάρωση καρτών επιβίβασης και ακτοπλοϊκών εισιτηρίων, με κάμερα ή PDF
+    - Υπενθυμίσεις πριν από κάθε ταξίδι, και πλήρη στατιστικά χιλιομέτρων και χωρών
+    - Family mode — κοινά εξώφυλλα, φάκελοι και ταξίδια με όποιον μοιράζεται το ίδιο cloud
+  features_en:
+    - Doesn't copy your photos — works directly on your own cloud (pCloud, Dropbox, OneDrive & more)
+    - Albums by year, a map of locations, search by real capture dates and GPS from EXIF
+    - Trips detected automatically from your photos — you just name them
+    - Scan boarding passes and ferry tickets, by camera or PDF
+    - Reminders before every trip, plus full distance and country stats
+    - Family mode — shared covers, folders and trips with everyone on the same cloud
   screenshots: []
 - slug: argus
   title: Argus
   greek: ΑΡΓΟΣ
-  icon: ''
+  icon: /assets/icons/argus.png
   order: 5
   has_legal: false
   support_email: argus@dimakis.app
@@ -94,3 +130,36 @@ list:
   features_el: []
   features_en: []
   screenshots: []
+- slug: iris
+  title: Iris
+  greek: ΙΡΙΔΑ
+  icon: /assets/icons/iris.png
+  order: 3
+  has_legal: true
+  support_email: iris@dimakis.app
+  appstore_url: ''
+  kind_el: Βοηθός φωτογραφιών για Mac
+  kind_en: Photo companion for Mac
+  tagline_el: Ετοιμάζει τις φωτογραφίες σου πριν μπουν στο Apollo.
+  tagline_en: Gets your photos ready before they join Apollo.
+  origin_el: Από την Ίριδα, τη θεά του ουράνιου τόξου που ένωνε ουρανό και γη· έτσι κι αυτή ενώνει τις φωτογραφίες σου με το Apollo.
+  origin_en: Named after Iris, goddess of the rainbow who connected sky and earth — connecting your photos to Apollo, in much the same way.
+  status_el: Σε ανάπτυξη
+  status_en: In development
+  features_el:
+    - Διορθώνει ημερομηνία λήψης και τοποθεσία
+    - Γράφει τίτλο, περιγραφή και λέξεις-κλειδιά
+    - Μαζική μετονομασία αρχείων
+    - Εντοπισμός διπλότυπων
+    - Όλη η επεξεργασία τοπικά, μέσα στο sandbox της Apple
+  features_en:
+    - Fixes capture date and GPS location
+    - Writes title, description and keywords
+    - Bulk renames files
+    - Finds duplicates
+    - All processing stays local, inside Apple's sandbox
+  screenshots:
+    - /assets/screens/iris/iris-1-metadata.webp
+    - /assets/screens/iris/iris-2-rename.webp
+    - /assets/screens/iris/iris-3-settings.webp
+    - /assets/screens/iris/iris-4-help.webp

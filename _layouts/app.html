@@ -32,6 +32,33 @@ layout: default
     <img src="{{ shot | relative_url }}" alt="{{ app.title }}" loading="lazy">
     {% endfor %}
   </section>
+  <div class="lightbox" id="lightbox" hidden>
+    <img src="" alt="">
+  </div>
+  <script>
+  (function(){
+    var gallery = document.querySelector('.gallery');
+    var lb = document.getElementById('lightbox');
+    var lbImg = lb.querySelector('img');
+    gallery.addEventListener('click', function(e){
+      var img = e.target.closest('img');
+      if (!img) return;
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lb.hidden = false;
+    });
+    lb.addEventListener('click', function(){
+      lb.hidden = true;
+      lbImg.src = '';
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && !lb.hidden) {
+        lb.hidden = true;
+        lbImg.src = '';
+      }
+    });
+  })();
+  </script>
   {% endif %}
 
   {% assign feats = app.features_el %}
