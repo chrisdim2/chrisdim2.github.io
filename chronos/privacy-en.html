@@ -34,12 +34,13 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="updated">App: Chronos · Last updated: 28 July 2026</p>
+<p class="updated">App: Chronos · Last updated: 24 September 2026</p>
 
 <div class="box">
-<strong>In short:</strong> Chronos has no accounts, no servers, no analytics and no ads.
-Your data stays on your device and, if you choose, in <em>your own</em> iCloud account.
-We have no access to it.
+<strong>In short:</strong> Chronos has no accounts of its own, no servers, no analytics
+and no ads. Your data stays on your device and, if you choose, in <em>your own</em> iCloud
+account. If you connect a Google, Microsoft or iCloud account for your calendars, the app
+talks <em>directly</em> to that service (section 6). We have no access to any of it.
 </div>
 
 <h2>1. Who is responsible</h2>
@@ -50,8 +51,8 @@ Contact: <a href="mailto:chronos@dimakis.app">chronos@dimakis.app</a>
 
 <h2>2. We collect nothing</h2>
 <p>
-The app has <strong>no backend</strong>. You do not create an account, you do not provide
-an email address, and there is no analytics, crash reporting or advertising SDK embedded.
+The app has <strong>no backend</strong>. You do not create a Chronos account, you do not
+give us an email address, and there is no analytics, crash reporting or advertising SDK embedded.
 We do not track you across apps or websites and we do not use the IDFA.
 </p>
 
@@ -61,11 +62,12 @@ sync (see section 5):</p>
 <table>
 <tr><th>Category</th><th>What it is</th><th>Why</th></tr>
 <tr><td>Calendar and Reminders</td><td>Your own events and tasks, via Apple's EventKit</td><td>So the app can display and edit them</td></tr>
-<tr><td>Contacts</td><td>Names and birth dates</td><td>Birthdays and name days in the calendar</td></tr>
+<tr><td>Contacts</td><td>Names and birth dates; the email addresses on your own card</td><td>Birthdays and name days in the calendar; recognising invitations addressed to you</td></tr>
 <tr><td>Medication</td><td>Names, dosages, times, intake history</td><td>Reminders and adherence tracking</td></tr>
 <tr><td>Tracking</td><td>Car, home maintenance, medical exams, subscriptions, loans</td><td>Renewal and expiry reminders</td></tr>
 <tr><td>Countdown</td><td>Titles, dates, photos you pick</td><td>Countdown cards</td></tr>
 <tr><td>Settings</td><td>Display preferences, favourite weather locations, time zones</td><td>App behaviour</td></tr>
+<tr><td>Connected accounts</td><td>Each account's email address, access credentials (in the Keychain), a cached copy of its events and tasks</td><td>So your calendars can be displayed and edited (section 6)</td></tr>
 </table>
 
 <div class="box">
@@ -78,7 +80,7 @@ The app does not read from or write to Apple Health (HealthKit).
 <h2>4. Permissions the app requests</h2>
 <ul>
   <li><strong>Calendars and Reminders</strong> — to show and manage your events. Without it the app has no purpose.</li>
-  <li><strong>Contacts</strong> — only for birthdays and name days. Optional.</li>
+  <li><strong>Contacts</strong> — for birthdays and name days, and for the email addresses on your own card. Optional.</li>
   <li><strong>Location (when in use)</strong> — for local weather and for the nearest on-duty pharmacies and hospitals. Optional.</li>
   <li><strong>Notifications</strong> — for reminders. Optional.</li>
   <li><strong>Photos</strong> — only the single image you pick each time, through Apple's picker. The app has no access to your library.</li>
@@ -93,10 +95,42 @@ That is between you and Apple. We have neither access nor visibility. Apple's
 <a href="https://www.apple.com/legal/privacy/">Privacy Policy</a> applies.
 </p>
 
-<h2>6. What leaves the device, and where it goes</h2>
+<h2>6. External accounts (Google, Microsoft, iCloud)</h2>
 <p>
-The app contacts the services below. None of them receives your name, email, device
-identifier, calendar content, contacts or medication data.
+Optionally, you can connect Google, Microsoft (Outlook, Microsoft 365) or iCloud accounts
+so you can view and edit their calendars and tasks inside Chronos. If you connect none,
+nothing in this section applies.
+</p>
+<table>
+<tr><th>Account</th><th>Access requested</th><th>How it connects</th></tr>
+<tr><td>Google</td><td>Google Calendar, Google Tasks, the account's email address</td><td>Sign-in on Google's own page (OAuth). Your password never passes through the app.</td></tr>
+<tr><td>Microsoft</td><td>Outlook calendars, Microsoft To Do, basic profile (email)</td><td>Sign-in on Microsoft's own page (OAuth). Your password never passes through the app.</td></tr>
+<tr><td>iCloud</td><td>Calendars and reminders via CalDAV</td><td>An app-specific password you create yourself at account.apple.com</td></tr>
+</table>
+<ul>
+  <li><strong>Direct connection.</strong> Your device talks straight to Google's, Microsoft's or Apple's servers. There is no server of ours in between, and we see neither your data nor your credentials.</li>
+  <li><strong>What is sent.</strong> Whatever you create, change, move or delete in those calendars and task lists is sent to the corresponding service. That is the purpose of connecting it.</li>
+  <li><strong>Where it is stored.</strong> Credentials (tokens, the iCloud app-specific password) are kept only in the device Keychain and are not synced. The account's email address and a cached copy of its events, for fast start-up, are kept in the app's local storage.</li>
+  <li><strong>Use.</strong> The data is used only to display and edit it inside the app. It is not used for advertising, not sold, not transferred to third parties and not used to train artificial intelligence models.</li>
+  <li><strong>Disconnecting.</strong> In Settings → Accounts you can remove an account; its credentials are deleted from the device. You can also revoke access on the service's side: <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>, <a href="https://account.microsoft.com/privacy/app-access">account.microsoft.com/privacy/app-access</a>, or for iCloud by revoking the app-specific password at <a href="https://account.apple.com">account.apple.com</a>.</li>
+</ul>
+<div class="box">
+<strong>Google API.</strong> Chronos's use and transfer to any other app of information
+received from Google APIs will adhere to the
+<a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
+including the Limited Use requirements.
+</div>
+<p>
+Data in those accounts is also subject to the privacy policies of
+<a href="https://policies.google.com/privacy">Google</a>,
+<a href="https://privacy.microsoft.com/">Microsoft</a> and
+<a href="https://www.apple.com/legal/privacy/">Apple</a>.
+</p>
+
+<h2>7. What else leaves the device, and where it goes</h2>
+<p>
+Apart from the accounts in section 6, the app contacts the services below. None of them
+receives your name, email, device identifier, calendar content, contacts or medication data.
 </p>
 <table>
 <tr><th>Service</th><th>What is sent</th><th>Purpose</th></tr>
@@ -117,29 +151,31 @@ One source only, the on-duty system of the 7th Health Region of Crete, is availa
 solely over an unencrypted connection (HTTP). No personal data is sent to it, only a date.
 </p>
 
-<h2>7. Retention</h2>
+<h2>8. Retention</h2>
 <p>
 For as long as you want. There is no automatic deletion. You can delete individual
 records, the whole history of one medication, or everything older than a number of years
 you choose, from within the app. Uninstalling removes local data. iCloud data is deleted
-from iOS Settings.
+from iOS Settings. Events and tasks in connected accounts remain with Google, Microsoft or
+Apple, under their own terms.
 </p>
 
-<h2>8. Your rights (GDPR)</h2>
+<h2>9. Your rights (GDPR)</h2>
 <p>
 You have the right of access, rectification, erasure, restriction, portability and
 objection. Since we hold none of your data, these rights are exercised directly on your
-device and in your iCloud account. For anything else, write to us. You also have the
+device, in your iCloud account and in any Google or Microsoft account you have connected.
+For anything else, write to us. You also have the
 right to lodge a complaint with your national supervisory authority.
 </p>
 
-<h2>9. Children</h2>
+<h2>10. Children</h2>
 <p>
 The app is not directed at children under 13 and does not knowingly collect data from
 them. Since we collect no data at all, no such risk arises.
 </p>
 
-<h2>10. Changes</h2>
+<h2>11. Changes</h2>
 <p>
 If anything material changes, the date at the top will be updated and it will be noted
 in the release notes. This policy is always available inside the app, under Help.
