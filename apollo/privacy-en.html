@@ -35,14 +35,13 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="updated">App: Apollo · Last updated: 24 September 2026</p>
+<p class="updated">App: Apollo · Last updated: September 24, 2026</p>
 
 <div class="box">
-<strong>In short:</strong> Apollo has no accounts, no usage analytics and no ads, and we keep
+<strong>In short:</strong> Apollo has no accounts, no usage analytics, and no ads, and we keep
 no data about you. Your photos stay where they already are, in <em>your own</em> cloud account,
-and your trips and boarding passes stay on your device. Two small helper services of ours
-exist only for technical reasons (Box sign-in and Wallet cards); they store nothing
-(section 2).
+and your trips and boarding passes stay on your device. We run two small helper services purely for technical reasons (Box sign-in and Wallet
+passes), and they store nothing (see section 2).
 </div>
 
 <h2>1. Who is responsible</h2>
@@ -51,101 +50,101 @@ Data controller: <strong>Christos Dimakis</strong>, Peristeri, Attica, Greece.<b
 Contact: <a href="mailto:apollo@dimakis.app">apollo@dimakis.app</a>
 </p>
 
-<h2>2. What we collect: nothing we keep</h2>
+<h2>2. What we collect: nothing that we keep</h2>
 <p>
-You do not create an account with us, you do not give us an email address, and there is no
-analytics, crash reporting or advertising SDK embedded. We do not track you across apps or
-websites and we do not use the IDFA. No photo and no video ever passes through a system of ours.
+You don't create an account with us, you don't give us an email address, and the app contains
+no analytics, crash-reporting, or advertising SDKs. We don't track you across apps or
+websites, and we don't use the IDFA. No photo or video ever passes through our systems.
 </p>
 <p>
 There are exactly <strong>two small helper services</strong>, run by us on
 <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a>. Each one exists because
-something cannot be done safely from inside the app:
+there's something that can't be done safely from inside the app:
 </p>
 <table>
 <tr><th>Helper</th><th>When it is used</th><th>What passes through it</th></tr>
-<tr><td>Box sign-in</td><td>Only when you connect a Box account, and when the app renews that connection</td><td>The one-time sign-in code, or the renewal token, is forwarded to Box together with a secret that Box requires and that must not live inside the app. Box's reply (your new access tokens) is passed straight back to your device.</td></tr>
-<tr><td>Wallet card signing</td><td>Only when you tap <em>Wallet</em> or send a boarding pass as a <code>.pkpass</code> file</td><td>Only the card's <code>manifest.json</code>: a list of file names and their SHA-1 fingerprints. <strong>No passenger name, flight, seat, booking code or barcode.</strong> The service returns the signature that Apple Wallet requires.</td></tr>
+<tr><td>Box sign-in</td><td>Only when you connect a Box account, and when the app renews that connection</td><td>The one-time sign-in code or the renewal token is forwarded to Box, along with a secret that Box requires and that can't be stored inside the app. Box's response (your new access tokens) goes straight back to your device.</td></tr>
+<tr><td>Wallet pass signing</td><td>Only when you tap <em>Wallet</em> or send a boarding pass as a <code>.pkpass</code> file</td><td>Only the pass's <code>manifest.json</code>: a list of file names and their SHA-1 hashes. <strong>No passenger name, flight, seat, booking code or barcode.</strong> The service returns the signature that Apple Wallet requires.</td></tr>
 </table>
 <p>
-Neither helper stores, logs or analyses what passes through it: request logging is not
-enabled on them. Like any server on the internet, Cloudflare sees your IP address while
-handling the request.
+Neither helper stores, logs, or analyzes anything that passes through it; request logging is
+turned off on both. Like any server on the internet, Cloudflare sees your IP address while
+it handles the request.
 </p>
 
 <h2>3. What Apollo is</h2>
 <p>
 Apollo is a viewer for photos you already keep in your own cloud: pCloud, Dropbox,
-OneDrive, Box, WebDAV, or any S3-compatible service, or your device's Photos library.
+OneDrive, Box, WebDAV, any S3-compatible service, or your device's Photos library.
 The app connects directly from your device to the service you chose. You can also transfer
-photos directly from one of your own accounts to another (see section 6).
+photos directly between your own accounts (see section 6).
 </p>
 <p>
-It also keeps your <strong>trips</strong>: flights and ferry journeys, and the boarding passes
-for them, which you enter yourself or scan from the ticket.
+It also keeps track of your <strong>trips</strong>: flights, ferry journeys, and their boarding
+passes, which you enter yourself or scan from your tickets.
 </p>
 
 <h2>4. Data that stays on your device</h2>
-<p>The following is stored locally:</p>
+<p>The following is stored only on your device:</p>
 <table>
 <tr><th>Category</th><th>What it is</th><th>Why</th></tr>
-<tr><td>Local index</td><td>File name, cloud path, size, dimensions, duration, capture date, GPS coordinates, camera model</td><td>So the timeline, albums and map can be shown without querying the cloud on every scroll</td></tr>
-<tr><td>Thumbnails</td><td>Small versions of your photos, up to 500 MB</td><td>Display speed. Cleared automatically and manually from Settings</td></tr>
-<tr><td>Temporary files</td><td>Files downloaded for viewing, editing or sharing, and Wallet cards you create</td><td>Deleted automatically</td></tr>
-<tr><td>Trips and boarding passes</td><td>Trips (name, dates, who went, transport, expenses, ratings), flights and ferry journeys (route, dates, times, operator, aircraft or ship), and for each boarding pass: passenger name, seat, class, gate, <strong>booking code and barcode</strong></td><td>Showing your trips, the pass at the gate, reminders and Wallet cards</td></tr>
-<tr><td>Travel images</td><td>Airline logos and photos of aircraft or ship types, downloaded as described in section 6</td><td>Display. A cache, rebuilt when needed</td></tr>
+<tr><td>Local index</td><td>File name, cloud path, size, dimensions, duration, capture date, GPS coordinates, camera model</td><td>So the timeline, albums, and map can be shown without querying the cloud every time you scroll</td></tr>
+<tr><td>Thumbnails</td><td>Small versions of your photos, up to 500 MB</td><td>Faster display. Cleared automatically, or manually in Settings</td></tr>
+<tr><td>Temporary files</td><td>Files downloaded for viewing, editing, or sharing, and Wallet passes you create</td><td>Deleted automatically</td></tr>
+<tr><td>Trips and boarding passes</td><td>Trips (name, dates, who went, transportation, expenses, ratings), flights and ferry journeys (route, dates, times, carrier, aircraft or ship), and for each boarding pass: passenger name, seat, class, gate, <strong>booking code, and barcode</strong></td><td>Showing your trips, the pass at the gate, reminders, and Wallet passes</td></tr>
+<tr><td>Travel images</td><td>Airline logos and photos of aircraft or ship types, downloaded as described in section 6</td><td>Display. Cached and rebuilt when needed</td></tr>
 <tr><td>Credentials</td><td>The access tokens for your cloud accounts, and your OpenSky credentials if you enter them</td><td>Stored in Apple's <strong>Keychain</strong>, not in a plain file</td></tr>
-<tr><td>Settings</td><td>Theme, icon, zoom level, album covers, place names</td><td>App functionality</td></tr>
+<tr><td>Settings</td><td>Theme, icon, zoom level, album covers, place names</td><td>Making the app work</td></tr>
 </table>
 
 <div class="box">
-<strong>We do not store the photos themselves.</strong> The index holds metadata and links,
+<strong>We don't store the photos themselves.</strong> The index holds metadata and links,
 not the files. Your photos stay in your cloud. Deleting the app removes the index, not your
 photos.
 </div>
 
 <h2>5. Permissions the app requests</h2>
-<p>Each is asked for only when you first use the feature that needs it, and each is optional.</p>
+<p>Each permission is requested only when you first use the feature that needs it, and all of them are optional.</p>
 <ul>
-  <li><strong>Photos</strong>: two uses. First, if you connect your device's Photos library as a source, to read and display it. Second, to save photos you download or transfer from a cloud into it.</li>
-  <li><strong>Camera</strong>: to scan the barcode on a boarding pass so the flight details fill in by themselves. Recognition happens on the device; <strong>no image is stored or sent</strong>.</li>
-  <li><strong>Calendar</strong>: write-only access, to add a trip to your calendar when you ask. The app cannot read your calendar.</li>
-  <li><strong>Notifications</strong>: reminders before a departure. They are scheduled on the device; nothing is sent anywhere.</li>
-  <li><strong>Background processing</strong>: so syncing and EXIF reading can continue while the app is closed.</li>
+  <li><strong>Photos</strong>: for two things. First, to read and display your device's Photos library if you connect it as a source. Second, to save photos you download or transfer from a cloud account into it.</li>
+  <li><strong>Camera</strong>: to scan the barcode on a boarding pass so the flight details fill in automatically. Recognition happens on the device, and <strong>no image is stored or sent</strong>.</li>
+  <li><strong>Calendar</strong>: write-only access, to add a trip to your calendar when you ask. The app can't read your calendar.</li>
+  <li><strong>Notifications</strong>: reminders before a departure. They are scheduled on the device, and nothing is sent anywhere.</li>
+  <li><strong>Background processing</strong>: so syncing and EXIF reading can continue after you leave the app.</li>
 </ul>
 <p>
-<strong>The app does not request location permission.</strong> The locations you see on the
-map come from your own files (EXIF GPS), not from where you are. Every permission can be
-revoked at any time in the system Settings.
+<strong>The app doesn't ask for location access.</strong> The locations you see on the
+map come from your own files (EXIF GPS), not from where you are. You can revoke any permission
+at any time in the Settings app.
 </p>
 
 <h2>6. What leaves the device, and where it goes</h2>
 <table>
 <tr><th>Service</th><th>What is sent</th><th>Purpose</th></tr>
-<tr><td>pCloud, Dropbox, OneDrive, Box, WebDAV, S3-compatible</td><td>Your access token (or credentials, for WebDAV/S3), file identifiers, and the files themselves when downloading or uploading — only for the ones you have connected</td><td>Reading your library, thumbnails, viewing, corrections</td></tr>
-<tr><td>Our helper services (Cloudflare)</td><td>As described in section 2: Box sign-in codes and tokens, and Wallet card manifests</td><td>Box sign-in, Wallet cards</td></tr>
-<tr><td>Apple (device Photos library)</td><td>Nothing to us. Access happens locally through the system (PhotoKit)</td><td>Reading and updating your library</td></tr>
-<tr><td>Apple Maps (MapKit)</td><td>The GPS coordinates of your photos, one by one</td><td>Turning them into place names ("Athens", "Zakynthos") for the map and search</td></tr>
-<tr><td>Wikipedia (Wikimedia)</td><td>Up to four coordinate pairs per trip. <strong>Not the trip name, not photos, no identifiers.</strong></td><td>Finding the names of landmarks around those points, so that <em>your own</em> photo taken closest to the best known one can be used as the cover. Happens only when you open the editor of a trip that has no cover, or when you tap the corresponding button</td></tr>
-<tr><td>Wikimedia Commons</td><td>The operator's name and the aircraft or ship type (for example "Aegean A320"). <strong>No passenger data, no flight number.</strong></td><td>Showing a photo of that type of aircraft or ship. The photo is downloaded and cached on the device</td></tr>
-<tr><td><a href="https://www.adsbdb.com">adsbdb.com</a></td><td>The flight number or the aircraft registration</td><td>Filling in the route and the aircraft type of a flight</td></tr>
-<tr><td><a href="https://opensky-network.org/about/privacy-policy">OpenSky Network</a></td><td>Only if you enter your own OpenSky credentials: those credentials (to OpenSky's sign-in), the aircraft's transponder code and the date of the flight</td><td>The actual take-off and landing times</td></tr>
-<tr><td>Airline logo services (pics.avs.io, images.kiwi.com, content.airhex.com)</td><td>The airline's two-letter code only</td><td>Showing the airline's logo in the app. The logo is not put on Wallet cards</td></tr>
-<tr><td><a href="https://frankfurter.dev">Frankfurter</a> (European Central Bank rates)</td><td>Nothing about you: the app downloads the day's exchange rates</td><td>Converting trip costs between currencies</td></tr>
-<tr><td>Flightradar24, MarineTraffic</td><td>Nothing, unless you tap the link to them on a trip. Then their app or website opens, and their own policy applies</td><td>Following a flight or a ship live</td></tr>
-<tr><td>Apple (iCloud key-value store)</td><td>Preferences only: which cloud is active, the names of your source folders, sync and EXIF switches, the upload renaming template, zoom levels and filters. Not appearance, not trips</td><td>Same settings across your devices. Can be turned off in Settings</td></tr>
+<tr><td>pCloud, Dropbox, OneDrive, Box, WebDAV, S3-compatible</td><td>Your access token (or credentials, for WebDAV and S3), file identifiers, and the files themselves when downloading or uploading, only for the services you've connected</td><td>Reading your library, thumbnails, viewing, and corrections</td></tr>
+<tr><td>Our helper services (Cloudflare)</td><td>As described in section 2: Box sign-in codes and tokens, and Wallet pass manifests</td><td>Box sign-in, Wallet passes</td></tr>
+<tr><td>Apple (device Photos library)</td><td>Nothing is sent to us. Access happens on the device, through the system (PhotoKit)</td><td>Reading and updating your library</td></tr>
+<tr><td>Apple Maps (MapKit)</td><td>The GPS coordinates of your photos, one at a time</td><td>Turning them into place names ("Athens", "Zakynthos") for the map and search</td></tr>
+<tr><td>Wikipedia (Wikimedia)</td><td>Up to four coordinate pairs per trip. <strong>No trip name, no photos, no identifiers.</strong></td><td>Finding the names of landmarks near those points, so that <em>your own</em> photo taken closest to the best-known one can be used as the cover. This happens only when you open the editor for a trip that has no cover, or when you tap the matching button</td></tr>
+<tr><td>Wikimedia Commons</td><td>The carrier's name and the aircraft or ship type (for example, "Aegean A320"). <strong>No passenger data, no flight number.</strong></td><td>Showing a photo of that aircraft or ship type. The photo is downloaded and cached on the device</td></tr>
+<tr><td><a href="https://www.adsbdb.com">adsbdb.com</a></td><td>The flight number or the aircraft registration</td><td>Filling in a flight's route and aircraft type</td></tr>
+<tr><td><a href="https://opensky-network.org/about/privacy-policy">OpenSky Network</a></td><td>Only if you enter your own OpenSky credentials: those credentials (sent to OpenSky's sign-in), the aircraft's transponder code, and the date of the flight</td><td>Actual takeoff and landing times</td></tr>
+<tr><td>Airline logo services (pics.avs.io, images.kiwi.com, content.airhex.com)</td><td>Only the airline's two-letter code</td><td>Showing the airline's logo in the app. Logos aren't added to Wallet passes</td></tr>
+<tr><td><a href="https://frankfurter.dev">Frankfurter</a> (European Central Bank rates)</td><td>Nothing about you. The app just downloads the day's exchange rates</td><td>Converting trip costs between currencies</td></tr>
+<tr><td>Flightradar24, MarineTraffic</td><td>Nothing, unless you tap their link on a trip. Their app or website then opens, and their own policy applies</td><td>Following a flight or a ship live</td></tr>
+<tr><td>Apple (iCloud key-value store)</td><td>Preferences only: which cloud is active, the names of your source folders, sync and EXIF switches, the upload renaming template, zoom levels, and filters. Not appearance settings, not trips</td><td>Keeping your settings the same across your devices. Can be turned off in Settings</td></tr>
 </table>
 <p>
-We send no name, email or device identifier of yours to any of them. Where a service requires
+We don't send your name, email address, or any device identifier to any of them. Where a service requires
 it, requests identify <em>the app</em> (its name and our contact address), not you. As with any
-internet connection, each service sees your IP address. All communication uses encrypted
-connections (HTTPS).
+internet connection, each service sees your IP address. All communication is encrypted
+(HTTPS).
 </p>
 <p>
 <strong>Transferring between your own accounts.</strong> If you choose to transfer photos
-from one of your connected accounts to another (e.g. from your device's library to pCloud,
-or from Dropbox to OneDrive), the file is downloaded from the first and uploaded to the
-second directly through your device. It does not pass through a system of ours — it
+from one of your connected accounts to another (for example, from your device's library to pCloud,
+or from Dropbox to OneDrive), each file is downloaded from the first and uploaded to the
+second directly by your device. It never passes through our systems; it
 is simply sent to two services instead of one.
 </p>
 <p>
@@ -155,30 +154,29 @@ contains the pass itself, including the barcode. It goes only where you send it.
 
 <div class="warn">
 <strong>A note on turning coordinates into place names.</strong> For the map to show "Athens"
-instead of numbers, the coordinates of your photos are sent to Apple. This reveals to Apple
-<em>where</em> your photos were taken, though not the photos themselves.
-<a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a> applies. If you
-would rather avoid it, do not open the "Places" tab.
+instead of numbers, the coordinates of your photos are sent to Apple. This tells Apple
+<em>where</em> your photos were taken, but not what's in them.
+<a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a> applies. If you'd rather avoid this, don't open the "Locations" screen.
 </div>
 
 <h2>7. Connecting your cloud accounts</h2>
 <p>
 Sign-in uses OAuth, the standard that lets an app get access <strong>without ever seeing
-your password</strong>. You give the password directly to the provider. The app receives only
-an access token, kept in your device's Keychain, which you can revoke at any time:
+your password</strong>. You enter your password directly with the provider. The app receives only
+an access token, stored in your device's Keychain, which you can revoke at any time:
 </p>
 <ul>
-  <li>inside the app, Settings → the provider → Disconnect,</li>
-  <li>or from the provider's own security settings.</li>
+  <li>in the app, under Settings → the provider → Sign Out,</li>
+  <li>or in the provider's own security settings.</li>
 </ul>
 <p>
-<strong>Box is the one exception to "directly".</strong> Box requires a secret for sign-in
-that must not be stored inside an app, so that one step goes through our helper service
+<strong>Box is the one exception.</strong> Box requires a secret for sign-in
+that can't be stored inside an app, so that one step goes through our helper service
 (section 2), which forwards it without keeping anything. For WebDAV and S3-compatible
-services you enter the credentials yourself; they are kept in the Keychain.
+services, you enter the credentials yourself, and they're stored in the Keychain.
 </p>
 <p>
-The providers' policies apply:
+Each provider's privacy policy applies:
 <a href="https://www.pcloud.com/privacy_policy.html">pCloud</a>,
 <a href="https://www.apple.com/legal/privacy/">Apple</a>,
 <a href="https://www.dropbox.com/privacy">Dropbox</a>,
@@ -189,69 +187,69 @@ WebDAV/S3-compatible provider.
 
 <h2>8. Family mode</h2>
 <p>
-If you enable it, the app writes <strong>two small files inside the photo folder of the
-cloud account you choose as the family hub</strong> (pCloud unless you pick another of your
-connected accounts), so that anyone with access to the same folder can read them:
+If you turn it on, the app writes <strong>two small files to the photo folder of the
+cloud account you choose as the family hub</strong> (pCloud, unless you pick another of your
+connected accounts), so that everyone with access to that folder can read them:
 </p>
 <ul>
-  <li><code>.photoapp-family.json</code>: album covers, year groupings, place names, <strong>the member names</strong> you define, your <strong>trips</strong> (name, dates, who went, transport, expenses and ratings), your <strong>flights and ferry journeys</strong>, your <strong>boarding passes</strong> (passenger name, seat, <strong>booking code and barcode</strong>) and the list of shared photos moved to the trash.</li>
-  <li><code>.photoapp-exif.json</code>: capture dates, <strong>GPS coordinates</strong> and camera models, so that each device does not have to read them again.</li>
+  <li><code>.photoapp-family.json</code>: album covers, year groupings, place names, the <strong>member names</strong> you set up, your <strong>trips</strong> (name, dates, who went, transportation, expenses, and ratings), your <strong>flights and ferry journeys</strong>, your <strong>boarding passes</strong> (passenger name, seat, <strong>booking code, and barcode</strong>), and the list of shared photos moved to the Trash.</li>
+  <li><code>.photoapp-exif.json</code>: capture dates, <strong>GPS coordinates</strong>, and camera models, so each device doesn't have to read them again.</li>
 </ul>
 <p>
-The boarding passes are shared on purpose: one person scans everyone's tickets and each
-member finds their own on their own phone.
+Boarding passes are shared on purpose: one person scans everyone's tickets, and each
+member finds theirs on their own phone.
 </p>
 <div class="warn">
-<strong>These files contain location data, people's names and boarding passes.</strong> Anyone
+<strong>These files contain location data, people's names, and boarding passes.</strong> Anyone
 with access to the shared folder can read them, and a booking code with a barcode can be
-enough to view or change a booking. "Members" are plain labels you type yourself, not
-accounts, and there is no sign-in. Enable this feature only with people you already trust
-with your photos and your tickets. You can turn it off, or keep only part of it (for example
-without trips), in Settings → Family mode. The files live in your own cloud account, not
-with us, and you can delete them whenever you want.
+enough to view or change a booking. "Members" are just labels you type in yourself, not
+accounts, and there's no sign-in. Turn this feature on only with people you already trust
+with your photos and your tickets. You can turn it off, or share only part of it (without
+trips, for example), in Settings → Family mode. The files are stored in your own cloud account,
+not with us, and you can delete them at any time.
 </div>
 <p>
-The "I am…" setting (which member you are on this device) and the choice of family hub are
-<strong>not</strong> synced; they stay on the device only.
+The "I am" setting (which member you are on this device) and your choice of family hub are
+<strong>not</strong> synced; they stay on the device.
 </p>
 
 <h2>9. How long data is kept</h2>
 <p>
-By us, not at all, because we hold nothing: the helper services keep nothing after replying.
-On your device, as long as you want. You can clear thumbnails and temporary files from
-Settings, delete trips and passes, disconnect a provider (which also removes its entries from
-the index), or uninstall the app, which deletes everything. Your photos in the cloud are not
+We don't keep any data, so there's nothing to retain: the helper services keep nothing after
+responding. On your device, data is kept for as long as you want. You can clear thumbnails and temporary files in
+Settings, delete trips and passes, sign out of a provider (which also removes its entries from
+the index), or delete the app, which removes everything. Your photos in the cloud aren't
 affected.
 </p>
 
 <h2>10. Support</h2>
 <p>
-If you write to us from Help → Contact, the message is pre-filled with technical details
-that help diagnosis: app version, system version, device model, which clouds are connected,
-whether Family mode is on, number of photos in the index, free space and language.
-<strong>No file names, locations, photos, trips or credentials are included.</strong> You see
-them before sending and can delete them. Support emails are kept only as long as needed to
+If you contact us from Help → Contact, the message is pre-filled with technical details
+that help us diagnose the problem: app version, OS version, device model, which clouds are connected,
+whether Family mode is on, the number of photos in the index, free space, and language.
+<strong>No file names, locations, photos, trips, or credentials are included.</strong> You can see
+these details before sending and delete them. Support emails are kept only as long as needed to
 resolve the issue.
 </p>
 
 <h2>11. Your rights (GDPR)</h2>
 <p>
-You have the right of access, rectification, erasure, restriction, portability and objection.
-Because we hold none of your data, these rights are exercised directly on your device and in
-your cloud accounts. For anything else, write to us. You also have the right to lodge a
+You have the right of access, rectification, erasure, restriction, portability, and objection.
+Because we hold none of your data, you exercise these rights directly on your device and in
+your cloud accounts. For anything else, contact us. You also have the right to lodge a
 complaint with the Hellenic Data Protection Authority (<a href="https://www.dpa.gr">dpa.gr</a>)
 or your local supervisory authority.
 </p>
 
 <h2>12. Children</h2>
 <p>
-The app is not directed at children under 13 and we do not knowingly collect data from them.
-Since we keep no data at all, no such risk exists.
+The app isn't directed at children under 13, and we don't knowingly collect data from them.
+Since we keep no data at all, this risk doesn't arise.
 </p>
 
 <h2>13. Changes</h2>
 <p>
-If something material changes, the date at the top will be updated and it will be mentioned
+If anything material changes, we'll update the date at the top and mention the change
 in the release notes. This policy is always available inside the app, under Settings → Support.
 </p>
 
