@@ -10,8 +10,7 @@ el:
   hero_text: Ημερολόγιο, αλληλογραφία, σημειώσεις, φωτογραφίες, σάρωση εγγράφων. Φτιαγμένες
     μία μία, από έναν άνθρωπο, στην Ελλάδα.
   apps_title: Οι εφαρμογές
-  apps_text: Καθεμία κάνει ένα πράγμα και το κάνει σωστά. Κοινή σχεδίαση, κοινή λογική,
-    κανένας λογαριασμός, καμία παρακολούθηση.
+  apps_text: Καθεμία κάνει ένα πράγμα και το κάνει σωστά. Κοινή σχεδίαση, κοινή λογική.
   nav_apps: Εφαρμογές
   nav_contact: Επικοινωνία
   footer_note: Σχεδιασμός και ανάπτυξη από την Ελλάδα.
@@ -38,7 +37,7 @@ en:
     by one person, in Greece.
   apps_title: The apps
   apps_text: Each one does a single thing and does it properly. Shared design, shared
-    logic, no accounts, no tracking.
+    logic.
   nav_apps: Apps
   nav_contact: Contact
   footer_note: Designed and developed in Greece.
