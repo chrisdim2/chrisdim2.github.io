@@ -1,5 +1,32 @@
-{% comment %}Σύνθεση: μεγάλη οθόνη (Mac) με iPhone μπροστά. include.stage, include.title, include.size{% endcomment %}
-<div class="stage{% if include.size == 'sm' %} stage-sm{% endif %}">
-  <img class="stage-wide" src="{{ include.stage.wide | relative_url }}" alt="{{ include.title }} — Mac" loading="lazy">
-  <img class="stage-phone" src="{{ include.stage.phone | relative_url }}" alt="{{ include.title }} — iPhone" loading="lazy">
+{% comment %}
+Σύνθεση συσκευών: MacBook και, αν υπάρχει, iPhone μπροστά του.
+include.wide / include.phone: εικόνες οθόνης. include.empty: κενές οθόνες με το include.icon.
+include.title, include.size ('sm' για την αρχική).
+{% endcomment %}
+{% assign has_phone = false %}
+{% if include.empty or include.phone %}{% assign has_phone = true %}{% endif %}
+<div class="stage{% if include.size == 'sm' %} stage-sm{% endif %}{% unless has_phone %} stage-solo{% endunless %}">
+  <div class="mbp">
+    <div class="mbp-lid">
+      <div class="mbp-screen">
+        {% if include.empty %}
+        <span class="dev-empty">{% if include.icon and include.icon != "" %}<img src="{{ include.icon | relative_url }}" alt="" loading="lazy">{% endif %}</span>
+        {% else %}
+        <img src="{{ include.wide | relative_url }}" alt="{{ include.title }} — Mac" loading="lazy">
+        {% endif %}
+      </div>
+    </div>
+    <div class="mbp-base"></div>
+  </div>
+  {% if has_phone %}
+  <div class="iph">
+    <div class="iph-screen">
+      {% if include.empty %}
+      <span class="dev-empty">{% if include.icon and include.icon != "" %}<img src="{{ include.icon | relative_url }}" alt="" loading="lazy">{% endif %}</span>
+      {% else %}
+      <img src="{{ include.phone | relative_url }}" alt="{{ include.title }} — iPhone" loading="lazy">
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
 </div>

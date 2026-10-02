@@ -29,7 +29,7 @@ layout: default
 
   {% assign sc = site.data.showcase[app.slug] %}
   {% if sc and sc.groups %}
-  {% if sc.stage %}{% include stage.html stage=sc.stage title=app.title %}{% endif %}
+  {% if sc.stage %}{% include stage.html wide=sc.stage.wide phone=sc.stage.phone title=app.title %}{% endif %}
 
   <section class="shots" id="shots">
     <div class="shots-head">

@@ -79,9 +79,6 @@ h1,h2,h3{letter-spacing:-.025em;font-weight:600}
 .showcase-shot img{display:block;width:auto;height:auto;max-width:100%;max-height:373px;
   border-radius:10px;border:1px solid rgba(0,0,0,.4);
   box-shadow:0 14px 44px rgba(0,0,0,.55);margin:0 auto}
-.shot-empty{aspect-ratio:9/16;max-width:210px;margin:0 auto;border-radius:26px;
-  border:1px dashed rgba(237,241,238,.08);
-  background:linear-gradient(180deg,rgba(237,241,238,.035),rgba(237,241,238,0))}
 .showcase-shot{min-height:0}
 
 /* app page */
@@ -103,23 +100,48 @@ h1,h2,h3{letter-spacing:-.025em;font-weight:600}
 .lightbox img{max-width:92vw;max-height:92vh;border-radius:14px;
   box-shadow:0 20px 60px rgba(0,0,0,.6)}
 
-/* stage: Mac + iPhone */
-.stage{position:relative;margin:38px 0 18px;padding:0 13% 6% 0;isolation:isolate}
+/* stage: MacBook + iPhone */
+.stage{position:relative;margin:38px 0 18px;padding-bottom:2.5cqw;isolation:isolate;container-type:inline-size}
 .stage::before{content:"";position:absolute;inset:-14% -10% -8% -10%;z-index:-1;pointer-events:none;
   background:radial-gradient(50% 55% at 42% 45%, rgba(255,184,77,.20), transparent 70%),
              radial-gradient(28% 40% at 76% 70%, rgba(225,75,65,.22), transparent 70%)}
-.stage-wide{width:100%;border-radius:12px;border:1px solid rgba(237,241,238,.10);
-  box-shadow:0 24px 60px rgba(0,0,0,.55)}
-.stage-phone{position:absolute;right:0;bottom:0;width:24%;border-radius:clamp(14px,3.2vw,30px);
-  border:clamp(3px,.6vw,6px) solid #05080B;outline:1px solid rgba(237,241,238,.16);
-  box-shadow:0 22px 50px rgba(0,0,0,.7)}
-.stage-sm{margin:0;max-width:520px;margin-inline:auto}
-.showcase-shot .stage img{max-height:none;margin:0}
-.showcase-shot .stage-wide{width:100%;border:1px solid rgba(237,241,238,.10);border-radius:10px}
-.showcase-shot .stage-phone{width:24%;border:3px solid #05080B}
-.stage-sm .stage-phone{border-radius:clamp(12px,2vw,20px);border-width:3px}
-a:hover > .stage .stage-phone{transform:translateY(-4px)}
-.stage-phone{transition:transform .25s ease}
+.stage-sm{margin:0 auto;max-width:520px}
+.stage-link{display:block;text-decoration:none}
+
+.mbp{position:relative;width:80cqw;margin-left:5cqw}
+.stage-solo .mbp{width:90cqw}
+.mbp-lid{position:relative;padding:1.3cqw 1.3cqw 1.6cqw;background:#0b0c0e;
+  border-radius:2.4cqw 2.4cqw .7cqw .7cqw;
+  box-shadow:0 0 0 .22cqw #3a3d43, inset 0 0 0 .12cqw #1b1d21}
+.mbp-lid::before{content:"";position:absolute;top:.45cqw;left:50%;width:.45cqw;height:.45cqw;
+  margin-left:-.225cqw;border-radius:50%;background:#1e252c}
+.mbp-screen{position:relative;aspect-ratio:16/10;overflow:hidden;border-radius:.45cqw;background:#000}
+.mbp-base{position:relative;height:1.9cqw;margin:0 -5cqw;
+  background:linear-gradient(180deg,#b9bdc3 0%,#8c9097 30%,#5a5e65 100%);
+  border-radius:0 0 1.6cqw 1.6cqw / 0 0 1.2cqw 1.2cqw;
+  box-shadow:0 1.8cqw 3.6cqw rgba(0,0,0,.55)}
+.mbp-base::before{content:"";position:absolute;top:0;left:50%;width:14cqw;height:.75cqw;
+  transform:translateX(-50%);border-radius:0 0 .9cqw .9cqw;
+  background:linear-gradient(180deg,#5d6168,#7d8188)}
+
+.iph{position:absolute;right:0;bottom:0;width:22cqw;padding:.75cqw;background:#050506;
+  border-radius:3.7cqw;transition:transform .25s ease;
+  box-shadow:0 0 0 .28cqw #70747b, 0 0 0 .42cqw #26282c, 0 2cqw 4.5cqw rgba(0,0,0,.65)}
+.iph::before,.iph::after{content:"";position:absolute;width:.32cqw;border-radius:.2cqw;background:#5c6066}
+.iph::before{left:-.68cqw;top:21%;height:7%}
+.iph::after{right:-.68cqw;top:26%;height:11%}
+.iph-screen{position:relative;aspect-ratio:1320/2868;overflow:hidden;border-radius:2.95cqw;background:#000}
+.iph-screen::after{content:"";position:absolute;top:.5cqw;left:50%;width:5.8cqw;height:1.7cqw;
+  transform:translateX(-50%);border-radius:1cqw;background:#000}
+.stage-link:hover .iph{transform:translateY(-4px)}
+
+.stage .mbp-screen > img,.stage .iph-screen > img{display:block;width:100%;height:100%;object-fit:cover;
+  max-width:none;max-height:none;margin:0;border:0;border-radius:0;box-shadow:none}
+.dev-empty{display:flex;align-items:center;justify-content:center;width:100%;height:100%;
+  background:radial-gradient(circle at 50% 45%,#1e2b34,#0a0f13 72%)}
+.stage .dev-empty img{width:22%;max-width:none;max-height:none;height:auto;margin:0;border:0;
+  border-radius:22%;box-shadow:0 1cqw 3cqw rgba(0,0,0,.6)}
+.iph .dev-empty img{width:42%}
 
 /* device gallery */
 .shots{margin-top:26px}

@@ -65,15 +65,16 @@ layout: default
     <div class="showcase-shot">
       <span class="showcase-gr" aria-hidden="true">{{ app.greek }}</span>
       {% assign sc = site.data.showcase[app.slug] %}
-      {% if sc and sc.stage %}
-      <a href="{{ base | append: app.slug | append: '/' | relative_url }}" aria-label="{{ app.title }}">
-        {% include stage.html stage=sc.stage title=app.title size="sm" %}
+      <a class="stage-link" href="{{ base | append: app.slug | append: '/' | relative_url }}" aria-label="{{ app.title }}">
+        {% if sc and sc.stage %}
+        {% include stage.html wide=sc.stage.wide phone=sc.stage.phone title=app.title size="sm" %}
+        {% elsif app.screenshots and app.screenshots.size > 0 %}
+        {% assign first_shot = app.screenshots | first %}
+        {% include stage.html wide=first_shot title=app.title size="sm" %}
+        {% else %}
+        {% include stage.html empty=true icon=app.icon title=app.title size="sm" %}
+        {% endif %}
       </a>
-      {% elsif app.screenshots and app.screenshots.size > 0 %}
-      <img src="{{ app.screenshots[0] | relative_url }}" alt="{{ app.title }}" loading="lazy">
-      {% else %}
-      <div class="shot-empty" aria-hidden="true"></div>
-      {% endif %}
     </div>
   </div>
 </section>
