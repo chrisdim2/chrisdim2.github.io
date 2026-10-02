@@ -36,7 +36,6 @@ layout: default
 {% for app in apps %}
 {% assign i = forloop.index0 | modulo: 2 %}
 <section class="showcase {% if i == 1 %}showcase-alt{% endif %}">
-  <span class="showcase-gr" aria-hidden="true">{{ app.greek }}</span>
   <div class="showcase-in">
     <div class="showcase-text">
       {% if app.icon and app.icon != "" %}
@@ -59,10 +58,12 @@ layout: default
         {% else %}
         <span class="app-status">{% if page.lang == 'el' %}{{ app.status_el }}{% else %}{{ app.status_en }}{% endif %}</span>
         {% endif %}
+        {% include langs-badge.html %}
         <a class="btn btn-quiet" href="{{ base | append: app.slug | append: '/' | relative_url }}">{{ app.title }} &rarr;</a>
       </div>
     </div>
     <div class="showcase-shot">
+      <span class="showcase-gr" aria-hidden="true">{{ app.greek }}</span>
       {% assign sc = site.data.showcase[app.slug] %}
       {% if sc and sc.stage %}
       <a href="{{ base | append: app.slug | append: '/' | relative_url }}" aria-label="{{ app.title }}">

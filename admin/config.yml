@@ -70,6 +70,9 @@ collections:
               - { name: download, label: Κουμπί λήψης, widget: string }
               - { name: back, label: Επιστροφή, widget: string }
               - { name: lang_other, label: Άλλη γλώσσα, widget: string }
+              - { name: languages_title, label: Τίτλος γλωσσών, widget: string }
+              - { name: languages_badge, label: "Γλώσσες, σήμα (%n = πλήθος)", widget: string }
+              - { name: languages_text, label: "Γλώσσες, κείμενο (%n = πλήθος)", widget: string }
           - name: en
             label: English
             widget: object
@@ -92,3 +95,6 @@ collections:
               - { name: download, label: Download button, widget: string }
               - { name: back, label: Back link, widget: string }
               - { name: lang_other, label: Other language, widget: string }
+              - { name: languages_title, label: Languages title, widget: string }
+              - { name: languages_badge, label: "Languages badge (%n = count)", widget: string }
+              - { name: languages_text, label: "Languages text (%n = count)", widget: string }

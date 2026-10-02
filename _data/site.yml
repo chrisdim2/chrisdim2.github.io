@@ -26,6 +26,9 @@ el:
   download: Λήψη από το App Store
   back: Όλες οι εφαρμογές
   lang_other: English
+  languages_title: Γλώσσες
+  languages_badge: '%n γλώσσες'
+  languages_text: Διαθέσιμη σε %n γλώσσες.
 en:
   eyebrow: iPhone and Mac
   hero_title: 'Six apps,
@@ -53,3 +56,6 @@ en:
   download: Download on the App Store
   back: All apps
   lang_other: Ελληνικά
+  languages_title: Languages
+  languages_badge: '%n languages'
+  languages_text: Available in %n languages.

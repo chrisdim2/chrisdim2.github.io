@@ -22,6 +22,7 @@ layout: default
       {% else %}
       <span class="app-status">{% if page.lang == 'el' %}{{ app.status_el }}{% else %}{{ app.status_en }}{% endif %}</span>
       {% endif %}
+      {% include langs-badge.html %}
       <a class="btn btn-quiet" href="{{ base | relative_url }}#apps">{{ L.back }}</a>
     </div>
   </header>
@@ -198,6 +199,14 @@ layout: default
     </ul>
   </section>
   {% endif %}
+
+  <section class="block">
+    <h2>{{ L.languages_title }}</h2>
+    <p>{{ L.languages_text | replace: '%n', site.data.languages.size }}</p>
+    <ul class="lang-list">
+      {% for lg in site.data.languages %}<li lang="{{ lg.code }}"{% if lg.rtl %} dir="rtl"{% endif %}>{{ lg.name }}</li>{% endfor %}
+    </ul>
+  </section>
 
   <section class="block">
     <h2>{{ L.origin_title }}</h2>

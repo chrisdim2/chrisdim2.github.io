@@ -1,0 +1,34 @@
+# Οι γλώσσες στις οποίες κυκλοφορούν οι εφαρμογές (ίδιες για όλες).
+# Το πλήθος εμφανίζεται αυτόματα στο site (%n στα κείμενα του site.yml).
+- { code: el, name: Ελληνικά }
+- { code: en, name: English }
+- { code: ar, name: العربية, rtl: true }
+- { code: ca, name: Català }
+- { code: cs, name: Čeština }
+- { code: da, name: Dansk }
+- { code: de, name: Deutsch }
+- { code: es, name: Español }
+- { code: fr, name: Français }
+- { code: he, name: עברית, rtl: true }
+- { code: hr, name: Hrvatski }
+- { code: hu, name: Magyar }
+- { code: id, name: Bahasa Indonesia }
+- { code: it, name: Italiano }
+- { code: ja, name: 日本語 }
+- { code: ko, name: 한국어 }
+- { code: ms, name: Bahasa Melayu }
+- { code: nb, name: Norsk bokmål }
+- { code: nl, name: Nederlands }
+- { code: pl, name: Polski }
+- { code: pt-BR, name: Português (Brasil) }
+- { code: pt-PT, name: Português (Portugal) }
+- { code: ro, name: Română }
+- { code: ru, name: Русский }
+- { code: sk, name: Slovenčina }
+- { code: sv, name: Svenska }
+- { code: th, name: ไทย }
+- { code: tr, name: Türkçe }
+- { code: uk, name: Українська }
+- { code: vi, name: Tiếng Việt }
+- { code: zh-Hans, name: 简体中文 }
+- { code: zh-Hant, name: 繁體中文 }
