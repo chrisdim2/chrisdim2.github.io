@@ -55,8 +55,6 @@ collections:
               - { name: eyebrow, label: Μικρός τίτλος, widget: string }
               - { name: hero_title, label: Κύριος τίτλος, widget: text }
               - { name: hero_text, label: Εισαγωγή, widget: text }
-              - { name: apps_title, label: Τίτλος ενότητας εφαρμογών, widget: string }
-              - { name: apps_text, label: Κείμενο ενότητας, widget: text }
               - { name: nav_apps, label: Μενού, εφαρμογές, widget: string }
               - { name: nav_contact, label: Μενού, επικοινωνία, widget: string }
               - { name: footer_note, label: Υποσέλιδο, widget: string }
@@ -80,8 +78,6 @@ collections:
               - { name: eyebrow, label: Eyebrow, widget: string }
               - { name: hero_title, label: Hero title, widget: text }
               - { name: hero_text, label: Hero text, widget: text }
-              - { name: apps_title, label: Apps section title, widget: string }
-              - { name: apps_text, label: Apps section text, widget: text }
               - { name: nav_apps, label: Nav, apps, widget: string }
               - { name: nav_contact, label: Nav, contact, widget: string }
               - { name: footer_note, label: Footer note, widget: string }

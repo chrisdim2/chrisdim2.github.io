@@ -28,14 +28,9 @@ layout: default
   </div>
 </section>
 
-<section id="apps" class="section-head">
-  <h2>{{ L.apps_title }}</h2>
-  <p>{{ L.apps_text }}</p>
-</section>
-
 {% for app in apps %}
 {% assign i = forloop.index0 | modulo: 2 %}
-<section class="showcase {% if i == 1 %}showcase-alt{% endif %}">
+<section {% if forloop.first %}id="apps" {% endif %}class="showcase {% if i == 1 %}showcase-alt{% endif %}">
   <div class="showcase-in">
     <div class="showcase-text">
       {% if app.icon and app.icon != "" %}

@@ -51,11 +51,6 @@ h1,h2,h3{letter-spacing:-.025em;font-weight:600}
   font-family:var(--util);font-size:22px}
 .icon-name{font-family:var(--util);font-size:12px;color:var(--ink-70)}
 
-/* section head */
-.section-head{max-width:var(--wrap);margin:0 auto;padding:60px 22px 6px}
-.section-head h2{font-size:clamp(26px,4vw,34px);margin:0 0 10px}
-.section-head p{color:var(--ink-70);max-width:56ch;margin:0}
-
 /* showcase */
 .showcase{position:relative;overflow:hidden;border-top:1px solid var(--line);margin-top:34px}
 .showcase:nth-child(even){background:var(--bg-2)}
