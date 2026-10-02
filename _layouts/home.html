@@ -63,7 +63,12 @@ layout: default
       </div>
     </div>
     <div class="showcase-shot">
-      {% if app.screenshots and app.screenshots.size > 0 %}
+      {% assign sc = site.data.showcase[app.slug] %}
+      {% if sc and sc.stage %}
+      <a href="{{ base | append: app.slug | append: '/' | relative_url }}" aria-label="{{ app.title }}">
+        {% include stage.html stage=sc.stage title=app.title size="sm" %}
+      </a>
+      {% elsif app.screenshots and app.screenshots.size > 0 %}
       <img src="{{ app.screenshots[0] | relative_url }}" alt="{{ app.title }}" loading="lazy">
       {% else %}
       <div class="shot-empty" aria-hidden="true"></div>

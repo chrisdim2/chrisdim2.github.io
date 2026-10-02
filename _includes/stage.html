@@ -1,0 +1,5 @@
+{% comment %}Σύνθεση: μεγάλη οθόνη (Mac) με iPhone μπροστά. include.stage, include.title, include.size{% endcomment %}
+<div class="stage{% if include.size == 'sm' %} stage-sm{% endif %}">
+  <img class="stage-wide" src="{{ include.stage.wide | relative_url }}" alt="{{ include.title }} — Mac" loading="lazy">
+  <img class="stage-phone" src="{{ include.stage.phone | relative_url }}" alt="{{ include.title }} — iPhone" loading="lazy">
+</div>

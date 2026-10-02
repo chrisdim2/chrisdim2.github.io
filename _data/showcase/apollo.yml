@@ -1,0 +1,82 @@
+# Παρουσίαση του Apollo: σύνθεση Mac + iPhone και γκαλερί ανά συσκευή.
+# Το διαβάζουν τα _layouts/home.html και _layouts/app.html (site.data.showcase[slug]).
+
+stage:
+  wide: /assets/screens/apollo/mac/apollo-mac-01-timeline.webp
+  phone: /assets/screens/apollo/iphone/apollo-iphone-01-timeline.webp
+
+groups:
+  - id: iphone
+    device: phone
+    label_el: iPhone
+    label_en: iPhone
+    shots:
+      - src: /assets/screens/apollo/iphone/apollo-iphone-01-timeline.webp
+        el: Χρονολόγιο με «Σαν σήμερα»
+        en: Timeline with “On this day”
+      - src: /assets/screens/apollo/iphone/apollo-iphone-02-clouds.webp
+        el: Όλα σου τα cloud σε μία βιβλιοθήκη
+        en: All your clouds in one library
+      - src: /assets/screens/apollo/iphone/apollo-iphone-03-viewer.webp
+        el: Προβολή σε πλήρη οθόνη
+        en: Full-screen viewer
+      - src: /assets/screens/apollo/iphone/apollo-iphone-04-date-place.webp
+        el: Διόρθωση ημερομηνίας και τοποθεσίας
+        en: Fix date and location
+      - src: /assets/screens/apollo/iphone/apollo-iphone-05-edit.webp
+        el: Επεξεργασία φωτογραφίας
+        en: Photo editing
+      - src: /assets/screens/apollo/iphone/apollo-iphone-06-select.webp
+        el: Μαζικές ενέργειες σε πολλές φωτογραφίες
+        en: Bulk actions on many photos
+      - src: /assets/screens/apollo/iphone/apollo-iphone-07-collage.webp
+        el: Κολάζ σε δευτερόλεπτα
+        en: Collages in seconds
+      - src: /assets/screens/apollo/iphone/apollo-iphone-08-collage-shapes.webp
+        el: Κολάζ με σχήματα
+        en: Shaped collages
+      - src: /assets/screens/apollo/iphone/apollo-iphone-09-albums.webp
+        el: Άλμπουμ ανά έτος
+        en: Albums by year
+      - src: /assets/screens/apollo/iphone/apollo-iphone-10-map.webp
+        el: Οι φωτογραφίες σου στον χάρτη, ανά χώρα
+        en: Your photos on the map, by country
+      - src: /assets/screens/apollo/iphone/apollo-iphone-11-trips.webp
+        el: Ταξίδια που βρίσκει μόνο του
+        en: Trips it finds on its own
+      - src: /assets/screens/apollo/iphone/apollo-iphone-12-tickets.webp
+        el: Κάθε πτήση και πλοίο σε έναν χάρτη
+        en: Every flight and ferry on one map
+      - src: /assets/screens/apollo/iphone/apollo-iphone-13-stats.webp
+        el: Στατιστικά χιλιομέτρων και διαδρομών
+        en: Distance and route stats
+
+  - id: mac
+    device: wide
+    label_el: iPad και Mac
+    label_en: iPad & Mac
+    shots:
+      - src: /assets/screens/apollo/mac/apollo-mac-01-timeline.webp
+        el: Το χρονολόγιο σε μεγάλη οθόνη
+        en: The timeline on a big screen
+      - src: /assets/screens/apollo/mac/apollo-mac-02-viewer.webp
+        el: Προβολή με εναλλαγή φωτογραφιών
+        en: Viewer with photo navigation
+      - src: /assets/screens/apollo/mac/apollo-mac-03-date-place.webp
+        el: Τοποθεσία με καρφίτσα στον χάρτη
+        en: Pin the location on a map
+      - src: /assets/screens/apollo/mac/apollo-mac-04-share.webp
+        el: Κοινοποίηση και αποθήκευση
+        en: Share and save
+      - src: /assets/screens/apollo/mac/apollo-mac-05-collage.webp
+        el: Κολάζ με αναλογίες και περιθώρια
+        en: Collages with ratios and spacing
+      - src: /assets/screens/apollo/mac/apollo-mac-06-trips.webp
+        el: Τα ταξίδια σου, με βαθμολογία
+        en: Your trips, rated
+      - src: /assets/screens/apollo/mac/apollo-mac-07-tickets.webp
+        el: Εισιτήρια και διαδρομές
+        en: Tickets and routes
+      - src: /assets/screens/apollo/mac/apollo-mac-08-stats.webp
+        el: Πόσες φορές γύρω από τη Γη
+        en: How many times around the Earth

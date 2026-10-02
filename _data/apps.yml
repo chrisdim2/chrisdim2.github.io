@@ -110,7 +110,9 @@ list:
     - Scan boarding passes and ferry tickets, by camera or PDF
     - Reminders before every trip, plus full distance and country stats
     - Family mode — shared covers, folders and trips with everyone on the same cloud
-  screenshots: []
+  screenshots:
+    - /assets/screens/apollo/mac/apollo-mac-01-timeline.webp
+    - /assets/screens/apollo/iphone/apollo-iphone-01-timeline.webp
 - slug: argus
   title: Argus
   greek: ΑΡΓΟΣ

@@ -26,7 +26,134 @@ layout: default
     </div>
   </header>
 
-  {% if app.screenshots and app.screenshots.size > 0 %}
+  {% assign sc = site.data.showcase[app.slug] %}
+  {% if sc and sc.groups %}
+  {% if sc.stage %}{% include stage.html stage=sc.stage title=app.title %}{% endif %}
+
+  <section class="shots" id="shots">
+    <div class="shots-head">
+      <div class="shots-tabs" role="tablist">
+        {% for g in sc.groups %}
+        <button type="button" role="tab" id="tab-{{ g.id }}" aria-controls="panel-{{ g.id }}"
+          aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"{% unless forloop.first %} tabindex="-1"{% endunless %}>
+          {% if page.lang == 'el' %}{{ g.label_el }}{% else %}{{ g.label_en }}{% endif %}
+          <span class="shots-count">{{ g.shots.size }}</span>
+        </button>
+        {% endfor %}
+      </div>
+      <div class="shots-nav">
+        <button type="button" class="shots-arrow" data-dir="-1" aria-label="{% if page.lang == 'el' %}Προηγούμενες{% else %}Previous{% endif %}">&larr;</button>
+        <button type="button" class="shots-arrow" data-dir="1" aria-label="{% if page.lang == 'el' %}Επόμενες{% else %}Next{% endif %}">&rarr;</button>
+      </div>
+    </div>
+    {% for g in sc.groups %}
+    <div class="shots-strip shots-{{ g.device }}" role="tabpanel" id="panel-{{ g.id }}" aria-labelledby="tab-{{ g.id }}"{% unless forloop.first %} hidden{% endunless %}>
+      {% for s in g.shots %}
+      {% assign cap = s.el %}{% if page.lang == 'en' %}{% assign cap = s.en %}{% endif %}
+      <figure>
+        <button type="button" class="shot" data-cap="{{ cap | escape }}">
+          <img src="{{ s.src | relative_url }}" alt="{{ cap | escape }}" loading="lazy">
+        </button>
+        <figcaption>{{ cap }}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </section>
+
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true">
+    <button type="button" class="lb-btn lb-close" aria-label="{% if page.lang == 'el' %}Κλείσιμο{% else %}Close{% endif %}">&times;</button>
+    <button type="button" class="lb-btn lb-prev" aria-label="{% if page.lang == 'el' %}Προηγούμενη{% else %}Previous{% endif %}">&larr;</button>
+    <figure class="lb-fig">
+      <img src="" alt="">
+      <figcaption><span class="lb-cap"></span> <span class="lb-num"></span></figcaption>
+    </figure>
+    <button type="button" class="lb-btn lb-next" aria-label="{% if page.lang == 'el' %}Επόμενη{% else %}Next{% endif %}">&rarr;</button>
+  </div>
+  <script>
+  (function(){
+    var root = document.getElementById('shots');
+    var tabs = root.querySelectorAll('[role=tab]');
+    var strips = root.querySelectorAll('.shots-strip');
+    var current = strips[0];
+
+    function select(i){
+      tabs.forEach(function(t, k){
+        var on = k === i;
+        t.setAttribute('aria-selected', on);
+        t.tabIndex = on ? 0 : -1;
+        strips[k].hidden = !on;
+      });
+      current = strips[i];
+      current.scrollLeft = 0;
+    }
+    tabs.forEach(function(t, i){
+      t.addEventListener('click', function(){ select(i); });
+      t.addEventListener('keydown', function(e){
+        var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (!d) return;
+        var n = (i + d + tabs.length) % tabs.length;
+        select(n); tabs[n].focus();
+      });
+    });
+    root.querySelectorAll('.shots-arrow').forEach(function(b){
+      b.addEventListener('click', function(){
+        current.scrollBy({ left: +b.dataset.dir * current.clientWidth * 0.8, behavior: 'smooth' });
+      });
+    });
+
+    var lb = document.getElementById('lightbox');
+    var lbImg = lb.querySelector('img');
+    var lbCap = lb.querySelector('.lb-cap');
+    var lbNum = lb.querySelector('.lb-num');
+    var list = [], idx = 0, opener = null;
+
+    function show(i){
+      idx = (i + list.length) % list.length;
+      var b = list[idx];
+      lbImg.src = b.querySelector('img').src;
+      lbImg.alt = b.dataset.cap;
+      lbCap.textContent = b.dataset.cap;
+      lbNum.textContent = (idx + 1) + ' / ' + list.length;
+    }
+    function close(){
+      lb.hidden = true;
+      lbImg.src = '';
+      document.documentElement.style.overflow = '';
+      if (opener) opener.focus();
+    }
+    root.addEventListener('click', function(e){
+      var b = e.target.closest('.shot');
+      if (!b) return;
+      list = Array.prototype.slice.call(b.closest('.shots-strip').querySelectorAll('.shot'));
+      lb.className = 'lightbox lb-' + (b.closest('.shots-phone') ? 'phone' : 'wide');
+      opener = b;
+      show(list.indexOf(b));
+      lb.hidden = false;
+      document.documentElement.style.overflow = 'hidden';
+      lb.querySelector('.lb-close').focus();
+    });
+    lb.querySelector('.lb-prev').addEventListener('click', function(e){ e.stopPropagation(); show(idx - 1); });
+    lb.querySelector('.lb-next').addEventListener('click', function(e){ e.stopPropagation(); show(idx + 1); });
+    lb.addEventListener('click', function(e){ if (e.target !== lbImg) close(); });
+    document.addEventListener('keydown', function(e){
+      if (lb.hidden) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft') show(idx - 1);
+      else if (e.key === 'ArrowRight') show(idx + 1);
+    });
+    var x0 = null;
+    lb.addEventListener('touchstart', function(e){ x0 = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend', function(e){
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0;
+      x0 = null;
+      if (Math.abs(dx) > 40) show(idx + (dx < 0 ? 1 : -1));
+    });
+  })();
+  </script>
+
+  {% elsif app.screenshots and app.screenshots.size > 0 %}
   <section class="gallery">
     {% for shot in app.screenshots %}
     <img src="{{ shot | relative_url }}" alt="{{ app.title }}" loading="lazy">
