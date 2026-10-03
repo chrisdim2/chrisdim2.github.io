@@ -1,9 +1,10 @@
-# Παρουσίαση του Apollo: σύνθεση Mac + iPhone και γκαλερί ανά συσκευή.
+# Παρουσίαση του Apollo: σύνθεση συσκευών και γκαλερί ανά συσκευή.
 # Το διαβάζουν τα _layouts/home.html και _layouts/app.html (site.data.showcase[slug]).
 
 stage:
   wide: /assets/screens/apollo/mac/apollo-mac-01-timeline.webp
   phone: /assets/screens/apollo/iphone/apollo-iphone-01-timeline.webp
+  ipad: /assets/screens/apollo/ipad/apollo-ipad-01-viewer.webp
 
 groups:
   - id: iphone

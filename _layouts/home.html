@@ -36,6 +36,7 @@ layout: default
       {% if app.icon and app.icon != "" %}
       <img class="showcase-icon" src="{{ app.icon | relative_url }}" alt="" width="80" height="80" loading="lazy">
       {% endif %}
+      {% include platforms.html list=app.platforms %}
       <p class="eyebrow">{% if page.lang == 'el' %}{{ app.kind_el }}{% else %}{{ app.kind_en }}{% endif %}</p>
       <h3>{{ app.title }}</h3>
       <p class="showcase-tag">{% if page.lang == 'el' %}{{ app.tagline_el }}{% else %}{{ app.tagline_en }}{% endif %}</p>
@@ -61,13 +62,11 @@ layout: default
       <span class="showcase-gr" aria-hidden="true">{{ app.greek }}</span>
       {% assign sc = site.data.showcase[app.slug] %}
       <a class="stage-link" href="{{ base | append: app.slug | append: '/' | relative_url }}" aria-label="{{ app.title }}">
-        {% if sc and sc.stage %}
-        {% include stage.html wide=sc.stage.wide phone=sc.stage.phone title=app.title size="sm" %}
-        {% elsif app.screenshots and app.screenshots.size > 0 %}
         {% assign first_shot = app.screenshots | first %}
-        {% include stage.html wide=first_shot title=app.title size="sm" %}
+        {% if sc and sc.stage %}
+        {% include stage.html platforms=app.platforms icon=app.icon wide=sc.stage.wide ipad=sc.stage.ipad phone=sc.stage.phone watch=sc.stage.watch title=app.title size="sm" %}
         {% else %}
-        {% include stage.html empty=true icon=app.icon title=app.title size="sm" %}
+        {% include stage.html platforms=app.platforms icon=app.icon wide=first_shot title=app.title size="sm" %}
         {% endif %}
       </a>
     </div>

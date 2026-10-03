@@ -1,0 +1,16 @@
+{% comment %}Συσκευές στις οποίες τρέχει η εφαρμογή. include.list: [iphone, ipad, mac, watch]{% endcomment %}
+{% assign L = site.data.site[page.lang] %}
+{% if include.list and include.list.size > 0 %}
+<ul class="platforms" aria-label="{{ L.platforms_label }}">
+  {% for p in include.list %}
+  <li>
+    {% case p %}
+    {% when 'iphone' %}<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.4"/><path d="M10.6 5h2.8"/></svg>iPhone
+    {% when 'ipad' %}<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="2.5" width="15" height="19" rx="2"/><path d="M11.5 5h1"/></svg>iPad
+    {% when 'mac' %}<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="5" width="15" height="10.5" rx="1.4"/><path d="M2.5 18.5h19"/></svg>Mac
+    {% when 'watch' %}<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="6.5" width="10" height="11" rx="2.8"/><path d="M9.2 6.5l.6-3.5h4.4l.6 3.5M9.2 17.5l.6 3.5h4.4l.6-3.5M17 10.5h1"/></svg>Apple Watch
+    {% endcase %}
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}

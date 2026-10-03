@@ -27,6 +27,7 @@ el:
   languages_title: Γλώσσες
   languages_badge: '%n γλώσσες'
   languages_text: Διαθέσιμη σε %n γλώσσες.
+  platforms_label: Διαθέσιμη για
 en:
   eyebrow: iPhone and Mac
   hero_title: 'Six apps,
@@ -54,3 +55,4 @@ en:
   languages_title: Languages
   languages_badge: '%n languages'
   languages_text: Available in %n languages.
+  platforms_label: Available on

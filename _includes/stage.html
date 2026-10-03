@@ -1,31 +1,44 @@
 {% comment %}
-Σύνθεση συσκευών: MacBook και, αν υπάρχει, iPhone μπροστά του.
-include.wide / include.phone: εικόνες οθόνης. include.empty: κενές οθόνες με το include.icon.
-include.title, include.size ('sm' για την αρχική).
+Σύνθεση συσκευών, ανάλογα με το include.platforms (iphone, ipad, mac, watch):
+MacBook πίσω, iPad αριστερά μπροστά, iPhone δεξιά, Apple Watch δίπλα στο iPhone.
+include.wide / include.ipad / include.phone / include.watch: εικόνες οθόνης.
+Όπου λείπει εικόνα, η οθόνη δείχνει το include.icon. include.title, include.size ('sm' για την αρχική).
 {% endcomment %}
-{% assign has_phone = false %}
-{% if include.empty or include.phone %}{% assign has_phone = true %}{% endif %}
-<div class="stage{% if include.size == 'sm' %} stage-sm{% endif %}{% unless has_phone %} stage-solo{% endunless %}">
+{% assign P = include.platforms %}
+{% assign has_ipad = false %}{% assign has_phone = false %}{% assign has_watch = false %}
+{% if P contains 'ipad' %}{% assign has_ipad = true %}{% endif %}
+{% if P contains 'iphone' %}{% assign has_phone = true %}{% endif %}
+{% if P contains 'watch' %}{% assign has_watch = true %}{% endif %}
+{% capture blank_screen %}<span class="dev-empty">{% if include.icon and include.icon != "" %}<img src="{{ include.icon | relative_url }}" alt="" loading="lazy">{% endif %}</span>{% endcapture %}
+<div class="stage{% if include.size == 'sm' %} stage-sm{% endif %}{% if has_ipad %} has-ipad{% endif %}{% if has_phone %} has-phone{% endif %}{% if has_watch %} has-watch{% endif %}">
   <div class="mbp">
     <div class="mbp-lid">
       <div class="mbp-screen">
-        {% if include.empty %}
-        <span class="dev-empty">{% if include.icon and include.icon != "" %}<img src="{{ include.icon | relative_url }}" alt="" loading="lazy">{% endif %}</span>
-        {% else %}
-        <img src="{{ include.wide | relative_url }}" alt="{{ include.title }} — Mac" loading="lazy">
-        {% endif %}
+        {% if include.wide %}<img src="{{ include.wide | relative_url }}" alt="{{ include.title }} — Mac" loading="lazy">{% else %}{{ blank_screen }}{% endif %}
       </div>
     </div>
     <div class="mbp-base"></div>
   </div>
+  {% if has_ipad %}
+  <div class="ipd">
+    <div class="ipd-screen">
+      {% if include.ipad %}<img src="{{ include.ipad | relative_url }}" alt="{{ include.title }} — iPad" loading="lazy">{% else %}{{ blank_screen }}{% endif %}
+    </div>
+  </div>
+  {% endif %}
   {% if has_phone %}
   <div class="iph">
     <div class="iph-screen">
-      {% if include.empty %}
-      <span class="dev-empty">{% if include.icon and include.icon != "" %}<img src="{{ include.icon | relative_url }}" alt="" loading="lazy">{% endif %}</span>
-      {% else %}
-      <img src="{{ include.phone | relative_url }}" alt="{{ include.title }} — iPhone" loading="lazy">
-      {% endif %}
+      {% if include.phone %}<img src="{{ include.phone | relative_url }}" alt="{{ include.title }} — iPhone" loading="lazy">{% else %}{{ blank_screen }}{% endif %}
+    </div>
+  </div>
+  {% endif %}
+  {% if has_watch %}
+  <div class="wch">
+    <div class="wch-case">
+      <div class="wch-screen">
+        {% if include.watch %}<img src="{{ include.watch | relative_url }}" alt="{{ include.title }} — Apple Watch" loading="lazy">{% else %}{{ blank_screen }}{% endif %}
+      </div>
     </div>
   </div>
   {% endif %}

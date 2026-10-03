@@ -23,6 +23,7 @@ collections:
               - { name: title, label: Όνομα, widget: string }
               - { name: greek, label: Ελληνικό όνομα, widget: string }
               - { name: order, label: Σειρά, widget: number, value_type: int }
+              - { name: platforms, label: Συσκευές, widget: select, multiple: true, required: false, options: [{ label: iPhone, value: iphone }, { label: iPad, value: ipad }, { label: Mac, value: mac }, { label: Apple Watch, value: watch }] }
               - { name: icon, label: Εικονίδιο, widget: image, required: false }
               - { name: kind_el, label: Κατηγορία, widget: string }
               - { name: kind_en, label: Category (EN), widget: string }
@@ -71,6 +72,7 @@ collections:
               - { name: languages_title, label: Τίτλος γλωσσών, widget: string }
               - { name: languages_badge, label: "Γλώσσες, σήμα (%n = πλήθος)", widget: string }
               - { name: languages_text, label: "Γλώσσες, κείμενο (%n = πλήθος)", widget: string }
+              - { name: platforms_label, label: Συσκευές (για αναγνώστες οθόνης), widget: string }
           - name: en
             label: English
             widget: object
@@ -94,3 +96,4 @@ collections:
               - { name: languages_title, label: Languages title, widget: string }
               - { name: languages_badge, label: "Languages badge (%n = count)", widget: string }
               - { name: languages_text, label: "Languages text (%n = count)", widget: string }
+              - { name: platforms_label, label: Platforms (for screen readers), widget: string }
