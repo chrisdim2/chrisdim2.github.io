@@ -30,7 +30,8 @@ layout: default
 
   {% assign sc = site.data.showcase[app.slug] %}
   {% if sc and sc.groups %}
-  {% if sc.stage %}{% include stage.html platforms=app.platforms icon=app.icon wide=sc.stage.wide ipad=sc.stage.ipad phone=sc.stage.phone watch=sc.stage.watch title=app.title %}{% endif %}
+  {% assign stage_wide = sc.stage.wide %}{% if page.lang == 'en' and sc.stage.wide_en %}{% assign stage_wide = sc.stage.wide_en %}{% endif %}
+  {% if sc.stage %}{% include stage.html platforms=app.platforms icon=app.icon wide=stage_wide ipad=sc.stage.ipad phone=sc.stage.phone watch=sc.stage.watch title=app.title %}{% endif %}
 
   <section class="shots" id="shots">
     <div class="shots-head">
@@ -52,9 +53,11 @@ layout: default
     <div class="shots-strip shots-{{ g.device }}" role="tabpanel" id="panel-{{ g.id }}" aria-labelledby="tab-{{ g.id }}"{% unless forloop.first %} hidden{% endunless %}>
       {% for s in g.shots %}
       {% assign cap = s.el %}{% if page.lang == 'en' %}{% assign cap = s.en %}{% endif %}
+      {% comment %} src_en: προαιρετική εικόνα με αγγλικό UI για την αγγλική σελίδα. {% endcomment %}
+      {% assign shot_src = s.src %}{% if page.lang == 'en' and s.src_en %}{% assign shot_src = s.src_en %}{% endif %}
       <figure>
         <button type="button" class="shot" data-cap="{{ cap | escape }}">
-          <img src="{{ s.src | relative_url }}" alt="{{ cap | escape }}" loading="lazy">
+          <img src="{{ shot_src | relative_url }}" alt="{{ cap | escape }}" loading="lazy">
         </button>
         <figcaption>{{ cap }}</figcaption>
       </figure>

@@ -64,7 +64,8 @@ layout: default
       <a class="stage-link" href="{{ base | append: app.slug | append: '/' | relative_url }}" aria-label="{{ app.title }}">
         {% assign first_shot = app.screenshots | first %}
         {% if sc and sc.stage %}
-        {% include stage.html platforms=app.platforms icon=app.icon wide=sc.stage.wide ipad=sc.stage.ipad phone=sc.stage.phone watch=sc.stage.watch title=app.title size="sm" %}
+        {% assign stage_wide = sc.stage.wide %}{% if page.lang == 'en' and sc.stage.wide_en %}{% assign stage_wide = sc.stage.wide_en %}{% endif %}
+        {% include stage.html platforms=app.platforms icon=app.icon wide=stage_wide ipad=sc.stage.ipad phone=sc.stage.phone watch=sc.stage.watch title=app.title size="sm" %}
         {% else %}
         {% include stage.html platforms=app.platforms icon=app.icon wide=first_shot title=app.title size="sm" %}
         {% endif %}

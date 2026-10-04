@@ -167,5 +167,5 @@ list:
     - Finds duplicates
     - All processing stays local, inside Apple's sandbox
   screenshots:
-    - /assets/screens/iris/mac/iris-mac-01-capture-date.webp
-    - /assets/screens/iris/mac/iris-mac-04-rename.webp
+    - /assets/screens/iris/mac/el/iris-mac-01-overview.webp
+    - /assets/screens/iris/mac/el/iris-mac-05-rename.webp
