@@ -31,7 +31,10 @@ layout: default
   {% assign sc = site.data.showcase[app.slug] %}
   {% if sc and sc.groups %}
   {% assign stage_wide = sc.stage.wide %}{% if page.lang == 'en' and sc.stage.wide_en %}{% assign stage_wide = sc.stage.wide_en %}{% endif %}
-  {% if sc.stage %}{% include stage.html platforms=app.platforms icon=app.icon wide=stage_wide ipad=sc.stage.ipad phone=sc.stage.phone watch=sc.stage.watch title=app.title %}{% endif %}
+  {% assign stage_ipad = sc.stage.ipad %}{% if page.lang == 'en' and sc.stage.ipad_en %}{% assign stage_ipad = sc.stage.ipad_en %}{% endif %}
+  {% assign stage_phone = sc.stage.phone %}{% if page.lang == 'en' and sc.stage.phone_en %}{% assign stage_phone = sc.stage.phone_en %}{% endif %}
+  {% assign stage_watch = sc.stage.watch %}{% if page.lang == 'en' and sc.stage.watch_en %}{% assign stage_watch = sc.stage.watch_en %}{% endif %}
+  {% if sc.stage %}{% include stage.html platforms=app.platforms icon=app.icon wide=stage_wide ipad=stage_ipad phone=stage_phone watch=stage_watch title=app.title %}{% endif %}
 
   <section class="shots" id="shots">
     <div class="shots-head">
@@ -40,7 +43,7 @@ layout: default
         <button type="button" role="tab" id="tab-{{ g.id }}" aria-controls="panel-{{ g.id }}"
           aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"{% unless forloop.first %} tabindex="-1"{% endunless %}>
           {% if page.lang == 'el' %}{{ g.label_el }}{% else %}{{ g.label_en }}{% endif %}
-          <span class="shots-count">{{ g.shots.size }}</span>
+          {% unless g.video %}{% assign n = 0 %}{% for s in g.shots %}{% unless s.only and s.only != page.lang %}{% assign n = n | plus: 1 %}{% endunless %}{% endfor %}<span class="shots-count">{{ n }}</span>{% endunless %}
         </button>
         {% endfor %}
       </div>
@@ -51,7 +54,17 @@ layout: default
     </div>
     {% for g in sc.groups %}
     <div class="shots-strip shots-{{ g.device }}" role="tabpanel" id="panel-{{ g.id }}" aria-labelledby="tab-{{ g.id }}"{% unless forloop.first %} hidden{% endunless %}>
+      {% if g.video %}
+      {% assign v = g.video %}
+      {% assign v_src = v.src %}{% assign v_poster = v.poster %}{% assign v_cap = v.el %}
+      {% if page.lang == 'en' %}{% assign v_src = v.src_en %}{% assign v_poster = v.poster_en %}{% assign v_cap = v.en %}{% endif %}
+      <figure>
+        <video controls preload="none" playsinline poster="{{ v_poster | relative_url }}" src="{{ v_src | relative_url }}" aria-label="{{ v_cap | escape }}"></video>
+        <figcaption>{{ v_cap }}</figcaption>
+      </figure>
+      {% endif %}
       {% for s in g.shots %}
+      {% if s.only and s.only != page.lang %}{% continue %}{% endif %}
       {% assign cap = s.el %}{% if page.lang == 'en' %}{% assign cap = s.en %}{% endif %}
       {% comment %} src_en: προαιρετική εικόνα με αγγλικό UI για την αγγλική σελίδα. {% endcomment %}
       {% assign shot_src = s.src %}{% if page.lang == 'en' and s.src_en %}{% assign shot_src = s.src_en %}{% endif %}
@@ -91,6 +104,7 @@ layout: default
       });
       current = strips[i];
       current.scrollLeft = 0;
+      strips.forEach(function(st){ var v = st.querySelector('video'); if (v && st !== current) v.pause(); });
     }
     tabs.forEach(function(t, i){
       t.addEventListener('click', function(){ select(i); });
@@ -131,7 +145,7 @@ layout: default
       var b = e.target.closest('.shot');
       if (!b) return;
       list = Array.prototype.slice.call(b.closest('.shots-strip').querySelectorAll('.shot'));
-      lb.className = 'lightbox lb-' + (b.closest('.shots-phone') ? 'phone' : 'wide');
+      lb.className = 'lightbox lb-' + (b.closest('.shots-phone, .shots-watch') ? 'phone' : 'wide');
       opener = b;
       show(list.indexOf(b));
       lb.hidden = false;

@@ -1,0 +1,177 @@
+# Παρουσίαση του Chronos: σύνθεση συσκευών και γκαλερί ανά συσκευή (iPhone, iPad, Mac, Apple Watch) και βίντεο.
+# Οι εικόνες βγαίνουν από το CalendarApp/Marketing (screenshots/<γλώσσα>/.../plain). Το βίντεο: video/<γλώσσα>_site_web.mp4.
+# src: ελληνικό UI, src_en: αγγλικό UI. only: el = εμφανίζεται μόνο στην ελληνική σελίδα (λειτουργίες μόνο για Ελλάδα).
+
+stage:
+  wide: /assets/screens/chronos/mac/el/chronos-mac-01-month.webp
+  wide_en: /assets/screens/chronos/mac/en/chronos-mac-01-month.webp
+  phone: /assets/screens/chronos/iphone/el/chronos-iphone-01-home.webp
+  phone_en: /assets/screens/chronos/iphone/en/chronos-iphone-01-home.webp
+  ipad: /assets/screens/chronos/ipad/el/chronos-ipad-01-month.webp
+  ipad_en: /assets/screens/chronos/ipad/en/chronos-ipad-01-month.webp
+  watch: /assets/screens/chronos/watch/el/chronos-watch-01-date.webp
+  watch_en: /assets/screens/chronos/watch/en/chronos-watch-01-date.webp
+
+groups:
+  - id: iphone
+    device: phone
+    label_el: iPhone
+    label_en: iPhone
+    shots:
+      - src: /assets/screens/chronos/iphone/el/chronos-iphone-01-home.webp
+        src_en: /assets/screens/chronos/iphone/en/chronos-iphone-01-home.webp
+        el: 'Μήνας και λίστα γεγονότων, σε μία οθόνη'
+        en: 'Month and agenda on one screen'
+      - src: /assets/screens/chronos/iphone/el/chronos-iphone-02-week.webp
+        src_en: /assets/screens/chronos/iphone/en/chronos-iphone-02-week.webp
+        el: 'Εβδομάδα με πρόγνωση καιρού'
+        en: 'Week view with the forecast'
+      - src: /assets/screens/chronos/iphone/el/chronos-iphone-03-day.webp
+        src_en: /assets/screens/chronos/iphone/en/chronos-iphone-03-day.webp
+        el: 'Ημέρα, ώρα με την ώρα'
+        en: 'Day view, hour by hour'
+      - src: /assets/screens/chronos/iphone/el/chronos-iphone-04-year.webp
+        src_en: /assets/screens/chronos/iphone/en/chronos-iphone-04-year.webp
+        el: 'Ολόκληρο το έτος με μια ματιά'
+        en: 'The whole year at a glance'
+      - src: /assets/screens/chronos/iphone/el/chronos-iphone-05-list.webp
+        src_en: /assets/screens/chronos/iphone/en/chronos-iphone-05-list.webp
+        el: 'Λίστα γεγονότων'
+        en: 'Event list'
+      - src: /assets/screens/chronos/iphone/el/chronos-iphone-06-quickadd.webp
+        src_en: /assets/screens/chronos/iphone/en/chronos-iphone-06-quickadd.webp
+        el: 'Γράψε όπως μιλάς'
+        en: 'Type it the way you’d say it'
+      - src: /assets/screens/chronos/iphone/el/chronos-iphone-07-weather.webp
+        src_en: /assets/screens/chronos/iphone/en/chronos-iphone-07-weather.webp
+        el: 'Καιρός για κάθε μέρα'
+        en: 'Weather for every day'
+      - src: /assets/screens/chronos/iphone/el/chronos-iphone-08-countdown.webp
+        src_en: /assets/screens/chronos/iphone/en/chronos-iphone-08-countdown.webp
+        el: 'Αντίστροφη μέτρηση με φωτογραφία'
+        en: 'Countdowns with a photo'
+      - src: /assets/screens/chronos/iphone/el/chronos-iphone-09-card.webp
+        src_en: /assets/screens/chronos/iphone/en/chronos-iphone-09-card.webp
+        el: 'Η κάρτα του countdown'
+        en: 'The countdown card'
+      - src: /assets/screens/chronos/iphone/el/chronos-iphone-10-tracking.webp
+        src_en: /assets/screens/chronos/iphone/en/chronos-iphone-10-tracking.webp
+        el: 'Εξετάσεις, φάρμακα, συνδρομές και δάνειο σε μία οθόνη'
+        en: 'Exams, medication, subscriptions and loans in one place'
+      - src: /assets/screens/chronos/iphone/el/chronos-iphone-11-meds.webp
+        src_en: /assets/screens/chronos/iphone/en/chronos-iphone-11-meds.webp
+        el: 'Φάρμακα με υπενθυμίσεις'
+        en: 'Medication reminders'
+      - src: /assets/screens/chronos/iphone/el/chronos-iphone-12-subs.webp
+        src_en: /assets/screens/chronos/iphone/en/chronos-iphone-12-subs.webp
+        el: 'Συνδρομές και κόστος'
+        en: 'Subscriptions and what they cost'
+      - src: /assets/screens/chronos/iphone/el/chronos-iphone-13-car.webp
+        src_en: /assets/screens/chronos/iphone/en/chronos-iphone-13-car.webp
+        el: 'Συντήρηση αυτοκινήτου'
+        en: 'Car maintenance'
+      - src: /assets/screens/chronos/iphone/el/chronos-iphone-14-pharmacies.webp
+        el: 'Εφημερεύοντα φαρμακεία κοντά σου'
+        only: el
+      - src: /assets/screens/chronos/iphone/el/chronos-iphone-15-onthisday.webp
+        src_en: /assets/screens/chronos/iphone/en/chronos-iphone-15-onthisday.webp
+        el: 'Σαν σήμερα: γιορτές και ιστορία'
+        en: 'On this day in history'
+  - id: ipad
+    device: wide
+    label_el: iPad
+    label_en: iPad
+    shots:
+      - src: /assets/screens/chronos/ipad/el/chronos-ipad-01-month.webp
+        src_en: /assets/screens/chronos/ipad/en/chronos-ipad-01-month.webp
+        el: 'Μήνας με πλευρική λίστα'
+        en: 'Month with a side agenda'
+      - src: /assets/screens/chronos/ipad/el/chronos-ipad-02-week.webp
+        src_en: /assets/screens/chronos/ipad/en/chronos-ipad-02-week.webp
+        el: 'Εβδομάδα'
+        en: 'Week view'
+      - src: /assets/screens/chronos/ipad/el/chronos-ipad-03-year.webp
+        src_en: /assets/screens/chronos/ipad/en/chronos-ipad-03-year.webp
+        el: 'Ολόκληρο το έτος'
+        en: 'The whole year'
+      - src: /assets/screens/chronos/ipad/el/chronos-ipad-04-day.webp
+        src_en: /assets/screens/chronos/ipad/en/chronos-ipad-04-day.webp
+        el: 'Ημέρα, ώρα με την ώρα'
+        en: 'Day view, hour by hour'
+      - src: /assets/screens/chronos/ipad/el/chronos-ipad-05-list.webp
+        src_en: /assets/screens/chronos/ipad/en/chronos-ipad-05-list.webp
+        el: 'Λίστα γεγονότων'
+        en: 'Event list'
+  - id: mac
+    device: wide
+    label_el: Mac
+    label_en: Mac
+    shots:
+      - src: /assets/screens/chronos/mac/el/chronos-mac-01-month.webp
+        src_en: /assets/screens/chronos/mac/en/chronos-mac-01-month.webp
+        el: 'Μήνας με όλα τα γεγονότα'
+        en: 'Month view with every event'
+      - src: /assets/screens/chronos/mac/el/chronos-mac-02-week.webp
+        src_en: /assets/screens/chronos/mac/en/chronos-mac-02-week.webp
+        el: 'Εβδομάδα'
+        en: 'Week view'
+      - src: /assets/screens/chronos/mac/el/chronos-mac-03-day.webp
+        src_en: /assets/screens/chronos/mac/en/chronos-mac-03-day.webp
+        el: 'Ημέρα με καιρό και ώρες'
+        en: 'Day view with weather and hours'
+      - src: /assets/screens/chronos/mac/el/chronos-mac-04-list.webp
+        src_en: /assets/screens/chronos/mac/en/chronos-mac-04-list.webp
+        el: 'Λίστα γεγονότων'
+        en: 'Event list'
+      - src: /assets/screens/chronos/mac/el/chronos-mac-05-year.webp
+        src_en: /assets/screens/chronos/mac/en/chronos-mac-05-year.webp
+        el: 'Ολόκληρο το έτος'
+        en: 'The whole year'
+      - src: /assets/screens/chronos/mac/el/chronos-mac-06-day-info.webp
+        src_en: /assets/screens/chronos/mac/en/chronos-mac-06-day-info.webp
+        el: 'Εορτολόγιο, σελήνη και «Σαν σήμερα»'
+        en: 'My Day: your day at a glance'
+      - src: /assets/screens/chronos/mac/el/chronos-mac-07-countdown.webp
+        src_en: /assets/screens/chronos/mac/en/chronos-mac-07-countdown.webp
+        el: 'Αντίστροφη μέτρηση με φωτογραφίες'
+        en: 'Countdowns with photos'
+      - src: /assets/screens/chronos/mac/el/chronos-mac-08-tracking.webp
+        src_en: /assets/screens/chronos/mac/en/chronos-mac-08-tracking.webp
+        el: 'Παρακολούθηση φαρμάκων, συνδρομών και δανείου'
+        en: 'Track medication, subscriptions and loans'
+      - src: /assets/screens/chronos/mac/el/chronos-mac-09-meds.webp
+        src_en: /assets/screens/chronos/mac/en/chronos-mac-09-meds.webp
+        el: 'Φάρμακα'
+        en: 'Medication'
+      - src: /assets/screens/chronos/mac/el/chronos-mac-10-car.webp
+        src_en: /assets/screens/chronos/mac/en/chronos-mac-10-car.webp
+        el: 'Αυτοκίνητο'
+        en: 'Car'
+  - id: watch
+    device: watch
+    label_el: Apple Watch
+    label_en: Apple Watch
+    shots:
+      - src: /assets/screens/chronos/watch/el/chronos-watch-01-date.webp
+        src_en: /assets/screens/chronos/watch/en/chronos-watch-01-date.webp
+        el: 'Η ημερομηνία στο ρολόι σου'
+        en: 'The date on your wrist'
+      - src: /assets/screens/chronos/watch/el/chronos-watch-02-month.webp
+        src_en: /assets/screens/chronos/watch/en/chronos-watch-02-month.webp
+        el: 'Ο μήνας με μια ματιά'
+        en: 'The month at a glance'
+      - src: /assets/screens/chronos/watch/el/chronos-watch-03-year.webp
+        src_en: /assets/screens/chronos/watch/en/chronos-watch-03-year.webp
+        el: 'Εβδομάδα, ημέρα του έτους και εποχή'
+        en: 'Week, day of the year and season'
+  - id: video
+    device: video
+    label_el: Βίντεο
+    label_en: Video
+    video:
+      src: /assets/video/chronos-el.mp4
+      src_en: /assets/video/chronos-en.mp4
+      poster: /assets/screens/chronos/video/chronos-poster-el.webp
+      poster_en: /assets/screens/chronos/video/chronos-poster-en.webp
+      el: 'Το Chronos σε δράση'
+      en: 'Chronos in action'
