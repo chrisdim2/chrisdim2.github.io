@@ -35,7 +35,7 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="updated">App: Apollo · Last updated: September 24, 2026</p>
+<p class="updated">App: Apollo · Last updated: October 4, 2026</p>
 
 <div class="box">
 <strong>In short:</strong> Apollo has no accounts, no usage analytics, and no ads, and we keep
@@ -95,12 +95,22 @@ passes, which you enter yourself or scan from your tickets.
 <tr><td>Travel images</td><td>Airline logos and photos of aircraft or ship types, downloaded as described in section 6</td><td>Display. Cached and rebuilt when needed</td></tr>
 <tr><td>Credentials</td><td>The access tokens for your cloud accounts, and your OpenSky credentials if you enter them</td><td>Stored in Apple's <strong>Keychain</strong>, not in a plain file</td></tr>
 <tr><td>Settings</td><td>Theme, icon, zoom level, album covers, place names</td><td>Making the app work</td></tr>
+<tr><td>Smart analysis results</td><td>For each photo: what it shows (e.g. “sea”, “dog”), a quality score, whether it’s a receipt, document or screenshot, the text read from it, and a numeric “fingerprint” used to find identical and similar photos</td><td>Searching by content, picking covers and “On this day”, finding duplicates. Deleted if you turn the analysis off</td></tr>
 </table>
 
 <div class="box">
 <strong>We don't store the photos themselves.</strong> The index holds metadata and links,
 not the files. Your photos stay in your cloud. Deleting the app removes the index, not your
 photos.
+</div>
+
+<div class="box">
+<strong>Smart photo analysis: on your device only.</strong> Searching by what a photo shows,
+picking the best ones for covers and “On this day”, separating receipts and documents, and
+finding duplicates all happen <strong>entirely on your device</strong>, using Vision, a part of
+Apple’s operating system. The analysis uses the thumbnails the app already downloads from your
+own cloud. We don’t use any cloud AI service, no photo or result is sent anywhere, and there is
+no face recognition. You can turn the analysis off in Settings → Smart Analysis.
 </div>
 
 <h2>5. Permissions the app requests</h2>
@@ -110,7 +120,8 @@ photos.
   <li><strong>Camera</strong>: to scan the barcode on a boarding pass so the flight details fill in automatically. Recognition happens on the device, and <strong>no image is stored or sent</strong>.</li>
   <li><strong>Calendar</strong>: write-only access, to add a trip to your calendar when you ask. The app can't read your calendar.</li>
   <li><strong>Notifications</strong>: reminders before a departure. They are scheduled on the device, and nothing is sent anywhere.</li>
-  <li><strong>Background processing</strong>: so syncing and EXIF reading can continue after you leave the app.</li>
+  <li><strong>Background processing</strong>: so syncing, EXIF reading and smart analysis can continue after you leave the app.</li>
+  <li><strong>Siri and Shortcuts</strong>: if you use them (e.g. “Search photos in Apollo”), your voice is processed by Apple under its own terms. The app only receives the text you asked for and opens the matching screen.</li>
 </ul>
 <p>
 <strong>The app doesn't ask for location access.</strong> The locations you see on the
@@ -217,7 +228,7 @@ The "I am" setting (which member you are on this device) and your choice of fami
 <p>
 We don't keep any data, so there's nothing to retain: the helper services keep nothing after
 responding. On your device, data is kept for as long as you want. You can clear thumbnails and temporary files in
-Settings, delete trips and passes, sign out of a provider (which also removes its entries from
+Settings, turn off smart analysis (which also deletes its results), delete trips and passes, sign out of a provider (which also removes its entries from
 the index), or delete the app, which removes everything. Your photos in the cloud aren't
 affected.
 </p>
