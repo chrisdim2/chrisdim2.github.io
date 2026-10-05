@@ -170,8 +170,6 @@ list:
   order: 3
   platforms: [mac]
   has_legal: true
-  # Ο τίτλος της αγγλικής σελίδας όρων, ίδιος με την εφαρμογή (οι άλλες: Terms of Service).
-  terms_title_en: Terms of Use
   support_email: iris@dimakis.app
   appstore_url: ''
   kind_el: Βοηθός φωτογραφιών για Mac
