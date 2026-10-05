@@ -248,7 +248,7 @@ layout: default
       <li><a href="{{ '/' | append: app.slug | append: '/privacy-el.html' | relative_url }}">Πολιτική Απορρήτου</a> <span>Ελληνικά</span></li>
       <li><a href="{{ '/' | append: app.slug | append: '/terms-el.html' | relative_url }}">Όροι Χρήσης</a> <span>Ελληνικά</span></li>
       <li><a href="{{ '/' | append: app.slug | append: '/privacy-en.html' | relative_url }}">Privacy Policy</a> <span>English</span></li>
-      <li><a href="{{ '/' | append: app.slug | append: '/terms-en.html' | relative_url }}">Terms of Service</a> <span>English</span></li>
+      <li><a href="{{ '/' | append: app.slug | append: '/terms-en.html' | relative_url }}">{{ app.terms_title_en | default: 'Terms of Service' }}</a> <span>English</span></li>
     </ul>
     {% else %}
     <p class="legal-todo">{{ L.legal_todo }}</p>

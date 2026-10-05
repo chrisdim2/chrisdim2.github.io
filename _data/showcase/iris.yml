@@ -1,5 +1,5 @@
 # Παρουσίαση του Iris (μόνο Mac). Το διαβάζουν τα _layouts/home.html και _layouts/app.html.
-# Οι εικόνες βγαίνουν από το EXIFeditor/Design/Screenshots/compose.py (out/site/<γλώσσα>/).
+# Οι εικόνες βγαίνουν από το EXIFeditor/Marketing/Screenshots/compose.py (out/site/<γλώσσα>/).
 # src: ελληνικό UI, src_en: αγγλικό UI για την αγγλική σελίδα.
 
 stage:
