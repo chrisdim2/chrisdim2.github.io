@@ -10,119 +10,125 @@
 
 <a class="lang" href="privacy-el.html">Ελληνικά</a>
 <h1>Privacy Policy</h1>
-<p class="updated">App: Iris (macOS) · Last updated: 21 September 2026</p>
+<p class="updated">App: Iris (macOS) · Last updated: October 5, 2026</p>
 
 <div class="box">
-<strong>In short:</strong> Iris has no accounts, no servers, collects no usage analytics and
-shows no ads. It only works on the files you choose or drag into it, and all processing
-happens on your Mac. Your photos and videos never leave your computer. The only contact
-with the internet is the map and place search, which go through Apple, and opening these
-pages from inside the app (see section 6).
+<strong>The short version:</strong> Iris has no accounts and no servers. It doesn’t collect
+analytics and doesn’t show ads. It works only on the files you choose or drag into it, and
+everything happens on your Mac. Your photos and videos never leave your computer. Iris goes
+online only for the map, place search, and the place name for the coordinates you’re viewing
+(all provided by Apple) and to open these pages
+from within the app (see section 6).
 </div>
 
-<h2>1. Who is responsible</h2>
+<h2>1. Who we are</h2>
 <p>
 Data controller: <strong>Christos Dimakis</strong>, Peristeri, Attica, Greece.<br>
 Contact: <a href="mailto:iris@dimakis.app">iris@dimakis.app</a>
 </p>
 
-<h2>2. We collect nothing</h2>
+<h2>2. We don’t collect anything</h2>
 <p>
-The app <strong>has no server</strong>. You don't create an account with us, you don't give
-an email, and there is no analytics, crash reporting or advertising network built in. We
-don't track you across apps or websites. No photo, no video and no metadata ever passes
-through a system of ours, because we have no such system.
+Iris <strong>has no server</strong>. You don’t create an account or give us your email
+address, and the app contains no analytics, crash reporting, or advertising SDKs. We don’t
+track you across apps or websites. None of your photos, videos, or metadata ever passes
+through our systems, because we don’t have any.
 </p>
 
 <h2>3. What Iris does</h2>
 <p>
-Iris prepares photos and videos before they go into your library: it fixes the capture date
-and location, writes title, description and keywords, renames in bulk and finds duplicates.
-It uses the macOS frameworks (ImageIO and AVFoundation) and runs inside Apple's
-<strong>sandbox</strong>, which only lets it touch the files and folders you chose or
-dragged in.
+Iris gets your photos and videos ready before they go into your library: it fixes capture
+dates and locations, adds titles, descriptions, and keywords, renames files in bulk, and
+finds duplicates. It uses built-in macOS frameworks (ImageIO and AVFoundation) and runs in
+Apple’s <strong>App Sandbox</strong>, which means it can only access the files and folders
+you choose or drag into it.
 </p>
 
 <h2>4. Data that stays on your Mac</h2>
-<p>The following is stored locally and is not sent anywhere:</p>
+<p>The following is stored locally and never sent anywhere:</p>
 <table>
 <tr><th>Category</th><th>What it is</th><th>Why</th></tr>
-<tr><td>File access</td><td>The macOS "bookmarks" for the folders and files you chose</td><td>So the app remembers access between launches</td></tr>
-<tr><td>Undo journal</td><td>One JSON file per batch: file path and the previous values (date, GPS, title, description, keywords, name)</td><td>So you can undo a change. Keeps the latest 50 batches; older ones are removed automatically. It lives in the app's own space (Application Support), not inside your folders</td></tr>
-<tr><td>Rename recovery record</td><td>The paths of a rename that is in progress</td><td>To put files back if the app quits abruptly. Removed as soon as the rename finishes</td></tr>
-<tr><td>Recent places</td><td>Up to 12 places you used: name and coordinates</td><td>So you don't retype the same coordinates</td></tr>
-<tr><td>Settings</td><td>The "Subfolders" and "Verify" switches</td><td>App behaviour</td></tr>
-<tr><td>Activity log</td><td>The latest 500 log lines, in memory only</td><td>To show what happened and any errors. Lost when you quit the app</td></tr>
-<tr><td>Temporary files</td><td>A temporary file and a rescue copy next to the file being written</td><td>Write safety. Deleted automatically when the write completes</td></tr>
+<tr><td>File access</td><td>macOS security-scoped bookmarks for the files and folders you’ve chosen</td><td>So Iris keeps access to them between launches</td></tr>
+<tr><td>Undo history</td><td>One JSON file per batch, with each file’s path and its previous values (date, GPS, title, description, keywords, name)</td><td>So you can undo changes. Iris keeps your last 50 batches and deletes older ones automatically. These files live in the app’s own storage (Application Support), not in your folders</td></tr>
+<tr><td>Rename recovery record</td><td>The file paths of a rename in progress</td><td>So files can be restored if the app quits unexpectedly. Deleted as soon as the rename finishes</td></tr>
+<tr><td>Recent places</td><td>Up to 12 places you’ve used, with their names and coordinates</td><td>So you don’t have to enter the same coordinates again</td></tr>
+<tr><td>Settings</td><td>The Subfolders and Verify options and your Language choice</td><td>To remember how you like the app to work</td></tr>
+<tr><td>Activity log</td><td>The last 500 log entries, kept in memory only</td><td>To show what happened, including any errors. Cleared when you quit the app</td></tr>
+<tr><td>Temporary files</td><td>A temporary file and a backup copy, stored next to the file being saved</td><td>To save files safely. Deleted automatically once saving is complete</td></tr>
 </table>
 
 <div class="box">
-<strong>We don't keep copies of your photos.</strong> Changes are made to the files
-themselves, where they are. If you delete the app, its journals and settings go away, not
-your files.
+<strong>We don’t keep copies of your photos.</strong> Changes are made directly to your
+files, right where they are. If you delete Iris, its undo history and settings go with it —
+your files stay put.
 </div>
 
-<h2>5. Permissions the app asks for</h2>
+<h2>5. Permissions</h2>
 <p>
-Iris <strong>does not ask</strong> for access to your Photos library, camera, contacts or
-location. The locations you see come from the files themselves (GPS) or from what you pick
-on the map, not from where you are. The only access is to files and folders you choose in
-the system's open panel or by dragging. The app has permission to connect to the internet only to load these pages
-(section 6); the map works through a system service.
+Iris <strong>doesn’t ask</strong> for access to your Photos library, camera, contacts, or
+location. The locations you see come from the files themselves (GPS data) or from what you
+pick on the map, never from where you are. The only files and folders Iris can access are
+the ones you choose in the Open dialog or drag into the app. Iris is allowed to connect to
+the internet only to load these pages (section 6); the map works through a macOS system
+service.
 </p>
 
-<h2>6. What leaves your Mac and where it goes</h2>
+<h2>6. What leaves your Mac, and where it goes</h2>
 <table>
-<tr><th>Service</th><th>What is sent</th><th>Purpose</th></tr>
-<tr><td>Apple Maps (MapKit)</td><td>The map area you are viewing and, when you press "Search", the text you typed (e.g. "Chalkida")</td><td>Showing the map and finding coordinates for a place name</td></tr>
-<tr><td>The app's website (dimakis.app, hosted on GitHub Pages)</td><td>One request for the page, like any browsing, <strong>only</strong> when you open the Privacy Policy or Terms of Use from Settings. The server sees your IP address and the technical details of the request</td><td>Showing these texts always in their current form. <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a> also applies</td></tr>
+<tr><th>Service</th><th>What’s sent</th><th>Why</th></tr>
+<tr><td>Apple Maps (MapKit)</td><td>The map area you’re viewing and, when you click Search, the text you typed (e.g. “Chalkida”)</td><td>To display the map and look up the coordinates of a place</td></tr>
+<tr><td>Apple (place names)</td><td>The coordinates of the file you select, or the ones you type. This happens automatically, without you clicking anything</td><td>To show the place name (e.g. “Chalkida”) under the map, so you can tell right away whether the location is correct</td></tr>
+<tr><td>The Iris website (dimakis.app, hosted on GitHub Pages)</td><td>A single page request, like visiting any website, and <strong>only</strong> when you open the Privacy Policy or Terms of Use from Settings. The server sees your IP address and standard request details</td><td>So you always see the latest version of these pages. <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub’s Privacy Statement</a> also applies</td></tr>
 </table>
 <p>
-Nothing else. Not your files, their names, their metadata, nor any name, email or device
-identifier from us.
+That’s it. We never receive your files, their names, or their metadata, nor your name,
+email address, or any device identifier.
 </p>
 
 <div class="warn">
-<strong>The map reveals to Apple the area you are looking at.</strong> When you select a
-file that has GPS, the map centres on that point, so Apple sees that this area was
-requested, though not the photo itself. Apple's
-<a href="https://www.apple.com/legal/privacy/">Privacy Policy</a> applies. If you don't want
-that, don't open the map or the place search; everything else works without them, by typing
-the coordinates yourself.
+<strong>The map and place names tell Apple which spot you’re looking at.</strong> When you
+select a file that has GPS data, the map centers on that spot and Iris automatically asks
+Apple for the name of the place. Apple sees the coordinates — but not the photo itself or
+the file’s name. Apple’s
+<a href="https://www.apple.com/legal/privacy/">Privacy Policy</a> applies. If you’d rather
+avoid this, work offline: everything else still works, and you can enter coordinates by
+hand.
 </div>
 
-<h2>7. How long we keep data</h2>
+<h2>7. How long data is kept</h2>
 <p>
-We don't, because we hold nothing. On your Mac, as long as you want. The undo journal keeps
-the latest 50 batches and automatically removes older ones; it goes away entirely if you
-delete the app. Your photos are not affected by either.
+We don’t keep anything, because we don’t have anything. On your Mac, data stays for as long
+as you want it. The undo history keeps your last 50 batches and deletes older ones
+automatically, and it’s removed entirely when you delete the app. Neither affects your
+photos.
 </p>
 
 <h2>8. Support</h2>
 <p>
-If you write to us from Settings → Contact, your email app opens with only the subject
-prefilled: app name and version. <strong>Nothing else is attached</strong>: no file names,
-locations or photos. We keep support emails for as long as needed to resolve the issue.
+If you contact us through Settings → Contact, your email app opens with just the subject
+line filled in: the app’s name and version. <strong>Nothing else is attached</strong> — no
+file names, locations, or photos. We keep support emails only for as long as it takes to
+resolve your issue.
 </p>
 
 <h2>9. Your rights (GDPR)</h2>
 <p>
-You have the right of access, rectification, erasure, restriction, portability and
-objection. Since we hold none of your data, these rights are exercised directly on your Mac.
-For anything else, write to us. You also have the right to lodge a complaint with the Hellenic
-Data Protection Authority (<a href="https://www.dpa.gr">dpa.gr</a>).
+You have the right to access, correct, delete, restrict, and port your data, and to object
+to its processing. Since we don’t hold any of your data, you exercise these rights directly
+on your Mac. For anything else, just email us. You also have the right to file a complaint
+with the Hellenic Data Protection Authority (<a href="https://www.dpa.gr">dpa.gr</a>).
 </p>
 
 <h2>10. Children</h2>
 <p>
-The app is not directed at children under 13 and does not knowingly collect data from them.
-Since we collect no data at all, there is no such risk.
+Iris isn’t directed at children under 13 and doesn’t knowingly collect data from them. In
+fact, since it collects no data at all, there’s nothing to collect.
 </p>
 
-<h2>11. Changes</h2>
+<h2>11. Changes to this policy</h2>
 <p>
-If anything material changes, the date at the top will be updated and we'll mention it in the
-release notes. This policy is always available inside the app, in Settings.
+If we make any significant changes, we’ll update the date at the top and mention it in the
+release notes. You can always find this policy in the app, under Settings.
 </p>
 
 </body>
