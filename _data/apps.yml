@@ -103,6 +103,7 @@ list:
   features_el:
     - Δεν αντιγράφει τις φωτογραφίες σου — δουλεύει απευθείας πάνω στο δικό σου cloud (pCloud, Dropbox, OneDrive κ.ά.)
     - Άλμπουμ ανά έτος, χάρτης τοποθεσιών, αναζήτηση με πραγματικές ημερομηνίες και GPS από τα EXIF
+    - Έξυπνη ανάλυση μόνο στη συσκευή — γράψε «θάλασσα» ή «σκύλος» και τις βρίσκει, διαλέγει τα καλύτερα εξώφυλλα και βρίσκει τις διπλές
     - Ταξίδια που βγαίνουν μόνα τους από τις φωτογραφίες σου — τα εντοπίζει, εσύ απλώς τα ονομάζεις
     - Σάρωση καρτών επιβίβασης και ακτοπλοϊκών εισιτηρίων, με κάμερα ή PDF
     - Υπενθυμίσεις πριν από κάθε ταξίδι, και πλήρη στατιστικά χιλιομέτρων και χωρών
@@ -110,13 +111,14 @@ list:
   features_en:
     - Doesn't copy your photos — works directly on your own cloud (pCloud, Dropbox, OneDrive & more)
     - Albums by year, a map of locations, search by real capture dates and GPS from EXIF
+    - Smart analysis, on your device only — type “sea” or “dog” to find them, best photos picked for covers, duplicates found
     - Trips detected automatically from your photos — you just name them
     - Scan boarding passes and ferry tickets, by camera or PDF
     - Reminders before every trip, plus full distance and country stats
     - Family mode — shared covers, folders and trips with everyone on the same cloud
   screenshots:
-    - /assets/screens/apollo/mac/apollo-mac-01-timeline.webp
-    - /assets/screens/apollo/iphone/apollo-iphone-01-timeline.webp
+    - /assets/screens/apollo/mac/el/apollo-mac-01-timeline.webp
+    - /assets/screens/apollo/iphone/el/apollo-iphone-01-timeline.webp
 - slug: argus
   title: Argus
   greek: ΑΡΓΟΣ
