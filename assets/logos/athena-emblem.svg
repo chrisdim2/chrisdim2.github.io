@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 181.2 181.2" width="181.2" height="181.2"><g transform="translate(-9.4 -8.4) scale(1)"><defs><linearGradient id="athena-emb-ig" gradientUnits="userSpaceOnUse" x1="51.4" y1="9.4" x2="148.6" y2="188.6"><stop offset="0" stop-color="#F7E4B3"/><stop offset=".42" stop-color="#DFB872"/><stop offset=".74" stop-color="#B78944"/><stop offset="1" stop-color="#E9CA88"/></linearGradient></defs><g fill="none" stroke="url(#athena-emb-ig)" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+<path d="M84 55 V30 Q84 12 100 12 Q116 12 116 30 V55"/>
+<path d="M100 21 V51"/>
+<path d="M88 186 V125 L67 115 V102 L94 105 V149 H106 V105 L133 102 V115 L112 125 V186 H121 C138 178 146 165 146 149 V110 C146 76 128 54 100 54 C72 54 54 76 54 110 V149 C54 165 62 178 79 186 Z"/>
+<path d="M62 92 C74 84 87 81 100 81 C113 81 126 84 138 92"/>
+</g></g></svg>

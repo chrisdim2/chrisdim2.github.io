@@ -15,7 +15,11 @@ layout: default
     {% endif %}
     {% include platforms.html list=app.platforms %}
     <p class="eyebrow">{% if page.lang == 'el' %}{{ app.kind_el }}{% else %}{{ app.kind_en }}{% endif %}</p>
+    {% if app.logo %}
+    <h1 class="page-h page-h-logo"><img class="app-logo" src="{{ app.logo | relative_url }}" alt="{{ app.title }}" width="{{ app.logo_size[0] }}" height="{{ app.logo_size[1] }}"></h1>
+    {% else %}
     <h1 class="page-h">{{ app.title }}</h1>
+    {% endif %}
     <p class="lede">{% if page.lang == 'el' %}{{ app.tagline_el }}{% else %}{{ app.tagline_en }}{% endif %}</p>
     <div class="page-links">
       {% if app.appstore_url and app.appstore_url != "" %}

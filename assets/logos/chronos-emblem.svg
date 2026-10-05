@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 187.2 187.2" width="187.2" height="187.2"><g transform="translate(-6.4 -6.4) scale(1)"><defs><linearGradient id="chronos-emb-ig" gradientUnits="userSpaceOnUse" x1="27.4" y1="7.4" x2="172.6" y2="192.6"><stop offset="0" stop-color="#F7E4B3"/><stop offset=".42" stop-color="#DFB872"/><stop offset=".74" stop-color="#B78944"/><stop offset="1" stop-color="#E9CA88"/></linearGradient></defs><g fill="none" stroke="url(#chronos-emb-ig)" stroke-width="5" stroke-linecap="round">
+<circle cx="100" cy="100" r="70"/>
+<path d="M120 10 C78 10 56 34 64 60 C72 88 128 112 136 140 C144 166 122 190 80 190"/>
+<path d="M110 84 H152 M48 116 H90"/>
+</g></g></svg>

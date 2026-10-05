@@ -3,6 +3,10 @@ list:
   title: Chronos
   greek: ΧΡΟΝΟΣ
   icon: /assets/icons/chronos.png
+  logo: /assets/logos/chronos-lockup.svg
+  logo_size: [648, 141]
+  emblem: /assets/logos/chronos-emblem.svg
+  og_image: /assets/og/chronos.jpg
   order: 1
   platforms: [iphone, ipad, mac, watch]
   has_legal: true
@@ -35,6 +39,10 @@ list:
   title: Hermes
   greek: ΕΡΜΗΣ
   icon: /assets/icons/hermes.png
+  logo: /assets/logos/hermes-lockup.svg
+  logo_size: [545, 141]
+  emblem: /assets/logos/hermes-emblem.svg
+  og_image: /assets/og/hermes.jpg
   order: 6
   platforms: [iphone, ipad, mac, watch]
   has_legal: false
@@ -55,6 +63,10 @@ list:
   title: Athena
   greek: ΑΘΗΝΑ
   icon: /assets/icons/athena.png
+  logo: /assets/logos/athena-lockup.svg
+  logo_size: [534, 141]
+  emblem: /assets/logos/athena-emblem.svg
+  og_image: /assets/og/athena.jpg
   order: 4
   platforms: [iphone, ipad, mac, watch]
   has_legal: false
@@ -87,6 +99,10 @@ list:
   title: Apollo
   greek: ΑΠΟΛΛΩΝ
   icon: /assets/icons/apollo.png
+  logo: /assets/logos/apollo-lockup.svg
+  logo_size: [571, 141]
+  emblem: /assets/logos/apollo-emblem.svg
+  og_image: /assets/og/apollo.jpg
   order: 2
   platforms: [iphone, ipad, mac]
   has_legal: true
@@ -123,6 +139,10 @@ list:
   title: Argus
   greek: ΑΡΓΟΣ
   icon: /assets/icons/argus.png
+  logo: /assets/logos/argus-lockup.svg
+  logo_size: [521, 141]
+  emblem: /assets/logos/argus-emblem.svg
+  og_image: /assets/og/argus.jpg
   order: 5
   platforms: [iphone, ipad, mac]
   has_legal: false
@@ -143,6 +163,10 @@ list:
   title: Iris
   greek: ΙΡΙΔΑ
   icon: /assets/icons/iris.png
+  logo: /assets/logos/iris-lockup.svg
+  logo_size: [356, 141]
+  emblem: /assets/logos/iris-emblem.svg
+  og_image: /assets/og/iris.jpg
   order: 3
   platforms: [mac]
   has_legal: true

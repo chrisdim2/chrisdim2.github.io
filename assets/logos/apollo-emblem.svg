@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175.6 175.6" width="175.6" height="175.6"><g transform="translate(-7.4 -17.6) scale(1)"><defs><linearGradient id="apollo-emb-ig" gradientUnits="userSpaceOnUse" x1="8.4" y1="25.4" x2="182" y2="185.4"><stop offset="0" stop-color="#F7E4B3"/><stop offset=".42" stop-color="#DFB872"/><stop offset=".74" stop-color="#B78944"/><stop offset="1" stop-color="#E9CA88"/></linearGradient></defs><g fill="none" stroke="url(#apollo-emb-ig)" stroke-width="5" stroke-linecap="round">
+<circle cx="100" cy="100" r="72"/>
+<path d="M24 170 L170.02 40.61"/>
+<path d="M24 170 L10.55 169.9 M24 170 L22.48 183.37 M29.99 164.69 L16.53 164.59 M29.99 164.69 L28.47 178.06 M35.98 159.39 L22.52 159.28 M35.98 159.39 L34.46 172.76" stroke-width="4"/>
+</g>
+<g fill="url(#apollo-emb-ig)">
+<path d="M78.87 121.38 A24 24 0 0 1 114.79 89.55 Z"/>
+<path d="M118.16 82.51 L126.25 62.59 L110.58 77.3 Z M109.52 76.82 L108.56 63.06 L100.66 74.36 Z M99.5 74.24 L93.61 53.57 L90.32 74.81 Z M89.19 75.07 L79.96 64.83 L80.7 78.6 Z M79.71 79.22 L62.34 66.55 L72.83 85.32 Z M72.1 86.22 L58.52 83.83 L67.57 94.23 Z M67.18 95.32 L45.69 96.03 L65.51 104.37 Z M65.49 105.52 L53.32 112 L66.86 114.62 Z M67.22 115.72 L50.72 129.51 L71.47 123.88 Z"/>
+<path d="M182 30 L161.06 36.53 L170.77 39.95 L173 50 Z"/>
+</g></g></svg>

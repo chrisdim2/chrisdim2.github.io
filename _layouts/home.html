@@ -38,7 +38,11 @@ layout: default
       {% endif %}
       {% include platforms.html list=app.platforms %}
       <p class="eyebrow">{% if page.lang == 'el' %}{{ app.kind_el }}{% else %}{{ app.kind_en }}{% endif %}</p>
+      {% if app.logo %}
+      <h3 class="showcase-h-logo"><img class="app-logo" src="{{ app.logo | relative_url }}" alt="{{ app.title }}" width="{{ app.logo_size[0] }}" height="{{ app.logo_size[1] }}" loading="lazy"></h3>
+      {% else %}
       <h3>{{ app.title }}</h3>
+      {% endif %}
       <p class="showcase-tag">{% if page.lang == 'el' %}{{ app.tagline_el }}{% else %}{{ app.tagline_en }}{% endif %}</p>
       {% assign feats = app.features_el %}
       {% if page.lang == 'en' %}{% assign feats = app.features_en %}{% endif %}

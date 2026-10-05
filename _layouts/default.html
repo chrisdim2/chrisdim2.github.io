@@ -9,6 +9,28 @@
 <meta name="color-scheme" content="dark">
 <title>{{ page.head_title | default: "dimakis" }}</title>
 <meta name="description" content="{{ page.head_desc | default: L.hero_text }}">
+{% assign share_app = "" %}
+{% for a in apps %}{% if a.slug == page.app %}{% assign share_app = a %}{% endif %}{% endfor %}
+{% if share_app != "" %}
+{% capture share_title %}{{ share_app.title }} · dimakis{% endcapture %}
+{% if page.lang == 'el' %}{% assign share_desc = share_app.tagline_el %}{% else %}{% assign share_desc = share_app.tagline_en %}{% endif %}
+{% assign share_img = share_app.og_image | default: '/assets/og/dimakis.jpg' %}
+{% else %}
+{% assign share_title = page.head_title | default: "dimakis" %}
+{% assign share_desc = page.head_desc | default: L.hero_text %}
+{% assign share_img = '/assets/og/dimakis.jpg' %}
+{% endif %}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="dimakis">
+<meta property="og:title" content="{{ share_title | strip | escape }}">
+<meta property="og:description" content="{{ share_desc | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ share_img | absolute_url }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="{% if page.lang == 'el' %}el_GR{% else %}en_US{% endif %}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{ share_img | absolute_url }}">
 <link rel="alternate" hreflang="{% if page.lang == 'el' %}en{% else %}el{% endif %}" href="{{ page.alt | absolute_url }}">
 <link rel="icon" href="{{ '/assets/favicon-32.png' | relative_url }}" sizes="32x32">
 <link rel="icon" href="{{ '/assets/favicon-16.png' | relative_url }}" sizes="16x16">
@@ -41,7 +63,7 @@
     <img class="foot-logo" src="{{ '/assets/dimakis-logo-dark.svg' | relative_url }}" alt="dimakis">
     <ul class="foot-list">
       {% for app in apps %}
-      <li><a href="{% if page.lang == 'el' %}{{ '/' | append: app.slug | append: '/' | relative_url }}{% else %}{{ '/en/' | append: app.slug | append: '/' | relative_url }}{% endif %}">{{ app.title }}</a></li>
+      <li><a href="{% if page.lang == 'el' %}{{ '/' | append: app.slug | append: '/' | relative_url }}{% else %}{{ '/en/' | append: app.slug | append: '/' | relative_url }}{% endif %}">{% if app.emblem %}<img class="foot-emblem" src="{{ app.emblem | relative_url }}" alt="" width="20" height="20" loading="lazy">{% endif %}{{ app.title }}</a></li>
       {% endfor %}
     </ul>
     <div class="foot-meta">
