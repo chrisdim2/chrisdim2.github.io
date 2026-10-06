@@ -1,6 +1,6 @@
-# Παρουσίαση του Apollo: σύνθεση συσκευών και γκαλερί ανά συσκευή (iPhone, iPad, Mac).
+# Παρουσίαση του Apollo: σύνθεση συσκευών και γκαλερί ανά συσκευή (iPhone, iPad, Mac) και βίντεο.
 # Οι εικόνες βγαίνουν από το PhotoApp/Marketing (screenshots/<γλώσσα>/.../plain): iPhone σε ανοιχτό,
-# iPad και Mac σε σκούρο θέμα, φωτογραφίες επίδειξης με πουλιά. src: ελληνικό UI, src_en: αγγλικό.
+# iPad και Mac σε σκούρο θέμα, φωτογραφίες επίδειξης με πουλιά. src: ελληνικό UI, src_en: αγγλικό. Βίντεο: video/<γλώσσα>_site_web.mp4.
 
 stage:
   wide: /assets/screens/apollo/mac/el/apollo-mac-01-timeline.webp
@@ -154,3 +154,14 @@ groups:
         src_en: /assets/screens/apollo/mac/en/apollo-mac-10-smart-analysis.webp
         el: 'Έξυπνη ανάλυση, μόνο στη συσκευή'
         en: 'Smart analysis, on device only'
+  - id: video
+    device: video
+    label_el: Βίντεο
+    label_en: Video
+    video:
+      src: /assets/video/apollo-el.mp4
+      src_en: /assets/video/apollo-en.mp4
+      poster: /assets/screens/apollo/video/apollo-poster-el.webp
+      poster_en: /assets/screens/apollo/video/apollo-poster-en.webp
+      el: 'Το Apollo σε δράση'
+      en: 'Apollo in action'
