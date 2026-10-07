@@ -35,7 +35,7 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="updated">App: Apollo · Last updated: October 4, 2026</p>
+<p class="updated">App: Apollo · Last updated: October 7, 2026</p>
 
 <div class="box">
 <strong>In short:</strong> Apollo has no accounts, no usage analytics, and no ads, and we keep
@@ -95,7 +95,7 @@ passes, which you enter yourself or scan from your tickets.
 <tr><td>Travel images</td><td>Airline logos and photos of aircraft or ship types, downloaded as described in section 6</td><td>Display. Cached and rebuilt when needed</td></tr>
 <tr><td>Credentials</td><td>The access tokens for your cloud accounts, and your OpenSky credentials if you enter them</td><td>Stored in Apple's <strong>Keychain</strong>, not in a plain file</td></tr>
 <tr><td>Settings</td><td>Theme, icon, zoom level, album covers, place names</td><td>Making the app work</td></tr>
-<tr><td>Smart analysis results</td><td>For each photo: what it shows (e.g. “sea”, “dog”), a quality score, whether it’s a receipt, document or screenshot, the text read from it, and a numeric “fingerprint” used to find identical and similar photos</td><td>Searching by content, picking covers and “On this day”, finding duplicates. Deleted if you turn the analysis off</td></tr>
+<tr><td>Smart analysis results</td><td>For each photo: what it shows (e.g. “sea”, “dog”), a quality score, whether it’s a receipt, document or screenshot, the text read from it, and a numeric “fingerprint” used to find identical and similar photos</td><td>Searching by content, picking covers and “On this day”, finding duplicates. Deleted from the device if you turn the analysis off (for the shared Family mode file, see section 8)</td></tr>
 </table>
 
 <div class="box">
@@ -109,8 +109,9 @@ photos.
 picking the best ones for covers and “On this day”, separating receipts and documents, and
 finding duplicates all happen <strong>entirely on your device</strong>, using Vision, a part of
 Apple’s operating system. The analysis uses the thumbnails the app already downloads from your
-own cloud. We don’t use any cloud AI service, no photo or result is sent anywhere, and there is
-no face recognition. You can turn the analysis off in Settings → Smart Analysis.
+own cloud. We don’t use any cloud AI service, no photo or result is sent to us or to anyone else,
+and there is no face recognition. The only exception is Family mode, if you turn it on: the
+results for shared photos are then written to the shared folder in your own cloud (section 8). You can turn the analysis off in Settings → Smart Analysis.
 </div>
 
 <h2>5. Permissions the app requests</h2>
@@ -198,13 +199,14 @@ WebDAV/S3-compatible provider.
 
 <h2>8. Family mode</h2>
 <p>
-If you turn it on, the app writes <strong>two small files to the photo folder of the
+If you turn it on, the app writes <strong>three files to the photo folder of the
 cloud account you choose as the family hub</strong> (pCloud, unless you pick another of your
 connected accounts), so that everyone with access to that folder can read them:
 </p>
 <ul>
   <li><code>.photoapp-family.json</code>: album covers, year groupings, place names, the <strong>member names</strong> you set up, your <strong>trips</strong> (name, dates, who went, transportation, expenses, and ratings), your <strong>flights and ferry journeys</strong>, your <strong>boarding passes</strong> (passenger name, seat, <strong>booking code, and barcode</strong>), and the list of shared photos moved to the Trash.</li>
   <li><code>.photoapp-exif.json</code>: capture dates, <strong>GPS coordinates</strong>, and camera models, so each device doesn't have to read them again.</li>
+  <li><code>.photoapp-insights.lzfse</code>: the smart analysis results for the photos in the shared folder (what each one shows, <strong>the text read inside it</strong>, its score, and a fingerprint for finding duplicates), so each device doesn't have to analyze them again. Anyone with access to the folder can already see the photos themselves. When a photo is deleted from the shared folder, its results are removed from the file automatically. The file is not deleted when you turn the analysis off on one device, because the other members use it too; you can delete it from the folder, and it is only recreated if a member has both the analysis and the Family mode “Smart Analysis” switch turned on.</li>
 </ul>
 <p>
 Boarding passes are shared on purpose: one person scans everyone's tickets, and each
