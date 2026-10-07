@@ -1,12 +1,12 @@
 <!doctype html>
 {% assign L = site.data.site[page.lang] %}
 {% assign apps = site.data.apps.list | sort: "order" %}
-<html lang="{{ page.lang }}">
+{% assign light = false %}
+{% for a in apps %}{% if a.slug == page.app and a.theme == 'light' %}{% assign light = true %}{% endif %}{% endfor %}
+<html lang="{{ page.lang }}"{% if light %} class="light"{% endif %}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#101820">
-<meta name="color-scheme" content="dark">
 <title>{{ page.head_title | default: "dimakis" }}</title>
 <meta name="description" content="{{ page.head_desc | default: L.hero_text }}">
 {% assign share_app = "" %}
@@ -19,6 +19,13 @@
 {% assign share_title = page.head_title | default: "dimakis" %}
 {% assign share_desc = page.head_desc | default: L.hero_text %}
 {% assign share_img = '/assets/og/dimakis.jpg' %}
+{% endif %}
+{% if light %}
+<meta name="theme-color" content="{{ share_app.tint | default: '#F6F7F9' }}">
+<meta name="color-scheme" content="light">
+{% else %}
+<meta name="theme-color" content="#101820">
+<meta name="color-scheme" content="dark">
 {% endif %}
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="dimakis">
@@ -39,14 +46,14 @@
 <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
-<style>:root{ --berry: {{ site.data.site.accent }}; }</style>
+<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+<style>:root{ --berry: {{ site.data.site.accent }}; }{% if light %} html.light{ --bg: {{ share_app.tint | default: '#F6F7F9' }}; --app: {{ share_app.accent | default: '#16212B' }}; }{% endif %}</style>
 <script data-goatcounter="https://dimakis.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 <header class="bar">
   <a class="brand" href="{% if page.lang == 'el' %}{{ '/' | relative_url }}{% else %}{{ '/en/' | relative_url }}{% endif %}" aria-label="dimakis">
-    <img src="{{ '/assets/dimakis-logo-dark.svg' | relative_url }}" alt="dimakis">
+    <img src="{% if light %}{{ '/assets/dimakis-logo.svg' | relative_url }}{% else %}{{ '/assets/dimakis-logo-dark.svg' | relative_url }}{% endif %}" alt="dimakis">
   </a>
   <nav class="bar-nav">
     <a href="{% if page.lang == 'el' %}{{ '/#apps' | relative_url }}{% else %}{{ '/en/#apps' | relative_url }}{% endif %}">{{ L.nav_apps }}</a>

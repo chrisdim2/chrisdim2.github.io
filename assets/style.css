@@ -281,6 +281,88 @@ h1,h2,h3{letter-spacing:-.025em;font-weight:600}
 .foot-meta p{margin:10px 0 0}
 .foot-tm{font-size:11px;line-height:1.5;color:var(--ink-45)}
 
+/* ανοιχτόχρωμες σελίδες εφαρμογών (theme: light στο apps.yml, tint για το φόντο) */
+.light{
+  --bg:#F6F7F9;
+  --bg-2:#FFFFFF;
+  --card:#FFFFFF;
+  --ink:#16212B;
+  --ink-70:#4E5B65;
+  --ink-45:#7B8790;
+  --leaf:#3D8B42;
+  --line:rgba(22,33,43,.10);
+}
+.light .app-hero-gr{color:rgba(22,33,43,.06)}
+.light .app-logo{filter:brightness(.82) saturate(1.25)}
+.light .page-icon{box-shadow:0 10px 30px rgba(22,33,43,.16),0 2px 6px rgba(22,33,43,.08)}
+.light .stage::before{background:radial-gradient(55% 60% at 45% 45%, rgba(255,255,255,.95), transparent 72%)}
+.light .mbp-base{box-shadow:0 calc(var(--w)*.02) calc(var(--w)*.04) rgba(22,33,43,.22)}
+.light .ipd{box-shadow:0 0 0 calc(var(--w)*.008) #70747b, 0 0 0 calc(var(--w)*.012) #26282c,
+    0 calc(var(--w)*.05) calc(var(--w)*.12) rgba(22,33,43,.25)}
+.light .iph{box-shadow:0 0 0 calc(var(--w)*.0127) #70747b, 0 0 0 calc(var(--w)*.019) #26282c,
+    0 calc(var(--w)*.09) calc(var(--w)*.2) rgba(22,33,43,.28)}
+.light .wch-case{box-shadow:0 0 0 calc(var(--w)*.028) #8a8e95, 0 0 0 calc(var(--w)*.045) #26282c,
+    0 calc(var(--w)*.15) calc(var(--w)*.35) rgba(22,33,43,.25)}
+.light .shot img,.light .shots-video video{box-shadow:0 10px 28px rgba(22,33,43,.16)}
+.light .shots-phone .shot img,.light .shots-watch .shot img{outline-color:rgba(22,33,43,.10)}
+.light .shots-wide .shot img{border-color:rgba(22,33,43,.10)}
+.light .btn:not(.btn-quiet):hover{background:#000;border-color:#000}
+.light .btn-quiet:hover,.light .shots-arrow:hover{background:rgba(22,33,43,.06);border-color:rgba(22,33,43,.18)}
+.light .shots-tabs{background:transparent}
+.light .shots-tabs button[aria-selected="true"]{background:rgba(22,33,43,.08);color:var(--ink)}
+.light .feat-grid li{box-shadow:0 1px 2px rgba(22,33,43,.04)}
+.light .big-link a{border-bottom-color:rgba(225,75,65,.35)}
+/* διάταξη τύπου bear.app: κεντραρισμένη κορυφή, αέρας, έγχρωμοι τίτλοι, απαλά σχήματα στο φόντο */
+.light main{position:relative;overflow:hidden;isolation:isolate}
+.light main::before,.light main::after{content:"";position:absolute;z-index:-1;pointer-events:none;
+  background:var(--app);opacity:.10}
+.light main::before{top:560px;right:-14vw;width:min(62vw,760px);aspect-ratio:1.15;
+  border-radius:58% 42% 47% 53% / 46% 57% 43% 54%;transform:rotate(-12deg)}
+.light main::after{bottom:-6%;left:-16vw;width:min(58vw,700px);aspect-ratio:1.1;
+  border-radius:41% 59% 52% 48% / 58% 39% 61% 42%;transform:rotate(18deg)}
+.light .app-page{max-width:960px;padding-top:40px}
+.light .app-hero{text-align:center;padding:30px 0 10px}
+/* το ελληνικό όνομα πάνω από το εικονίδιο, όχι πίσω του */
+.light .app-hero-gr{position:relative;display:block;top:auto;right:auto;text-align:center;
+  font-size:clamp(56px,11vw,130px);line-height:.9;margin:0 0 26px;
+  color:var(--app);opacity:.10;letter-spacing:.04em}
+.light .page-icon{margin:0 auto 22px;width:120px;height:120px;border-radius:27px}
+.light .platforms{justify-content:center}
+.light .app-hero .eyebrow{color:var(--app);opacity:.85}
+.light .page-h-logo .app-logo{margin:0 auto;object-position:center}
+.light .lede{margin:0 auto 26px;font-size:clamp(22px,2.6vw,27px);line-height:1.35;letter-spacing:-.01em}
+.light .page-links{justify-content:center}
+.light .stage{margin-top:52px}
+.light .shots{margin-top:60px}
+.light .shots-head{justify-content:center;position:relative}
+.light .shots-nav{position:absolute;right:0}
+.light .shots-tabs button[aria-selected="true"]{background:rgba(22,33,43,.08);background:color-mix(in srgb,var(--app) 14%,transparent);color:var(--app);font-weight:600}
+.light .block{border-top:0;padding-top:0;margin-top:76px}
+.light .block h2{font-size:clamp(28px,3.4vw,38px);line-height:1.15;margin:0 0 18px;color:var(--app)}
+.light .block p{font-size:18px}
+.light .feat-grid{gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.light .feat-grid li{position:relative;border:0;border-radius:18px;padding:20px 20px 20px 44px;
+  box-shadow:0 1px 2px rgba(22,33,43,.04),0 8px 24px rgba(22,33,43,.06);line-height:1.5}
+.light .feat-grid li::before{content:"";position:absolute;left:20px;top:29px;width:9px;height:9px;
+  border-radius:50%;background:var(--app)}
+.light .lang-list li{border-color:transparent;box-shadow:0 1px 2px rgba(22,33,43,.05)}
+.light .origin-note{border-left-color:var(--app);font-size:19px}
+.light .big-link a{color:var(--app);border-bottom-color:currentColor}
+.light .legal-list a:hover{color:var(--app)}
+.light .app-status{color:var(--app);border-color:currentColor;opacity:.9}
+.light ::selection{background:var(--app);color:#fff}
+@media (max-width:820px){
+  .light .shots-nav{display:none}
+  .light .shots-head{justify-content:flex-start}
+  .light main::before{top:620px;width:90vw;right:-30vw}
+  .light main::after{width:90vw;left:-34vw}
+}
+
+/* footer και lightbox μένουν σκούρα, όπως στην αρχική */
+.light .foot,.light .lightbox{
+  --bg:#101820;--card:#1A2831;--ink:#EDF1EE;--ink-70:#A7B4BB;--ink-45:#7A888F;
+  --line:rgba(237,241,238,.12);color:var(--ink)}
+
 @media (max-width:820px){
   .showcase-in{grid-template-columns:1fr;gap:26px;padding:40px 22px 46px}
   .showcase-alt .showcase-in{direction:ltr}
