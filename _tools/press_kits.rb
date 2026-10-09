@@ -1,7 +1,7 @@
 # Φτιάχνει τα zip του Press Kit, ένα ανά έτοιμη εφαρμογή (ready: true) και γλώσσα (el, en),
 # με τα πρωτότυπα σε πλήρη ανάλυση από τους φακέλους Marketing των εφαρμογών (~/Developer/...).
 #
-#   ruby _tools/press_kits.rb            # φτιάχνει τα zip στο _tools/out/ (εκτός site, δεν μπαίνουν στο git)
+#   ruby _tools/press_kits.rb            # φτιάχνει τα zip στο ~/Library/Caches/dimakis-press-kits/
 #   ruby _tools/press_kits.rb --upload   # και τα ανεβάζει στο GitHub Release «press-kit» (χρειάζεται gh)
 #
 # Τα zip είναι μεγάλα (δεκάδες MB), γι' αυτό φιλοξενούνται στο GitHub Release και όχι στο repo.
@@ -76,7 +76,8 @@ press_email = site["press_email"].to_s.empty? ? site["contact_email"] : site["pr
 owner = site["owner_name"].to_s.empty? ? "dimakis" : site["owner_name"]
 DEVICE = { "iphone" => "iPhone", "ipad" => "iPad", "mac" => "Mac", "watch" => "Apple Watch" }
 
-out_dir = File.join(__dir__, "out")
+# Εκτός ~/Developer: ο φάκελος συγχρονίζεται με cloud, που «μπερδεύεται» με μεγάλα αρχεία που ξαναγράφονται.
+out_dir = File.join(Dir.home, "Library/Caches/dimakis-press-kits")
 FileUtils.mkdir_p(out_dir)
 summary = {}
 built = []
