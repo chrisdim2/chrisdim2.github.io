@@ -21,6 +21,7 @@ collections:
             fields:
               - { name: slug, label: Φάκελος (URL), widget: string }
               - { name: title, label: Όνομα, widget: string }
+              - { name: full_name, label: Πλήρες όνομα (όπως στο App Store), widget: string, required: false }
               - { name: greek, label: Ελληνικό όνομα, widget: string }
               - { name: order, label: Σειρά, widget: number, value_type: int }
               - { name: platforms, label: Συσκευές, widget: select, multiple: true, required: false, options: [{ label: iPhone, value: iphone }, { label: iPad, value: ipad }, { label: Mac, value: mac }, { label: Apple Watch, value: watch }] }
