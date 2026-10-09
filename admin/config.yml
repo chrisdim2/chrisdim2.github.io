@@ -60,7 +60,9 @@ collections:
           - { name: contact_email, label: Γενικό email, widget: string }
           - { name: press_email, label: Email για τύπο, widget: string, required: false }
           - { name: owner_name, label: Ονοματεπώνυμο, widget: string, required: false }
-          - { name: newsletter_action, label: Διεύθυνση φόρμας newsletter (Buttondown), widget: string, required: false }
+          - { name: newsletter_action, label: Διεύθυνση φόρμας newsletter (Brevo), widget: string, required: false }
+          - { name: newsletter_app_field, label: Πεδίο Brevo για την εφαρμογή, widget: string, required: false }
+          - { name: newsletter_lang_field, label: Πεδίο Brevo για τη γλώσσα, widget: string, required: false }
           - name: social
             label: Social media
             widget: list
@@ -104,6 +106,8 @@ collections:
               - { name: notify_placeholder, label: "Ειδοποίηση, παράδειγμα", widget: string, required: false }
               - { name: notify_button, label: "Ειδοποίηση, κουμπί", widget: string, required: false }
               - { name: notify_note, label: "Ειδοποίηση, σημείωση", widget: string, required: false }
+              - { name: notify_success, label: "Ειδοποίηση, επιτυχία", widget: string, required: false }
+              - { name: notify_error, label: "Ειδοποίηση, σφάλμα", widget: string, required: false }
               - { name: articles_title, label: "Άρθρα, τίτλος", widget: string, required: false }
               - { name: articles_text, label: "Άρθρα, εισαγωγή", widget: string, required: false }
               - { name: articles_empty, label: "Άρθρα, κενή λίστα", widget: string, required: false }
@@ -145,6 +149,8 @@ collections:
               - { name: notify_placeholder, label: "Ειδοποίηση, παράδειγμα", widget: string, required: false }
               - { name: notify_button, label: "Ειδοποίηση, κουμπί", widget: string, required: false }
               - { name: notify_note, label: "Ειδοποίηση, σημείωση", widget: string, required: false }
+              - { name: notify_success, label: "Ειδοποίηση, επιτυχία", widget: string, required: false }
+              - { name: notify_error, label: "Ειδοποίηση, σφάλμα", widget: string, required: false }
               - { name: articles_title, label: "Άρθρα, τίτλος", widget: string, required: false }
               - { name: articles_text, label: "Άρθρα, εισαγωγή", widget: string, required: false }
               - { name: articles_empty, label: "Άρθρα, κενή λίστα", widget: string, required: false }

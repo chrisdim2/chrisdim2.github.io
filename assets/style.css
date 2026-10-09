@@ -496,3 +496,5 @@ h1,h2,h3{letter-spacing:-.025em;font-weight:600}
   .doc{padding:28px 16px 40px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none !important;scroll-behavior:auto}}
+.notify-form.is-done input[type=email],.notify-form.is-done .btn{display:none}
+.notify-form.is-done .notify-note{margin-left:0;font-size:15px;color:var(--ink)}

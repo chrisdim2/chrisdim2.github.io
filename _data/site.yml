@@ -4,9 +4,14 @@ contact_email: support@dimakis.app
 press_email: press@dimakis.app
 # Το ονοματεπώνυμό σου (όπως θα φαίνεται στο App Store). Μπαίνει ως δημιουργός στο JSON-LD όταν δεν είναι κενό.
 owner_name: ''
-# Φόρμα «Ειδοποίησέ με» (Buttondown). Αντικατέστησε το USERNAME με το όνομα του λογαριασμού σου.
-# Όσο περιέχει «USERNAME», η φόρμα φαίνεται μόνο στην τοπική προεπισκόπηση, όχι στο live site.
-newsletter_action: https://buttondown.com/api/emails/embed-subscribe/USERNAME
+# Φόρμα «Ειδοποίησέ με» (Brevo). Στο Brevo: Contacts → Forms → νέα φόρμα με double opt-in,
+# και από τον κώδικα ενσωμάτωσης (Share → HTML) αντιγράφεις τη διεύθυνση του action="https://….sibforms.com/serve/…".
+# Όσο περιέχει «FORM_ID», η φόρμα φαίνεται μόνο στην τοπική προεπισκόπηση, όχι στο live site.
+newsletter_action: https://XXXX.sibforms.com/serve/FORM_ID
+# Ονόματα των κρυφών πεδίων της φόρμας στο Brevo (attributes επαφής) για εφαρμογή και γλώσσα.
+# Αν μείνουν κενά, δεν στέλνονται.
+newsletter_app_field: APP
+newsletter_lang_field: LANGUAGE
 # Λογαριασμοί social media: γράψε τον πλήρη σύνδεσμο. Όσοι μένουν κενοί δεν εμφανίζονται.
 social:
   - { name: Instagram, url: '' }
@@ -57,6 +62,8 @@ el:
   notify_placeholder: όνομα@email.gr
   notify_button: Ειδοποίησέ με
   notify_note: Μπορείς να διαγραφείς με ένα κλικ, όποτε θέλεις.
+  notify_success: 'Σχεδόν έτοιμο: άνοιξε το email που σου στείλαμε και πάτα «Επιβεβαίωση».'
+  notify_error: 'Κάτι δεν πήγε καλά. Δοκίμασε ξανά σε λίγο.'
   articles_title: Άρθρα
   articles_text: Οδηγοί και μικρές λύσεις για iPhone, iPad και Mac.
   articles_empty: Τα πρώτα άρθρα έρχονται σύντομα.
@@ -102,6 +109,8 @@ en:
   notify_placeholder: name@email.com
   notify_button: Notify me
   notify_note: Unsubscribe with one click, any time.
+  notify_success: 'Almost done: open the email we just sent you and tap “Confirm”.'
+  notify_error: 'Something went wrong. Please try again shortly.'
   articles_title: Articles
   articles_text: Guides and small fixes for iPhone, iPad and Mac.
   articles_empty: The first articles are coming soon.
