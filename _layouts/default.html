@@ -18,11 +18,11 @@
     {% case p %}{% when 'iphone' %}{% assign n = 'iPhone' %}{% when 'ipad' %}{% assign n = 'iPad' %}{% when 'mac' %}{% assign n = 'Mac' %}{% when 'watch' %}{% assign n = 'Apple Watch' %}{% endcase %}
     {% if forloop.first %}{% assign pn = n %}{% elsif forloop.last %}{% assign pn = pn | append: and_word | append: n %}{% else %}{% assign pn = pn | append: ', ' | append: n %}{% endif %}
   {% endfor %}
-  {% if kind contains for_word %}{% capture auto_title %}{{ share_app.title }} — {{ kind }} | dimakis{% endcapture %}
-  {% else %}{% capture auto_title %}{{ share_app.title }} — {{ kind }}{{ for_word }}{{ pn }} | dimakis{% endcapture %}{% endif %}
+  {% assign app_name = share_app.full_name | default: share_app.title %}
+  {% capture auto_title %}{{ app_name }}{{ for_word }}{{ pn }} | dimakis{% endcapture %}
   {% assign page_title = page.head_title | default: auto_title %}
   {% assign page_desc = page.head_desc | default: app_desc | default: app_tag %}
-  {% capture share_title %}{{ share_app.title }} · dimakis{% endcapture %}
+  {% capture share_title %}{{ app_name }} · dimakis{% endcapture %}
   {% assign share_desc = app_tag %}
   {% assign share_img = share_app.og_image | default: '/assets/og/dimakis.jpg' %}
 {% else %}
@@ -33,7 +33,7 @@
   {% assign share_desc = page_desc %}
   {% assign share_img = page.og_image | default: share_app.og_image | default: '/assets/og/dimakis.jpg' %}
 {% endif %}
-<title>{{ page_title | strip }}</title>
+<title>{{ page_title | strip | escape }}</title>
 <meta name="description" content="{{ page_desc | strip | escape }}">
 {% if page.draft or page.published == false %}<meta name="robots" content="noindex">{% endif %}
 {% comment %} Γλωσσικές εκδόσεις: page.alt = η ίδια σελίδα στην άλλη γλώσσα. x-default → αγγλικά. {% endcomment %}
@@ -86,7 +86,6 @@
   </a>
   <nav class="bar-nav">
     <a href="{{ home | append: '#apps' | relative_url }}">{{ L.nav_apps }}</a>
-    <a href="{{ home | append: 'about/' | relative_url }}"{% if page.url contains '/about/' %} aria-current="page"{% endif %}>{{ L.nav_about }}</a>
     <a class="bar-contact" href="mailto:{{ site.data.site.contact_email }}">{{ L.nav_contact }}</a>
     {% if page.lang == 'el' %}{% assign other_home = '/en/' %}{% else %}{% assign other_home = '/' %}{% endif %}
     <a class="lang" href="{{ page.alt | default: other_home | relative_url }}" hreflang="{% if page.lang == 'el' %}en{% else %}el{% endif %}">{{ L.lang_other }}</a>
@@ -108,7 +107,6 @@
     </ul>
     <div class="foot-meta">
       <ul class="foot-links" aria-label="{{ L.footer_more }}">
-        <li><a href="{{ home | append: 'about/' | relative_url }}">{{ L.nav_about }}</a></li>
         {% if live_posts.size > 0 %}<li><a href="{{ home | append: 'articles/' | relative_url }}">{{ L.nav_articles }}</a></li>{% endif %}
         <li><a href="{{ home | append: 'press/' | relative_url }}">{{ L.nav_press }}</a></li>
       </ul>

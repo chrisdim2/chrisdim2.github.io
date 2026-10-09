@@ -28,7 +28,6 @@ el:
   hero_text: Ημερολόγιο, αλληλογραφία, σημειώσεις, φωτογραφίες, σάρωση εγγράφων. Φτιαγμένες
     μία μία, από έναν άνθρωπο, στην Ελλάδα.
   nav_apps: Εφαρμογές
-  nav_about: Σχετικά
   nav_press: Press Kit
   nav_articles: Άρθρα
   nav_contact: Επικοινωνία
@@ -74,7 +73,6 @@ en:
   hero_text: Calendar, mail, notes, photos, document scanning. Built one at a time,
     by one person, in Greece.
   nav_apps: Apps
-  nav_about: About
   nav_press: Press Kit
   nav_articles: Articles
   nav_contact: Contact

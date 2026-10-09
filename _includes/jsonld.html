@@ -16,7 +16,7 @@
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": {{ A.title | jsonify }},
+  "name": {{ A.full_name | default: A.title | jsonify }},
   "description": {{ include.desc | strip | jsonify }},
   "url": {{ page.url | absolute_url | jsonify }},
   "image": {{ A.icon | absolute_url | jsonify }},
@@ -31,7 +31,7 @@
     "priceCurrency": "EUR"{% if store and store != "" %},
     "url": {{ store | jsonify }}{% endif %}
   },
-  {% endif %}"author": {% if site.data.site.owner_name != "" %}{ "@type": "Person", "name": {{ site.data.site.owner_name | jsonify }}, "url": {{ '/about/' | absolute_url | jsonify }} }{% else %}{ "@type": "Organization", "name": "dimakis", "url": {{ '/' | absolute_url | jsonify }} }{% endif %}
+  {% endif %}"author": {% if site.data.site.owner_name != "" %}{ "@type": "Person", "name": {{ site.data.site.owner_name | jsonify }} }{% else %}{ "@type": "Organization", "name": "dimakis", "url": {{ '/' | absolute_url | jsonify }} }{% endif %}
 }
 </script>
 {% elsif page.layout == 'home' %}

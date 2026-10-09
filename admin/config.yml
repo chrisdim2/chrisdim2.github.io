@@ -92,7 +92,6 @@ collections:
               - { name: languages_text, label: "Γλώσσες, κείμενο (%n = πλήθος)", widget: string }
               - { name: platforms_label, label: Συσκευές (για αναγνώστες οθόνης), widget: string }
               - { name: home_title, label: "Τίτλος αρχικής (Google)", widget: string, required: false }
-              - { name: nav_about, label: "Μενού, σχετικά", widget: string, required: false }
               - { name: nav_press, label: "Μενού, press kit", widget: string, required: false }
               - { name: nav_articles, label: "Μενού, άρθρα", widget: string, required: false }
               - { name: footer_more, label: "Υποσέλιδο, περισσότερα", widget: string, required: false }
@@ -134,7 +133,6 @@ collections:
               - { name: languages_text, label: "Languages text (%n = count)", widget: string }
               - { name: platforms_label, label: Platforms (for screen readers), widget: string }
               - { name: home_title, label: "Τίτλος αρχικής (Google)", widget: string, required: false }
-              - { name: nav_about, label: "Μενού, σχετικά", widget: string, required: false }
               - { name: nav_press, label: "Μενού, press kit", widget: string, required: false }
               - { name: nav_articles, label: "Μενού, άρθρα", widget: string, required: false }
               - { name: footer_more, label: "Υποσέλιδο, περισσότερα", widget: string, required: false }

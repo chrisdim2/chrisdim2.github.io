@@ -1,0 +1,11 @@
+{% comment %}Κουμπί λήψης του zip Press Kit. include.app. Τα zip τα φτιάχνει το _tools/press_kits.rb.{% endcomment %}
+{% assign T = site.data.press[page.lang] %}
+{% assign kit = site.data.press_kits[include.app.slug] %}
+{% if kit %}
+{% assign mb = kit.bytes | divided_by: 104857.6 | round | divided_by: 10.0 %}
+{% if page.lang == 'el' %}{% assign mb = mb | append: '' | replace: '.', ',' %}{% endif %}
+<div class="kit-download">
+  <a class="btn" href="{{ kit.file | relative_url }}" download><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5v9M4 7l4 4 4-4M2.5 14.5h11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>{{ T.download_zip }}</a>
+  <span class="kit-download-meta">{{ T.zip_label }} · {{ mb }} MB</span>
+</div>
+{% endif %}

@@ -23,17 +23,18 @@ el:
   long_title: Μεγάλη περιγραφή
   copy: Αντιγραφή
   copied: Αντιγράφηκε
-  assets_title: Εικονίδιο και λογότυπα
-  icon: Εικονίδιο
-  emblem: Σύμβολο
-  lockup: Λογότυπο
-  share_image: Εικόνα κοινοποίησης
-  screens_title: Screenshots
-  screens_text: Κάθε εικόνα κατεβαίνει με ένα κλικ. Υπάρχει και με αγγλικό περιβάλλον.
   other_lang: Αγγλικά
   video_title: Βίντεο
   download: Λήψη
   all_kits: Όλα τα Press Kit
+  download_zip: Λήψη Press Kit
+  zip_label: ZIP
+  zip_contents_title: Τι περιέχει
+  zip_readme: Κείμενα σε ελληνικά και αγγλικά (σύντομη και μεγάλη περιγραφή, βασικά στοιχεία)
+  zip_icon: Εικονίδιο και λογότυπα (SVG), μαζί με το λογότυπο του dimakis
+  zip_share: Εικόνα κοινοποίησης 1200×630
+  zip_screens: '%n screenshots σε JPG, με ελληνικό και αγγλικό περιβάλλον, ανά συσκευή'
+  video_text: Το βίντεο της παρουσίασης, ξεχωριστά λόγω μεγέθους.
 en:
   title: Press Kit
   intro: Material for journalists, bloggers and creators. Feel free to use the icons, logos, copy and screenshots in articles and videos about the apps.
@@ -58,14 +59,15 @@ en:
   long_title: Long description
   copy: Copy
   copied: Copied
-  assets_title: Icon and logos
-  icon: Icon
-  emblem: Emblem
-  lockup: Logo
-  share_image: Share image
-  screens_title: Screenshots
-  screens_text: Every image downloads with one click. Also available with a Greek interface.
   other_lang: Greek
   video_title: Video
   download: Download
   all_kits: All press kits
+  download_zip: Download press kit
+  zip_label: ZIP
+  zip_contents_title: What's inside
+  zip_readme: Copy in English and Greek (short and long description, key facts)
+  zip_icon: Icon and logos (SVG), plus the dimakis logo
+  zip_share: Share image 1200×630
+  zip_screens: '%n screenshots as JPG, with English and Greek interface, by device'
+  video_text: The showcase video, separately because of its size.

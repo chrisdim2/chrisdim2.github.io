@@ -2,10 +2,12 @@
 # appstore_id: ο αριθμός της εφαρμογής στο App Store (π.χ. 6740000000)· ενεργοποιεί το Smart App Banner στο Safari.
 # price: τιμή σε ευρώ (π.χ. '4.99' ή '0')· μπαίνει στο JSON-LD μόνο όταν δεν είναι κενή.
 # ready: true = η εφαρμογή είναι έτοιμη (εμφανίζεται στο Press Kit).
+# full_name: το πλήρες όνομα (όπως στο App Store)· μπαίνει στον τίτλο της σελίδας, στο JSON-LD και στο Press Kit.
 # description_el/en: meta description της σελίδας και σύντομη περιγραφή στο Press Kit.
 list:
 - slug: chronos
   title: Chronos
+  full_name: Chronos Calendar
   greek: ΧΡΟΝΟΣ
   icon: /assets/icons/chronos.png
   theme: light
@@ -63,6 +65,7 @@ list:
   screenshots: []
 - slug: hermes
   title: Hermes
+  full_name: Hermes Mail
   greek: ΕΡΜΗΣ
   icon: /assets/icons/hermes.png
   theme: light
@@ -96,6 +99,7 @@ list:
   screenshots: []
 - slug: athena
   title: Athena
+  full_name: 'Athena Notes & Notebooks'
   greek: ΑΘΗΝΑ
   icon: /assets/icons/athena.png
   theme: light
@@ -141,6 +145,7 @@ list:
   screenshots: []
 - slug: apollo
   title: Apollo
+  full_name: Apollo Cloud Photo Gallery
   greek: ΑΠΟΛΛΩΝ
   icon: /assets/icons/apollo.png
   theme: light
@@ -202,6 +207,7 @@ list:
     - /assets/screens/apollo/iphone/el/apollo-iphone-01-timeline.webp
 - slug: argus
   title: Argus
+  full_name: 'Argus PDF & Doc Scanner'
   greek: ΑΡΓΟΣ
   icon: /assets/icons/argus.png
   theme: light
@@ -235,6 +241,7 @@ list:
   screenshots: []
 - slug: iris
   title: Iris
+  full_name: Iris EXIFeditor
   greek: ΙΡΙΔΑ
   icon: /assets/icons/iris.png
   theme: light

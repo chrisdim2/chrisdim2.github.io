@@ -1,0 +1,13 @@
+# Παράγεται από το _tools/press_kits.rb. Μην το αλλάζεις με το χέρι.
+chronos:
+  file: "/assets/press/chronos-press-kit.zip"
+  bytes: 13120359
+  screenshots: 65
+apollo:
+  file: "/assets/press/apollo-press-kit.zip"
+  bytes: 16492477
+  screenshots: 64
+iris:
+  file: "/assets/press/iris-press-kit.zip"
+  bytes: 3523562
+  screenshots: 12

@@ -31,7 +31,6 @@ layout: default
       {% include langs-badge.html %}
       <a class="btn btn-quiet" href="{{ base | relative_url }}#apps">{{ L.back }}</a>
     </div>
-    {% unless store and store != "" %}{% include notify.html app=app compact=true %}{% endunless %}
   </header>
 
   {% assign sc = site.data.showcase[app.slug] %}
@@ -223,6 +222,7 @@ layout: default
     </ul>
   </section>
   {% endif %}
+  {% unless store and store != "" %}{% include notify.html app=app compact=true %}{% endunless %}
 
   <section class="block">
     <h2>{{ L.languages_title }}</h2>

@@ -20,26 +20,13 @@ layout: default
       <li>
         <a href="{{ base | append: 'press/' | append: app.slug | append: '/' | relative_url }}">
           <img src="{{ app.icon | relative_url }}" alt="" width="64" height="64" loading="lazy">
-          <span class="kit-card-t"><strong>{{ app.title }}</strong><span>{% if page.lang == 'el' %}{{ app.kind_el }}{% else %}{{ app.kind_en }}{% endif %}</span></span>
+          <span class="kit-card-t"><strong>{{ app.full_name | default: app.title }}</strong><span>{% if page.lang == 'el' %}{{ app.kind_el }}{% else %}{{ app.kind_en }}{% endif %}</span></span>
           <span class="kit-card-go" aria-hidden="true">&rarr;</span>
         </a>
+        {% assign kit = site.data.press_kits[app.slug] %}
+        {% if kit %}<span class="kit-card-dl"><a href="{{ kit.file | relative_url }}" download>{{ T.download_zip }}</a> · ZIP</span>{% endif %}
       </li>
       {% endfor %}
-    </ul>
-  </section>
-
-  <section class="doc-block">
-    <h2>{{ T.brand_title }}</h2>
-    <p>{{ T.brand_text }}</p>
-    <ul class="kit-assets">
-      <li class="kit-asset kit-asset-light">
-        <span class="kit-asset-img"><img src="{{ '/assets/dimakis-logo.svg' | relative_url }}" alt="dimakis" loading="lazy"></span>
-        <span class="kit-asset-meta">{{ T.logo_on_light }} · SVG <a href="{{ '/assets/dimakis-logo.svg' | relative_url }}" download>{{ T.download }}</a></span>
-      </li>
-      <li class="kit-asset">
-        <span class="kit-asset-img"><img src="{{ '/assets/dimakis-logo-dark.svg' | relative_url }}" alt="dimakis" loading="lazy"></span>
-        <span class="kit-asset-meta">{{ T.logo_on_dark }} · SVG <a href="{{ '/assets/dimakis-logo-dark.svg' | relative_url }}" download>{{ T.download }}</a></span>
-      </li>
     </ul>
   </section>
 

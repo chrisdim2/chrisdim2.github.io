@@ -28,8 +28,6 @@ layout: default
   </div>
 </section>
 
-{% include notify.html %}
-
 {% for app in apps %}
 {% assign i = forloop.index0 | modulo: 2 %}
 <section {% if forloop.first %}id="apps" {% endif %}class="showcase {% if i == 1 %}showcase-alt{% endif %}">
