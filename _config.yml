@@ -5,3 +5,6 @@ include:
   - .well-known
 exclude:
   - README.md
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: article }

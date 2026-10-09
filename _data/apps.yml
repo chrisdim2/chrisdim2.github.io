@@ -1,3 +1,8 @@
+# appstore_url: σύνδεσμος App Store· αν μείνει κενός αλλά υπάρχει appstore_id, φτιάχνεται αυτόματα.
+# appstore_id: ο αριθμός της εφαρμογής στο App Store (π.χ. 6740000000)· ενεργοποιεί το Smart App Banner στο Safari.
+# price: τιμή σε ευρώ (π.χ. '4.99' ή '0')· μπαίνει στο JSON-LD μόνο όταν δεν είναι κενή.
+# ready: true = η εφαρμογή είναι έτοιμη (εμφανίζεται στο Press Kit).
+# description_el/en: meta description της σελίδας και σύντομη περιγραφή στο Press Kit.
 list:
 - slug: chronos
   title: Chronos
@@ -15,14 +20,32 @@ list:
   has_legal: true
   support_email: chronos@dimakis.app
   appstore_url: ''
+  appstore_id: ''
+  price: ''
+  ready: true
+  schema_category: LifestyleApplication
+  description_el: 'Ημερολόγιο για iPhone, iPad, Mac και Apple Watch με αντίστροφη μέτρηση, υπενθυμίσεις φαρμάκων, συντήρηση αυτοκινήτου και εφημερεύοντα φαρμακεία.'
+  description_en: 'A calendar for iPhone, iPad, Mac and Apple Watch with countdowns, medication reminders, car maintenance tracking and nearby on-duty pharmacies.'
+  press_long_el: |
+    Το Chronos είναι ημερολόγιο για iPhone, iPad, Mac και Apple Watch που δεν σταματά στα ραντεβού. Δείχνει τον μήνα, την εβδομάδα, την ημέρα, το έτος ή μια λίστα, με τον καιρό κάθε ημέρας δίπλα στα γεγονότα, και καταλαβαίνει ό,τι γράφεις όπως θα το έλεγες.
+
+    Μαζεύει σε ένα μέρος όσα συνήθως σκορπίζονται σε σημειώσεις και υπενθυμίσεις: αντίστροφη μέτρηση για γενέθλια και ταξίδια, που μπορείς να τη στείλεις σε φίλο, φάρμακα με έλεγχο αλληλεπιδράσεων, service, ΚΤΕΟ και ασφάλεια του αυτοκινήτου, δάνεια, συνδρομές και συντήρηση του σπιτιού.
+
+    Για την Ελλάδα έχει κάτι που δεν έχει κανένα ξένο ημερολόγιο: γιορτές και εφημερεύοντα φαρμακεία και νοσοκομεία κοντά σου, σε πραγματικό χρόνο. Τα δεδομένα σου μένουν στη συσκευή και στο iCloud σου.
+  press_long_en: |
+    Chronos is a calendar for iPhone, iPad, Mac and Apple Watch that goes beyond appointments. It shows your month, week, day, year or a simple list, with each day's weather right next to your events, and understands what you type the way you'd say it.
+
+    It brings together everything that usually ends up scattered across notes and reminders: countdowns for birthdays and trips that you can send to a friend, medication with interaction checks, car service, inspections and insurance, loans, subscriptions and home maintenance.
+
+    In Greece it does something no other calendar does: name days, plus on-duty pharmacies and hospitals near you, in real time. Your data stays on your devices and in your own iCloud.
   kind_el: Ημερολόγιο
   kind_en: Calendar
   tagline_el: Ο χρόνος υπό τον έλεγχό σου.
   tagline_en: Your time, under control.
   origin_el: Από τον Χρόνο, την προσωποποίηση του χρόνου στην ελληνική μυθολογία.
   origin_en: Named after Chronos, the personification of time in Greek mythology.
-  status_el: Σε ανάπτυξη
-  status_en: In development
+  status_el: Έρχεται τον Δεκέμβριο
+  status_en: Coming in December
   features_el:
     - Έξι όψεις ημερολογίου — Λίστα, Ημέρα, Εβδομάδα, Μήνας, Έτος, και συνδυαστική αρχική
     - Αντίστροφη μέτρηση για γενέθλια, επετείους και ό,τι περιμένεις, με δυνατότητα να τη στείλεις σε φίλο
@@ -54,6 +77,12 @@ list:
   has_legal: false
   support_email: hermes@dimakis.app
   appstore_url: ''
+  appstore_id: ''
+  price: ''
+  ready: false
+  schema_category: CommunicationApplication
+  description_el: 'Hermes: εφαρμογή ηλεκτρονικού ταχυδρομείου για iPhone, iPad, Mac και Apple Watch, σε ανάπτυξη, από το dimakis.'
+  description_en: 'Hermes: a mail app for iPhone, iPad, Mac and Apple Watch, in development, by dimakis.'
   kind_el: Ηλεκτρονικό ταχυδρομείο
   kind_en: Mail
   tagline_el: Επικοινωνία με ταχύτητα θεού.
@@ -81,6 +110,12 @@ list:
   has_legal: false
   support_email: athena@dimakis.app
   appstore_url: ''
+  appstore_id: ''
+  price: ''
+  ready: false
+  schema_category: BusinessApplication
+  description_el: 'Σημειώσεις σε απλά αρχεία Markdown στο δικό σου cloud, με πίνακες, ηχητικές σημειώσεις, σάρωση εγγράφων και εισαγωγή από OneNote και Apple Notes.'
+  description_en: 'Notes as plain Markdown files in your own cloud, with tables, voice notes, document scanning and import from OneNote and Apple Notes.'
   kind_el: Σημειώσεις και τετράδια
   kind_en: Notes & notebooks
   tagline_el: Η σοφία σου, οργανωμένη.
@@ -120,14 +155,32 @@ list:
   has_legal: true
   support_email: apollo@dimakis.app
   appstore_url: ''
+  appstore_id: ''
+  price: ''
+  ready: true
+  schema_category: PhotographyApplication
+  description_el: 'Οικογενειακό άλμπουμ που δουλεύει πάνω στο δικό σου cloud: άλμπουμ ανά έτος, χάρτης, ταξίδια και έξυπνη αναζήτηση, μόνο μέσα στη συσκευή.'
+  description_en: 'A family photo album that works right on your own cloud: albums by year, a map, automatic trips and smart search, all on your device.'
+  press_long_el: |
+    Το Apollo είναι οικογενειακό άλμπουμ φωτογραφιών για iPhone, iPad και Mac που δεν αντιγράφει τίποτα. Δουλεύει απευθείας πάνω στις φωτογραφίες που έχεις ήδη στο pCloud, στο Dropbox, στο OneDrive και σε άλλες υπηρεσίες, και τις οργανώνει σε άλμπουμ ανά έτος και σε χάρτη, με τις πραγματικές ημερομηνίες και τοποθεσίες λήψης.
+
+    Η έξυπνη ανάλυση γίνεται μόνο μέσα στη συσκευή: γράφεις «θάλασσα» ή «σκύλος» και βρίσκει τις φωτογραφίες, διαλέγει τα καλύτερα εξώφυλλα και εντοπίζει τις διπλές. Τα ταξίδια βγαίνουν μόνα τους από τις φωτογραφίες σου, μαζί με κάρτες επιβίβασης, ακτοπλοϊκά εισιτήρια και στατιστικά χιλιομέτρων και χωρών.
+
+    Με το Family mode, όλη η οικογένεια βλέπει τα ίδια εξώφυλλα, φακέλους και ταξίδια, πάνω στο ίδιο cloud.
+  press_long_en: |
+    Apollo is a family photo album for iPhone, iPad and Mac that doesn't copy anything. It works directly on the photos you already keep in pCloud, Dropbox, OneDrive and other services, and organises them into albums by year and on a map, using the real capture dates and locations.
+
+    Smart analysis runs on your device only: type “sea” or “dog” to find photos, let it pick the best covers and spot duplicates. Trips are detected automatically from your photos, alongside boarding passes, ferry tickets and distance and country stats.
+
+    With Family mode, everyone in the family sees the same covers, folders and trips, on the same cloud.
   kind_el: Οικογενειακό άλμπουμ φωτογραφιών
   kind_en: Family photo album
   tagline_el: Φως στις αναμνήσεις.
   tagline_en: Light on your memories.
   origin_el: Από τον Απόλλωνα, τον θεό του φωτός και της ομορφιάς.
   origin_en: Named after Apollo, god of light and beauty.
-  status_el: Σε ανάπτυξη
-  status_en: In development
+  status_el: Έρχεται σύντομα
+  status_en: Coming soon
   features_el:
     - Δεν αντιγράφει τις φωτογραφίες σου — δουλεύει απευθείας πάνω στο δικό σου cloud (pCloud, Dropbox, OneDrive κ.ά.)
     - Άλμπουμ ανά έτος, χάρτης τοποθεσιών, αναζήτηση με πραγματικές ημερομηνίες και GPS από τα EXIF
@@ -163,6 +216,12 @@ list:
   has_legal: false
   support_email: argus@dimakis.app
   appstore_url: ''
+  appstore_id: ''
+  price: ''
+  ready: false
+  schema_category: UtilitiesApplication
+  description_el: 'Argus: σαρωτής εγγράφων για iPhone, iPad και Mac, σε ανάπτυξη, από το dimakis.'
+  description_en: 'Argus: a document scanner for iPhone, iPad and Mac, in development, by dimakis.'
   kind_el: Σαρωτής εγγράφων
   kind_en: Document scanner
   tagline_el: Καταγράφει τα πάντα.
@@ -190,14 +249,28 @@ list:
   has_legal: true
   support_email: iris@dimakis.app
   appstore_url: ''
+  appstore_id: ''
+  price: ''
+  ready: true
+  schema_category: PhotographyApplication
+  description_el: 'Εφαρμογή για Mac που διορθώνει ημερομηνία και τοποθεσία, γράφει τίτλους και λέξεις-κλειδιά, μετονομάζει αρχεία και βρίσκει διπλότυπες φωτογραφίες.'
+  description_en: 'A Mac app that fixes dates and locations, writes titles and keywords, renames files and finds duplicate photos, all locally on your Mac.'
+  press_long_el: |
+    Το Iris είναι εφαρμογή για Mac που ετοιμάζει τις φωτογραφίες σου πριν μπουν στο αρχείο σου. Διορθώνει ημερομηνία λήψης και τοποθεσία, γράφει τίτλο, περιγραφή και λέξεις-κλειδιά, μετονομάζει μαζικά τα αρχεία και εντοπίζει τα διπλότυπα.
+
+    Όλη η επεξεργασία γίνεται τοπικά, μέσα στο sandbox της Apple, χωρίς να ανεβαίνει τίποτα πουθενά. Είναι ο φυσικός σύντροφος του Apollo: ό,τι τακτοποιεί το Iris, το Apollo το δείχνει σωστά σε άλμπουμ, χάρτη και ταξίδια.
+  press_long_en: |
+    Iris is a Mac app that gets your photos ready before they join your library. It fixes capture dates and locations, writes titles, descriptions and keywords, bulk-renames files and finds duplicates.
+
+    Everything happens locally, inside Apple's sandbox, with nothing uploaded anywhere. It's the natural companion to Apollo: whatever Iris tidies up, Apollo shows correctly in albums, on the map and in trips.
   kind_el: Βοηθός φωτογραφιών για Mac
   kind_en: Photo companion for Mac
   tagline_el: Ετοιμάζει τις φωτογραφίες σου πριν μπουν στο Apollo.
   tagline_en: Gets your photos ready before they join Apollo.
   origin_el: Από την Ίριδα, τη θεά του ουράνιου τόξου που ένωνε ουρανό και γη· έτσι κι αυτή ενώνει τις φωτογραφίες σου με το Apollo.
   origin_en: Named after Iris, goddess of the rainbow who connected sky and earth — connecting your photos to Apollo, in much the same way.
-  status_el: Σε ανάπτυξη
-  status_en: In development
+  status_el: Έρχεται σύντομα
+  status_en: Coming soon
   features_el:
     - Διορθώνει ημερομηνία λήψης και τοποθεσία
     - Γράφει τίτλο, περιγραφή και λέξεις-κλειδιά

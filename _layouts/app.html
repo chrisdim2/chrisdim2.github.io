@@ -22,14 +22,16 @@ layout: default
     {% endif %}
     <p class="lede">{% if page.lang == 'el' %}{{ app.tagline_el }}{% else %}{{ app.tagline_en }}{% endif %}</p>
     <div class="page-links">
-      {% if app.appstore_url and app.appstore_url != "" %}
-      <a class="btn" href="{{ app.appstore_url }}">{{ L.download }}</a>
+      {% assign store = app.appstore_url %}{% if store == "" and app.appstore_id and app.appstore_id != "" %}{% capture store %}https://apps.apple.com/app/id{{ app.appstore_id }}{% endcapture %}{% endif %}
+      {% if store and store != "" %}
+      <a class="btn btn-store" href="{{ store }}">{% include apple.svg %}{{ L.download }}</a>
       {% else %}
       <span class="app-status">{% if page.lang == 'el' %}{{ app.status_el }}{% else %}{{ app.status_en }}{% endif %}</span>
       {% endif %}
       {% include langs-badge.html %}
       <a class="btn btn-quiet" href="{{ base | relative_url }}#apps">{{ L.back }}</a>
     </div>
+    {% unless store and store != "" %}{% include notify.html app=app compact=true %}{% endunless %}
   </header>
 
   {% assign sc = site.data.showcase[app.slug] %}
@@ -240,6 +242,9 @@ layout: default
     <p class="big-link"><a href="mailto:{{ app.support_email }}">{{ app.support_email }}</a></p>
     <p>{{ L.support_text }}</p>
   </section>
+  {% if app.ready %}
+  <p class="press-link"><a href="{{ base | append: 'press/' | append: app.slug | append: '/' | relative_url }}">{{ L.nav_press }}: {{ app.title }} &rarr;</a></p>
+  {% endif %}
 
   <section class="block">
     <h2>{{ L.legal_title }}</h2>

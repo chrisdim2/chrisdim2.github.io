@@ -28,6 +28,8 @@ layout: default
   </div>
 </section>
 
+{% include notify.html %}
+
 {% for app in apps %}
 {% assign i = forloop.index0 | modulo: 2 %}
 <section {% if forloop.first %}id="apps" {% endif %}class="showcase {% if i == 1 %}showcase-alt{% endif %}">
@@ -53,8 +55,9 @@ layout: default
       {% endif %}
       <p class="showcase-origin">{% if page.lang == 'el' %}{{ app.origin_el }}{% else %}{{ app.origin_en }}{% endif %}</p>
       <div class="page-links">
-        {% if app.appstore_url and app.appstore_url != "" %}
-        <a class="btn" href="{{ app.appstore_url }}">{{ L.download }}</a>
+        {% assign store = app.appstore_url %}{% if store == "" and app.appstore_id and app.appstore_id != "" %}{% capture store %}https://apps.apple.com/app/id{{ app.appstore_id }}{% endcapture %}{% endif %}
+        {% if store and store != "" %}
+        <a class="btn btn-store" href="{{ store }}">{% include apple.svg %}{{ L.download }}</a>
         {% else %}
         <span class="app-status">{% if page.lang == 'el' %}{{ app.status_el }}{% else %}{{ app.status_en }}{% endif %}</span>
         {% endif %}

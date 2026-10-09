@@ -1,6 +1,24 @@
 accent: '#E14B41'
 contact_email: support@dimakis.app
+# Email για δημοσιογράφους στο Press Kit (αν μείνει κενό, μπαίνει το contact_email).
+press_email: press@dimakis.app
+# Το ονοματεπώνυμό σου (όπως θα φαίνεται στο App Store). Μπαίνει ως δημιουργός στο JSON-LD όταν δεν είναι κενό.
+owner_name: ''
+# Φόρμα «Ειδοποίησέ με» (Buttondown). Αντικατέστησε το USERNAME με το όνομα του λογαριασμού σου.
+# Όσο περιέχει «USERNAME», η φόρμα φαίνεται μόνο στην τοπική προεπισκόπηση, όχι στο live site.
+newsletter_action: https://buttondown.com/api/emails/embed-subscribe/USERNAME
+# Λογαριασμοί social media: γράψε τον πλήρη σύνδεσμο. Όσοι μένουν κενοί δεν εμφανίζονται.
+social:
+  - { name: Instagram, url: '' }
+  - { name: Threads, url: '' }
+  - { name: X, url: '' }
+  - { name: Bluesky, url: '' }
+  - { name: Mastodon, url: '' }
+  - { name: YouTube, url: '' }
+  - { name: TikTok, url: '' }
+  - { name: LinkedIn, url: '' }
 el:
+  home_title: dimakis — Εφαρμογές για iPhone, iPad, Mac και Apple Watch
   eyebrow: iPhone και Mac
   hero_title: 'Έξι εφαρμογές,
 
@@ -10,8 +28,13 @@ el:
   hero_text: Ημερολόγιο, αλληλογραφία, σημειώσεις, φωτογραφίες, σάρωση εγγράφων. Φτιαγμένες
     μία μία, από έναν άνθρωπο, στην Ελλάδα.
   nav_apps: Εφαρμογές
+  nav_about: Σχετικά
+  nav_press: Press Kit
+  nav_articles: Άρθρα
   nav_contact: Επικοινωνία
   footer_note: Σχεδιασμός και ανάπτυξη από την Ελλάδα.
+  footer_more: Περισσότερα
+  footer_social: Ακολούθησέ με
   support_title: Υποστήριξη
   support_text: Γράψτε μου απευθείας, απαντώ σε κάθε μήνυμα. Βοηθά να αναφέρετε τη
     συσκευή σας, την έκδοση του λειτουργικού και την έκδοση της εφαρμογής. Απαντώ
@@ -28,7 +51,20 @@ el:
   languages_badge: '%n γλώσσες'
   languages_text: Διαθέσιμη σε %n γλώσσες.
   platforms_label: Διαθέσιμη για
+  notify_title: Ειδοποίησέ με όταν κυκλοφορήσει
+  notify_title_app: Ειδοποίησέ με όταν κυκλοφορήσει το %app
+  notify_text: Ένα email τη μέρα που θα βγει στο App Store. Τίποτε άλλο.
+  notify_label: Το email σου
+  notify_placeholder: όνομα@email.gr
+  notify_button: Ειδοποίησέ με
+  notify_note: Μπορείς να διαγραφείς με ένα κλικ, όποτε θέλεις.
+  articles_title: Άρθρα
+  articles_text: Οδηγοί και μικρές λύσεις για iPhone, iPad και Mac.
+  articles_empty: Τα πρώτα άρθρα έρχονται σύντομα.
+  article_draft: Πρόχειρο, δεν δημοσιεύεται ακόμα
+  read_more: Διάβασε
 en:
+  home_title: dimakis — Apps for iPhone, iPad, Mac and Apple Watch
   eyebrow: iPhone and Mac
   hero_title: 'Six apps,
 
@@ -38,8 +74,13 @@ en:
   hero_text: Calendar, mail, notes, photos, document scanning. Built one at a time,
     by one person, in Greece.
   nav_apps: Apps
+  nav_about: About
+  nav_press: Press Kit
+  nav_articles: Articles
   nav_contact: Contact
   footer_note: Designed and developed in Greece.
+  footer_more: More
+  footer_social: Follow
   support_title: Support
   support_text: Write to me directly, I answer every message. Please include your
     device, your OS version and the app version. Replies usually within two working
@@ -56,3 +97,15 @@ en:
   languages_badge: '%n languages'
   languages_text: Available in %n languages.
   platforms_label: Available on
+  notify_title: Tell me when it's out
+  notify_title_app: Tell me when %app is out
+  notify_text: One email on the day it lands on the App Store. Nothing else.
+  notify_label: Your email
+  notify_placeholder: name@email.com
+  notify_button: Notify me
+  notify_note: Unsubscribe with one click, any time.
+  articles_title: Articles
+  articles_text: Guides and small fixes for iPhone, iPad and Mac.
+  articles_empty: The first articles are coming soon.
+  article_draft: Draft, not published yet
+  read_more: Read

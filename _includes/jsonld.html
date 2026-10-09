@@ -1,0 +1,63 @@
+{% comment %}
+Δομημένα δεδομένα (schema.org) για τις μηχανές αναζήτησης.
+Σελίδα εφαρμογής → SoftwareApplication (τιμή και App Store μόνο όταν υπάρχουν στο apps.yml).
+Αρχική → WebSite. Άρθρο → Article.
+{% endcomment %}
+{% assign A = include.app %}
+{% if page.layout == 'app' and A != "" %}
+{% assign os = "" %}
+{% for p in A.platforms %}
+  {% case p %}{% when 'iphone' %}{% assign n = 'iOS' %}{% when 'ipad' %}{% assign n = 'iPadOS' %}{% when 'mac' %}{% assign n = 'macOS' %}{% when 'watch' %}{% assign n = 'watchOS' %}{% endcase %}
+  {% if forloop.first %}{% assign os = n %}{% else %}{% assign os = os | append: ', ' | append: n %}{% endif %}
+{% endfor %}
+{% assign store = A.appstore_url %}
+{% if store == "" and A.appstore_id and A.appstore_id != "" %}{% capture store %}https://apps.apple.com/app/id{{ A.appstore_id }}{% endcapture %}{% endif %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": {{ A.title | jsonify }},
+  "description": {{ include.desc | strip | jsonify }},
+  "url": {{ page.url | absolute_url | jsonify }},
+  "image": {{ A.icon | absolute_url | jsonify }},
+  "operatingSystem": {{ os | jsonify }},
+  "applicationCategory": {{ A.schema_category | default: 'UtilitiesApplication' | jsonify }},
+  "inLanguage": {{ site.data.languages | map: "code" | jsonify }},
+  {% if store and store != "" %}"installUrl": {{ store | jsonify }},
+  "downloadUrl": {{ store | jsonify }},
+  {% endif %}{% if A.price and A.price != "" %}"offers": {
+    "@type": "Offer",
+    "price": {{ A.price | append: "" | jsonify }},
+    "priceCurrency": "EUR"{% if store and store != "" %},
+    "url": {{ store | jsonify }}{% endif %}
+  },
+  {% endif %}"author": {% if site.data.site.owner_name != "" %}{ "@type": "Person", "name": {{ site.data.site.owner_name | jsonify }}, "url": {{ '/about/' | absolute_url | jsonify }} }{% else %}{ "@type": "Organization", "name": "dimakis", "url": {{ '/' | absolute_url | jsonify }} }{% endif %}
+}
+</script>
+{% elsif page.layout == 'home' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "dimakis",
+  "url": {{ '/' | absolute_url | jsonify }},
+  "inLanguage": ["el", "en"]
+}
+</script>
+{% elsif page.layout == 'article' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ include.desc | strip | jsonify }},
+  "inLanguage": {{ page.lang | jsonify }},
+  "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+  {% if page.last_modified_at %}"dateModified": {{ page.last_modified_at | date_to_xmlschema | jsonify }},
+  {% endif %}"mainEntityOfPage": {{ page.url | absolute_url | jsonify }},
+  "image": {{ page.og_image | default: '/assets/og/dimakis.jpg' | absolute_url | jsonify }},
+  "author": {% if site.data.site.owner_name != "" %}{ "@type": "Person", "name": {{ site.data.site.owner_name | jsonify }} }{% else %}{ "@type": "Organization", "name": "dimakis" }{% endif %},
+  "publisher": { "@type": "Organization", "name": "dimakis", "url": {{ '/' | absolute_url | jsonify }} }
+}
+</script>
+{% endif %}

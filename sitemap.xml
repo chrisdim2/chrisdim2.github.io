@@ -1,0 +1,37 @@
+---
+layout: null
+sitemap: false
+---
+{%- comment -%}
+Χάρτης του site για τις μηχανές αναζήτησης, με τις γλωσσικές εκδόσεις κάθε σελίδας (hreflang).
+Δεν χρησιμοποιεί το jekyll-sitemap γιατί εκείνο δεν γράφει hreflang. Μια σελίδα βγαίνει από εδώ με «sitemap: false».
+{%- endcomment -%}
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- assign posts_el = site.posts | where: "lang", "el" -%}
+{%- assign posts_en = site.posts | where: "lang", "en" -%}
+{%- assign docs = site.pages | concat: site.posts -%}
+{%- for p in docs -%}
+{%- if p.sitemap == false or p.lang == nil -%}{%- continue -%}{%- endif -%}
+{%- if p.layout == 'articles' -%}{%- if p.lang == 'el' and posts_el.size == 0 -%}{%- continue -%}{%- endif -%}{%- if p.lang == 'en' and posts_en.size == 0 -%}{%- continue -%}{%- endif -%}{%- endif -%}
+{%- if p.lang == 'el' -%}{%- assign u_el = p.url -%}{%- assign u_en = p.alt -%}{%- else -%}{%- assign u_en = p.url -%}{%- assign u_el = p.alt -%}{%- endif %}
+  <url>
+    <loc>{{ p.url | absolute_url | xml_escape }}</loc>
+    {%- if p.date %}
+    <lastmod>{{ p.last_modified_at | default: p.date | date_to_xmlschema }}</lastmod>
+    {%- endif %}
+    {%- if p.alt %}
+    <xhtml:link rel="alternate" hreflang="el" href="{{ u_el | absolute_url | xml_escape }}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ u_en | absolute_url | xml_escape }}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ u_en | absolute_url | xml_escape }}"/>
+    {%- endif %}
+  </url>
+{%- endfor -%}
+{%- for f in site.static_files -%}
+{%- if f.extname == '.html' and f.path contains '/privacy-' or f.extname == '.html' and f.path contains '/terms-' %}
+  <url>
+    <loc>{{ f.path | absolute_url | xml_escape }}</loc>
+  </url>
+{%- endif -%}
+{%- endfor %}
+</urlset>

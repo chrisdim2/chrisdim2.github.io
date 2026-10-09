@@ -2,23 +2,50 @@
 {% assign L = site.data.site[page.lang] %}
 {% assign apps = site.data.apps.list | sort: "order" %}
 {% assign light = false %}
-{% for a in apps %}{% if a.slug == page.app and a.theme == 'light' %}{% assign light = true %}{% endif %}{% endfor %}
+{% for a in apps %}{% if a.slug == page.app and a.theme == 'light' and page.layout == 'app' %}{% assign light = true %}{% endif %}{% endfor %}
 <html lang="{{ page.lang }}"{% if light %} class="light"{% endif %}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ page.head_title | default: "dimakis" }}</title>
-<meta name="description" content="{{ page.head_desc | default: L.hero_text }}">
 {% assign share_app = "" %}
 {% for a in apps %}{% if a.slug == page.app %}{% assign share_app = a %}{% endif %}{% endfor %}
-{% if share_app != "" %}
-{% capture share_title %}{{ share_app.title }} · dimakis{% endcapture %}
-{% if page.lang == 'el' %}{% assign share_desc = share_app.tagline_el %}{% else %}{% assign share_desc = share_app.tagline_en %}{% endif %}
-{% assign share_img = share_app.og_image | default: '/assets/og/dimakis.jpg' %}
+{% comment %} Τίτλος και περιγραφή: σελίδα εφαρμογής → από το apps.yml, αρχική → site.yml, άλλες → page.title / page.description. {% endcomment %}
+{% if share_app != "" and page.layout == 'app' %}
+  {% if page.lang == 'el' %}{% assign kind = share_app.kind_el %}{% assign and_word = ' και ' %}{% assign for_word = ' για ' %}{% assign app_desc = share_app.description_el %}{% assign app_tag = share_app.tagline_el %}
+  {% else %}{% assign kind = share_app.kind_en %}{% assign and_word = ' and ' %}{% assign for_word = ' for ' %}{% assign app_desc = share_app.description_en %}{% assign app_tag = share_app.tagline_en %}{% endif %}
+  {% assign pn = "" %}
+  {% for p in share_app.platforms %}
+    {% case p %}{% when 'iphone' %}{% assign n = 'iPhone' %}{% when 'ipad' %}{% assign n = 'iPad' %}{% when 'mac' %}{% assign n = 'Mac' %}{% when 'watch' %}{% assign n = 'Apple Watch' %}{% endcase %}
+    {% if forloop.first %}{% assign pn = n %}{% elsif forloop.last %}{% assign pn = pn | append: and_word | append: n %}{% else %}{% assign pn = pn | append: ', ' | append: n %}{% endif %}
+  {% endfor %}
+  {% if kind contains for_word %}{% capture auto_title %}{{ share_app.title }} — {{ kind }} | dimakis{% endcapture %}
+  {% else %}{% capture auto_title %}{{ share_app.title }} — {{ kind }}{{ for_word }}{{ pn }} | dimakis{% endcapture %}{% endif %}
+  {% assign page_title = page.head_title | default: auto_title %}
+  {% assign page_desc = page.head_desc | default: app_desc | default: app_tag %}
+  {% capture share_title %}{{ share_app.title }} · dimakis{% endcapture %}
+  {% assign share_desc = app_tag %}
+  {% assign share_img = share_app.og_image | default: '/assets/og/dimakis.jpg' %}
 {% else %}
-{% assign share_title = page.head_title | default: "dimakis" %}
-{% assign share_desc = page.head_desc | default: L.hero_text %}
-{% assign share_img = '/assets/og/dimakis.jpg' %}
+  {% if page.layout == 'home' %}{% assign auto_title = L.home_title %}{% elsif page.title %}{% capture auto_title %}{{ page.title }} | dimakis{% endcapture %}{% else %}{% assign auto_title = 'dimakis' %}{% endif %}
+  {% assign page_title = page.head_title | default: auto_title %}
+  {% assign page_desc = page.head_desc | default: page.description | default: L.hero_text %}
+  {% assign share_title = page.title | default: page_title %}
+  {% assign share_desc = page_desc %}
+  {% assign share_img = page.og_image | default: share_app.og_image | default: '/assets/og/dimakis.jpg' %}
+{% endif %}
+<title>{{ page_title | strip }}</title>
+<meta name="description" content="{{ page_desc | strip | escape }}">
+{% if page.draft or page.published == false %}<meta name="robots" content="noindex">{% endif %}
+{% comment %} Γλωσσικές εκδόσεις: page.alt = η ίδια σελίδα στην άλλη γλώσσα. x-default → αγγλικά. {% endcomment %}
+{% if page.lang == 'el' %}{% assign url_el = page.url %}{% assign url_en = page.alt %}{% else %}{% assign url_en = page.url %}{% assign url_el = page.alt %}{% endif %}
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+{% if page.alt %}
+<link rel="alternate" hreflang="el" href="{{ url_el | absolute_url }}">
+<link rel="alternate" hreflang="en" href="{{ url_en | absolute_url }}">
+<link rel="alternate" hreflang="x-default" href="{{ url_en | absolute_url }}">
+{% endif %}
+{% if share_app != "" and page.layout == 'app' and share_app.appstore_id and share_app.appstore_id != "" %}
+<meta name="apple-itunes-app" content="app-id={{ share_app.appstore_id }}">
 {% endif %}
 {% if light %}
 <meta name="theme-color" content="{{ share_app.tint | default: '#F6F7F9' }}">
@@ -27,18 +54,18 @@
 <meta name="theme-color" content="#101820">
 <meta name="color-scheme" content="dark">
 {% endif %}
-<meta property="og:type" content="website">
+<meta property="og:type" content="{% if page.layout == 'article' %}article{% else %}website{% endif %}">
 <meta property="og:site_name" content="dimakis">
 <meta property="og:title" content="{{ share_title | strip | escape }}">
-<meta property="og:description" content="{{ share_desc | escape }}">
+<meta property="og:description" content="{{ share_desc | strip | escape }}">
 <meta property="og:url" content="{{ page.url | absolute_url }}">
 <meta property="og:image" content="{{ share_img | absolute_url }}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="{% if page.lang == 'el' %}el_GR{% else %}en_US{% endif %}">
+{% if page.alt %}<meta property="og:locale:alternate" content="{% if page.lang == 'el' %}en_US{% else %}el_GR{% endif %}">{% endif %}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="{{ share_img | absolute_url }}">
-<link rel="alternate" hreflang="{% if page.lang == 'el' %}en{% else %}el{% endif %}" href="{{ page.alt | absolute_url }}">
 <link rel="icon" href="{{ '/assets/favicon-32.png' | relative_url }}" sizes="32x32">
 <link rel="icon" href="{{ '/assets/favicon-16.png' | relative_url }}" sizes="16x16">
 <link rel="apple-touch-icon" href="{{ '/assets/favicon-180.png' | relative_url }}">
@@ -48,17 +75,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 <style>:root{ --berry: {{ site.data.site.accent }}; }{% if light %} html.light{ --bg: {{ share_app.tint | default: '#F6F7F9' }}; --app: {{ share_app.accent | default: '#16212B' }}; }{% endif %}</style>
+{% include jsonld.html app=share_app desc=page_desc %}
 <script data-goatcounter="https://dimakis.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
+{% if page.lang == 'el' %}{% assign home = '/' %}{% else %}{% assign home = '/en/' %}{% endif %}
 <header class="bar">
-  <a class="brand" href="{% if page.lang == 'el' %}{{ '/' | relative_url }}{% else %}{{ '/en/' | relative_url }}{% endif %}" aria-label="dimakis">
+  <a class="brand" href="{{ home | relative_url }}" aria-label="dimakis">
     <img src="{% if light %}{{ '/assets/dimakis-logo.svg' | relative_url }}{% else %}{{ '/assets/dimakis-logo-dark.svg' | relative_url }}{% endif %}" alt="dimakis">
   </a>
   <nav class="bar-nav">
-    <a href="{% if page.lang == 'el' %}{{ '/#apps' | relative_url }}{% else %}{{ '/en/#apps' | relative_url }}{% endif %}">{{ L.nav_apps }}</a>
-    <a href="mailto:{{ site.data.site.contact_email }}">{{ L.nav_contact }}</a>
-    <a class="lang" href="{{ page.alt | relative_url }}">{{ L.lang_other }}</a>
+    <a href="{{ home | append: '#apps' | relative_url }}">{{ L.nav_apps }}</a>
+    <a href="{{ home | append: 'about/' | relative_url }}"{% if page.url contains '/about/' %} aria-current="page"{% endif %}>{{ L.nav_about }}</a>
+    <a class="bar-contact" href="mailto:{{ site.data.site.contact_email }}">{{ L.nav_contact }}</a>
+    {% if page.lang == 'el' %}{% assign other_home = '/en/' %}{% else %}{% assign other_home = '/' %}{% endif %}
+    <a class="lang" href="{{ page.alt | default: other_home | relative_url }}" hreflang="{% if page.lang == 'el' %}en{% else %}el{% endif %}">{{ L.lang_other }}</a>
   </nav>
 </header>
 
@@ -66,16 +97,28 @@
 {{ content }}
 </main>
 
+{% assign live_posts = site.posts | where: "lang", page.lang %}
 <footer class="foot">
   <div class="foot-in">
     <img class="foot-logo" src="{{ '/assets/dimakis-logo-dark.svg' | relative_url }}" alt="dimakis">
     <ul class="foot-list">
       {% for app in apps %}
-      <li><a href="{% if page.lang == 'el' %}{{ '/' | append: app.slug | append: '/' | relative_url }}{% else %}{{ '/en/' | append: app.slug | append: '/' | relative_url }}{% endif %}">{% if app.emblem %}<img class="foot-emblem" src="{{ app.emblem | relative_url }}" alt="" width="20" height="20" loading="lazy">{% endif %}{{ app.title }}</a></li>
+      <li><a href="{{ home | append: app.slug | append: '/' | relative_url }}">{% if app.emblem %}<img class="foot-emblem" src="{{ app.emblem | relative_url }}" alt="" width="20" height="20" loading="lazy">{% endif %}{{ app.title }}</a></li>
       {% endfor %}
     </ul>
     <div class="foot-meta">
-      <a href="mailto:{{ site.data.site.contact_email }}">{{ site.data.site.contact_email }}</a>
+      <ul class="foot-links" aria-label="{{ L.footer_more }}">
+        <li><a href="{{ home | append: 'about/' | relative_url }}">{{ L.nav_about }}</a></li>
+        {% if live_posts.size > 0 %}<li><a href="{{ home | append: 'articles/' | relative_url }}">{{ L.nav_articles }}</a></li>{% endif %}
+        <li><a href="{{ home | append: 'press/' | relative_url }}">{{ L.nav_press }}</a></li>
+      </ul>
+      {% assign socials = site.data.site.social | where_exp: "s", "s.url != ''" %}
+      {% if socials.size > 0 %}
+      <ul class="foot-links foot-social" aria-label="{{ L.footer_social }}">
+        {% for s in socials %}<li><a href="{{ s.url }}" rel="me noopener" target="_blank">{{ s.name }}</a></li>{% endfor %}
+      </ul>
+      {% endif %}
+      <a class="foot-mail" href="mailto:{{ site.data.site.contact_email }}">{{ site.data.site.contact_email }}</a>
       <p>{{ L.footer_note }}</p>
       <p class="foot-tm">Apple, the Apple logo, iPhone and Mac are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
     </div>

@@ -1,0 +1,31 @@
+---
+layout: default
+---
+{% assign L = site.data.site[page.lang] %}
+{% if page.lang == 'el' %}{% assign base = '/' %}{% assign months = "Ιανουαρίου,Φεβρουαρίου,Μαρτίου,Απριλίου,Μαΐου,Ιουνίου,Ιουλίου,Αυγούστου,Σεπτεμβρίου,Οκτωβρίου,Νοεμβρίου,Δεκεμβρίου" | split: "," %}{% else %}{% assign base = '/en/' %}{% assign months = "January,February,March,April,May,June,July,August,September,October,November,December" | split: "," %}{% endif %}
+{% assign m = page.date | date: "%-m" | minus: 1 %}
+{% assign app = "" %}
+{% for a in site.data.apps.list %}{% if a.slug == page.app %}{% assign app = a %}{% endif %}{% endfor %}
+
+<article class="doc article">
+  {% if page.published == false %}<p class="draft-flag">{{ L.article_draft }}</p>{% endif %}
+  <header class="doc-head">
+    <p class="eyebrow"><a href="{{ base | append: 'articles/' | relative_url }}">{{ L.articles_title }}</a> · <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d" }} {{ months[m] }} {{ page.date | date: "%Y" }}</time></p>
+    <h1 class="doc-h">{{ page.title }}</h1>
+    {% if page.description %}<p class="doc-lede">{{ page.description }}</p>{% endif %}
+  </header>
+  <div class="prose">
+    {{ content }}
+  </div>
+  {% if app != "" %}
+  {% if page.lang == 'el' %}{% assign kind = app.kind_el %}{% assign tag = app.tagline_el %}{% else %}{% assign kind = app.kind_en %}{% assign tag = app.tagline_en %}{% endif %}
+  <aside class="article-app">
+    <a href="{{ base | append: app.slug | append: '/' | relative_url }}">
+      <img src="{{ app.icon | relative_url }}" alt="" width="64" height="64" loading="lazy">
+      <span><strong>{{ app.title }}</strong><span>{{ kind }}. {{ tag }}</span></span>
+      <span class="kit-card-go" aria-hidden="true">&rarr;</span>
+    </a>
+  </aside>
+  {% endif %}
+</article>
+{% include notify.html app=app %}

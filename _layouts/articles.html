@@ -1,0 +1,29 @@
+---
+layout: default
+---
+{% assign L = site.data.site[page.lang] %}
+{% assign posts = site.posts | where: "lang", page.lang %}
+{% if page.lang == 'el' %}{% assign months = "Ιανουαρίου,Φεβρουαρίου,Μαρτίου,Απριλίου,Μαΐου,Ιουνίου,Ιουλίου,Αυγούστου,Σεπτεμβρίου,Οκτωβρίου,Νοεμβρίου,Δεκεμβρίου" | split: "," %}{% else %}{% assign months = "January,February,March,April,May,June,July,August,September,October,November,December" | split: "," %}{% endif %}
+<article class="doc">
+  <header class="doc-head">
+    <p class="eyebrow">dimakis</p>
+    <h1 class="doc-h">{{ L.articles_title }}</h1>
+    <p class="doc-lede">{{ L.articles_text }}</p>
+  </header>
+  {% if posts.size > 0 %}
+  <ul class="post-list">
+    {% for post in posts %}
+    {% assign m = post.date | date: "%-m" | minus: 1 %}
+    <li>
+      <a href="{{ post.url | relative_url }}">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d" }} {{ months[m] }} {{ post.date | date: "%Y" }}</time>{% if post.published == false %} · <span class="draft-tag">{{ L.article_draft }}</span>{% endif %}
+        <strong>{{ post.title }}</strong>
+        {% if post.description %}<span>{{ post.description }}</span>{% endif %}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="doc-block">{{ L.articles_empty }}</p>
+  {% endif %}
+</article>

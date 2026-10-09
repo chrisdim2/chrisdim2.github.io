@@ -1,0 +1,46 @@
+---
+layout: page
+lang: el
+alt: /en/about/
+title: Σχετικά
+description: Ποιος φτιάχνει τις εφαρμογές του dimakis, και γιατί. Έξι εφαρμογές για iPhone, iPad, Mac και Apple Watch, από έναν άνθρωπο, στην Ελλάδα.
+# Φωτογραφία: βάλε το αρχείο στο assets/about/ και γράψε εδώ τη διαδρομή (π.χ. /assets/about/photo.jpg).
+photo: ''
+doc_class: about
+---
+{% assign apps = site.data.apps.list | sort: "order" %}
+<header class="about-head">
+  {% if page.photo != "" %}
+  <img class="about-photo" src="{{ page.photo | relative_url }}" alt="{{ site.data.site.owner_name | default: 'dimakis' }}" width="160" height="160">
+  {% else %}
+  <span class="about-photo about-photo-empty" aria-hidden="true"><img src="{{ '/assets/dimakis-strawberry.svg' | relative_url }}" alt=""></span>
+  {% endif %}
+  <div>
+    <p class="eyebrow">Σχετικά</p>
+    <h1 class="doc-h">{% if site.data.site.owner_name != "" %}{{ site.data.site.owner_name }}{% else %}<span class="todo">[Το ονοματεπώνυμό σου]</span>{% endif %}</h1>
+    <p class="doc-lede">Φτιάχνω εφαρμογές για iPhone, iPad, Mac και Apple Watch, μία μία, στην Ελλάδα.</p>
+  </div>
+</header>
+
+<section class="doc-block prose">
+  <p class="todo">[Ποιος είσαι: δύο τρεις προτάσεις. Τι δουλειά κάνεις, από πού είσαι, πώς ξεκίνησες να φτιάχνεις εφαρμογές.]</p>
+  <p class="todo">[Γιατί τις φτιάχνεις: ποιο πρόβλημα σε ενόχλησε και δεν το έλυνε καμία εφαρμογή. Π.χ. ένα ημερολόγιο που ξέρει τις γιορτές και τα εφημερεύοντα φαρμακεία, ένα άλμπουμ που δεν αντιγράφει τις φωτογραφίες σου.]</p>
+  <p class="todo">[Πώς τις φτιάχνεις: χωρίς διαφημίσεις, χωρίς συλλογή δεδομένων, με ό,τι γίνεται μέσα στη συσκευή. Ένας άνθρωπος, που απαντά ο ίδιος σε κάθε email.]</p>
+</section>
+
+<section class="doc-block">
+  <h2>Οι εφαρμογές</h2>
+  <ul class="about-apps">
+    {% for app in apps %}
+    <li><a href="{{ '/' | append: app.slug | append: '/' | relative_url }}"><img src="{{ app.icon | relative_url }}" alt="" width="44" height="44" loading="lazy"><span><strong>{{ app.title }}</strong> {{ app.kind_el }}</span><span class="about-status">{{ app.status_el }}</span></a></li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="doc-block">
+  <h2>Επικοινωνία</h2>
+  <p class="big-link"><a href="mailto:{{ site.data.site.contact_email }}">{{ site.data.site.contact_email }}</a></p>
+  <p>Για τύπο: <a href="{{ '/press/' | relative_url }}">Press Kit</a>.</p>
+</section>
+
+{% include notify.html %}

@@ -37,6 +37,14 @@ collections:
               - { name: status_el, label: Κατάσταση, widget: string }
               - { name: status_en, label: Status (EN), widget: string }
               - { name: appstore_url, label: Σύνδεσμος App Store, widget: string, required: false }
+              - { name: appstore_id, label: Αριθμός App Store (Smart App Banner), widget: string, required: false }
+              - { name: price, label: "Τιμή σε € (για το JSON-LD)", widget: string, required: false }
+              - { name: ready, label: Έτοιμη (εμφανίζεται στο Press Kit), widget: boolean, default: false }
+              - { name: schema_category, label: Κατηγορία schema.org, widget: string, required: false }
+              - { name: description_el, label: Περιγραφή για Google (meta description), widget: text }
+              - { name: description_en, label: Description for Google (EN), widget: text }
+              - { name: press_long_el, label: Μεγάλη περιγραφή (Press Kit), widget: text, required: false }
+              - { name: press_long_en, label: Long description (Press Kit, EN), widget: text, required: false }
               - { name: support_email, label: Email υποστήριξης, widget: string }
               - { name: has_legal, label: Έχει νομικά κείμενα, widget: boolean, default: false }
 
@@ -49,6 +57,16 @@ collections:
         fields:
           - { name: accent, label: Χρώμα τόνου, widget: color }
           - { name: contact_email, label: Γενικό email, widget: string }
+          - { name: press_email, label: Email για τύπο, widget: string, required: false }
+          - { name: owner_name, label: Ονοματεπώνυμο, widget: string, required: false }
+          - { name: newsletter_action, label: Διεύθυνση φόρμας newsletter (Buttondown), widget: string, required: false }
+          - name: social
+            label: Social media
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: Όνομα, widget: string }
+              - { name: url, label: Σύνδεσμος (κενό = κρυφό), widget: string, required: false }
           - name: el
             label: Ελληνικά
             widget: object
@@ -73,6 +91,24 @@ collections:
               - { name: languages_badge, label: "Γλώσσες, σήμα (%n = πλήθος)", widget: string }
               - { name: languages_text, label: "Γλώσσες, κείμενο (%n = πλήθος)", widget: string }
               - { name: platforms_label, label: Συσκευές (για αναγνώστες οθόνης), widget: string }
+              - { name: home_title, label: "Τίτλος αρχικής (Google)", widget: string, required: false }
+              - { name: nav_about, label: "Μενού, σχετικά", widget: string, required: false }
+              - { name: nav_press, label: "Μενού, press kit", widget: string, required: false }
+              - { name: nav_articles, label: "Μενού, άρθρα", widget: string, required: false }
+              - { name: footer_more, label: "Υποσέλιδο, περισσότερα", widget: string, required: false }
+              - { name: footer_social, label: "Υποσέλιδο, social", widget: string, required: false }
+              - { name: notify_title, label: "Ειδοποίηση, τίτλος", widget: string, required: false }
+              - { name: notify_title_app, label: "Ειδοποίηση, τίτλος εφαρμογής (%app)", widget: string, required: false }
+              - { name: notify_text, label: "Ειδοποίηση, κείμενο", widget: string, required: false }
+              - { name: notify_label, label: "Ειδοποίηση, πεδίο", widget: string, required: false }
+              - { name: notify_placeholder, label: "Ειδοποίηση, παράδειγμα", widget: string, required: false }
+              - { name: notify_button, label: "Ειδοποίηση, κουμπί", widget: string, required: false }
+              - { name: notify_note, label: "Ειδοποίηση, σημείωση", widget: string, required: false }
+              - { name: articles_title, label: "Άρθρα, τίτλος", widget: string, required: false }
+              - { name: articles_text, label: "Άρθρα, εισαγωγή", widget: string, required: false }
+              - { name: articles_empty, label: "Άρθρα, κενή λίστα", widget: string, required: false }
+              - { name: article_draft, label: "Άρθρα, πρόχειρο", widget: string, required: false }
+              - { name: read_more, label: "Διάβασε", widget: string, required: false }
           - name: en
             label: English
             widget: object
@@ -97,3 +133,21 @@ collections:
               - { name: languages_badge, label: "Languages badge (%n = count)", widget: string }
               - { name: languages_text, label: "Languages text (%n = count)", widget: string }
               - { name: platforms_label, label: Platforms (for screen readers), widget: string }
+              - { name: home_title, label: "Τίτλος αρχικής (Google)", widget: string, required: false }
+              - { name: nav_about, label: "Μενού, σχετικά", widget: string, required: false }
+              - { name: nav_press, label: "Μενού, press kit", widget: string, required: false }
+              - { name: nav_articles, label: "Μενού, άρθρα", widget: string, required: false }
+              - { name: footer_more, label: "Υποσέλιδο, περισσότερα", widget: string, required: false }
+              - { name: footer_social, label: "Υποσέλιδο, social", widget: string, required: false }
+              - { name: notify_title, label: "Ειδοποίηση, τίτλος", widget: string, required: false }
+              - { name: notify_title_app, label: "Ειδοποίηση, τίτλος εφαρμογής (%app)", widget: string, required: false }
+              - { name: notify_text, label: "Ειδοποίηση, κείμενο", widget: string, required: false }
+              - { name: notify_label, label: "Ειδοποίηση, πεδίο", widget: string, required: false }
+              - { name: notify_placeholder, label: "Ειδοποίηση, παράδειγμα", widget: string, required: false }
+              - { name: notify_button, label: "Ειδοποίηση, κουμπί", widget: string, required: false }
+              - { name: notify_note, label: "Ειδοποίηση, σημείωση", widget: string, required: false }
+              - { name: articles_title, label: "Άρθρα, τίτλος", widget: string, required: false }
+              - { name: articles_text, label: "Άρθρα, εισαγωγή", widget: string, required: false }
+              - { name: articles_empty, label: "Άρθρα, κενή λίστα", widget: string, required: false }
+              - { name: article_draft, label: "Άρθρα, πρόχειρο", widget: string, required: false }
+              - { name: read_more, label: "Διάβασε", widget: string, required: false }

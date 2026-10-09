@@ -1,0 +1,71 @@
+# Κείμενα των σελίδων Press Kit (/press/ και /press/<εφαρμογή>/).
+el:
+  title: Press Kit
+  intro: Υλικό για δημοσιογράφους, bloggers και creators. Χρησιμοποίησε ελεύθερα εικονίδια, λογότυπα, κείμενα και screenshots σε άρθρα και βίντεο για τις εφαρμογές.
+  contact_title: Επικοινωνία για τύπο
+  contact_text: Για συνέντευξη, περισσότερο υλικό ή promo code για δοκιμή, γράψε μου. Απαντώ γρήγορα.
+  apps_title: Εφαρμογές
+  brand_title: Το dimakis
+  brand_text: Λογότυπο του developer, σε σκούρο και ανοιχτό φόντο.
+  logo_on_light: Για ανοιχτό φόντο
+  logo_on_dark: Για σκούρο φόντο
+  app_kit: Press Kit
+  facts_title: Με μια ματιά
+  fact_developer: Developer
+  fact_platforms: Συσκευές
+  fact_languages: Γλώσσες
+  fact_price: Τιμή
+  fact_price_tba: Θα ανακοινωθεί
+  fact_release: Κυκλοφορία
+  fact_website: Σελίδα
+  fact_appstore: App Store
+  short_title: Σύντομη περιγραφή
+  long_title: Μεγάλη περιγραφή
+  copy: Αντιγραφή
+  copied: Αντιγράφηκε
+  assets_title: Εικονίδιο και λογότυπα
+  icon: Εικονίδιο
+  emblem: Σύμβολο
+  lockup: Λογότυπο
+  share_image: Εικόνα κοινοποίησης
+  screens_title: Screenshots
+  screens_text: Κάθε εικόνα κατεβαίνει με ένα κλικ. Υπάρχει και με αγγλικό περιβάλλον.
+  other_lang: Αγγλικά
+  video_title: Βίντεο
+  download: Λήψη
+  all_kits: Όλα τα Press Kit
+en:
+  title: Press Kit
+  intro: Material for journalists, bloggers and creators. Feel free to use the icons, logos, copy and screenshots in articles and videos about the apps.
+  contact_title: Press contact
+  contact_text: For interviews, more material or a promo code to try the app, write to me. I reply quickly.
+  apps_title: Apps
+  brand_title: dimakis
+  brand_text: The developer logo, for dark and light backgrounds.
+  logo_on_light: For light backgrounds
+  logo_on_dark: For dark backgrounds
+  app_kit: Press Kit
+  facts_title: At a glance
+  fact_developer: Developer
+  fact_platforms: Platforms
+  fact_languages: Languages
+  fact_price: Price
+  fact_price_tba: To be announced
+  fact_release: Release
+  fact_website: Website
+  fact_appstore: App Store
+  short_title: Short description
+  long_title: Long description
+  copy: Copy
+  copied: Copied
+  assets_title: Icon and logos
+  icon: Icon
+  emblem: Emblem
+  lockup: Logo
+  share_image: Share image
+  screens_title: Screenshots
+  screens_text: Every image downloads with one click. Also available with a Greek interface.
+  other_lang: Greek
+  video_title: Video
+  download: Download
+  all_kits: All press kits

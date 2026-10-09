@@ -1,0 +1,32 @@
+{% comment %}
+Φόρμα «Ειδοποίησέ με όταν κυκλοφορήσει» (Buttondown).
+include.app: η εφαρμογή (προαιρετικό). Με εφαρμογή, ο συνδρομητής παίρνει tag με το όνομά της,
+ώστε να στείλεις email μόνο σε όσους περιμένουν τη συγκεκριμένη. Χωρίς εφαρμογή: tag «all».
+Η διεύθυνση της φόρμας είναι στο site.yml (newsletter_action). Όσο περιέχει «USERNAME»,
+η φόρμα δεν εμφανίζεται στο live site (μόνο στην τοπική προεπισκόπηση).
+{% endcomment %}
+{% assign L = site.data.site[page.lang] %}
+{% assign action = site.data.site.newsletter_action %}
+{% assign pending = false %}
+{% if action == "" or action contains 'USERNAME' %}{% assign pending = true %}{% endif %}
+{% unless pending and jekyll.environment == 'production' %}
+{% assign A = include.app %}
+{% if A and A != "" %}{% assign heading = L.notify_title_app | replace: '%app', A.title %}{% assign tag = A.slug %}{% else %}{% assign heading = L.notify_title %}{% assign tag = 'all' %}{% endif %}
+<section class="notify{% if include.compact %} notify-compact{% endif %}" aria-labelledby="notify-h-{{ tag }}">
+  <div class="notify-in">
+    <div class="notify-text">
+      <h2 id="notify-h-{{ tag }}">{{ heading }}</h2>
+      <p>{{ L.notify_text }}</p>
+    </div>
+    <form class="notify-form" action="{{ action }}" method="post" target="_blank">
+      <label class="visually-hidden" for="notify-email-{{ tag }}">{{ L.notify_label }}</label>
+      <input id="notify-email-{{ tag }}" type="email" name="email" required autocomplete="email" inputmode="email" placeholder="{{ L.notify_placeholder }}">
+      <input type="hidden" name="tag" value="{{ tag }}">
+      <input type="hidden" name="tag" value="lang-{{ page.lang }}">
+      <input type="hidden" name="embed" value="1">
+      <button type="submit" class="btn">{{ L.notify_button }}</button>
+      <p class="notify-note">{{ L.notify_note }}</p>
+    </form>
+  </div>
+</section>
+{% endunless %}
