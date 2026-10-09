@@ -285,14 +285,14 @@ list:
   price: ''
   ready: true
   schema_category: PhotographyApplication
-  description_el: 'Εφαρμογή για Mac που διορθώνει ημερομηνία και τοποθεσία, γράφει τίτλους και λέξεις-κλειδιά, μετονομάζει αρχεία και βρίσκει διπλότυπες φωτογραφίες.'
-  description_en: 'A Mac app that fixes dates and locations, writes titles and keywords, renames files and finds duplicate photos, all locally on your Mac.'
+  description_el: 'Εφαρμογή για Mac που διορθώνει ημερομηνία και τοποθεσία, γράφει τίτλους και λέξεις-κλειδιά, μετονομάζει αρχεία, βρίσκει διπλότυπες φωτογραφίες και τις καθαρίζει από τα metadata πριν τις μοιραστείς.'
+  description_en: 'A Mac app that fixes dates and locations, writes titles and keywords, renames files, finds duplicate photos and strips their metadata before you share them, all locally on your Mac.'
   press_long_el: |
-    Το Iris είναι εφαρμογή για Mac που ετοιμάζει τις φωτογραφίες σου πριν μπουν στο αρχείο σου. Διορθώνει ημερομηνία λήψης και τοποθεσία, γράφει τίτλο, περιγραφή και λέξεις-κλειδιά, μετονομάζει μαζικά τα αρχεία και εντοπίζει τα διπλότυπα.
+    Το Iris είναι εφαρμογή για Mac που ετοιμάζει τις φωτογραφίες σου πριν μπουν στο αρχείο σου. Διορθώνει ημερομηνία λήψης και τοποθεσία, γράφει τίτλο, περιγραφή και λέξεις-κλειδιά, μετονομάζει μαζικά τα αρχεία και εντοπίζει τα διπλότυπα. Και πριν μοιραστείς μια φωτογραφία ή ένα βίντεο, ο Καθαρισμός για ιδιωτικότητα σβήνει με ένα κλικ τοποθεσία, ημερομηνία και συσκευή, χωρίς να αλλάξει η εικόνα.
 
     Όλη η επεξεργασία γίνεται τοπικά, μέσα στο sandbox της Apple, χωρίς να ανεβαίνει τίποτα πουθενά. Είναι ο φυσικός σύντροφος του Apollo: ό,τι τακτοποιεί το Iris, το Apollo το δείχνει σωστά σε άλμπουμ, χάρτη και ταξίδια.
   press_long_en: |
-    Iris is a Mac app that gets your photos ready before they join your library. It fixes capture dates and locations, writes titles, descriptions and keywords, bulk-renames files and finds duplicates.
+    Iris is a Mac app that gets your photos ready before they join your library. It fixes capture dates and locations, writes titles, descriptions and keywords, bulk-renames files and finds duplicates. And before you share a photo or video, Clean for Privacy removes the location, date and device details in one click, without changing the image.
 
     Everything happens locally, inside Apple's sandbox, with nothing uploaded anywhere. It's the natural companion to Apollo: whatever Iris tidies up, Apollo shows correctly in albums, on the map and in trips.
   kind_el: Βοηθός φωτογραφιών για Mac
@@ -308,13 +308,16 @@ list:
     - Γράφει τίτλο, περιγραφή και λέξεις-κλειδιά
     - Μαζική μετονομασία αρχείων
     - Εντοπισμός διπλότυπων
+    - Καθαρισμός για ιδιωτικότητα: σβήνει όλα τα metadata πριν μοιραστείς μια φωτογραφία ή ένα βίντεο
     - Όλη η επεξεργασία τοπικά, μέσα στο sandbox της Apple
   features_en:
     - Fixes capture date and GPS location
     - Writes title, description and keywords
     - Bulk renames files
     - Finds duplicates
+    - Clean for Privacy: removes all metadata before you share a photo or video
     - All processing stays local, inside Apple's sandbox
   screenshots:
     - /assets/screens/iris/mac/el/iris-mac-01-overview.webp
-    - /assets/screens/iris/mac/el/iris-mac-05-rename.webp
+    - /assets/screens/iris/mac/el/iris-mac-02-privacy.webp
+    - /assets/screens/iris/mac/el/iris-mac-06-rename.webp

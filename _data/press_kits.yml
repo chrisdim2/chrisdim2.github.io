@@ -20,9 +20,9 @@ apollo:
 iris:
   el:
     file: https://github.com/chrisdim2/chrisdim2.github.io/releases/download/press-kit/iris-press-kit-el.zip
-    bytes: 13225753
+    bytes: 13225976
     screenshots: 14
   en:
     file: https://github.com/chrisdim2/chrisdim2.github.io/releases/download/press-kit/iris-press-kit-en.zip
-    bytes: 13235124
+    bytes: 13235347
     screenshots: 14

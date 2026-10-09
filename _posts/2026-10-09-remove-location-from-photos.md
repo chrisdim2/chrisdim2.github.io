@@ -20,13 +20,13 @@ When you choose **File → Export**, untick **location information**. The export
 
 ## With Iris: strip everything
 
-The **Privacy clean** in [Iris](/en/iris/) removes **all** metadata from photos and videos, not just the location: date, device, faces, everything. It keeps only what the image needs to look the same, namely orientation and colour.
+**Clean for Privacy** in [Iris](/en/iris/) removes **all** metadata from photos and videos, not just the location: date, device, faces, everything. It keeps only what the image needs to look the same, namely orientation and colour.
 
 - Works on many files at once, and on **videos**.
 - After cleaning it re-reads the file, and if anything that should be gone is still there, it leaves the original untouched.
 - It all happens locally on your Mac, nothing is uploaded.
 
-<figure class="fig-wide"><img src="/assets/screens/iris/mac/en/iris-mac-06-inspector.webp" alt="Every piece of metadata a file carries, in Iris" loading="lazy"><figcaption>Every piece of metadata a file carries, in Iris</figcaption></figure>
+<figure class="fig-wide"><img src="/assets/screens/iris/mac/en/iris-mac-02-privacy.webp" alt="Clean for Privacy in Iris: before anything is removed, it tells you what will go" loading="lazy"><figcaption>Clean for Privacy in Iris: before anything is removed, it tells you what will go</figcaption></figure>
 
 ## A small tip
 

@@ -25,7 +25,7 @@ permalink: /articles/lathos-imerominia-fotografies-mac/
 - Δουλεύει και σε **βίντεο**.
 - Κάθε αλλαγή **αναιρείται**, και τίποτα δεν γράφεται αν το αρχείο δεν ανοίγει σωστά.
 
-<figure class="fig-wide"><img src="/assets/screens/iris/mac/el/iris-mac-02-missing.webp" alt="Οι φωτογραφίες χωρίς ημερομηνία και η πρόταση από το όνομα αρχείου, στο Iris" loading="lazy"><figcaption>Οι φωτογραφίες χωρίς ημερομηνία και η πρόταση από το όνομα αρχείου, στο Iris</figcaption></figure>
+<figure class="fig-wide"><img src="/assets/screens/iris/mac/el/iris-mac-03-missing.webp" alt="Οι φωτογραφίες χωρίς ημερομηνία και η πρόταση από το όνομα αρχείου, στο Iris" loading="lazy"><figcaption>Οι φωτογραφίες χωρίς ημερομηνία και η πρόταση από το όνομα αρχείου, στο Iris</figcaption></figure>
 
 ## Μικρή συμβουλή
 

@@ -25,7 +25,7 @@ If the photos are already in your Photos library, on a Mac you select them and c
 - Works on **videos** too.
 - Every change can be **undone**, and nothing is written unless the file opens correctly.
 
-<figure class="fig-wide"><img src="/assets/screens/iris/mac/en/iris-mac-02-missing.webp" alt="Photos without a date, and the suggestion from the file name, in Iris" loading="lazy"><figcaption>Photos without a date, and the suggestion from the file name, in Iris</figcaption></figure>
+<figure class="fig-wide"><img src="/assets/screens/iris/mac/en/iris-mac-03-missing.webp" alt="Photos without a date, and the suggestion from the file name, in Iris" loading="lazy"><figcaption>Photos without a date, and the suggestion from the file name, in Iris</figcaption></figure>
 
 ## A small tip
 

@@ -21,7 +21,7 @@ permalink: /articles/topothesia-se-fotografies-mac/
 - Το όνομα του τόπου βγαίνει αυτόματα, μέσω της Apple.
 - Κάθε αλλαγή **αναιρείται**.
 
-<figure class="fig-wide"><img src="/assets/screens/iris/mac/el/iris-mac-03-location.webp" alt="Τοποθεσία με μία αναζήτηση στον χάρτη, στο Iris" loading="lazy"><figcaption>Τοποθεσία με μία αναζήτηση στον χάρτη, στο Iris</figcaption></figure>
+<figure class="fig-wide"><img src="/assets/screens/iris/mac/el/iris-mac-04-location.webp" alt="Τοποθεσία με μία αναζήτηση στον χάρτη, στο Iris" loading="lazy"><figcaption>Τοποθεσία με μία αναζήτηση στον χάρτη, στο Iris</figcaption></figure>
 
 ## Μικρή συμβουλή
 

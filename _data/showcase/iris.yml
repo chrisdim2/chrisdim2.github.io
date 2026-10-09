@@ -16,23 +16,27 @@ groups:
         src_en: /assets/screens/iris/mac/en/iris-mac-01-overview.webp
         el: Πότε και πού, για κάθε φωτογραφία
         en: When and where, for every photo
-      - src: /assets/screens/iris/mac/el/iris-mac-02-missing.webp
-        src_en: /assets/screens/iris/mac/en/iris-mac-02-missing.webp
+      - src: /assets/screens/iris/mac/el/iris-mac-02-privacy.webp
+        src_en: /assets/screens/iris/mac/en/iris-mac-02-privacy.webp
+        el: Καθαρίζει φωτογραφίες και βίντεο πριν τα μοιραστείς
+        en: Cleans photos and videos before you share them
+      - src: /assets/screens/iris/mac/el/iris-mac-03-missing.webp
+        src_en: /assets/screens/iris/mac/en/iris-mac-03-missing.webp
         el: Βρίσκει ό,τι λείπει και προτείνει ημερομηνία από το όνομα του αρχείου
         en: Finds what’s missing and suggests a date from the file name
-      - src: /assets/screens/iris/mac/el/iris-mac-03-location.webp
-        src_en: /assets/screens/iris/mac/en/iris-mac-03-location.webp
+      - src: /assets/screens/iris/mac/el/iris-mac-04-location.webp
+        src_en: /assets/screens/iris/mac/en/iris-mac-04-location.webp
         el: Τοποθεσία με μία αναζήτηση στον χάρτη
         en: Add a place with one search on the map
-      - src: /assets/screens/iris/mac/el/iris-mac-04-shift.webp
-        src_en: /assets/screens/iris/mac/en/iris-mac-04-shift.webp
+      - src: /assets/screens/iris/mac/el/iris-mac-05-shift.webp
+        src_en: /assets/screens/iris/mac/en/iris-mac-05-shift.webp
         el: Διορθώνει την ώρα σε πολλές φωτογραφίες μαζί
         en: Fixes the time on many photos at once
-      - src: /assets/screens/iris/mac/el/iris-mac-05-rename.webp
-        src_en: /assets/screens/iris/mac/en/iris-mac-05-rename.webp
+      - src: /assets/screens/iris/mac/el/iris-mac-06-rename.webp
+        src_en: /assets/screens/iris/mac/en/iris-mac-06-rename.webp
         el: Μετονομασία με αρίθμηση και προεπισκόπηση
         en: Rename with numbering and a preview
-      - src: /assets/screens/iris/mac/el/iris-mac-06-inspector.webp
-        src_en: /assets/screens/iris/mac/en/iris-mac-06-inspector.webp
-        el: Όλα τα μεταδεδομένα του αρχείου
+      - src: /assets/screens/iris/mac/el/iris-mac-07-inspector.webp
+        src_en: /assets/screens/iris/mac/en/iris-mac-07-inspector.webp
+        el: Όλα τα metadata του αρχείου
         en: Every metadata field in the file

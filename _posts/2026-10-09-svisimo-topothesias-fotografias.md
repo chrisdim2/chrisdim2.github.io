@@ -26,7 +26,7 @@ permalink: /articles/svisimo-topothesias-fotografias/
 - Μετά τον καθαρισμό ξαναδιαβάζει το αρχείο, και αν βρει οτιδήποτε που έπρεπε να έχει σβηστεί, δεν αντικαθιστά το πρωτότυπο.
 - Γίνεται τοπικά στο Mac, χωρίς να ανεβαίνει τίποτα πουθενά.
 
-<figure class="fig-wide"><img src="/assets/screens/iris/mac/el/iris-mac-06-inspector.webp" alt="Όλα τα στοιχεία που κρύβει ένα αρχείο, στο Iris" loading="lazy"><figcaption>Όλα τα στοιχεία που κρύβει ένα αρχείο, στο Iris</figcaption></figure>
+<figure class="fig-wide"><img src="/assets/screens/iris/mac/el/iris-mac-02-privacy.webp" alt="Ο Καθαρισμός για ιδιωτικότητα στο Iris: πριν σβήσει, λέει τι θα σβηστεί" loading="lazy"><figcaption>Ο Καθαρισμός για ιδιωτικότητα στο Iris: πριν σβήσει, λέει τι θα σβηστεί</figcaption></figure>
 
 ## Μικρή συμβουλή
 

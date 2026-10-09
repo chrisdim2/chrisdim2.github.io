@@ -21,7 +21,7 @@ In [Iris](/en/iris/) you select the photos, search for the place on the map, say
 - The place name is filled in automatically, using Apple's service.
 - Every change can be **undone**.
 
-<figure class="fig-wide"><img src="/assets/screens/iris/mac/en/iris-mac-03-location.webp" alt="Add a place with one search on the map, in Iris" loading="lazy"><figcaption>Add a place with one search on the map, in Iris</figcaption></figure>
+<figure class="fig-wide"><img src="/assets/screens/iris/mac/en/iris-mac-04-location.webp" alt="Add a place with one search on the map, in Iris" loading="lazy"><figcaption>Add a place with one search on the map, in Iris</figcaption></figure>
 
 ## A small tip
 
