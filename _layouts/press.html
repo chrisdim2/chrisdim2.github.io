@@ -23,8 +23,8 @@ layout: default
           <span class="kit-card-t"><strong>{{ app.full_name | default: app.title }}</strong><span>{% if page.lang == 'el' %}{{ app.kind_el }}{% else %}{{ app.kind_en }}{% endif %}</span></span>
           <span class="kit-card-go" aria-hidden="true">&rarr;</span>
         </a>
-        {% assign kit = site.data.press_kits[app.slug] %}
-        {% if kit %}<span class="kit-card-dl"><a href="{{ kit.file | relative_url }}" download>{{ T.download_zip }}</a> · ZIP</span>{% endif %}
+        {% assign kits = site.data.press_kits[app.slug] %}
+        {% if kits %}<span class="kit-card-dl">{{ T.download_zip }}: {% if kits.el %}<a href="{{ kits.el.file }}" hreflang="el">{{ T.zip_el }}</a>{% endif %}{% if kits.el and kits.en %} · {% endif %}{% if kits.en %}<a href="{{ kits.en.file }}" hreflang="en">{{ T.zip_en }}</a>{% endif %}</span>{% endif %}
       </li>
       {% endfor %}
     </ul>

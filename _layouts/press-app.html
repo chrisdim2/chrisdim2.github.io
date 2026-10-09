@@ -13,7 +13,7 @@ layout: default
 {% endif %}
 {% assign name = app.full_name | default: app.title %}
 {% assign store = app.appstore_url %}{% if store == "" and app.appstore_id and app.appstore_id != "" %}{% capture store %}https://apps.apple.com/app/id{{ app.appstore_id }}{% endcapture %}{% endif %}
-{% assign kit = site.data.press_kits[app.slug] %}
+{% assign kits = site.data.press_kits[app.slug] %}{% assign kit = kits[page.lang] %}
 {% assign sc = site.data.showcase[app.slug] %}
 
 <article class="doc">

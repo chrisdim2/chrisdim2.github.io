@@ -16,6 +16,7 @@ layout: default
     {% assign m = post.date | date: "%-m" | minus: 1 %}
     <li>
       <a href="{{ post.url | relative_url }}">
+        {% assign papp = site.data.apps.list | where: "slug", post.app | first %}{% if papp %}<img class="post-icon" src="{{ papp.icon | relative_url }}" alt="{{ papp.title }}" width="44" height="44" loading="lazy">{% endif %}
         <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d" }} {{ months[m] }} {{ post.date | date: "%Y" }}</time>{% if post.published == false %} · <span class="draft-tag">{{ L.article_draft }}</span>{% endif %}
         <strong>{{ post.title }}</strong>
         {% if post.description %}<span>{{ post.description }}</span>{% endif %}

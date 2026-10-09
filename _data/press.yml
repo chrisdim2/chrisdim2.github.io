@@ -28,12 +28,15 @@ el:
   download: Λήψη
   all_kits: Όλα τα Press Kit
   download_zip: Λήψη Press Kit
+  zip_el: Ελληνικά
+  zip_en: Αγγλικά
+  zip_hint: Ένα zip για κάθε γλώσσα του περιβάλλοντος της εφαρμογής.
   zip_label: ZIP
   zip_contents_title: Τι περιέχει
   zip_readme: Κείμενα σε ελληνικά και αγγλικά (σύντομη και μεγάλη περιγραφή, βασικά στοιχεία)
-  zip_icon: Εικονίδιο και λογότυπα (SVG), μαζί με το λογότυπο του dimakis
+  zip_icon: Εικονίδιο 1024×1024 και λογότυπα (SVG), μαζί με το λογότυπο του dimakis
   zip_share: Εικόνα κοινοποίησης 1200×630
-  zip_screens: '%n screenshots σε JPG, με ελληνικό και αγγλικό περιβάλλον, ανά συσκευή'
+  zip_screens: '%n screenshots σε πλήρη ανάλυση, ανά συσκευή: με λεζάντες όπως στο App Store, και χωρίς κείμενο'
   video_text: Το βίντεο της παρουσίασης, ξεχωριστά λόγω μεγέθους.
 en:
   title: Press Kit
@@ -64,10 +67,13 @@ en:
   download: Download
   all_kits: All press kits
   download_zip: Download press kit
+  zip_el: Greek
+  zip_en: English
+  zip_hint: One zip per app interface language.
   zip_label: ZIP
   zip_contents_title: What's inside
   zip_readme: Copy in English and Greek (short and long description, key facts)
-  zip_icon: Icon and logos (SVG), plus the dimakis logo
+  zip_icon: 1024×1024 icon and logos (SVG), plus the dimakis logo
   zip_share: Share image 1200×630
-  zip_screens: '%n screenshots as JPG, with English and Greek interface, by device'
+  zip_screens: '%n full-resolution screenshots by device: with captions as on the App Store, and without text'
   video_text: The showcase video, separately because of its size.

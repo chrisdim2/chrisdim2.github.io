@@ -1,11 +1,14 @@
-{% comment %}Κουμπί λήψης του zip Press Kit. include.app. Τα zip τα φτιάχνει το _tools/press_kits.rb.{% endcomment %}
+{% comment %}Κουμπιά λήψης του Press Kit (ένα zip ανά γλώσσα). include.app. Τα zip τα φτιάχνει το _tools/press_kits.rb.{% endcomment %}
 {% assign T = site.data.press[page.lang] %}
-{% assign kit = site.data.press_kits[include.app.slug] %}
-{% if kit %}
-{% assign mb = kit.bytes | divided_by: 104857.6 | round | divided_by: 10.0 %}
-{% if page.lang == 'el' %}{% assign mb = mb | append: '' | replace: '.', ',' %}{% endif %}
+{% assign kits = site.data.press_kits[include.app.slug] %}
+{% if kits %}
+{% if page.lang == 'el' %}{% assign order = "el,en" | split: "," %}{% else %}{% assign order = "en,el" | split: "," %}{% endif %}
 <div class="kit-download">
-  <a class="btn" href="{{ kit.file | relative_url }}" download><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5v9M4 7l4 4 4-4M2.5 14.5h11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>{{ T.download_zip }}</a>
-  <span class="kit-download-meta">{{ T.zip_label }} · {{ mb }} MB</span>
+  {% for l in order %}{% assign kit = kits[l] %}{% if kit %}
+  {% assign mb = kit.bytes | divided_by: 1048576.0 | round %}
+  {% if l == 'el' %}{% assign label = T.zip_el %}{% else %}{% assign label = T.zip_en %}{% endif %}
+  <a class="btn{% unless forloop.first %} btn-quiet{% endunless %}" href="{{ kit.file }}" hreflang="{{ l }}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5v9M4 7l4 4 4-4M2.5 14.5h11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>{{ T.download_zip }} · {{ label }}<span class="kit-download-size">ZIP · {{ mb }} MB</span></a>
+  {% endif %}{% endfor %}
+  <p class="kit-download-meta">{{ T.zip_hint }}</p>
 </div>
 {% endif %}

@@ -249,6 +249,16 @@ layout: default
     <p class="origin-note">{% if page.lang == 'el' %}{{ app.origin_el }}{% else %}{{ app.origin_en }}{% endif %}</p>
   </section>
 
+  {% assign app_posts = site.posts | where: "lang", page.lang | where: "app", app.slug %}
+  {% if app_posts.size > 0 %}
+  <section class="block">
+    <h2>{{ L.articles_title }}</h2>
+    <ul class="app-articles">
+      {% for post in app_posts %}<li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>{% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
   <section class="block">
     <h2>{{ L.support_title }}</h2>
     <p class="big-link"><a href="mailto:{{ app.support_email }}">{{ app.support_email }}</a></p>

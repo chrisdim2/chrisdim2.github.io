@@ -349,7 +349,8 @@ h1,h2,h3{letter-spacing:-.025em;font-weight:600}
 .kit-download{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin:26px 0 0}
 .kit-download .btn{display:inline-flex;align-items:center;gap:10px}
 .kit-download .btn svg{width:16px;height:16px}
-.kit-download-meta{font-family:var(--util);font-size:14px;color:var(--ink-45)}
+.kit-download-meta{flex-basis:100%;margin:0;font-family:var(--util);font-size:13px;color:var(--ink-45)}
+.kit-download-size{font-size:12px;opacity:.65;margin-left:2px}
 .kit-contents{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 .kit-contents li{position:relative;padding-left:20px;color:var(--ink-70)}
 .kit-contents li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:8px;border-radius:50%;background:var(--berry)}
@@ -374,6 +375,21 @@ h1,h2,h3{letter-spacing:-.025em;font-weight:600}
 .prose a:hover{color:var(--berry)}
 .prose li{margin:0 0 8px}
 .prose img{border-radius:14px;margin:24px auto}
+.prose figure{margin:30px 0}
+.prose figure img{margin:0 auto}
+.prose figcaption{font-family:var(--util);font-size:14px;color:var(--ink-45);text-align:center;margin-top:12px}
+.prose .fig-phone img{width:min(280px,72vw);border-radius:30px;border:4px solid #05080B;outline:1px solid rgba(237,241,238,.14);
+  box-shadow:0 14px 40px rgba(0,0,0,.5)}
+.prose .fig-wide img{width:100%;border-radius:12px;border:1px solid rgba(237,241,238,.10);box-shadow:0 14px 40px rgba(0,0,0,.5)}
+.prose code{font-family:ui-monospace,Menlo,monospace;font-size:.88em;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1px 6px;color:var(--ink)}
+.post-list a{display:grid;grid-template-columns:44px 1fr;column-gap:16px;row-gap:4px;align-items:start}
+.post-list a > *:not(.post-icon){grid-column:2}
+.post-icon{grid-row:1 / span 3;width:44px;height:44px;border-radius:10px;margin-top:2px}
+.app-articles{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.app-articles a{display:block;text-decoration:none;font-size:18px;line-height:1.4;padding:14px 18px;border-radius:14px;background:var(--card);border:1px solid var(--line)}
+.app-articles a:hover{border-color:var(--berry)}
+.light .app-articles a{border-color:transparent;box-shadow:0 1px 2px rgba(22,33,43,.04),0 8px 24px rgba(22,33,43,.06)}
+.light .app-articles a:hover{color:var(--app)}
 .article-app{margin:44px 0 0;max-width:66ch}
 
 /* footer: σύνδεσμοι σελίδων και social */
