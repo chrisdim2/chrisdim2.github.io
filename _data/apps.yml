@@ -200,6 +200,17 @@ list:
   origin_en: Named after Apollo, god of light and beauty.
   status_el: Έρχεται σύντομα
   status_en: Coming soon
+  suite:
+    title_el: 5 εφαρμογές σε 1
+    title_en: 5 apps in 1
+    lead_el: Ό,τι χρειάζεσαι για τις φωτογραφίες και τα ταξίδια σου, σε μία εφαρμογή αντί για πέντε.
+    lead_en: Everything you need for your photos and trips, in one app instead of five.
+    items:
+      - {icon: /assets/icons/suite/1-galeria.png, el: Γκαλερί, en: Gallery}
+      - {icon: /assets/icons/suite/2-taxidia.png, el: Ταξίδια, en: Trips}
+      - {icon: /assets/icons/suite/3-ptiseis.png, el: Πτήσεις, en: Flights}
+      - {icon: /assets/icons/suite/4-epexergasia.png, el: Επεξεργασία, en: Editing}
+      - {icon: /assets/icons/suite/5-exif.png, el: EXIF, en: EXIF}
   features_el:
     - Δεν αντιγράφει τις φωτογραφίες σου — δουλεύει απευθείας πάνω στο δικό σου cloud (pCloud, Dropbox, OneDrive κ.ά.)
     - Άλμπουμ ανά έτος, χάρτης τοποθεσιών, αναζήτηση με πραγματικές ημερομηνίες και GPS από τα EXIF
