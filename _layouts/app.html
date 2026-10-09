@@ -33,6 +33,18 @@ layout: default
     </div>
   </header>
 
+  {% if app.suite %}
+  <section class="block suite">
+    <h2>{% if page.lang == 'el' %}{{ app.suite.title_el }}{% else %}{{ app.suite.title_en }}{% endif %}</h2>
+    <p>{% if page.lang == 'el' %}{{ app.suite.lead_el }}{% else %}{{ app.suite.lead_en }}{% endif %}</p>
+    <ul class="suite-grid">
+      {% for it in app.suite.items %}{% if it.only and it.only != page.lang %}{% continue %}{% endif %}
+      <li><img src="{{ it.icon | relative_url }}" alt="" width="120" height="120" loading="lazy"><span>{% if page.lang == 'el' %}{{ it.el }}{% else %}{{ it.en }}{% endif %}</span></li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
   {% assign sc = site.data.showcase[app.slug] %}
   {% if sc and sc.groups %}
   {% assign stage_wide = sc.stage.wide %}{% if page.lang == 'en' and sc.stage.wide_en %}{% assign stage_wide = sc.stage.wide_en %}{% endif %}

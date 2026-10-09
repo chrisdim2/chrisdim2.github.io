@@ -48,6 +48,19 @@ list:
   origin_en: Named after Chronos, the personification of time in Greek mythology.
   status_el: Έρχεται τον Δεκέμβριο
   status_en: Coming in December
+  suite:
+    title_el: 7 εφαρμογές σε 1
+    title_en: 5 apps in 1
+    lead_el: Ό,τι χρειάζεσαι κάθε μέρα, σε μία εφαρμογή αντί για επτά.
+    lead_en: Everything you need every day, in one app instead of five.
+    items:
+      - {icon: /assets/icons/suite/1-imerologio.png, el: Ημερολόγιο, en: Calendar}
+      - {icon: /assets/icons/suite/2-kairos.png, el: Καιρός, en: Weather}
+      - {icon: /assets/icons/suite/3-farmaka.png, el: Φάρμακα, en: Medications}
+      - {icon: /assets/icons/suite/4-efimeries.png, el: Εφημερίες, en: On-duty, only: el}
+      - {icon: /assets/icons/suite/5-exoda.png, el: Έξοδα, en: Expenses}
+      - {icon: /assets/icons/suite/6-eortologio.png, el: Εορτολόγιο, en: Name days, only: el}
+      - {icon: /assets/icons/suite/7-antistrofi.png, el: Αντίστροφη μέτρηση, en: Countdown}
   features_el:
     - Έξι όψεις ημερολογίου — Λίστα, Ημέρα, Εβδομάδα, Μήνας, Έτος, και συνδυαστική αρχική
     - Αντίστροφη μέτρηση για γενέθλια, επετείους και ό,τι περιμένεις, με δυνατότητα να τη στείλεις σε φίλο
