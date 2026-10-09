@@ -303,6 +303,14 @@ list:
   origin_en: Named after Iris, goddess of the rainbow who connected sky and earth — connecting your photos to Apollo, in much the same way.
   status_el: Έρχεται σύντομα
   status_en: Coming soon
+  suite:
+    title_el: 2 εφαρμογές σε 1
+    title_en: 2 apps in 1
+    lead_el: Ό,τι χρειάζεσαι για να ετοιμάσεις τις φωτογραφίες σου, σε μία εφαρμογή αντί για δύο.
+    lead_en: Everything you need to get your photos ready, in one app instead of two.
+    items:
+      - {icon: /assets/icons/suite/1-exif-iris.png, el: Επεξεργαστής EXIF, en: EXIF editor}
+      - {icon: /assets/icons/suite/2-metonomasia-iris.png, el: Μαζική μετονομασία, en: Batch renaming}
   features_el:
     - Διορθώνει ημερομηνία λήψης και τοποθεσία
     - Γράφει τίτλο, περιγραφή και λέξεις-κλειδιά
