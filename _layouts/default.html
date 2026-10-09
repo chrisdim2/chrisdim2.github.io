@@ -99,7 +99,7 @@
 {% assign live_posts = site.posts | where: "lang", page.lang %}
 <footer class="foot">
   <div class="foot-in">
-    <img class="foot-logo" src="{{ '/assets/dimakis-logo-dark.svg' | relative_url }}" alt="dimakis">
+    <a class="foot-brand" href="{{ home | relative_url }}" aria-label="dimakis"><img class="foot-logo" src="{{ '/assets/dimakis-logo-dark.svg' | relative_url }}" alt="dimakis"></a>
     <ul class="foot-list">
       {% for app in apps %}
       <li><a href="{{ home | append: app.slug | append: '/' | relative_url }}">{% if app.emblem %}<img class="foot-emblem" src="{{ app.emblem | relative_url }}" alt="" width="20" height="20" loading="lazy">{% endif %}{{ app.title }}</a></li>
@@ -122,5 +122,23 @@
     </div>
   </div>
 </footer>
+<button type="button" class="to-top" aria-label="{% if page.lang == 'el' %}Επιστροφή στην κορυφή{% else %}Back to top{% endif %}" hidden>
+  <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13.5v-11M3.5 7 8 2.5 12.5 7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+<script>
+(function(){
+  var b = document.querySelector('.to-top');
+  b.hidden = false;
+  function update(){ b.classList.toggle('is-on', window.scrollY > window.innerHeight * 0.8); }
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+  b.addEventListener('click', function(){
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+    var brand = document.querySelector('.brand');
+    if (brand) brand.focus({ preventScroll: true });
+  });
+})();
+</script>
 </body>
 </html>
