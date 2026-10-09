@@ -6,8 +6,9 @@ press_email: press@dimakis.app
 owner_name: ''
 # Φόρμα «Ειδοποίησέ με» (Brevo). Στο Brevo: Contacts → Forms → νέα φόρμα με double opt-in,
 # και από τον κώδικα ενσωμάτωσης (Share → HTML) αντιγράφεις τη διεύθυνση του action="https://….sibforms.com/serve/…".
-# Όσο περιέχει «FORM_ID», η φόρμα φαίνεται μόνο στην τοπική προεπισκόπηση, όχι στο live site.
-newsletter_action: https://XXXX.sibforms.com/serve/FORM_ID
+# Φόρμα στο Brevo: «dimakis.app – Ειδοποίηση κυκλοφορίας» → λίστα #3, double opt-in.
+# Αν η διεύθυνση γίνει κενή ή περιέχει «FORM_ID», η φόρμα κρύβεται στο live site.
+newsletter_action: https://54afba2f.sibforms.com/serve/MUIFAAThl_VuVMPD-tos_YALOZWh1wcNU29Irm7g0jB_Ryxqot4EStOtsK7kPmQZ071v8NAi0GxXlAU4GUrZg-b9uOG-j-JM_kqv0WK-3XTDaYmqXp8CUPf-36waTho1-Zst6Rh4V4HG3oI_23OQPp1NtasffOeXRbz5NTw1CJYbwFt_yXQcKkDJd-4zJ5gjjTlwEf16GFesp-dN5g==
 # Ονόματα των κρυφών πεδίων της φόρμας στο Brevo (attributes επαφής) για εφαρμογή και γλώσσα.
 # Αν μείνουν κενά, δεν στέλνονται.
 newsletter_app_field: APP

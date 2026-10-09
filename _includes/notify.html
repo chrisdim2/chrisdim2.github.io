@@ -27,6 +27,7 @@ include.app: η εφαρμογή (προαιρετικό). Η επαφή απο�
       {% if S.newsletter_lang_field != "" %}<input type="hidden" name="{{ S.newsletter_lang_field }}" value="{{ page.lang }}">{% endif %}
       <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" class="visually-hidden" aria-hidden="true">
       <input type="hidden" name="locale" value="{{ page.lang }}">
+      <input type="hidden" name="html_type" value="simple">
       <button type="submit" class="btn">{{ L.notify_button }}</button>
       <p class="notify-note" aria-live="polite">{{ L.notify_note }}</p>
     </form>
