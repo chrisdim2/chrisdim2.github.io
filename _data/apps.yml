@@ -27,7 +27,7 @@ list:
   ready: true
   schema_category: LifestyleApplication
   description_el: 'Ημερολόγιο για iPhone, iPad, Mac και Apple Watch με αντίστροφη μέτρηση, υπενθυμίσεις φαρμάκων, συντήρηση αυτοκινήτου και εφημερεύοντα φαρμακεία.'
-  description_en: 'A calendar for iPhone, iPad, Mac and Apple Watch with countdowns, medication reminders, car maintenance tracking and nearby on-duty pharmacies.'
+  description_en: 'A calendar for iPhone, iPad, Mac and Apple Watch with weather, countdowns, medication reminders, car maintenance and subscription tracking.'
   press_long_el: |
     Το Chronos είναι ημερολόγιο για iPhone, iPad, Mac και Apple Watch που δεν σταματά στα ραντεβού. Δείχνει τον μήνα, την εβδομάδα, την ημέρα, το έτος ή μια λίστα, με τον καιρό κάθε ημέρας δίπλα στα γεγονότα, και καταλαβαίνει ό,τι γράφεις όπως θα το έλεγες.
 
@@ -39,7 +39,7 @@ list:
 
     It brings together everything that usually ends up scattered across notes and reminders: countdowns for birthdays and trips that you can send to a friend, medication with interaction checks, car service, inspections and insurance, loans, subscriptions and home maintenance.
 
-    In Greece it does something no other calendar does: name days, plus on-duty pharmacies and hospitals near you, in real time. Your data stays on your devices and in your own iCloud.
+    Your data stays on your devices and in your own iCloud. And if you live in Greece, it also shows name days and on-duty pharmacies and hospitals near you.
   kind_el: Ημερολόγιο
   kind_en: Calendar
   tagline_el: Ο χρόνος υπό τον έλεγχό σου.
@@ -53,6 +53,8 @@ list:
     title_en: 5 apps in 1
     lead_el: Ό,τι χρειάζεσαι κάθε μέρα, σε μία εφαρμογή αντί για επτά.
     lead_en: Everything you need every day, in one app instead of five.
+    # Διακριτική σημείωση κάτω από τα εικονίδια, μόνο στα αγγλικά: οι 2 λειτουργίες «only: el» ως μπόνους.
+    bonus_en: Living in Greece? You also get on-duty pharmacies and name days.
     items:
       - {icon: /assets/icons/suite/1-imerologio.png, el: Ημερολόγιο, en: Calendar}
       - {icon: /assets/icons/suite/2-kairos.png, el: Καιρός, en: Weather}
@@ -73,7 +75,6 @@ list:
     - Countdown for birthdays, anniversaries and anything you're waiting for — share it with a friend
     - Car maintenance tracking — service, oil, MOT, insurance, with full history
     - Medication reminders with interaction checks
-    - Nearby on-duty pharmacies and hospitals, in real time
     - Loans, home maintenance and subscriptions — your whole life admin, in one place
   screenshots: []
 - slug: hermes

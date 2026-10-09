@@ -521,4 +521,5 @@ h1,h2,h3{letter-spacing:-.025em;font-weight:600}
 .suite-grid li{width:112px;display:flex;flex-direction:column;align-items:center;gap:10px}
 .suite-grid img{width:104px;height:104px;border-radius:24px;box-shadow:0 6px 18px rgba(39,71,184,.14)}
 .suite-grid span{font-size:14px;line-height:1.25;color:var(--ink-70)}
+.light .block p.suite-bonus,.suite-bonus{margin:22px 0 0;font-family:var(--util);font-size:14px;color:var(--ink-45)}
 @media (max-width:520px){.suite-grid li{width:96px}.suite-grid img{width:88px;height:88px}}

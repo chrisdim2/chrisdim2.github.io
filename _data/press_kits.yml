@@ -2,11 +2,11 @@
 chronos:
   el:
     file: https://github.com/chrisdim2/chrisdim2.github.io/releases/download/press-kit/chronos-press-kit-el.zip
-    bytes: 67998700
+    bytes: 67998684
     screenshots: 89
   en:
     file: https://github.com/chrisdim2/chrisdim2.github.io/releases/download/press-kit/chronos-press-kit-en.zip
-    bytes: 50736249
+    bytes: 50736233
     screenshots: 77
 apollo:
   el:

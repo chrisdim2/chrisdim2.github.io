@@ -42,6 +42,7 @@ layout: default
       <li><img src="{{ it.icon | relative_url }}" alt="" width="120" height="120" loading="lazy"><span>{% if page.lang == 'el' %}{{ it.el }}{% else %}{{ it.en }}{% endif %}</span></li>
       {% endfor %}
     </ul>
+    {% if page.lang == 'en' and app.suite.bonus_en %}<p class="suite-bonus">{{ app.suite.bonus_en }}</p>{% endif %}
   </section>
   {% endif %}
 
