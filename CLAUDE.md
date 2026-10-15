@@ -85,6 +85,10 @@
 
 ## Εκκρεμότητες
 
+- **Social, 16/10/2026**: ο χρήστης ανοίγει το desktop app και δίνει πρόσβαση στον browser. Το Claude στήνει τα προφίλ
+  (Instagram, Threads, Facebook) από το `_social/profiles.md` και προγραμματίζει τις αναρτήσεις του `_social/posts.md`
+  με το πρόγραμμα του `_social/README.md`. Login και 2FA τα κάνει ο χρήστης, κάθε δημοσίευση με την έγκρισή του.
+  Πριν τις 2/11: να ελεγχθεί το «KTEO inspection» στο αγγλικό UI του Chronos (screenshot αυτοκινήτου, ανάρτηση 07).
 - Social: όσοι λογαριασμοί ανοίξουν ακόμα (X, Bluesky, YouTube κ.λπ.) μπαίνουν στο `site.yml`.
 - `owner_name` στο `site.yml` (ίδιο με το App Store): μπαίνει ως δημιουργός στο JSON-LD και στο Press Kit.
 - Με την κυκλοφορία: ένδειξη «Νέο» για το Chronos στην αρχική.
