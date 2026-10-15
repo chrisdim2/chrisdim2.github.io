@@ -10,6 +10,10 @@
 | `images/profile.png` | Εικόνα προφίλ 1080×1080 (ίδια παντού, αντέχει το κυκλικό κόψιμο) |
 | `images/facebook-cover.png` | Εξώφυλλο Facebook 1640×624 (το περιεχόμενο στο κέντρο, ώστε να μην κόβεται στο κινητό) |
 | `images/00-intro.jpg` … `09-*.jpg` | Εικόνες αναρτήσεων 1080×1350 (4:5) |
+| `youtube.md` | Κανάλι YouTube: στήσιμο, κείμενα για τα 2 trailer, Shorts, οδηγοί, πρόγραμμα |
+| `shorts.yml`, `subtitles/` | Σενάρια των 9 Shorts και οι υπότιτλοί τους (αγγλικά, ελληνικά) |
+| `video/` | Trailer Chronos και Apollo για YouTube, με «Coming…» στην τελική κάρτα |
+| `images/youtube-*`, `yt-*` | Banner, υδατογράφημα, μικρογραφίες, τελικές κάρτες Shorts |
 
 Οι εικόνες ξαναφτιάχνονται με `node _tools/social_images.js` (όλες) ή `node _tools/social_images.js 04-subscriptions`
 (μία). Κείμενα, crop και σειρά είναι στον πίνακα `POSTS` του script.

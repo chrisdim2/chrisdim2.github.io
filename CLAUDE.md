@@ -55,6 +55,14 @@
 - Λειτουργίες «Μένω στην Ελλάδα»: μόνο σε χωριστές, αραιές αναρτήσεις στα ελληνικά, ποτέ στις κανονικές.
 - Όχι χωριστός ελληνικός λογαριασμός, εκτός αν το ελληνικό κοινό μεγαλώσει πολύ.
 - Οι εικόνες φτιάχνονται με `node _tools/social_images.js` (Playwright και Chromium, γραμματοσειρά Inter).
+- **YouTube** (`_social/youtube.md`): κανάλι επωνυμίας «dimakis», `@dimakis.app`, κάτω από το `dimakis.4home@gmail.com`.
+  Αγγλικός τίτλος και περιγραφή με ελληνική μετάφραση στο Studio. Τα `*-el.mp4` όχι στο YouTube, μόνο στο Facebook.
+  Trailer με «Coming…» αντί για «Available on the App Store»: `python3 _tools/social_trailers.py`. Με την κυκλοφορία
+  ανεβαίνει το αρχικό `assets/video/<app>-en.mp4` ως νέο βίντεο. Shorts: σενάρια στο `_social/shorts.yml`,
+  υπότιτλοι με `ruby _tools/social_srt.rb`. Στο site τα βίντεο μένουν αυτοφιλοξενούμενα (όχι embed YouTube, για το απόρρητο).
+- Άλλοι λογαριασμοί (πρόταση 15/10): Bluesky (`@dimakis.app` με TXT `_atproto` στο Cloudflare) και Mastodon ενεργά,
+  X (`dimakisapp`) και TikTok (`dimakis.app`, βιογραφικό έως 80 χαρακτήρες) μόνο κράτηση ονόματος,
+  Product Hunt και Reddit (προσωπικός) για την κυκλοφορία.
 
 ## Υπηρεσίες
 

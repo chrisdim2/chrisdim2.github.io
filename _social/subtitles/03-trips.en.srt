@@ -1,0 +1,23 @@
+1
+00:00:00,000 --> 00:00:03,000
+Your photos already know every trip
+
+2
+00:00:03,000 --> 00:00:08,000
+Apollo finds them by itself, from dates and places
+
+3
+00:00:08,000 --> 00:00:13,000
+Each trip: a map, its days and its photos
+
+4
+00:00:13,000 --> 00:00:17,000
+Distance and countries, per year
+
+5
+00:00:17,000 --> 00:00:22,000
+Boarding passes and ferry tickets, filed under the right trip
+
+6
+00:00:22,000 --> 00:00:25,000
+Apollo · Coming soon

@@ -1,0 +1,23 @@
+1
+00:00:00,000 --> 00:00:03,000
+Camera photos have no location
+
+2
+00:00:03,000 --> 00:00:07,000
+See which ones at a glance
+
+3
+00:00:07,000 --> 00:00:13,000
+Select them all, search for the place once
+
+4
+00:00:13,000 --> 00:00:18,000
+Written inside every file. Photos and videos
+
+5
+00:00:18,000 --> 00:00:21,000
+Every change can be undone
+
+6
+00:00:21,000 --> 00:00:24,000
+Iris · Coming soon

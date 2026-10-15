@@ -1,0 +1,23 @@
+1
+00:00:00,000 --> 00:00:03,000
+What do your subscriptions cost per year?
+
+2
+00:00:03,000 --> 00:00:08,000
+iPhone Settings only show what you pay through Apple
+
+3
+00:00:08,000 --> 00:00:13,000
+In Chronos: all of them, with totals per month and year
+
+4
+00:00:13,000 --> 00:00:18,000
+A reminder before every charge
+
+5
+00:00:18,000 --> 00:00:22,000
+Renewals right in your calendar
+
+6
+00:00:22,000 --> 00:00:25,000
+Chronos · Coming in December

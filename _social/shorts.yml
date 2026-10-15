@@ -1,0 +1,135 @@
+# Σενάρια για YouTube Shorts (και Reels / TikTok): ένα για κάθε άρθρο του site.
+# Κάθετο βίντεο 1080×1920, χωρίς αφήγηση: κείμενο πάνω στην οθόνη στα αγγλικά, μουσική από την YouTube Audio Library.
+# t: [αρχή, τέλος] σε δευτερόλεπτα. en: κείμενο οθόνης (και αγγλικοί υπότιτλοι). el: ελληνικοί υπότιτλοι.
+# shot: τι δείχνει η οθόνη (οδηγία εγγραφής). Χαρακτηριστικά μόνο από τα άρθρα, τίποτα από το «Μένω στην Ελλάδα».
+# Υπότιτλοι: ruby _tools/social_srt.rb → _social/subtitles/<id>.en.srt και .el.srt.
+# Αν στο μοντάζ αλλάξουν οι χρόνοι, διόρθωσε εδώ τα t και ξανατρέξε το script.
+# Τελική κάρτα: _social/images/yt-endcard-<app>.png (τα τελευταία 3 δευτερόλεπτα κάθε βίντεο).
+
+- id: 01-countdown
+  app: chronos
+  title_en: How many days until your holiday? Countdowns with a photo on iPhone
+  title_el: Πόσες μέρες μένουν για τις διακοπές; Αντίστροφη μέτρηση με φωτογραφία στο iPhone
+  article: countdown-iphone
+  record: iPhone. Λίστα αντίστροφων μετρήσεων, μετά δημιουργία νέας με φωτογραφία, μετά κοινοποίηση.
+  scenes:
+    - {t: [0, 3], en: "How many days until…?", el: "Πόσες μέρες μένουν…;", shot: "Η λίστα αντίστροφων μετρήσεων του Chronos, ακίνητη"}
+    - {t: [3, 8], en: "Tap ⏱ and give it a name, a date and a photo", el: "Πάτα ⏱ και δώσε όνομα, ημερομηνία και φωτογραφία", shot: "Πάτημα στο ⏱, πληκτρολόγηση «Summer holiday», επιλογή ημερομηνίας και φωτογραφίας"}
+    - {t: [8, 12], en: "Days, weeks, months or years", el: "Σε μέρες, εβδομάδες, μήνες ή χρόνια", shot: "Αλλαγή μορφής μέτρησης"}
+    - {t: [12, 16], en: "A reminder up to a month before", el: "Υπενθύμιση έως και έναν μήνα πριν", shot: "Ρύθμιση ειδοποίησης"}
+    - {t: [16, 20], en: "Birthdays show the age, every year", el: "Στα γενέθλια δείχνει την ηλικία, κάθε χρόνο", shot: "Η κάρτα «Emma's birthday, 36 years old»"}
+    - {t: [20, 25], en: "Send it to a friend, with the same photo", el: "Στείλ' τη σε φίλο, με την ίδια φωτογραφία", shot: "Παρατεταμένο πάτημα στην κάρτα → Share → AirDrop ή Messages"}
+    - {t: [25, 28], en: "Chronos · Coming in December", el: "Chronos · Έρχεται τον Δεκέμβριο", shot: "Τελική κάρτα yt-endcard-chronos.png"}
+
+- id: 02-remove-location
+  app: iris
+  title_en: Your photo may show where you live. Remove the location before you share it
+  title_el: Η φωτογραφία σου μπορεί να δείχνει πού μένεις. Σβήσε την τοποθεσία πριν τη στείλεις
+  article: remove-location-from-photos
+  record: Πρώτα iPhone (φύλλο κοινοποίησης), μετά Mac με Iris. Στο μοντάζ, το Mac κομμένο κάθετα στο σημείο που αλλάζει.
+  scenes:
+    - {t: [0, 3], en: "This photo may show where you live", el: "Αυτή η φωτογραφία μπορεί να δείχνει πού μένεις", shot: "Φωτογραφία αντικειμένου για πώληση, με χάρτη τοποθεσίας από κάτω (Πληροφορίες στις Φωτογραφίες)"}
+    - {t: [3, 9], en: "On iPhone: Share → Options → turn off Location", el: "Στο iPhone: Κοινοποίηση → Επιλογές → κλείσε την Τοποθεσία", shot: "Φύλλο κοινοποίησης, «Επιλογές», διακόπτης Τοποθεσίας"}
+    - {t: [9, 13], en: "Many photos? Iris on Mac", el: "Πολλές φωτογραφίες; Iris στο Mac", shot: "Iris με φάκελο φωτογραφιών"}
+    - {t: [13, 19], en: "Clean for Privacy removes all metadata: location, date, device", el: "Το Clean for Privacy σβήνει όλα τα μεταδεδομένα: τοποθεσία, ημερομηνία, συσκευή", shot: "Επιλογή αρχείων, Clean for Privacy, το παράθυρο «Remove all metadata?»"}
+    - {t: [19, 23], en: "All on your Mac. Nothing is uploaded", el: "Όλα στο Mac σου. Τίποτα δεν ανεβαίνει", shot: "Το αποτέλεσμα: τα αρχεία χωρίς τοποθεσία"}
+    - {t: [23, 26], en: "Iris · Coming soon", el: "Iris · Έρχεται σύντομα", shot: "Τελική κάρτα yt-endcard-iris.png"}
+
+- id: 03-trips
+  app: apollo
+  title_en: Your photos already know every trip. Turn them into a travel map
+  title_el: Οι φωτογραφίες σου ξέρουν ήδη κάθε ταξίδι. Κάν' τες χάρτη ταξιδιών
+  article: trips-from-your-photos
+  record: iPhone, Apollo. Καρτέλα ταξιδιών, ένα ταξίδι, στατιστικά, εισιτήριο.
+  scenes:
+    - {t: [0, 3], en: "Your photos already know every trip", el: "Οι φωτογραφίες σου ξέρουν ήδη κάθε ταξίδι", shot: "Ο χάρτης ταξιδιών του Apollo, ακίνητος"}
+    - {t: [3, 8], en: "Apollo finds them by itself, from dates and places", el: "Το Apollo τα βρίσκει μόνο του, από ημερομηνίες και τοποθεσίες", shot: "Λίστα ταξιδιών, κύλιση"}
+    - {t: [8, 13], en: "Each trip: a map, its days and its photos", el: "Κάθε ταξίδι: χάρτης, μέρες και φωτογραφίες", shot: "Άνοιγμα ενός ταξιδιού (π.χ. Crete)"}
+    - {t: [13, 17], en: "Distance and countries, per year", el: "Χιλιόμετρα και χώρες, ανά έτος", shot: "Στατιστικά"}
+    - {t: [17, 22], en: "Boarding passes and ferry tickets, filed under the right trip", el: "Κάρτες επιβίβασης και εισιτήρια πλοίου, στο σωστό ταξίδι", shot: "Καρτέλα εισιτηρίων, σάρωση ή άνοιγμα ενός"}
+    - {t: [22, 25], en: "Apollo · Coming soon", el: "Apollo · Έρχεται σύντομα", shot: "Τελική κάρτα yt-endcard-apollo.png"}
+
+- id: 04-subscriptions
+  app: chronos
+  title_en: What do your subscriptions really cost per year?
+  title_el: Πόσο σου κοστίζουν πραγματικά οι συνδρομές τον χρόνο;
+  article: subscriptions-iphone
+  record: iPhone, Chronos. Παρακολούθηση → Συνδρομές, σύνολα, προσθήκη μίας, ρύθμιση υπενθύμισης.
+  scenes:
+    - {t: [0, 3], en: "What do your subscriptions cost per year?", el: "Πόσα δίνεις τον χρόνο σε συνδρομές;", shot: "Η λίστα συνδρομών του Chronos, ακίνητη"}
+    - {t: [3, 8], en: "iPhone Settings only show what you pay through Apple", el: "Οι Ρυθμίσεις του iPhone δείχνουν μόνο όσα πληρώνεις μέσω Apple", shot: "Ρυθμίσεις → [όνομα] → Συνδρομές"}
+    - {t: [8, 13], en: "In Chronos: all of them, with totals per month and year", el: "Στο Chronos: όλες, με σύνολα ανά μήνα και χρόνο", shot: "Chronos → Παρακολούθηση → Συνδρομές, τα σύνολα"}
+    - {t: [13, 18], en: "A reminder before every charge", el: "Υπενθύμιση πριν από κάθε χρέωση", shot: "Ρύθμιση ειδοποίησης μιας συνδρομής (ημέρες πριν)"}
+    - {t: [18, 22], en: "Renewals right in your calendar", el: "Οι ανανεώσεις μέσα στο ημερολόγιο", shot: "Ημερολόγιο με την ανανέωση δίπλα στα ραντεβού"}
+    - {t: [22, 25], en: "Chronos · Coming in December", el: "Chronos · Έρχεται τον Δεκέμβριο", shot: "Τελική κάρτα yt-endcard-chronos.png"}
+
+- id: 05-fix-photo-dates
+  app: iris
+  title_en: Why your old photos show up in the wrong year (and how to fix it on Mac)
+  title_el: Γιατί οι παλιές φωτογραφίες εμφανίζονται σε λάθος χρονιά (και πώς το διορθώνεις στο Mac)
+  article: fix-photo-dates-mac
+  record: Mac, Iris. Φάκελος με σκαναρισμένες ή WhatsApp φωτογραφίες. Στο μοντάζ κάθετο κόψιμο.
+  scenes:
+    - {t: [0, 3], en: "Your 2015 trip, filed under 2023?", el: "Το ταξίδι του 2015, στο 2023;", shot: "Φωτογραφίες σε λάθος χρονιά (Φωτογραφίες ή Apollo)"}
+    - {t: [3, 8], en: "Scans, WhatsApp, or a camera with the wrong clock", el: "Σκαναρισμένες, από WhatsApp ή κάμερα με λάθος ρολόι", shot: "Λίστα αρχείων στο Iris με «no date»"}
+    - {t: [8, 14], en: "Iris suggests the date from the file name", el: "Το Iris προτείνει ημερομηνία από το όνομα του αρχείου", shot: "IMG-20190814-WA0012.jpg → Get Date from File Name → 14 Αυγούστου 2019"}
+    - {t: [14, 19], en: "Wrong camera clock? Shift them all at once", el: "Λάθος ρολόι; Μετατόπισε όλες μαζί", shot: "Επιλογή πολλών αρχείων, Shift +3 ώρες"}
+    - {t: [19, 23], en: "Written inside the files. Every app sees it", el: "Γράφεται μέσα στα αρχεία. Το βλέπει κάθε εφαρμογή", shot: "Οι φωτογραφίες στη σωστή χρονιά"}
+    - {t: [23, 26], en: "Iris · Coming soon", el: "Iris · Έρχεται σύντομα", shot: "Τελική κάρτα yt-endcard-iris.png"}
+
+- id: 06-cloud-albums
+  app: apollo
+  title_en: Your pCloud, Dropbox or OneDrive photos as a real album
+  title_el: Οι φωτογραφίες σου από pCloud, Dropbox ή OneDrive σαν πραγματικό άλμπουμ
+  article: cloud-photos-as-albums-iphone
+  record: Πρώτα φάκελοι στην εφαρμογή του cloud (Αρχεία ή pCloud), μετά το ίδιο υλικό στο Apollo.
+  scenes:
+    - {t: [0, 3], en: "Photos in the cloud = files in folders", el: "Φωτογραφίες στο cloud = αρχεία σε φακέλους", shot: "Φάκελοι και υποφάκελοι στην εφαρμογή του cloud, αργή φόρτωση"}
+    - {t: [3, 8], en: "Apollo turns them into an album, without copying", el: "Το Apollo τα κάνει άλμπουμ, χωρίς αντιγραφή", shot: "Χρονολόγιο του Apollo, κύλιση"}
+    - {t: [8, 12], en: "By year, from the real capture date", el: "Ανά έτος, από την πραγματική ημερομηνία λήψης", shot: "Άλμπουμ ανά έτος"}
+    - {t: [12, 16], en: "Every photo with a location, on a map", el: "Κάθε φωτογραφία με τοποθεσία, σε χάρτη", shot: "Χάρτης"}
+    - {t: [16, 21], en: "Search \"sea\" or \"dog\". Analysed on your device only", el: "Ψάξε «θάλασσα» ή «σκύλος». Η ανάλυση γίνεται μόνο στη συσκευή σου", shot: "Αναζήτηση «birds» με αποτελέσματα"}
+    - {t: [21, 24], en: "pCloud · Dropbox · OneDrive · Box · WebDAV", el: "pCloud · Dropbox · OneDrive · Box · WebDAV", shot: "Οθόνη σύνδεσης cloud"}
+    - {t: [24, 27], en: "Apollo · Coming soon", el: "Apollo · Έρχεται σύντομα", shot: "Τελική κάρτα yt-endcard-apollo.png"}
+
+- id: 07-car-reminders
+  app: chronos
+  title_en: Never miss a car inspection, insurance or oil change again
+  title_el: Να μη σου ξεφύγει ξανά ΚΤΕΟ, ασφάλεια ή αλλαγή λαδιών
+  article: car-service-reminders-iphone
+  record: iPhone, Chronos. Παρακολούθηση → Αυτοκίνητο. Ελέγξτε πριν ότι το αγγλικό UI δεν γράφει «KTEO» (CLAUDE.md, Εκκρεμότητες).
+  scenes:
+    - {t: [0, 3], en: "Car inspection due… last month?", el: "Το ΚΤΕΟ έληγε… τον προηγούμενο μήνα;", shot: "Οι κάρτες συντήρησης του Chronos, ακίνητες"}
+    - {t: [3, 8], en: "One card per task: service, oil, inspection, insurance, tyres", el: "Μία κάρτα ανά εργασία: service, λάδια, ΚΤΕΟ, ασφάλεια, λάστιχα", shot: "Κύλιση στις κάρτες"}
+    - {t: [8, 13], en: "Kilometres for oil and service", el: "Χιλιόμετρα για λάδια και service", shot: "Κάρτα «Oil change» με χιλιόμετρα"}
+    - {t: [13, 18], en: "Log it when it's done. The next date is worked out", el: "Σημείωσέ το όταν γίνει. Η επόμενη ημερομηνία βγαίνει μόνη της", shot: "Καταγραφή εργασίας, νέα ημερομηνία"}
+    - {t: [18, 22], en: "Full history, handy when you sell the car", el: "Πλήρες ιστορικό, χρήσιμο όταν πουλάς το αυτοκίνητο", shot: "Ιστορικό μιας κάρτας"}
+    - {t: [22, 25], en: "Chronos · Coming in December", el: "Chronos · Έρχεται τον Δεκέμβριο", shot: "Τελική κάρτα yt-endcard-chronos.png"}
+
+- id: 08-add-location
+  app: iris
+  title_en: Old photos missing from the map? Add a location to all of them at once on Mac
+  title_el: Παλιές φωτογραφίες λείπουν από τον χάρτη; Βάλε τοποθεσία σε όλες μαζί στο Mac
+  article: add-location-to-photos-mac
+  record: Mac, Iris. Φάκελος φωτογραφιών από κάμερα χωρίς GPS. Στο μοντάζ κάθετο κόψιμο στον χάρτη.
+  scenes:
+    - {t: [0, 3], en: "Camera photos have no location", el: "Οι φωτογραφίες από κάμερα δεν έχουν τοποθεσία", shot: "Χάρτης με κενά, ή λίστα στο Iris με «no location»"}
+    - {t: [3, 7], en: "See which ones at a glance", el: "Δες αμέσως ποιες", shot: "Φίλτρο «no location» στο Iris"}
+    - {t: [7, 13], en: "Select them all, search for the place once", el: "Επίλεξέ τες όλες, ψάξε το μέρος μία φορά", shot: "Επιλογή όλων, αναζήτηση «Nafplio», καρφίτσα στον χάρτη"}
+    - {t: [13, 18], en: "Written inside every file. Photos and videos", el: "Γράφεται μέσα σε κάθε αρχείο. Φωτογραφίες και βίντεο", shot: "Write to files, τα αρχεία πλέον με τοποθεσία"}
+    - {t: [18, 21], en: "Every change can be undone", el: "Κάθε αλλαγή αναιρείται", shot: "Κουμπί αναίρεσης"}
+    - {t: [21, 24], en: "Iris · Coming soon", el: "Iris · Έρχεται σύντομα", shot: "Τελική κάρτα yt-endcard-iris.png"}
+
+- id: 09-family-album
+  app: apollo
+  title_en: A shared family photo album without iCloud
+  title_el: Κοινό οικογενειακό άλμπουμ χωρίς iCloud
+  article: family-photo-album-without-icloud
+  record: Δύο συσκευές (iPhone και iPad ή Mac) με Family mode στο Apollo, στο ίδιο cloud.
+  scenes:
+    - {t: [0, 3], en: "One family album. No iCloud needed", el: "Ένα οικογενειακό άλμπουμ. Χωρίς iCloud", shot: "Τα άλμπουμ του Apollo, ακίνητα"}
+    - {t: [3, 8], en: "Works on the pCloud, Dropbox or NAS you already share", el: "Πάνω στο pCloud, Dropbox ή NAS που ήδη μοιράζεστε", shot: "Ρυθμίσεις → Family mode"}
+    - {t: [8, 14], en: "Everyone sees the same covers, folders and trips", el: "Όλοι βλέπουν ίδια εξώφυλλα, φακέλους και ταξίδια", shot: "Δύο συσκευές δίπλα δίπλα με τα ίδια άλμπουμ"}
+    - {t: [14, 19], en: "Rename a trip, and it changes for everyone", el: "Μετονόμασε ένα ταξίδι, και αλλάζει για όλους", shot: "Μετονομασία ταξιδιού στη μία συσκευή, εμφάνιση στην άλλη"}
+    - {t: [19, 23], en: "Your photos never leave your own cloud", el: "Οι φωτογραφίες σου δεν φεύγουν ποτέ από το δικό σου cloud", shot: "Άλμπουμ, κύλιση"}
+    - {t: [23, 26], en: "Apollo · Coming soon", el: "Apollo · Έρχεται σύντομα", shot: "Τελική κάρτα yt-endcard-apollo.png"}

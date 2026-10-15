@@ -1,0 +1,27 @@
+1
+00:00:00,000 --> 00:00:03,000
+Photos in the cloud = files in folders
+
+2
+00:00:03,000 --> 00:00:08,000
+Apollo turns them into an album, without copying
+
+3
+00:00:08,000 --> 00:00:12,000
+By year, from the real capture date
+
+4
+00:00:12,000 --> 00:00:16,000
+Every photo with a location, on a map
+
+5
+00:00:16,000 --> 00:00:21,000
+Search "sea" or "dog". Analysed on your device only
+
+6
+00:00:21,000 --> 00:00:24,000
+pCloud · Dropbox · OneDrive · Box · WebDAV
+
+7
+00:00:24,000 --> 00:00:27,000
+Apollo · Coming soon

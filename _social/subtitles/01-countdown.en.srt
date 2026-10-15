@@ -1,0 +1,27 @@
+1
+00:00:00,000 --> 00:00:03,000
+How many days until…?
+
+2
+00:00:03,000 --> 00:00:08,000
+Tap ⏱ and give it a name, a date and a photo
+
+3
+00:00:08,000 --> 00:00:12,000
+Days, weeks, months or years
+
+4
+00:00:12,000 --> 00:00:16,000
+A reminder up to a month before
+
+5
+00:00:16,000 --> 00:00:20,000
+Birthdays show the age, every year
+
+6
+00:00:20,000 --> 00:00:25,000
+Send it to a friend, with the same photo
+
+7
+00:00:25,000 --> 00:00:28,000
+Chronos · Coming in December

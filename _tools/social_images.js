@@ -156,11 +156,98 @@ function post(p) {
     ${device}</div></body></html>`;
 }
 
+// YouTube: banner 2560×1440 με το περιεχόμενο στη «ζώνη ασφαλείας» 1546×423 στο κέντρο (φαίνεται σε κάθε συσκευή).
+function ytBanner() {
+  const icons = ORDER.map((k) => `<img src="${url(`assets/icons/${k}.png`)}" alt="">`).join('');
+  return head(2560, 1440, `
+    .glow{background:radial-gradient(ellipse at 50% 42%,rgba(199,42,44,.16),rgba(16,24,32,0) 45%)}
+    .safe{position:absolute;left:507px;top:508px;width:1546px;height:423px;
+      display:flex;align-items:center;justify-content:center;gap:56px}
+    .logo{height:104px;width:auto}
+    .txt{display:flex;flex-direction:column;gap:22px}
+    p{font-family:"Inter";font-size:34px;font-weight:500;color:#A7B4BB;letter-spacing:-.01em}
+    .icons{display:flex;gap:18px}
+    .icons img{width:68px;height:68px;border-radius:15px;box-shadow:0 6px 18px rgba(0,0,0,.5)}
+    .sep{width:2px;height:190px;background:rgba(237,241,238,.14)}
+  `) + `<div class="glow"></div><div class="safe">
+    <img class="logo" src="${url('assets/dimakis-logo-dark.svg')}"><div class="sep"></div>
+    <div class="txt"><p>Apps for iPhone, iPad, Mac and Apple Watch</p><div class="icons">${icons}</div></div>
+  </div></body></html>`;
+}
+
+// YouTube: υδατογράφημα 150×150, διάφανο φόντο.
+function ytWatermark() {
+  return `<!doctype html><html><head><style>html,body{margin:0;background:transparent;width:150px;height:150px}
+    img{width:150px;height:150px;display:block}</style></head><body>
+    <img src="${url('assets/dimakis-strawberry.svg')}"></body></html>`;
+}
+
+// YouTube: μικρογραφίες 1280×720 για τα οριζόντια βίντεο-οδηγούς.
+const THUMBS = [
+  // Χωρίς screenshot: το παράδειγμα του άρθρου (ημερομηνία από το όνομα του αρχείου), σε μεγάλα γράμματα.
+  { file: 'yt-thumb-fix-photo-dates', app: 'iris', title: 'Wrong photo dates?', sub: 'Fix them all at once',
+    graphic: `<div class="g"><code>IMG-20190814-WA0012.jpg</code><span>↓</span><b>14 August 2019</b></div>` },
+  { file: 'yt-thumb-remove-location', app: 'iris', title: 'Remove the location', sub: 'before you share a photo',
+    mac: 'assets/screens/iris/mac/en/iris-mac-02-privacy.webp', crop: [600, 400, 800, 600] },
+  { file: 'yt-thumb-add-location', app: 'iris', title: 'Put old photos on the map', sub: 'all at once, on your Mac',
+    mac: 'assets/screens/iris/mac/en/iris-mac-04-location.webp', crop: [720, 700, 1020, 550] },
+];
+
+function ytThumb(t) {
+  const a = APPS[t.app];
+  const [x, y, w, h] = t.crop || [0, 0, 1, 1];
+  const H = 560, s = H / h, W = Math.round(w * s);
+  return head(1280, 720, `
+    .glow{background:radial-gradient(circle at 0% 0%,${a.accent}80,rgba(16,24,32,0) 55%)}
+    .txt{position:absolute;left:64px;top:60px;width:560px;display:flex;flex-direction:column;gap:18px}
+    .app{display:flex;align-items:center;gap:16px;font-size:34px;font-weight:600}
+    .app img{width:72px;height:72px;border-radius:16px}
+    h1{font-size:92px;line-height:.98;font-weight:700;letter-spacing:-.035em;text-wrap:balance;margin-top:24px}
+    .sub{font-family:"Inter";font-size:36px;font-weight:500;color:#E9CA88}
+    .mac{position:absolute;left:640px;top:80px;width:${W}px;height:${H}px;overflow:hidden;border-radius:22px;
+      box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 2px rgba(237,241,238,.14);background:#fff}
+    .mac img{position:absolute;max-width:none;width:${Math.round(2000 * s)}px;left:${-Math.round(x * s)}px;top:${-Math.round(y * s)}px}
+    .g{position:absolute;left:660px;top:150px;width:560px;height:420px;border-radius:28px;background:#1A2831;
+      border:2px solid rgba(237,241,238,.14);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px}
+    .g code{font-family:"DejaVu Sans Mono",Menlo,monospace;font-size:30px;color:#A7B4BB;background:#101820;
+      padding:14px 20px;border-radius:12px}
+    .g span{font-size:64px;color:#E9CA88;line-height:1}
+    .g b{font-size:58px;font-weight:700;letter-spacing:-.02em}
+  `) + `<div class="glow"></div>
+    <div class="txt"><div class="app"><img src="${url(`assets/icons/${t.app}.png`)}">${a.name} for Mac</div>
+      <h1>${t.title}</h1><p class="sub">${t.sub}</p></div>
+    ${t.graphic || `<div class="mac"><img src="${url(t.mac)}"></div>`}</body></html>`;
+}
+
+// Τελική κάρτα για τα Shorts (1080×1920), τα τελευταία 3 δευτερόλεπτα κάθε βίντεο.
+function ytEndcard(k) {
+  const a = APPS[k];
+  return head(1080, 1920, `
+    .glow{background:radial-gradient(circle at 50% 42%,${a.accent}70,rgba(16,24,32,0) 50%)}
+    .in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px}
+    .icon{width:280px;height:280px;border-radius:62px;box-shadow:0 20px 60px rgba(0,0,0,.55)}
+    h1{font-size:110px;font-weight:600;letter-spacing:-.03em;margin-top:30px}
+    .kind{font-family:"Inter";font-size:40px;color:#A7B4BB}
+    .pill{margin-top:30px;font-family:"Inter";font-size:38px;font-weight:600;color:#E9CA88;
+      border:2px solid rgba(233,202,136,.55);border-radius:999px;padding:14px 34px}
+    .brand{position:absolute;left:0;right:0;bottom:200px;display:flex;justify-content:center;align-items:center;gap:16px;
+      font-family:"Inter";font-size:40px;font-weight:600;color:#EDF1EE}
+    .brand img{width:56px;height:56px}
+  `) + `<div class="glow"></div><div class="in">
+    <img class="icon" src="${url(`assets/icons/${k}.png`)}"><h1>${a.name}</h1><span class="kind">${a.kind}</span>
+    <span class="pill">${a.status}</span></div>
+    <div class="brand"><img src="${url('assets/dimakis-strawberry.svg')}">dimakis.app</div></body></html>`;
+}
+
 const JOBS = [
   { name: 'profile', w: 1080, h: 1080, html: profile, type: 'png' },
   { name: 'facebook-cover', w: 1640, h: 624, html: cover, type: 'png' },
   { name: '00-intro', w: 1080, h: 1350, html: intro, type: 'jpeg' },
   ...POSTS.map((p) => ({ name: p.file, w: 1080, h: 1350, html: () => post(p), type: 'jpeg' })),
+  { name: 'youtube-banner', w: 2560, h: 1440, html: ytBanner, type: 'jpeg' },
+  { name: 'youtube-watermark', w: 150, h: 150, html: ytWatermark, type: 'png', transparent: true },
+  ...THUMBS.map((t) => ({ name: t.file, w: 1280, h: 720, html: () => ytThumb(t), type: 'jpeg' })),
+  ...['chronos', 'apollo', 'iris'].map((k) => ({ name: `yt-endcard-${k}`, w: 1080, h: 1920, html: () => ytEndcard(k), type: 'png' })),
 ];
 
 (async () => {
@@ -176,7 +263,7 @@ const JOBS = [
     await page.goto('file://' + tmp, { waitUntil: 'networkidle' });
     await page.evaluate(() => document.fonts.ready);
     const out = path.join(OUT, `${j.name}.${j.type === 'png' ? 'png' : 'jpg'}`);
-    await page.screenshot({ path: out, type: j.type, ...(j.type === 'jpeg' ? { quality: 90 } : {}) });
+    await page.screenshot({ path: out, type: j.type, omitBackground: !!j.transparent, ...(j.type === 'jpeg' ? { quality: 90 } : {}) });
     fs.unlinkSync(tmp);
     console.log('✓', path.relative(ROOT, out));
   }

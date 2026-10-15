@@ -1,0 +1,23 @@
+1
+00:00:00,000 --> 00:00:03,000
+Car inspection due… last month?
+
+2
+00:00:03,000 --> 00:00:08,000
+One card per task: service, oil, inspection, insurance, tyres
+
+3
+00:00:08,000 --> 00:00:13,000
+Kilometres for oil and service
+
+4
+00:00:13,000 --> 00:00:18,000
+Log it when it's done. The next date is worked out
+
+5
+00:00:18,000 --> 00:00:22,000
+Full history, handy when you sell the car
+
+6
+00:00:22,000 --> 00:00:25,000
+Chronos · Coming in December

@@ -1,0 +1,23 @@
+1
+00:00:00,000 --> 00:00:03,000
+This photo may show where you live
+
+2
+00:00:03,000 --> 00:00:09,000
+On iPhone: Share → Options → turn off Location
+
+3
+00:00:09,000 --> 00:00:13,000
+Many photos? Iris on Mac
+
+4
+00:00:13,000 --> 00:00:19,000
+Clean for Privacy removes all metadata: location, date, device
+
+5
+00:00:19,000 --> 00:00:23,000
+All on your Mac. Nothing is uploaded
+
+6
+00:00:23,000 --> 00:00:26,000
+Iris · Coming soon
