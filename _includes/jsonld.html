@@ -1,7 +1,7 @@
 {% comment %}
 Δομημένα δεδομένα (schema.org) για τις μηχανές αναζήτησης.
 Σελίδα εφαρμογής → SoftwareApplication (τιμή και App Store μόνο όταν υπάρχουν στο apps.yml).
-Αρχική → WebSite. Άρθρο → Article.
+Αρχική → WebSite, με publisher και sameAs τους λογαριασμούς social του site.yml. Άρθρο → Article.
 {% endcomment %}
 {% assign A = include.app %}
 {% if page.layout == 'app' and A != "" %}
@@ -41,7 +41,13 @@
   "@type": "WebSite",
   "name": "dimakis",
   "url": {{ '/' | absolute_url | jsonify }},
-  "inLanguage": ["el", "en"]
+  "inLanguage": ["el", "en"]{% assign socials = site.data.site.social | where_exp: "s", "s.url != ''" %}{% if socials.size > 0 %},
+  "publisher": {
+    "@type": "Organization",
+    "name": "dimakis",
+    "url": {{ '/' | absolute_url | jsonify }},
+    "sameAs": {{ socials | map: "url" | jsonify }}
+  }{% endif %}
 }
 </script>
 {% elsif page.layout == 'article' %}

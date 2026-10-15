@@ -53,6 +53,9 @@
 - **GitHub Pages**: Enforce HTTPS ενεργό.
 - **Press Kit**: zip ανά εφαρμογή και γλώσσα, από τα `Marketing` των εφαρμογών, στο GitHub Release «press-kit».
   Ενημέρωση: `ruby _tools/press_kits.rb --upload` (πηγές στο `SOURCES` του script).
+- **Social** (Meta, Κέντρο διαχείρισης λογαριασμών, email `social@dimakis.app`):
+  Instagram και Threads `dimakis.app`, σελίδα Facebook `dimakis.apps` (με «s»). Στο `site.yml` → `social`,
+  εμφανίζονται στο footer και ως `sameAs` στο JSON-LD της αρχικής. Νέος λογαριασμός = νέα γραμμή εκεί.
 - **GoatCounter**: στατιστικά επισκέψεων (dimakis.goatcounter.com).
 - Email: `support@`, `press@`, `hello@` και ένα ανά εφαρμογή (`chronos@` κ.λπ.) στο dimakis.app.
 
@@ -65,7 +68,7 @@
 
 ## Εκκρεμότητες
 
-- Social: σύνδεσμοι στο `site.yml` όταν ανοίξουν οι λογαριασμοί.
+- Social: όσοι λογαριασμοί ανοίξουν ακόμα (X, Bluesky, YouTube κ.λπ.) μπαίνουν στο `site.yml`.
 - `owner_name` στο `site.yml` (ίδιο με το App Store): μπαίνει ως δημιουργός στο JSON-LD και στο Press Kit.
 - Με την κυκλοφορία: ένδειξη «Νέο» για το Chronos στην αρχική.
 - Προαιρετικά: `apple-app-site-association` για universal links.

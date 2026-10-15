@@ -15,8 +15,9 @@ newsletter_app_field: APP
 newsletter_lang_field: LANGUAGE
 # Λογαριασμοί social media: γράψε τον πλήρη σύνδεσμο. Όσοι μένουν κενοί δεν εμφανίζονται.
 social:
-  - { name: Instagram, url: '' }
-  - { name: Threads, url: '' }
+  - { name: Instagram, url: 'https://www.instagram.com/dimakis.app/' }
+  - { name: Threads, url: 'https://www.threads.com/@dimakis.app' }
+  - { name: Facebook, url: 'https://www.facebook.com/dimakis.apps' }
   - { name: X, url: '' }
   - { name: Bluesky, url: '' }
   - { name: Mastodon, url: '' }
