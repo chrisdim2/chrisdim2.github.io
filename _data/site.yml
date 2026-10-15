@@ -14,6 +14,7 @@ newsletter_action: https://54afba2f.sibforms.com/serve/MUIFAAThl_VuVMPD-tos_YALO
 newsletter_app_field: APP
 newsletter_lang_field: LANGUAGE
 # Λογαριασμοί social media: γράψε τον πλήρη σύνδεσμο. Όσοι μένουν κενοί δεν εμφανίζονται.
+# Το χρυσό εικονίδιο είναι το assets/logos/social/<όνομα με μικρά>.svg (αν δεν υπάρχει, μόνο κείμενο).
 social:
   - { name: Instagram, url: 'https://www.instagram.com/dimakis.app/' }
   - { name: Threads, url: 'https://www.threads.com/@dimakis.app' }

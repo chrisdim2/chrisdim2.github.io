@@ -55,7 +55,9 @@
   Ενημέρωση: `ruby _tools/press_kits.rb --upload` (πηγές στο `SOURCES` του script).
 - **Social** (Meta, Κέντρο διαχείρισης λογαριασμών, email `social@dimakis.app`):
   Instagram και Threads `dimakis.app`, σελίδα Facebook `dimakis.apps` (με «s»). Στο `site.yml` → `social`,
-  εμφανίζονται στο footer και ως `sameAs` στο JSON-LD της αρχικής. Νέος λογαριασμός = νέα γραμμή εκεί.
+  εμφανίζονται στο footer με χρυσό εικονίδιο (`assets/logos/social/<όνομα>.svg`, ίδια διαβάθμιση με τα εμβλήματα,
+  έτοιμα και για X, Bluesky, Mastodon, YouTube, TikTok, LinkedIn) και ως `sameAs` στο JSON-LD της αρχικής.
+  Νέος λογαριασμός = μόνο ο σύνδεσμος στο `site.yml`.
 - **GoatCounter**: στατιστικά επισκέψεων (dimakis.goatcounter.com).
 - Email: `support@`, `press@`, `hello@` και ένα ανά εφαρμογή (`chronos@` κ.λπ.) στο dimakis.app.
 

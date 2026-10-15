@@ -113,7 +113,8 @@
       {% assign socials = site.data.site.social | where_exp: "s", "s.url != ''" %}
       {% if socials.size > 0 %}
       <ul class="foot-links foot-social" aria-label="{{ L.footer_social }}">
-        {% for s in socials %}<li><a href="{{ s.url }}" rel="me noopener" target="_blank">{{ s.name }}</a></li>{% endfor %}
+        {% for s in socials %}{% assign ic = s.name | downcase | prepend: '/assets/logos/social/' | append: '.svg' %}{% assign ic_found = site.static_files | where: "path", ic %}
+        <li><a href="{{ s.url }}" rel="me noopener" target="_blank">{% if ic_found.size > 0 %}<img class="foot-emblem" src="{{ ic | relative_url }}" alt="" width="20" height="20" loading="lazy">{% endif %}{{ s.name }}</a></li>{% endfor %}
       </ul>
       {% endif %}
       <a class="foot-mail" href="mailto:{{ site.data.site.contact_email }}">{{ site.data.site.contact_email }}</a>
