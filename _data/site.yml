@@ -22,7 +22,7 @@ social:
   - { name: X, url: '' }
   - { name: Bluesky, url: '' }
   - { name: Mastodon, url: '' }
-  - { name: YouTube, url: '' }
+  - { name: YouTube, url: 'https://www.youtube.com/@dimakisapps' }
   - { name: TikTok, url: '' }
   - { name: LinkedIn, url: '' }
 el:
