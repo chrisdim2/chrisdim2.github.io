@@ -89,7 +89,8 @@ function cover() {
 function intro() {
   const cards = ORDER.map((k) => {
     const a = APPS[k];
-    return `<div class="card"><img src="${url(`assets/icons/${k}.png`)}">
+    // Χρυσά εμβλήματα (ίδια με το εξώφυλλο Facebook και το banner YouTube), όχι τα έγχρωμα εικονίδια.
+    return `<div class="card"><div class="emb"><img src="${url(`assets/logos/${k}-emblem.svg`)}"></div>
       <b>${a.name}</b><span>${a.kind}</span><i>${a.status}</i></div>`;
   }).join('');
   return head(1080, 1350, `
@@ -101,7 +102,9 @@ function intro() {
     .grid{position:absolute;left:80px;right:80px;top:560px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
     .card{background:#1A2831;border:1px solid rgba(237,241,238,.10);border-radius:30px;padding:30px 26px;
       display:flex;flex-direction:column;align-items:flex-start;gap:6px;height:330px}
-    .card img{width:104px;height:104px;border-radius:24px;margin-bottom:16px;box-shadow:0 6px 18px rgba(0,0,0,.45)}
+    .card .emb{width:104px;height:104px;border-radius:24px;margin-bottom:16px;display:flex;align-items:center;justify-content:center;
+      background:radial-gradient(circle at 50% 35%,#1F2B38,#121A23);box-shadow:0 6px 18px rgba(0,0,0,.45),inset 0 0 0 1px rgba(233,202,136,.10)}
+    .card .emb img{width:76px;height:76px}
     .card b{font-size:36px;font-weight:600;letter-spacing:-.02em}
     .card span{font-family:"Inter";font-size:22px;color:#A7B4BB;line-height:1.25}
     .card i{font-style:normal;font-family:"Inter";font-size:19px;font-weight:600;color:#E9CA88;margin-top:auto}
