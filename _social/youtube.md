@@ -28,7 +28,7 @@
 
 1. youtube.com με το `dimakis.4home@gmail.com` (ίδιος λογαριασμός με το Search Console) → Δημιουργία καναλιού
    → **με επωνυμία**: «dimakis». Γίνεται κανάλι επωνυμίας (Brand Account), στο οποίο μπαίνουν αργότερα διαχειριστές χωρίς κωδικό.
-2. **Handle:** `@dimakis.app`
+2. **Handle:** `@dimakisapps` (ίδιο όνομα σε όλα τα δίκτυα, απόφαση 16/10)
 3. **Επαλήθευση** με τηλέφωνο: youtube.com/verify (χωρίς αυτήν δεν ανεβαίνουν μικρογραφίες).
 4. **Προσαρμογή → Branding:** εικόνα, banner, υδατογράφημα.
 5. **Προσαρμογή → Βασικές πληροφορίες:** περιγραφή (παρακάτω), σύνδεσμοι, email επικοινωνίας `hello@dimakis.app`.
@@ -60,10 +60,10 @@ Get notified on launch day: https://dimakis.app/en/
 Ειδοποίηση τη μέρα της κυκλοφορίας: https://dimakis.app/
 ```
 
-**Σύνδεσμοι καναλιού:** Website `https://dimakis.app/en/` · Instagram `https://www.instagram.com/dimakis.app/` ·
-Threads `https://www.threads.com/@dimakis.app` · Facebook `https://www.facebook.com/dimakis.apps`
+**Σύνδεσμοι καναλιού:** Website `https://dimakis.app/en/` · Instagram `https://www.instagram.com/dimakisapps/` ·
+Threads `https://www.threads.com/@dimakisapps` · Facebook `https://www.facebook.com/dimakisapps`
 
-Μετά: `_data/site.yml` → `social` → YouTube: `https://www.youtube.com/@dimakis.app` (εμφανίζεται μόνο του στο footer).
+Μετά: `_data/site.yml` → `social` → YouTube: `https://www.youtube.com/@dimakisapps` (εμφανίζεται μόνο του στο footer).
 
 ---
 

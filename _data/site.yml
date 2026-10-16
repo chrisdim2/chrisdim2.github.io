@@ -16,9 +16,9 @@ newsletter_lang_field: LANGUAGE
 # Λογαριασμοί social media: γράψε τον πλήρη σύνδεσμο. Όσοι μένουν κενοί δεν εμφανίζονται.
 # Το χρυσό εικονίδιο είναι το assets/logos/social/<όνομα με μικρά>.svg (αν δεν υπάρχει, μόνο κείμενο).
 social:
-  - { name: Instagram, url: 'https://www.instagram.com/dimakis.app/' }
-  - { name: Threads, url: 'https://www.threads.com/@dimakis.app' }
-  - { name: Facebook, url: 'https://www.facebook.com/dimakis.apps' }
+  - { name: Instagram, url: 'https://www.instagram.com/dimakisapps/' }
+  - { name: Threads, url: 'https://www.threads.com/@dimakisapps' }
+  - { name: Facebook, url: 'https://www.facebook.com/dimakisapps' }
   - { name: X, url: '' }
   - { name: Bluesky, url: '' }
   - { name: Mastodon, url: '' }

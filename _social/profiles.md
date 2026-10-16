@@ -5,7 +5,7 @@
 
 ---
 
-## Instagram (`dimakis.app`)
+## Instagram (`dimakisapps`)
 
 Επεξεργασία προφίλ στην εφαρμογή Instagram.
 
@@ -35,11 +35,11 @@ Chronos arrives in December
 
 **Επαγγελματικός λογαριασμός** (Ρυθμίσεις → Τύπος λογαριασμού): «Δημιουργός» ή «Επιχείρηση», για Insights,
 προγραμματισμό και κουμπί email. Κατηγορία: «App Page». Αν δεν εμφανίζεται, η πλησιέστερη (π.χ. «Software»).
-Κουμπί επικοινωνίας: email `hello@dimakis.app`. Σύνδεση με τη σελίδα Facebook `dimakis.apps`.
+Κουμπί επικοινωνίας: email `hello@dimakis.app`. Σύνδεση με τη σελίδα Facebook `dimakisapps`.
 
 ---
 
-## Threads (`@dimakis.app`)
+## Threads (`@dimakisapps`)
 
 Παίρνει όνομα και εικόνα από το Instagram. Το βιογραφικό γράφεται χωριστά.
 
@@ -54,7 +54,7 @@ Apps for iPhone, iPad, Mac & Apple Watch, built by one person in Greece. Tips, l
 
 ---
 
-## Facebook (σελίδα `dimakis.apps`)
+## Facebook (σελίδα `dimakisapps`)
 
 **Κατηγορία:** «App Page». Δεύτερη, αν θέλεις: «Software».
 
