@@ -23,7 +23,7 @@ social:
   - { name: Bluesky, url: '' }
   - { name: Mastodon, url: '' }
   - { name: YouTube, url: 'https://www.youtube.com/@dimakisapps' }
-  - { name: TikTok, url: '' }
+  - { name: TikTok, url: 'https://www.tiktok.com/@dimakisapps' }
   - { name: LinkedIn, url: '' }
 el:
   home_title: dimakis — Εφαρμογές για iPhone, iPad, Mac και Apple Watch
