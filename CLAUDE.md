@@ -60,9 +60,10 @@
   Trailer με «Coming…» αντί για «Available on the App Store»: `python3 _tools/social_trailers.py`. Με την κυκλοφορία
   ανεβαίνει το αρχικό `assets/video/<app>-en.mp4` ως νέο βίντεο. Shorts: σενάρια στο `_social/shorts.yml`,
   υπότιτλοι με `ruby _tools/social_srt.rb`. Στο site τα βίντεο μένουν αυτοφιλοξενούμενα (όχι embed YouTube, για το απόρρητο).
-- Άλλοι λογαριασμοί (πρόταση 15/10): Bluesky (`@dimakis.app` με TXT `_atproto` στο Cloudflare) και Mastodon ενεργά,
-  X (`dimakisapp`) και TikTok (`dimakis.app`, βιογραφικό έως 80 χαρακτήρες) μόνο κράτηση ονόματος,
-  Product Hunt και Reddit για την κυκλοφορία.
+- Άλλοι λογαριασμοί (19/10): **TikTok** `@dimakisapps` (στο footer) και **X** `@dimakisapps` υπάρχουν.
+  Το X μένει κράτηση ονόματος (μία καρφιτσωμένη ανάρτηση), **όχι στο footer** όσο δεν είναι ενεργό.
+  Bluesky (`@dimakis.app` με TXT `_atproto` στο Cloudflare) και Mastodon: προτάθηκαν ως ενεργοί, δεν έχουν ανοίξει ακόμα.
+  TestFlight: όχι ακόμα. Αν βγει, ιδανικά 3 με 4 εβδομάδες πριν την κυκλοφορία, με αναρτήσεις beta στο Reddit.
 - **Reddit** `u/dimakisapp` (χωρίς «s», το όνομα δεν αλλάζει) και **Product Hunt** `@dimakisapps` (άνοιξαν την εβδομάδα 12 με 18/10).
   Μέχρι την κυκλοφορία μόνο χτίσιμο ιστορικού, σχέδιο στο `_social/README.md` → «Reddit και Product Hunt».
   Τα προσχέδια τα γράφει το Claude, την ανάρτηση την κάνει πάντα ο χρήστης (όχι αυτόματες αναρτήσεις: παραβιάζουν τους όρους).
