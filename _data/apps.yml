@@ -77,35 +77,31 @@ list:
     - Medication reminders with interaction checks
     - Loans, home maintenance and subscriptions — your whole life admin, in one place
   screenshots: []
-- slug: hermes
-  title: Hermes
-  full_name: Hermes Mail
-  greek: ΕΡΜΗΣ
-  icon: /assets/icons/hermes.png
+- slug: hestia
+  title: Hestia
+  full_name: Hestia Booking Manager
+  greek: ΕΣΤΙΑ
+  icon: /assets/icons/hestia.png
   theme: light
-  tint: '#E0F2FB'
-  accent: '#0A7FC0'
-  logo: /assets/logos/hermes-lockup.svg
-  logo_size: [545, 141]
-  emblem: /assets/logos/hermes-emblem.svg
-  og_image: /assets/og/hermes.jpg
+  tint: '#FBE7E5'
+  accent: '#B71C1C'
   order: 6
-  platforms: [iphone, ipad, mac, watch]
+  platforms: [iphone, ipad]
   has_legal: false
-  support_email: hermes@dimakis.app
+  support_email: hestia@dimakis.app
   appstore_url: ''
   appstore_id: ''
   price: ''
   ready: false
-  schema_category: CommunicationApplication
-  description_el: 'Hermes: εφαρμογή ηλεκτρονικού ταχυδρομείου για iPhone, iPad, Mac και Apple Watch, σε ανάπτυξη, από το dimakis.'
-  description_en: 'Hermes: a mail app for iPhone, iPad, Mac and Apple Watch, in development, by dimakis.'
-  kind_el: Ηλεκτρονικό ταχυδρομείο
-  kind_en: Mail
-  tagline_el: Επικοινωνία με ταχύτητα θεού.
-  tagline_en: Communication at the speed of a god.
-  origin_el: Από τον Ερμή, τον αγγελιοφόρο των θεών.
-  origin_en: Named after Hermes, messenger of the gods.
+  schema_category: BusinessApplication
+  description_el: 'Hestia: εφαρμογή διαχείρισης κρατήσεων για μικρά καταλύματα, για iPhone και iPad, σε ανάπτυξη, από το dimakis.'
+  description_en: 'Hestia: a booking manager for small stays, for iPhone and iPad, in development, by dimakis.'
+  kind_el: Διαχείριση κρατήσεων
+  kind_en: Booking management
+  tagline_el: Η εστία των κρατήσεών σου.
+  tagline_en: The hearth of your bookings.
+  origin_el: Από την Εστία, τη θεά της εστίας και του σπιτικού.
+  origin_en: Named after Hestia, goddess of the hearth and home.
   status_el: Σε ανάπτυξη
   status_en: In development
   features_el: []

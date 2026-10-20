@@ -15,11 +15,11 @@ const APPS = {
   chronos: { name: 'Chronos', kind: 'Calendar', accent: '#2747B8', status: 'Coming in December' },
   apollo: { name: 'Apollo', kind: 'Family photo album', accent: '#B07D0A', status: 'Coming soon' },
   iris: { name: 'Iris', kind: 'Photo companion for Mac', accent: '#9A7240', status: 'Coming soon' },
-  hermes: { name: 'Hermes', kind: 'Mail', accent: '#0A7FC0', status: 'In development' },
+  hestia: { name: 'Hestia', kind: 'Booking management', accent: '#B71C1C', status: 'In development' },
   athena: { name: 'Athena', kind: 'Notes & notebooks', accent: '#5B47D6', status: 'In development' },
   argus: { name: 'Argus', kind: 'Document scanner', accent: '#4F5B67', status: 'In development' },
 };
-const ORDER = ['chronos', 'apollo', 'iris', 'hermes', 'athena', 'argus'];
+const ORDER = ['chronos', 'apollo', 'iris', 'hestia', 'athena', 'argus'];
 
 // Αναρτήσεις: ίδια σειρά με το _social/README.md. shot: phone (κάθετο screenshot) ή mac (με crop σε px πηγής).
 const POSTS = [

@@ -33,7 +33,7 @@ el:
     έξι ονόματα
 
     θεών.'
-  hero_text: Ημερολόγιο, αλληλογραφία, σημειώσεις, φωτογραφίες, σάρωση εγγράφων. Φτιαγμένες
+  hero_text: Ημερολόγιο, κρατήσεις, σημειώσεις, φωτογραφίες, σάρωση εγγράφων. Φτιαγμένες
     μία μία, από έναν άνθρωπο, στην Ελλάδα.
   nav_apps: Εφαρμογές
   nav_press: Press Kit
@@ -80,7 +80,7 @@ en:
     six names
 
     of gods.'
-  hero_text: Calendar, mail, notes, photos, document scanning. Built one at a time,
+  hero_text: Calendar, bookings, notes, photos, document scanning. Built one at a time,
     by one person, in Greece.
   nav_apps: Apps
   nav_press: Press Kit

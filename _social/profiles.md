@@ -67,11 +67,11 @@ Apps for iPhone, iPad, Mac & Apple Watch, made in Greece 🇬🇷 Εφαρμογ
 **Λεπτομέρειες / Περισσότερα για τη σελίδα** (εδώ χωράει πλήρες κείμενο):
 
 ```
-Six apps, six names of gods. Calendar, mail, notes, photos and document scanning for iPhone, iPad, Mac and Apple Watch, built one at a time by one person, in Greece. Every app speaks 32 languages, and your data stays on your devices and in your own cloud.
+Six apps, six names of gods. Calendar, bookings, notes, photos and document scanning for iPhone, iPad, Mac and Apple Watch, built one at a time by one person, in Greece. Every app speaks 32 languages, and your data stays on your devices and in your own cloud.
 
 Chronos, a calendar that goes beyond appointments, arrives in December. Apollo (family photo album) and Iris (photo companion for Mac) are coming soon.
 
-🇬🇷 Έξι εφαρμογές, έξι ονόματα θεών. Ημερολόγιο, αλληλογραφία, σημειώσεις, φωτογραφίες και σάρωση εγγράφων για iPhone, iPad, Mac και Apple Watch, φτιαγμένες μία μία από έναν άνθρωπο, στην Ελλάδα.
+🇬🇷 Έξι εφαρμογές, έξι ονόματα θεών. Ημερολόγιο, κρατήσεις, σημειώσεις, φωτογραφίες και σάρωση εγγράφων για iPhone, iPad, Mac και Apple Watch, φτιαγμένες μία μία από έναν άνθρωπο, στην Ελλάδα.
 ```
 
 **Ιστότοπος:** `https://dimakis.app/en/` (και `https://dimakis.app/` αν δέχεται δεύτερο)

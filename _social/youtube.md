@@ -39,7 +39,7 @@
 **Περιγραφή καναλιού** (όριο 1000):
 
 ```
-Six apps, six names of Greek gods. Calendar, mail, notes, photos and document scanning for iPhone, iPad, Mac and Apple Watch, built one at a time by one person, in Greece. Every app speaks 32 languages, and your data stays on your devices and in your own cloud.
+Six apps, six names of Greek gods. Calendar, bookings, notes, photos and document scanning for iPhone, iPad, Mac and Apple Watch, built one at a time by one person, in Greece. Every app speaks 32 languages, and your data stays on your devices and in your own cloud.
 
 Here: short tips, how-to guides and launch news.
 
@@ -51,7 +51,7 @@ Get notified on launch day: https://dimakis.app/en/
 **Μετάφραση στα ελληνικά:**
 
 ```
-Έξι εφαρμογές, έξι ονόματα θεών. Ημερολόγιο, αλληλογραφία, σημειώσεις, φωτογραφίες και σάρωση εγγράφων για iPhone, iPad, Mac και Apple Watch, φτιαγμένες μία μία από έναν άνθρωπο, στην Ελλάδα. Κάθε εφαρμογή μιλά 32 γλώσσες, και τα δεδομένα σου μένουν στις συσκευές σου και στο δικό σου cloud.
+Έξι εφαρμογές, έξι ονόματα θεών. Ημερολόγιο, κρατήσεις, σημειώσεις, φωτογραφίες και σάρωση εγγράφων για iPhone, iPad, Mac και Apple Watch, φτιαγμένες μία μία από έναν άνθρωπο, στην Ελλάδα. Κάθε εφαρμογή μιλά 32 γλώσσες, και τα δεδομένα σου μένουν στις συσκευές σου και στο δικό σου cloud.
 
 Εδώ: σύντομες συμβουλές, οδηγοί και νέα για τις κυκλοφορίες.
 

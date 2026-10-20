@@ -28,7 +28,7 @@ I'm building apps for iPhone, iPad, Mac and Apple Watch, one at a time, here in 
 📅 Chronos, a calendar that goes beyond appointments: December
 🖼️ Apollo, a family photo album on the cloud you already use: coming soon
 🌈 Iris, a photo companion for Mac: coming soon
-✉️ Hermes, 📓 Athena and 📄 Argus: in the works
+🏡 Hestia, 📓 Athena and 📄 Argus: in the works
 
 Follow along for tips, behind the scenes and launch news. Get notified on launch day: dimakis.app (link in bio)
 
@@ -48,7 +48,7 @@ Six apps, six names of Greek gods 🍓 I'm building apps for iPhone, iPad, Mac a
 https://dimakis.app/en/
 ```
 
-**Alt text:** The dimakis logo above six app cards: Chronos (calendar), Apollo (family photo album), Iris (photo companion for Mac), Hermes (mail), Athena (notes) and Argus (document scanner), each with its release status.
+**Alt text:** The dimakis logo above six app cards: Chronos (calendar), Apollo (family photo album), Iris (photo companion for Mac), Hestia (bookings), Athena (notes) and Argus (document scanner), each with its release status.
 
 ---
 
