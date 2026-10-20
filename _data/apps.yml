@@ -83,8 +83,8 @@ list:
   greek: ΕΣΤΙΑ
   icon: /assets/icons/hestia.png
   theme: light
-  tint: '#FBE7E5'
-  accent: '#B71C1C'
+  tint: '#E3EAFB'
+  accent: '#1E40AF'
   order: 6
   platforms: [iphone, ipad]
   has_legal: false

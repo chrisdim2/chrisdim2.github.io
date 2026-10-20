@@ -36,7 +36,7 @@
   (εκτός repo) ώσπου να αποφασίσει ο χρήστης. Το `hermes@dimakis.app` (Cloudflare) να σβηστεί από τον χρήστη.
 - **Hestia (ΕΣΤΙΑ)** παίρνει τη θέση του Hermes ως 6η εφαρμογή, ώστε το «Έξι εφαρμογές, έξι ονόματα θεών» να μένει σωστό (bios, αρχική).
   Φάκελος `~/Developer/BookingApp`, blueprint στο `hestia_app_blueprint.md` (PMS για μικρά καταλύματα, συνδρομή ανά μονάδες, Swift/Supabase).
-  Στο site: «Σε ανάπτυξη», μόνο εικονίδιο (προσωρινά το κόκκινο, υπάρχει και μπλε στο `BookingApp/Icons`, δεν έχει επιλεγεί).
+  Στο site: «Σε ανάπτυξη», μόνο εικονίδιο (το μπλε, `BookingApp/Icons/Hestia-Blue-Light.png`, επιλογή χρήστη 20/10· accent `#1E40AF`).
   **Εκκρεμεί**: χρυσό έμβλημα και λογότυπο (`emblem`, `logo`, `logo_size`, `og_image` στο `apps.yml`) από το `~/Developer/Logos/tools/icons.py`,
   και μετά ξανατρέξιμο του `node _tools/social_images.js` (η εικόνα 00-intro, το εξώφυλλο Facebook και το banner YouTube έχουν ακόμα το έμβλημα του Hermes).
   Τα τελικά κείμενα (`full_name`, `tagline`) είναι προσχέδια.
