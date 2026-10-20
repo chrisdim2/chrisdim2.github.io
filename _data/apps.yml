@@ -85,6 +85,10 @@ list:
   theme: light
   tint: '#E4EFE7'
   accent: '#3F6B4D'
+  logo: /assets/logos/hestia-lockup.svg
+  logo_size: [497, 141]
+  emblem: /assets/logos/hestia-emblem.svg
+  og_image: /assets/og/hestia.jpg
   order: 6
   platforms: [iphone, ipad]
   has_legal: false
