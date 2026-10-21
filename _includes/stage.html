@@ -1,7 +1,7 @@
 {% comment %}
 Σύνθεση συσκευών, ανάλογα με το include.platforms (iphone, ipad, mac, watch):
 MacBook πίσω (μόνο αν η εφαρμογή έχει mac· αλλιώς iPad και iPhone δίπλα-δίπλα), iPad αριστερά μπροστά, iPhone δεξιά, Apple Watch δίπλα στο iPhone.
-include.wide / include.ipad / include.phone / include.watch: εικόνες οθόνης.
+include.wide / include.ipad / include.phone / include.watch: εικόνες οθόνης. include.accent: χρώμα της λάμψης πίσω από τις συσκευές.
 Όπου λείπει εικόνα, η οθόνη δείχνει το include.icon. include.title, include.size ('sm' για την αρχική).
 {% endcomment %}
 {% assign P = include.platforms %}
@@ -11,7 +11,7 @@ include.wide / include.ipad / include.phone / include.watch: εικόνες οθ
 {% if P contains 'iphone' %}{% assign has_phone = true %}{% endif %}
 {% if P contains 'watch' %}{% assign has_watch = true %}{% endif %}
 {% capture blank_screen %}<span class="dev-empty">{% if include.icon and include.icon != "" %}<img src="{{ include.icon | relative_url }}" alt="" loading="lazy">{% endif %}</span>{% endcapture %}
-<div class="stage{% unless has_mac %} no-mac{% endunless %}{% if include.size == 'sm' %} stage-sm{% endif %}{% if has_ipad %} has-ipad{% endif %}{% if has_phone %} has-phone{% endif %}{% if has_watch %} has-watch{% endif %}">
+<div class="stage{% unless has_mac %} no-mac{% endunless %}{% if include.size == 'sm' %} stage-sm{% endif %}{% if has_ipad %} has-ipad{% endif %}{% if has_phone %} has-phone{% endif %}{% if has_watch %} has-watch{% endif %}"{% if include.accent %} style="--glow:{{ include.accent }}"{% endif %}>
   {% if has_mac %}
   <div class="mbp">
     <div class="mbp-lid">

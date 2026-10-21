@@ -75,9 +75,9 @@ layout: default
         {% assign stage_ipad = sc.stage.ipad %}{% if page.lang == 'en' and sc.stage.ipad_en %}{% assign stage_ipad = sc.stage.ipad_en %}{% endif %}
         {% assign stage_phone = sc.stage.phone %}{% if page.lang == 'en' and sc.stage.phone_en %}{% assign stage_phone = sc.stage.phone_en %}{% endif %}
         {% assign stage_watch = sc.stage.watch %}{% if page.lang == 'en' and sc.stage.watch_en %}{% assign stage_watch = sc.stage.watch_en %}{% endif %}
-        {% include stage.html platforms=app.platforms icon=app.icon wide=stage_wide ipad=stage_ipad phone=stage_phone watch=stage_watch title=atitle size="sm" %}
+        {% include stage.html accent=app.accent platforms=app.platforms icon=app.icon wide=stage_wide ipad=stage_ipad phone=stage_phone watch=stage_watch title=atitle size="sm" %}
         {% else %}
-        {% include stage.html platforms=app.platforms icon=app.icon wide=first_shot title=atitle size="sm" %}
+        {% include stage.html accent=app.accent platforms=app.platforms icon=app.icon wide=first_shot title=atitle size="sm" %}
         {% endif %}
       </a>
     </div>
