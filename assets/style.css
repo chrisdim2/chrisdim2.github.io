@@ -162,6 +162,15 @@ h1,h2,h3{letter-spacing:-.025em;font-weight:600}
 .wch-case::after{top:52%;height:22%;background:#6f737a}
 .wch-screen{position:relative;aspect-ratio:396/484;overflow:hidden;border-radius:calc(var(--w)*.23);background:#000}
 
+/* Χωρίς Mac: iPad και iPhone δίπλα-δίπλα, στη βάση */
+.stage.no-mac{display:flex;align-items:flex-end;justify-content:center;gap:5cqw}
+.stage.no-mac .ipd,.stage.no-mac .iph,.stage.no-mac .wch{position:relative;left:auto;right:auto;bottom:auto}
+.stage.no-mac .ipd{--w:54cqw}
+.stage.no-mac .iph{--w:24cqw}
+.stage.no-mac.has-ipad .iph{--w:21cqw}
+.stage.no-mac.has-watch .ipd{--w:48cqw}
+.stage.no-mac.has-watch .iph{--w:19cqw}
+.stage.no-mac .wch{--w:11cqw}
 .stage-link:hover .iph,.stage-link:hover .wch{transform:translateY(-4px)}
 .wch{transition:transform .25s ease}
 

@@ -1,16 +1,18 @@
 {% comment %}
 Σύνθεση συσκευών, ανάλογα με το include.platforms (iphone, ipad, mac, watch):
-MacBook πίσω, iPad αριστερά μπροστά, iPhone δεξιά, Apple Watch δίπλα στο iPhone.
+MacBook πίσω (μόνο αν η εφαρμογή έχει mac· αλλιώς iPad και iPhone δίπλα-δίπλα), iPad αριστερά μπροστά, iPhone δεξιά, Apple Watch δίπλα στο iPhone.
 include.wide / include.ipad / include.phone / include.watch: εικόνες οθόνης.
 Όπου λείπει εικόνα, η οθόνη δείχνει το include.icon. include.title, include.size ('sm' για την αρχική).
 {% endcomment %}
 {% assign P = include.platforms %}
-{% assign has_ipad = false %}{% assign has_phone = false %}{% assign has_watch = false %}
+{% assign has_mac = false %}{% assign has_ipad = false %}{% assign has_phone = false %}{% assign has_watch = false %}
+{% if P contains 'mac' %}{% assign has_mac = true %}{% endif %}
 {% if P contains 'ipad' %}{% assign has_ipad = true %}{% endif %}
 {% if P contains 'iphone' %}{% assign has_phone = true %}{% endif %}
 {% if P contains 'watch' %}{% assign has_watch = true %}{% endif %}
 {% capture blank_screen %}<span class="dev-empty">{% if include.icon and include.icon != "" %}<img src="{{ include.icon | relative_url }}" alt="" loading="lazy">{% endif %}</span>{% endcapture %}
-<div class="stage{% if include.size == 'sm' %} stage-sm{% endif %}{% if has_ipad %} has-ipad{% endif %}{% if has_phone %} has-phone{% endif %}{% if has_watch %} has-watch{% endif %}">
+<div class="stage{% unless has_mac %} no-mac{% endunless %}{% if include.size == 'sm' %} stage-sm{% endif %}{% if has_ipad %} has-ipad{% endif %}{% if has_phone %} has-phone{% endif %}{% if has_watch %} has-watch{% endif %}">
+  {% if has_mac %}
   <div class="mbp">
     <div class="mbp-lid">
       <div class="mbp-screen">
@@ -19,6 +21,7 @@ include.wide / include.ipad / include.phone / include.watch: εικόνες οθ
     </div>
     <div class="mbp-base"></div>
   </div>
+  {% endif %}
   {% if has_ipad %}
   <div class="ipd">
     <div class="ipd-screen">
