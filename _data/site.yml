@@ -58,6 +58,9 @@ el:
   languages_badge: '%n γλώσσες'
   languages_text: Διαθέσιμη σε %n γλώσσες.
   platforms_label: Διαθέσιμη για
+  family_title: Η οικογένεια Chronos
+  family_lead: Εφαρμογές που ανήκουν στην ίδια οικογένεια με το Chronos.
+  family_planned_note: Όσες γράφουν «Σε σχεδιασμό» είναι ιδέες χωρίς ημερομηνία κυκλοφορίας και δεν είναι βέβαιο ότι θα γίνουν.
   notify_title: Ειδοποίησέ με όταν κυκλοφορήσει
   notify_title_app: Ειδοποίησέ με όταν κυκλοφορήσει το %app
   notify_text: Ένα email τη μέρα που θα βγει στο App Store. Τίποτε άλλο.
@@ -103,6 +106,9 @@ en:
   languages_badge: '%n languages'
   languages_text: Available in %n languages.
   platforms_label: Available on
+  family_title: The Chronos family
+  family_lead: Apps that belong to the same family as Chronos.
+  family_planned_note: Those marked “Planned” are ideas with no release date, and may never be built.
   notify_title: Tell me when it's out
   notify_title_app: Tell me when %app is out
   notify_text: One email on the day it lands on the App Store. Nothing else.

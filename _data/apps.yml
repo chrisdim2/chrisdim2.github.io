@@ -6,6 +6,7 @@
 # description_el/en: meta description της σελίδας και σύντομη περιγραφή στο Press Kit.
 list:
 - slug: chronos
+  family: chronos
   title: Chronos
   full_name: Chronos Calendar
   greek: ΧΡΟΝΟΣ
@@ -296,6 +297,7 @@ list:
     - /assets/screens/iris/mac/el/iris-mac-02-privacy.webp
     - /assets/screens/iris/mac/el/iris-mac-06-rename.webp
 - slug: giortes
+  family: chronos
   title: Γιορτές
   full_name: Chronos Γιορτές
   title_en: Celebrations
@@ -335,6 +337,8 @@ list:
   features_en: []
   screenshots: []
 - slug: roster
+  family: chronos
+  planned: true
   title: Roster
   full_name: Chronos Roster
   greek: ΒΑΡΔΙΕΣ
@@ -355,20 +359,22 @@ list:
   price: ''
   ready: false
   schema_category: BusinessApplication
-  description_el: 'Chronos Roster: διαχείριση προσωπικού και βαρδιών για iPhone, iPad, Mac και Web, σε ανάπτυξη, από το dimakis.'
-  description_en: 'Chronos Roster: staff and shift management for iPhone, iPad, Mac and Web, in development, by dimakis.'
+  description_el: 'Chronos Roster: διαχείριση προσωπικού και βαρδιών για iPhone, iPad, Mac και Web, σε σχεδιασμό, από το dimakis.'
+  description_en: 'Chronos Roster: staff and shift management for iPhone, iPad, Mac and Web, planned, by dimakis.'
   kind_el: Διαχείριση προσωπικού και βαρδιών
   kind_en: Staff & shift management
   tagline_el: Οι βάρδιες, στη θέση τους.
   tagline_en: Every shift in its place.
   origin_el: Μέλος της οικογένειας Chronos.
   origin_en: Part of the Chronos family.
-  status_el: Σε ανάπτυξη
-  status_en: In development
+  status_el: Σε σχεδιασμό
+  status_en: Planned
   features_el: []
   features_en: []
   screenshots: []
 - slug: fleet
+  family: chronos
+  planned: true
   title: Fleet
   full_name: Chronos Fleet
   greek: ΣΤΟΛΟΣ
@@ -389,20 +395,22 @@ list:
   price: ''
   ready: false
   schema_category: BusinessApplication
-  description_el: 'Chronos Fleet: διαχείριση στόλου οχημάτων για iPhone, iPad, Mac και Web, σε ανάπτυξη, από το dimakis.'
-  description_en: 'Chronos Fleet: vehicle fleet management for iPhone, iPad, Mac and Web, in development, by dimakis.'
+  description_el: 'Chronos Fleet: διαχείριση στόλου οχημάτων για iPhone, iPad, Mac και Web, σε σχεδιασμό, από το dimakis.'
+  description_en: 'Chronos Fleet: vehicle fleet management for iPhone, iPad, Mac and Web, planned, by dimakis.'
   kind_el: Διαχείριση στόλου οχημάτων
   kind_en: Vehicle fleet management
   tagline_el: Ο στόλος σου, υπό έλεγχο.
   tagline_en: Your fleet, under control.
   origin_el: Μέλος της οικογένειας Chronos.
   origin_en: Part of the Chronos family.
-  status_el: Σε ανάπτυξη
-  status_en: In development
+  status_el: Σε σχεδιασμό
+  status_en: Planned
   features_el: []
   features_en: []
   screenshots: []
 - slug: hospitality
+  family: chronos
+  planned: true
   title: Hospitality
   full_name: Chronos Hospitality
   greek: ΦΙΛΟΞΕΝΙΑ
@@ -423,16 +431,16 @@ list:
   price: ''
   ready: false
   schema_category: BusinessApplication
-  description_el: 'Chronos Hospitality: διαχείριση καταλυμάτων και κρατήσεων για iPhone, iPad, Mac και Web, σε ανάπτυξη, από το dimakis.'
-  description_en: 'Chronos Hospitality: stays and bookings management for iPhone, iPad, Mac and Web, in development, by dimakis.'
+  description_el: 'Chronos Hospitality: διαχείριση καταλυμάτων και κρατήσεων για iPhone, iPad, Mac και Web, σε σχεδιασμό, από το dimakis.'
+  description_en: 'Chronos Hospitality: stays and bookings management for iPhone, iPad, Mac and Web, planned, by dimakis.'
   kind_el: Διαχείριση καταλυμάτων και κρατήσεων
   kind_en: Stays & bookings management
   tagline_el: Καταλύματα και κρατήσεις, χωρίς μπέρδεμα.
   tagline_en: Stays and bookings, without the mix-ups.
   origin_el: Μέλος της οικογένειας Chronos.
   origin_en: Part of the Chronos family.
-  status_el: Σε ανάπτυξη
-  status_en: In development
+  status_el: Σε σχεδιασμό
+  status_en: Planned
   features_el: []
   features_en: []
   screenshots: []

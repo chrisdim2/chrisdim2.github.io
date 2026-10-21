@@ -3,6 +3,8 @@ layout: default
 ---
 {% assign L = site.data.site[page.lang] %}
 {% assign apps = site.data.apps.list | sort: "order" %}
+{% assign listed = apps | where_exp: "a", "a.planned != true" %}
+{% assign family = apps | where: "family", "chronos" %}
 {% assign base = '/' %}
 {% if page.lang == 'en' %}{% assign base = '/en/' %}{% endif %}
 
@@ -12,7 +14,7 @@ layout: default
     <h1 class="hero-h">{{ L.hero_title | newline_to_br }}</h1>
     <p class="hero-p">{{ L.hero_text }}</p>
     <ul class="icon-row">
-      {% for app in apps %}
+      {% for app in listed %}
       {% include app_i18n.html app=app %}
       <li>
         <a href="{{ base | append: app.slug | append: '/' | relative_url }}" title="{{ atitle }}">
@@ -21,7 +23,7 @@ layout: default
           {% else %}
           <span class="icon-blank" aria-hidden="true">{{ atitle | slice: 0 }}</span>
           {% endif %}
-          <span class="icon-name">{{ atitle }}</span>
+          <span class="icon-name">{% if app.family %}{{ afull }}{% else %}{{ atitle }}{% endif %}</span>
         </a>
       </li>
       {% endfor %}
@@ -29,7 +31,7 @@ layout: default
   </div>
 </section>
 
-{% for app in apps %}
+{% for app in listed %}
 {% include app_i18n.html app=app %}
 {% assign i = forloop.index0 | modulo: 2 %}
 <section {% if forloop.first %}id="apps" {% endif %}class="showcase {% if i == 1 %}showcase-alt{% endif %}">
@@ -84,3 +86,22 @@ layout: default
   </div>
 </section>
 {% endfor %}
+
+{% if family.size > 0 %}
+<section class="family" aria-labelledby="family-h">
+  <div class="family-in">
+    <h2 id="family-h">{{ L.family_title }}</h2>
+    <p class="family-lead">{{ L.family_lead }}</p>
+    <ul class="family-list">
+      {% assign any_planned = false %}
+      {% for app in family %}
+      {% include app_i18n.html app=app %}
+      {% if app.planned %}{% assign any_planned = true %}{% endif %}
+      {% capture card %}<img src="{{ app.icon | relative_url }}" alt="" width="56" height="56" loading="lazy"><span class="family-name">{{ afull }}</span><span class="family-kind">{% if page.lang == 'el' %}{{ app.kind_el }}{% else %}{{ app.kind_en }}{% endif %}</span><span class="family-status">{% if page.lang == 'el' %}{{ app.status_el }}{% else %}{{ app.status_en }}{% endif %}</span>{% endcapture %}
+      <li{% if app.planned %} class="is-planned"{% endif %}>{% if app.planned %}<span class="family-card">{{ card }}</span>{% else %}<a class="family-card" href="{{ base | append: app.slug | append: '/' | relative_url }}">{{ card }}</a>{% endif %}</li>
+      {% endfor %}
+    </ul>
+    {% if any_planned %}<p class="family-note">{{ L.family_planned_note }}</p>{% endif %}
+  </div>
+</section>
+{% endif %}

@@ -49,15 +49,17 @@
 | 4 | Iris | EXIFeditor | Mac | σε ανάπτυξη |
 | 5 | Argus | PDF & Doc Scanner | iPhone, iPad (όχι Mac, απόφαση 21/10) | σε ανάπτυξη |
 | 6 | Athena | Notes & Notebooks | iPhone, iPad, Mac, Watch | σε ανάπτυξη |
-| 7 | **Chronos Roster** | Staff & Shift Management (Διαχείριση Προσωπικού και Βαρδιών) | iPhone, iPad, Mac, Web | σε ανάπτυξη |
-| 8 | **Chronos Fleet** | Vehicle Fleet Management (Διαχείριση Στόλου Οχημάτων) | iPhone, iPad, Mac, Web | σε ανάπτυξη |
-| 9 | **Chronos Hospitality** | Stays & Bookings Management (Διαχείριση Καταλυμάτων και Κρατήσεων) | iPhone, iPad, Mac, Web | σε ανάπτυξη |
+| 7 | **Chronos Roster** | Staff & Shift Management (Διαχείριση Προσωπικού και Βαρδιών) | iPhone, iPad, Mac, Web | **σε σχεδιασμό** (planned) |
+| 8 | **Chronos Fleet** | Vehicle Fleet Management (Διαχείριση Στόλου Οχημάτων) | iPhone, iPad, Mac, Web | **σε σχεδιασμό** (planned) |
+| 9 | **Chronos Hospitality** | Stays & Bookings Management (Διαχείριση Καταλυμάτων και Κρατήσεων) | iPhone, iPad, Mac, Web | **σε σχεδιασμό** (planned) |
 
 - Το **Chronos Hospitality** είναι ο διάδοχος της Hestia (αφαιρέθηκε). Το **ΔΙΟΝΥΣΟΣ δεν υπάρχει πια**· η εφαρμογή «Γιορτές» είναι το **Chronos Γιορτές**.
 - Γιορτές: φτιάχνεται από έτοιμο κομμάτι του Chronos, **δωρεάν τον Νοέμβριο** ως δοκιμή πριν το Chronos του Δεκεμβρίου. Έχει και γενέθλια, άρα ο τίτλος δεν είναι «Name Day» (και ποτέ «Names Day»). Φάκελος `~/Developer/GiortesApp`.
 - Ελληνικά: «Chronos Γιορτές» (η λέξη «Γιορτές» μένει για την αναζήτηση στο App Store). Αγγλικά: «Chronos Celebrations». Στο `apps.yml` τα αγγλικά είναι τα προαιρετικά `title_en`, `full_name_en`, `logo_en`, `logo_size_en`, `og_image_en` (και στο `admin/config.yml`). Το `_includes/app_i18n.html` διαλέγει όνομα και λογότυπο ανά γλώσσα.
 - Εικονίδια: ημερολόγιο με χρωματιστή κορυφή και σύμβολο σε δύο τόνους (Chronos μπλε, Roster μοβ, Fleet πράσινο, Hospitality κυανό, Γιορτές κόκκινο). Φάκελοι `~/Developer/<App>/Icons/` (Light, Dark, Tinted + `Assets.xcassets` + `Source/` SVG). Σύμβολα: Roster χρονοδιάγραμμα, Fleet ταχύμετρο, Hospitality διάστημα διαμονής, Γιορτές δώρο.
 - Λογότυπα: `~/Developer/Logos/logos/{roster,fleet,hospitality,giortes,celebrations}` (έμβλημα χρυσό από γραμμές, «CHRONOS» και από κάτω το όνομα, στην Olympos). Χτίζονται από `Logos/tools/build.py` (δίγραμμο όνομα με `Word2`).
+- **Δεν προωθούμε εφαρμογές που μπορεί να μην υλοποιηθούν** (μάθημα από τον Hermes). Roster, Fleet, Hospitality έχουν στο `apps.yml` `planned: true` και `family: chronos`: δεν μπαίνουν στη γραμμή εικονιδίων, στις ενότητες της αρχικής, στο footer, στο sitemap, δεν έχουν φόρμα «Ειδοποίησέ με» και οι σελίδες τους έχουν `noindex`. Φαίνονται μόνο ως διακεκομμένες, μη κλικαρίσιμες κάρτες «Σε σχεδιασμό» στην ενότητα **«Η οικογένεια Chronos»** της αρχικής, με σημείωση ότι δεν υπάρχει ημερομηνία. Όταν μια εφαρμογή γίνει πραγματική: σβήνεις `planned`, αλλάζεις status και τα `noindex`/`sitemap: false` στις δύο σελίδες.
+- Στην αρχική οι εφαρμογές της οικογένειας φαίνονται με το πλήρες όνομα («Chronos Γιορτές», «Chronos Calendar», «Chronos Roster» κ.λπ.) και ανήκουν στην ενότητα της οικογένειας (πεδίο `family`).
 - Σελίδες: slug `giortes`, `roster`, `fleet`, `hospitality`. Πεδίο `greek` (υδατογράφημα) = ελληνική λέξη (ΓΙΟΡΤΕΣ, ΒΑΡΔΙΕΣ, ΣΤΟΛΟΣ, ΦΙΛΟΞΕΝΙΑ). `platforms` δέχεται και `web`.
 - Emails υποστήριξης: `giortes@`, `roster@`, `fleet@`, `hospitality@` @dimakis.app (έτοιμα 21/10). **Προσωρινά**: οι ατάκες (`tagline`) και οι περιγραφές είναι προσχέδια· χωρίς λειτουργίες/screenshots ώσπου να υπάρχει κώδικας.
 - Ανοιχτά: ο τίτλος της αρχικής «ονόματα από τη μυθολογία» δεν ισχύει για τις νέες εφαρμογές· το «32 γλώσσες» δεν έχει επιβεβαιωθεί για εφαρμογές σε ανάπτυξη· η Olympos γράφει το λατινικό A σαν «Λ» στα λογότυπα.

@@ -560,3 +560,22 @@ h1,h2,h3{letter-spacing:-.025em;font-weight:600}
 .suite-grid span{font-size:14px;line-height:1.25;color:var(--ink-70)}
 .light .block p.suite-bonus,.suite-bonus{margin:22px 0 0;font-family:var(--util);font-size:14px;color:var(--ink-45)}
 @media (max-width:520px){.suite-grid li{width:96px}.suite-grid img{width:88px;height:88px}}
+
+/* Οικογένεια Chronos (αρχική). Όσες είναι «σε σχεδιασμό» δεν είναι σύνδεσμοι και φαίνονται πιο χαμηλά. */
+.family{border-top:1px solid var(--line);margin-top:34px;background:var(--bg-2)}
+.family-in{max-width:var(--wrap);margin:0 auto;padding:56px 22px 62px}
+.family h2{font-size:clamp(26px,4vw,34px);margin:0 0 6px}
+.family-lead{color:var(--ink-70);margin:0 0 26px}
+.family-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
+.family-card{display:flex;flex-direction:column;align-items:flex-start;gap:4px;height:100%;padding:20px;text-decoration:none;color:inherit;
+  background:var(--card);border:1px solid var(--line);border-radius:22px;transition:transform .18s ease,border-color .18s ease}
+a.family-card:hover{transform:translateY(-3px);border-color:rgba(237,241,238,.28)}
+.family-card img{width:56px;height:56px;border-radius:13px;margin-bottom:10px}
+.family-name{font-weight:600;font-size:18px;letter-spacing:-.015em}
+.family-kind{color:var(--ink-70);font-size:14px;line-height:1.35}
+.family-status{margin-top:auto;padding-top:10px;font-family:var(--gr);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#E9CA88}
+.is-planned .family-card{background:transparent;border-style:dashed}
+.is-planned .family-card img{opacity:.72;filter:saturate(.75)}
+.is-planned .family-name{color:var(--ink-70)}
+.is-planned .family-status{color:var(--ink-45)}
+.family-note{color:var(--ink-45);font-size:14px;margin:22px 0 0;max-width:60ch}

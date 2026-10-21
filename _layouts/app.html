@@ -236,7 +236,7 @@ layout: default
     </ul>
   </section>
   {% endif %}
-  {% unless store and store != "" %}{% include notify.html app=app compact=true %}{% endunless %}
+  {% unless store and store != "" or app.planned %}{% include notify.html app=app compact=true %}{% endunless %}
 
   <section class="block">
     <h2>{{ L.languages_title }}</h2>

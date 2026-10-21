@@ -36,7 +36,7 @@
 {% endif %}
 <title>{{ page_title | strip | escape }}</title>
 <meta name="description" content="{{ page_desc | strip | escape }}">
-{% if page.draft or page.published == false %}<meta name="robots" content="noindex">{% endif %}
+{% if page.draft or page.published == false or page.noindex %}<meta name="robots" content="noindex">{% endif %}
 {% comment %} Γλωσσικές εκδόσεις: page.alt = η ίδια σελίδα στην άλλη γλώσσα. x-default → αγγλικά. {% endcomment %}
 {% if page.lang == 'el' %}{% assign url_el = page.url %}{% assign url_en = page.alt %}{% else %}{% assign url_en = page.url %}{% assign url_el = page.alt %}{% endif %}
 <link rel="canonical" href="{{ page.url | absolute_url }}">
@@ -102,9 +102,9 @@
   <div class="foot-in">
     <a class="foot-brand" href="{{ home | relative_url }}" aria-label="dimakis"><img class="foot-logo" src="{{ '/assets/dimakis-logo-dark.svg' | relative_url }}" alt="dimakis"></a>
     <ul class="foot-list">
-      {% for app in apps %}
+      {% for app in apps %}{% unless app.planned %}
       {% include app_i18n.html app=app %}
-      <li><a href="{{ home | append: app.slug | append: '/' | relative_url }}">{% if app.emblem %}<img class="foot-emblem" src="{{ app.emblem | relative_url }}" alt="" width="20" height="20" loading="lazy">{% endif %}{{ atitle }}</a></li>
+      <li><a href="{{ home | append: app.slug | append: '/' | relative_url }}">{% if app.emblem %}<img class="foot-emblem" src="{{ app.emblem | relative_url }}" alt="" width="20" height="20" loading="lazy">{% endif %}{{ atitle }}</a></li>{% endunless %}
       {% endfor %}
     </ul>
     <div class="foot-meta">

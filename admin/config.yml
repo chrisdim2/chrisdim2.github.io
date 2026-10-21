@@ -23,6 +23,8 @@ collections:
               - { name: title, label: Όνομα, widget: string }
               - { name: full_name, label: Πλήρες όνομα (όπως στο App Store), widget: string, required: false }
               - { name: greek, label: Ελληνικό όνομα, widget: string }
+              - { name: family, label: Οικογένεια (π.χ. chronos), widget: string, required: false }
+              - { name: planned, label: Σε σχεδιασμό (κρυφή από λίστες, noindex), widget: boolean, default: false, required: false }
               - { name: title_en, label: Όνομα στα αγγλικά (μόνο αν διαφέρει), widget: string, required: false }
               - { name: full_name_en, label: Πλήρες όνομα στα αγγλικά (μόνο αν διαφέρει), widget: string, required: false }
               - { name: logo_en, label: Λογότυπο στα αγγλικά (μόνο αν διαφέρει), widget: string, required: false }
@@ -99,6 +101,9 @@ collections:
               - { name: languages_badge, label: "Γλώσσες, σήμα (%n = πλήθος)", widget: string }
               - { name: languages_text, label: "Γλώσσες, κείμενο (%n = πλήθος)", widget: string }
               - { name: platforms_label, label: Συσκευές (για αναγνώστες οθόνης), widget: string }
+              - { name: family_title, label: Οικογένεια, τίτλος, widget: string }
+              - { name: family_lead, label: Οικογένεια, εισαγωγή, widget: string }
+              - { name: family_planned_note, label: Οικογένεια, σημείωση για όσες είναι σε σχεδιασμό, widget: text }
               - { name: home_title, label: "Τίτλος αρχικής (Google)", widget: string, required: false }
               - { name: nav_press, label: "Μενού, press kit", widget: string, required: false }
               - { name: nav_articles, label: "Μενού, άρθρα", widget: string, required: false }
@@ -142,6 +147,9 @@ collections:
               - { name: languages_badge, label: "Languages badge (%n = count)", widget: string }
               - { name: languages_text, label: "Languages text (%n = count)", widget: string }
               - { name: platforms_label, label: Platforms (for screen readers), widget: string }
+              - { name: family_title, label: Family title, widget: string }
+              - { name: family_lead, label: Family intro, widget: string }
+              - { name: family_planned_note, label: Family note for planned apps, widget: text }
               - { name: home_title, label: "Τίτλος αρχικής (Google)", widget: string, required: false }
               - { name: nav_press, label: "Μενού, press kit", widget: string, required: false }
               - { name: nav_articles, label: "Μενού, άρθρα", widget: string, required: false }
