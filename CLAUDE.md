@@ -47,7 +47,7 @@
 | 2 | Chronos Calendar | Calendar | iPhone, iPad, Mac, Watch | Δεκέμβριος |
 | 3 | Apollo | Cloud Photo Gallery | iPhone, iPad, Mac | σε ανάπτυξη |
 | 4 | Iris | EXIFeditor | Mac | σε ανάπτυξη |
-| 5 | Argus | PDF & Doc Scanner | iPhone, iPad, Mac | σε ανάπτυξη |
+| 5 | Argus | PDF & Doc Scanner | iPhone, iPad (όχι Mac, απόφαση 21/10) | σε ανάπτυξη |
 | 6 | Athena | Notes & Notebooks | iPhone, iPad, Mac, Watch | σε ανάπτυξη |
 | 7 | **Chronos Roster** | Staff & Shift Management (Διαχείριση Προσωπικού και Βαρδιών) | iPhone, iPad, Mac, Web | σε ανάπτυξη |
 | 8 | **Chronos Fleet** | Vehicle Fleet Management (Διαχείριση Στόλου Οχημάτων) | iPhone, iPad, Mac, Web | σε ανάπτυξη |

@@ -209,7 +209,7 @@ list:
   emblem: /assets/logos/argus-emblem.svg
   og_image: /assets/og/argus.jpg
   order: 5
-  platforms: [iphone, ipad, mac]
+  platforms: [iphone, ipad]
   has_legal: false
   support_email: argus@dimakis.app
   appstore_url: ''
@@ -217,8 +217,8 @@ list:
   price: ''
   ready: false
   schema_category: UtilitiesApplication
-  description_el: 'Argus: σαρωτής εγγράφων για iPhone, iPad και Mac, σε ανάπτυξη, από το dimakis.'
-  description_en: 'Argus: a document scanner for iPhone, iPad and Mac, in development, by dimakis.'
+  description_el: 'Argus: σαρωτής εγγράφων για iPhone και iPad, σε ανάπτυξη, από το dimakis.'
+  description_en: 'Argus: a document scanner for iPhone and iPad, in development, by dimakis.'
   kind_el: Σαρωτής εγγράφων
   kind_en: Document scanner
   tagline_el: Καταγράφει τα πάντα.
