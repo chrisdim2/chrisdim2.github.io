@@ -59,7 +59,7 @@
 - Εικονίδια: ημερολόγιο με χρωματιστή κορυφή και σύμβολο σε δύο τόνους (Chronos μπλε, Roster μοβ, Fleet πράσινο, Hospitality κυανό, Γιορτές κόκκινο). Φάκελοι `~/Developer/<App>/Icons/` (Light, Dark, Tinted + `Assets.xcassets` + `Source/` SVG). Σύμβολα: Roster χρονοδιάγραμμα, Fleet ταχύμετρο, Hospitality διάστημα διαμονής, Γιορτές δώρο.
 - Λογότυπα: `~/Developer/Logos/logos/{roster,fleet,hospitality,giortes,celebrations}` (έμβλημα χρυσό από γραμμές, «CHRONOS» και από κάτω το όνομα, στην Olympos). Χτίζονται από `Logos/tools/build.py` (δίγραμμο όνομα με `Word2`).
 - Σελίδες: slug `giortes`, `roster`, `fleet`, `hospitality`. Πεδίο `greek` (υδατογράφημα) = ελληνική λέξη (ΓΙΟΡΤΕΣ, ΒΑΡΔΙΕΣ, ΣΤΟΛΟΣ, ΦΙΛΟΞΕΝΙΑ). `platforms` δέχεται και `web`.
-- **Προσωρινά**: `support_email` = `support@dimakis.app` (δεν υπάρχουν ακόμα `roster@`, `fleet@`, `hospitality@`, `giortes@`)· οι ατάκες (`tagline`) και οι περιγραφές είναι προσχέδια· χωρίς λειτουργίες/screenshots ώσπου να υπάρχει κώδικας.
+- Emails υποστήριξης: `giortes@`, `roster@`, `fleet@`, `hospitality@` @dimakis.app (έτοιμα 21/10). **Προσωρινά**: οι ατάκες (`tagline`) και οι περιγραφές είναι προσχέδια· χωρίς λειτουργίες/screenshots ώσπου να υπάρχει κώδικας.
 - Ανοιχτά: ο τίτλος της αρχικής «ονόματα από τη μυθολογία» δεν ισχύει για τις νέες εφαρμογές· το «32 γλώσσες» δεν έχει επιβεβαιωθεί για εφαρμογές σε ανάπτυξη· η Olympos γράφει το λατινικό A σαν «Λ» στα λογότυπα.
 
 ## Κανόνες περιεχομένου
@@ -126,7 +126,7 @@
   έτοιμα και για X, Bluesky, Mastodon, YouTube, TikTok, LinkedIn) και ως `sameAs` στο JSON-LD της αρχικής.
   Νέος λογαριασμός = μόνο ο σύνδεσμος στο `site.yml`.
 - **GoatCounter**: στατιστικά επισκέψεων (dimakis.goatcounter.com).
-- Email: `support@`, `press@`, `hello@` και ένα ανά εφαρμογή (`chronos@`, `hestia@`, `dionysus@` κ.λπ.) στο dimakis.app. Έτοιμα και τα `hestia@` και `dionysus@` (20/10).
+- Email: `support@`, `press@`, `hello@` και ένα ανά εφαρμογή στο dimakis.app: `chronos@`, `apollo@`, `iris@`, `athena@`, `argus@`, `giortes@`, `roster@`, `fleet@`, `hospitality@`. Τα `hestia@`, `dionysus@`, `hermes@` δεν χρησιμοποιούνται πια (να σβηστούν από τον χρήστη στο Cloudflare).
 
 ## Με την κυκλοφορία μιας εφαρμογής
 
