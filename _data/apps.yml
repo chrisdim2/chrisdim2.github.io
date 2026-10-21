@@ -17,7 +17,7 @@ list:
   logo_size: [648, 141]
   emblem: /assets/logos/chronos-emblem.svg
   og_image: /assets/og/chronos.jpg
-  order: 1
+  order: 2
   platforms: [iphone, ipad, mac, watch]
   has_legal: true
   support_email: chronos@dimakis.app
@@ -89,7 +89,7 @@ list:
   logo_size: [534, 141]
   emblem: /assets/logos/athena-emblem.svg
   og_image: /assets/og/athena.jpg
-  order: 4
+  order: 6
   platforms: [iphone, ipad, mac, watch]
   has_legal: false
   support_email: athena@dimakis.app
@@ -135,7 +135,7 @@ list:
   logo_size: [571, 141]
   emblem: /assets/logos/apollo-emblem.svg
   og_image: /assets/og/apollo.jpg
-  order: 2
+  order: 3
   platforms: [iphone, ipad, mac]
   has_legal: true
   support_email: apollo@dimakis.app
@@ -242,7 +242,7 @@ list:
   logo_size: [356, 141]
   emblem: /assets/logos/iris-emblem.svg
   og_image: /assets/og/iris.jpg
-  order: 3
+  order: 4
   platforms: [mac]
   has_legal: true
   support_email: iris@dimakis.app
@@ -295,3 +295,144 @@ list:
     - /assets/screens/iris/mac/el/iris-mac-01-overview.webp
     - /assets/screens/iris/mac/el/iris-mac-02-privacy.webp
     - /assets/screens/iris/mac/el/iris-mac-06-rename.webp
+- slug: giortes
+  title: Γιορτές
+  full_name: Chronos Γιορτές
+  title_en: Celebrations
+  full_name_en: Chronos Celebrations
+  logo_en: /assets/logos/celebrations-lockup.svg
+  logo_size_en: [662, 141]
+  og_image_en: /assets/og/celebrations.jpg
+  greek: ΓΙΟΡΤΕΣ
+  icon: /assets/icons/giortes.png
+  theme: light
+  tint: '#FBE9E9'
+  accent: '#B91C1C'
+  logo: /assets/logos/giortes-lockup.svg
+  logo_size: [662, 141]
+  emblem: /assets/logos/giortes-emblem.svg
+  og_image: /assets/og/giortes.jpg
+  order: 1
+  platforms: [iphone, ipad]
+  has_legal: false
+  support_email: support@dimakis.app
+  appstore_url: ''
+  appstore_id: ''
+  price: ''
+  ready: false
+  schema_category: LifestyleApplication
+  description_el: 'Chronos Γιορτές: γιορτές και γενέθλια για iPhone και iPad, έρχεται τον Νοέμβριο, από το dimakis.'
+  description_en: 'Chronos Celebrations: name days and birthdays for iPhone and iPad, coming in November, by dimakis.'
+  kind_el: Γιορτές και γενέθλια
+  kind_en: Name days & birthdays
+  tagline_el: Μην ξεχάσεις ποτέ μια γιορτή.
+  tagline_en: Never miss a celebration.
+  origin_el: Μέλος της οικογένειας Chronos.
+  origin_en: Part of the Chronos family.
+  status_el: Έρχεται τον Νοέμβριο
+  status_en: Coming in November
+  features_el: []
+  features_en: []
+  screenshots: []
+- slug: roster
+  title: Roster
+  full_name: Chronos Roster
+  greek: ΒΑΡΔΙΕΣ
+  icon: /assets/icons/roster.png
+  theme: light
+  tint: '#EFE9FB'
+  accent: '#6D28D9'
+  logo: /assets/logos/roster-lockup.svg
+  logo_size: [662, 141]
+  emblem: /assets/logos/roster-emblem.svg
+  og_image: /assets/og/roster.jpg
+  order: 7
+  platforms: [iphone, ipad, mac, web]
+  has_legal: false
+  support_email: support@dimakis.app
+  appstore_url: ''
+  appstore_id: ''
+  price: ''
+  ready: false
+  schema_category: BusinessApplication
+  description_el: 'Chronos Roster: διαχείριση προσωπικού και βαρδιών για iPhone, iPad, Mac και Web, σε ανάπτυξη, από το dimakis.'
+  description_en: 'Chronos Roster: staff and shift management for iPhone, iPad, Mac and Web, in development, by dimakis.'
+  kind_el: Διαχείριση προσωπικού και βαρδιών
+  kind_en: Staff & shift management
+  tagline_el: Οι βάρδιες, στη θέση τους.
+  tagline_en: Every shift in its place.
+  origin_el: Μέλος της οικογένειας Chronos.
+  origin_en: Part of the Chronos family.
+  status_el: Σε ανάπτυξη
+  status_en: In development
+  features_el: []
+  features_en: []
+  screenshots: []
+- slug: fleet
+  title: Fleet
+  full_name: Chronos Fleet
+  greek: ΣΤΟΛΟΣ
+  icon: /assets/icons/fleet.png
+  theme: light
+  tint: '#E6F2EA'
+  accent: '#15803D'
+  logo: /assets/logos/fleet-lockup.svg
+  logo_size: [683, 141]
+  emblem: /assets/logos/fleet-emblem.svg
+  og_image: /assets/og/fleet.jpg
+  order: 8
+  platforms: [iphone, ipad, mac, web]
+  has_legal: false
+  support_email: support@dimakis.app
+  appstore_url: ''
+  appstore_id: ''
+  price: ''
+  ready: false
+  schema_category: BusinessApplication
+  description_el: 'Chronos Fleet: διαχείριση στόλου οχημάτων για iPhone, iPad, Mac και Web, σε ανάπτυξη, από το dimakis.'
+  description_en: 'Chronos Fleet: vehicle fleet management for iPhone, iPad, Mac and Web, in development, by dimakis.'
+  kind_el: Διαχείριση στόλου οχημάτων
+  kind_en: Vehicle fleet management
+  tagline_el: Ο στόλος σου, υπό έλεγχο.
+  tagline_en: Your fleet, under control.
+  origin_el: Μέλος της οικογένειας Chronos.
+  origin_en: Part of the Chronos family.
+  status_el: Σε ανάπτυξη
+  status_en: In development
+  features_el: []
+  features_en: []
+  screenshots: []
+- slug: hospitality
+  title: Hospitality
+  full_name: Chronos Hospitality
+  greek: ΦΙΛΟΞΕΝΙΑ
+  icon: /assets/icons/hospitality.png
+  theme: light
+  tint: '#E4F1F5'
+  accent: '#0E7490'
+  logo: /assets/logos/hospitality-lockup.svg
+  logo_size: [662, 141]
+  emblem: /assets/logos/hospitality-emblem.svg
+  og_image: /assets/og/hospitality.jpg
+  order: 9
+  platforms: [iphone, ipad, mac, web]
+  has_legal: false
+  support_email: support@dimakis.app
+  appstore_url: ''
+  appstore_id: ''
+  price: ''
+  ready: false
+  schema_category: BusinessApplication
+  description_el: 'Chronos Hospitality: διαχείριση καταλυμάτων και κρατήσεων για iPhone, iPad, Mac και Web, σε ανάπτυξη, από το dimakis.'
+  description_en: 'Chronos Hospitality: stays and bookings management for iPhone, iPad, Mac and Web, in development, by dimakis.'
+  kind_el: Διαχείριση καταλυμάτων και κρατήσεων
+  kind_en: Stays & bookings management
+  tagline_el: Καταλύματα και κρατήσεις, χωρίς μπέρδεμα.
+  tagline_en: Stays and bookings, without the mix-ups.
+  origin_el: Μέλος της οικογένειας Chronos.
+  origin_en: Part of the Chronos family.
+  status_el: Σε ανάπτυξη
+  status_en: In development
+  features_el: []
+  features_en: []
+  screenshots: []

@@ -24,7 +24,7 @@
 - `_data/site.yml`: κείμενα site, `newsletter_action` (Brevo), `social` (κενά = κρυφά), `owner_name`, `press_email`.
 - `_data/showcase/<app>.yml`: screenshots και βίντεο ανά συσκευή. `only: el` = μόνο στην ελληνική σελίδα.
 - `_layouts/default.html`: `<title>`, canonical, hreflang (x-default → αγγλικά), Smart App Banner, footer, κουμπί «πάνω».
-- `_includes/jsonld.html`, `notify.html` (φόρμα Brevo), `press-zip.html`.
+- `_includes/jsonld.html`, `notify.html` (φόρμα Brevo), `press-zip.html`, `app_i18n.html` (όνομα και λογότυπο εφαρμογής ανά γλώσσα).
 - `sitemap.xml` και `robots.txt`: δικά μας Liquid (όχι jekyll-sitemap, γιατί δεν γράφει hreflang).
 - `_posts/`: άρθρα, ένα αρχείο ανά γλώσσα, με `lang`, `alt` (η άλλη γλώσσα), `app`, `permalink`.
 - `admin/config.yml`: Decap CMS. Κάθε νέο πεδίο στα `_data` μπαίνει κι εδώ, αλλιώς το CMS το σβήνει.
@@ -37,9 +37,31 @@
 - **Hestia (ΕΣΤΙΑ) αφαιρέθηκε από το site (απόφαση 21/10/2026).** Σελίδες, `apps.yml`, εικόνες και `_tools/social_images.js` καθαρίστηκαν.
   Ο φάκελος `~/Developer/BookingApp` (και το blueprint) και το `hestia@dimakis.app` μένουν ως έχουν. Αν ξαναμπεί, θα είναι νέα απόφαση.
   Βλ. το git ιστορικό (commits `1144f6f`, `5a5a51a`, `6b74fdf`) για λογότυπο, έμβλημα και χρώματα (πράσινο φασκόμηλου `#3F6B4D`).
-- **Εφαρμογή «Γιορτές»** (φάκελος `~/Developer/GiortesApp`, μόνο εικονίδια): **δωρεάν**, **μόνο για Ελλάδα**, για προώθηση του Chronos.
-  Όνομα: πιθανώς **ΔΙΟΝΥΣΟΣ**, αλλά η λέξη «Γιορτές» πρέπει να υπάρχει (τίτλος στο App Store, ώστε να τη βρίσκουν στην αναζήτηση).
-  Λογότυπο (τσαμπί σταφύλι) έτοιμο στο `~/Developer/Logos/logos/dionysus` (δεν έχει επιλεγεί οριστικό όνομα). Email `dionysus@dimakis.app` έτοιμο. Δεν έχει μπει στο site. Όταν μπει (`support_email: dionysus@dimakis.app`): μόνο στην ελληνική σελίδα.
+## Οικογένεια Chronos και σειρά εφαρμογών (αποφάσεις 21/10/2026)
+
+Οι εφαρμογές στο site (η σειρά είναι η σειρά κυκλοφορίας, πεδίο `order` στο `apps.yml`, ο χρήστης την αλλάζει όποτε θέλει):
+
+| # | Εφαρμογή | Υπότιτλος (EN) | Συσκευές | Κατάσταση |
+|---|---|---|---|---|
+| 1 | **Chronos Γιορτές** (EN: **Chronos Celebrations**) | Name Days & Birthdays | iPhone, iPad | δωρεάν, Νοέμβριος |
+| 2 | Chronos Calendar | Calendar | iPhone, iPad, Mac, Watch | Δεκέμβριος |
+| 3 | Apollo | Cloud Photo Gallery | iPhone, iPad, Mac | σε ανάπτυξη |
+| 4 | Iris | EXIFeditor | Mac | σε ανάπτυξη |
+| 5 | Argus | PDF & Doc Scanner | iPhone, iPad, Mac | σε ανάπτυξη |
+| 6 | Athena | Notes & Notebooks | iPhone, iPad, Mac, Watch | σε ανάπτυξη |
+| 7 | **Chronos Roster** | Staff & Shift Management (Διαχείριση Προσωπικού και Βαρδιών) | iPhone, iPad, Mac, Web | σε ανάπτυξη |
+| 8 | **Chronos Fleet** | Vehicle Fleet Management (Διαχείριση Στόλου Οχημάτων) | iPhone, iPad, Mac, Web | σε ανάπτυξη |
+| 9 | **Chronos Hospitality** | Stays & Bookings Management (Διαχείριση Καταλυμάτων και Κρατήσεων) | iPhone, iPad, Mac, Web | σε ανάπτυξη |
+
+- Το **Chronos Hospitality** είναι ο διάδοχος της Hestia (αφαιρέθηκε). Το **ΔΙΟΝΥΣΟΣ δεν υπάρχει πια**· η εφαρμογή «Γιορτές» είναι το **Chronos Γιορτές**.
+- Γιορτές: φτιάχνεται από έτοιμο κομμάτι του Chronos, **δωρεάν τον Νοέμβριο** ως δοκιμή πριν το Chronos του Δεκεμβρίου. Έχει και γενέθλια, άρα ο τίτλος δεν είναι «Name Day» (και ποτέ «Names Day»). Φάκελος `~/Developer/GiortesApp`.
+- Ελληνικά: «Chronos Γιορτές» (η λέξη «Γιορτές» μένει για την αναζήτηση στο App Store). Αγγλικά: «Chronos Celebrations». Στο `apps.yml` τα αγγλικά είναι τα προαιρετικά `title_en`, `full_name_en`, `logo_en`, `logo_size_en`, `og_image_en` (και στο `admin/config.yml`). Το `_includes/app_i18n.html` διαλέγει όνομα και λογότυπο ανά γλώσσα.
+- Εικονίδια: ημερολόγιο με χρωματιστή κορυφή και σύμβολο σε δύο τόνους (Chronos μπλε, Roster μοβ, Fleet πράσινο, Hospitality κυανό, Γιορτές κόκκινο). Φάκελοι `~/Developer/<App>/Icons/` (Light, Dark, Tinted + `Assets.xcassets` + `Source/` SVG). Σύμβολα: Roster χρονοδιάγραμμα, Fleet ταχύμετρο, Hospitality διάστημα διαμονής, Γιορτές δώρο.
+- Λογότυπα: `~/Developer/Logos/logos/{roster,fleet,hospitality,giortes,celebrations}` (έμβλημα χρυσό από γραμμές, «CHRONOS» και από κάτω το όνομα, στην Olympos). Χτίζονται από `Logos/tools/build.py` (δίγραμμο όνομα με `Word2`).
+- Σελίδες: slug `giortes`, `roster`, `fleet`, `hospitality`. Πεδίο `greek` (υδατογράφημα) = ελληνική λέξη (ΓΙΟΡΤΕΣ, ΒΑΡΔΙΕΣ, ΣΤΟΛΟΣ, ΦΙΛΟΞΕΝΙΑ). `platforms` δέχεται και `web`.
+- **Προσωρινά**: `support_email` = `support@dimakis.app` (δεν υπάρχουν ακόμα `roster@`, `fleet@`, `hospitality@`, `giortes@`)· οι ατάκες (`tagline`) και οι περιγραφές είναι προσχέδια· χωρίς λειτουργίες/screenshots ώσπου να υπάρχει κώδικας.
+- Στα social εικόνες (`_tools/social_images.js`) οι νέες εφαρμογές δεν έχουν μπει ακόμα (και 00-intro, εξώφυλλο Facebook, banner YouTube έχουν ακόμα τη Hestia).
+- Ανοιχτά: ο τίτλος της αρχικής «ονόματα από τη μυθολογία» δεν ισχύει για τις νέες εφαρμογές· το «32 γλώσσες» δεν έχει επιβεβαιωθεί για εφαρμογές σε ανάπτυξη· η Olympos γράφει το λατινικό A σαν «Λ» στα λογότυπα.
 
 ## Κανόνες περιεχομένου
 

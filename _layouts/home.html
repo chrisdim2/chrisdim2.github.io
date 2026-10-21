@@ -13,14 +13,15 @@ layout: default
     <p class="hero-p">{{ L.hero_text }}</p>
     <ul class="icon-row">
       {% for app in apps %}
+      {% include app_i18n.html app=app %}
       <li>
-        <a href="{{ base | append: app.slug | append: '/' | relative_url }}" title="{{ app.title }}">
+        <a href="{{ base | append: app.slug | append: '/' | relative_url }}" title="{{ atitle }}">
           {% if app.icon and app.icon != "" %}
-          <img src="{{ app.icon | relative_url }}" alt="{{ app.title }}" width="64" height="64" loading="lazy">
+          <img src="{{ app.icon | relative_url }}" alt="{{ atitle }}" width="64" height="64" loading="lazy">
           {% else %}
-          <span class="icon-blank" aria-hidden="true">{{ app.title | slice: 0 }}</span>
+          <span class="icon-blank" aria-hidden="true">{{ atitle | slice: 0 }}</span>
           {% endif %}
-          <span class="icon-name">{{ app.title }}</span>
+          <span class="icon-name">{{ atitle }}</span>
         </a>
       </li>
       {% endfor %}
@@ -29,6 +30,7 @@ layout: default
 </section>
 
 {% for app in apps %}
+{% include app_i18n.html app=app %}
 {% assign i = forloop.index0 | modulo: 2 %}
 <section {% if forloop.first %}id="apps" {% endif %}class="showcase {% if i == 1 %}showcase-alt{% endif %}">
   <div class="showcase-in">
@@ -38,10 +40,10 @@ layout: default
       {% endif %}
       {% include platforms.html list=app.platforms %}
       <p class="eyebrow">{% if page.lang == 'el' %}{{ app.kind_el }}{% else %}{{ app.kind_en }}{% endif %}</p>
-      {% if app.logo %}
-      <h3 class="showcase-h-logo"><a href="{{ base | append: app.slug | append: '/' | relative_url }}"><img class="app-logo" src="{{ app.logo | relative_url }}" alt="{{ app.title }}" width="{{ app.logo_size[0] }}" height="{{ app.logo_size[1] }}" loading="lazy"></a></h3>
+      {% if alogo %}
+      <h3 class="showcase-h-logo"><a href="{{ base | append: app.slug | append: '/' | relative_url }}"><img class="app-logo" src="{{ alogo | relative_url }}" alt="{{ atitle }}" width="{{ alogo_w }}" height="{{ alogo_h }}" loading="lazy"></a></h3>
       {% else %}
-      <h3><a href="{{ base | append: app.slug | append: '/' | relative_url }}">{{ app.title }}</a></h3>
+      <h3><a href="{{ base | append: app.slug | append: '/' | relative_url }}">{{ atitle }}</a></h3>
       {% endif %}
       <p class="showcase-tag">{% if page.lang == 'el' %}{{ app.tagline_el }}{% else %}{{ app.tagline_en }}{% endif %}</p>
       {% assign feats = app.features_el %}
@@ -60,22 +62,22 @@ layout: default
         <span class="app-status">{% if page.lang == 'el' %}{{ app.status_el }}{% else %}{{ app.status_en }}{% endif %}</span>
         {% endif %}
         {% include langs-badge.html %}
-        <a class="btn btn-quiet" href="{{ base | append: app.slug | append: '/' | relative_url }}">{{ app.title }} &rarr;</a>
+        <a class="btn btn-quiet" href="{{ base | append: app.slug | append: '/' | relative_url }}">{{ atitle }} &rarr;</a>
       </div>
     </div>
     <div class="showcase-shot">
-      <span class="showcase-gr" aria-hidden="true">{{ app.greek }}</span>
+      <span class="showcase-gr" aria-hidden="true">{{ agreek }}</span>
       {% assign sc = site.data.showcase[app.slug] %}
-      <a class="stage-link" href="{{ base | append: app.slug | append: '/' | relative_url }}" aria-label="{{ app.title }}">
+      <a class="stage-link" href="{{ base | append: app.slug | append: '/' | relative_url }}" aria-label="{{ atitle }}">
         {% assign first_shot = app.screenshots | first %}
         {% if sc and sc.stage %}
         {% assign stage_wide = sc.stage.wide %}{% if page.lang == 'en' and sc.stage.wide_en %}{% assign stage_wide = sc.stage.wide_en %}{% endif %}
         {% assign stage_ipad = sc.stage.ipad %}{% if page.lang == 'en' and sc.stage.ipad_en %}{% assign stage_ipad = sc.stage.ipad_en %}{% endif %}
         {% assign stage_phone = sc.stage.phone %}{% if page.lang == 'en' and sc.stage.phone_en %}{% assign stage_phone = sc.stage.phone_en %}{% endif %}
         {% assign stage_watch = sc.stage.watch %}{% if page.lang == 'en' and sc.stage.watch_en %}{% assign stage_watch = sc.stage.watch_en %}{% endif %}
-        {% include stage.html platforms=app.platforms icon=app.icon wide=stage_wide ipad=stage_ipad phone=stage_phone watch=stage_watch title=app.title size="sm" %}
+        {% include stage.html platforms=app.platforms icon=app.icon wide=stage_wide ipad=stage_ipad phone=stage_phone watch=stage_watch title=atitle size="sm" %}
         {% else %}
-        {% include stage.html platforms=app.platforms icon=app.icon wide=first_shot title=app.title size="sm" %}
+        {% include stage.html platforms=app.platforms icon=app.icon wide=first_shot title=atitle size="sm" %}
         {% endif %}
       </a>
     </div>

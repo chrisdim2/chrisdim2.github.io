@@ -1,0 +1,12 @@
+{%- comment -%}Όνομα και λογότυπο εφαρμογής ανά γλώσσα. include.app → atitle, afull, alogo, alogo_w, alogo_h, agreek. Προαιρετικά πεδία στο apps.yml: title_en, full_name_en, logo_en, logo_size_en.{%- endcomment -%}
+{%- assign atitle = include.app.title -%}
+{%- assign afull = include.app.full_name | default: include.app.title -%}
+{%- assign alogo = include.app.logo -%}
+{%- assign alogo_w = include.app.logo_size[0] -%}
+{%- assign alogo_h = include.app.logo_size[1] -%}
+{%- assign agreek = include.app.greek -%}
+{%- if page.lang == 'en' -%}
+{%- if include.app.title_en -%}{%- assign atitle = include.app.title_en -%}{%- endif -%}
+{%- if include.app.full_name_en -%}{%- assign afull = include.app.full_name_en -%}{%- endif -%}
+{%- if include.app.logo_en -%}{%- assign alogo = include.app.logo_en -%}{%- assign alogo_w = include.app.logo_size_en[0] -%}{%- assign alogo_h = include.app.logo_size_en[1] -%}{%- endif -%}
+{%- endif -%}

@@ -9,22 +9,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {% assign share_app = "" %}
 {% for a in apps %}{% if a.slug == page.app %}{% assign share_app = a %}{% endif %}{% endfor %}
+{% if share_app != "" %}{% include app_i18n.html app=share_app %}{% endif %}
 {% comment %} Τίτλος και περιγραφή: σελίδα εφαρμογής → από το apps.yml, αρχική → site.yml, άλλες → page.title / page.description. {% endcomment %}
 {% if share_app != "" and page.layout == 'app' %}
   {% if page.lang == 'el' %}{% assign kind = share_app.kind_el %}{% assign and_word = ' και ' %}{% assign for_word = ' για ' %}{% assign app_desc = share_app.description_el %}{% assign app_tag = share_app.tagline_el %}
   {% else %}{% assign kind = share_app.kind_en %}{% assign and_word = ' and ' %}{% assign for_word = ' for ' %}{% assign app_desc = share_app.description_en %}{% assign app_tag = share_app.tagline_en %}{% endif %}
   {% assign pn = "" %}
   {% for p in share_app.platforms %}
-    {% case p %}{% when 'iphone' %}{% assign n = 'iPhone' %}{% when 'ipad' %}{% assign n = 'iPad' %}{% when 'mac' %}{% assign n = 'Mac' %}{% when 'watch' %}{% assign n = 'Apple Watch' %}{% endcase %}
+    {% case p %}{% when 'iphone' %}{% assign n = 'iPhone' %}{% when 'ipad' %}{% assign n = 'iPad' %}{% when 'mac' %}{% assign n = 'Mac' %}{% when 'watch' %}{% assign n = 'Apple Watch' %}{% when 'web' %}{% assign n = 'Web' %}{% endcase %}
     {% if forloop.first %}{% assign pn = n %}{% elsif forloop.last %}{% assign pn = pn | append: and_word | append: n %}{% else %}{% assign pn = pn | append: ', ' | append: n %}{% endif %}
   {% endfor %}
-  {% assign app_name = share_app.full_name | default: share_app.title %}
+  {% assign app_name = afull %}
   {% capture auto_title %}{{ app_name }}{{ for_word }}{{ pn }} | dimakis{% endcapture %}
   {% assign page_title = page.head_title | default: auto_title %}
   {% assign page_desc = page.head_desc | default: app_desc | default: app_tag %}
   {% capture share_title %}{{ app_name }} · dimakis{% endcapture %}
   {% assign share_desc = app_tag %}
-  {% assign share_img = share_app.og_image | default: '/assets/og/dimakis.jpg' %}
+  {% assign share_img = share_app.og_image | default: '/assets/og/dimakis.jpg' %}{% if page.lang == 'en' and share_app.og_image_en %}{% assign share_img = share_app.og_image_en %}{% endif %}
 {% else %}
   {% if page.layout == 'home' %}{% assign auto_title = L.home_title %}{% elsif page.title %}{% capture auto_title %}{{ page.title }} | dimakis{% endcapture %}{% else %}{% assign auto_title = 'dimakis' %}{% endif %}
   {% assign page_title = page.head_title | default: auto_title %}
@@ -102,7 +103,8 @@
     <a class="foot-brand" href="{{ home | relative_url }}" aria-label="dimakis"><img class="foot-logo" src="{{ '/assets/dimakis-logo-dark.svg' | relative_url }}" alt="dimakis"></a>
     <ul class="foot-list">
       {% for app in apps %}
-      <li><a href="{{ home | append: app.slug | append: '/' | relative_url }}">{% if app.emblem %}<img class="foot-emblem" src="{{ app.emblem | relative_url }}" alt="" width="20" height="20" loading="lazy">{% endif %}{{ app.title }}</a></li>
+      {% include app_i18n.html app=app %}
+      <li><a href="{{ home | append: app.slug | append: '/' | relative_url }}">{% if app.emblem %}<img class="foot-emblem" src="{{ app.emblem | relative_url }}" alt="" width="20" height="20" loading="lazy">{% endif %}{{ atitle }}</a></li>
       {% endfor %}
     </ul>
     <div class="foot-meta">

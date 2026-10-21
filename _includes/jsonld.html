@@ -5,9 +5,10 @@
 {% endcomment %}
 {% assign A = include.app %}
 {% if page.layout == 'app' and A != "" %}
+{% include app_i18n.html app=A %}
 {% assign os = "" %}
 {% for p in A.platforms %}
-  {% case p %}{% when 'iphone' %}{% assign n = 'iOS' %}{% when 'ipad' %}{% assign n = 'iPadOS' %}{% when 'mac' %}{% assign n = 'macOS' %}{% when 'watch' %}{% assign n = 'watchOS' %}{% endcase %}
+  {% case p %}{% when 'iphone' %}{% assign n = 'iOS' %}{% when 'ipad' %}{% assign n = 'iPadOS' %}{% when 'mac' %}{% assign n = 'macOS' %}{% when 'watch' %}{% assign n = 'watchOS' %}{% when 'web' %}{% assign n = 'Web' %}{% endcase %}
   {% if forloop.first %}{% assign os = n %}{% else %}{% assign os = os | append: ', ' | append: n %}{% endif %}
 {% endfor %}
 {% assign store = A.appstore_url %}
@@ -16,7 +17,7 @@
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": {{ A.full_name | default: A.title | jsonify }},
+  "name": {{ afull | jsonify }},
   "description": {{ include.desc | strip | jsonify }},
   "url": {{ page.url | absolute_url | jsonify }},
   "image": {{ A.icon | absolute_url | jsonify }},

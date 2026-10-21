@@ -13,7 +13,7 @@ include.app: η εφαρμογή (προαιρετικό). Η επαφή απο�
 {% if action == "" or action contains 'FORM_ID' %}{% assign pending = true %}{% endif %}
 {% unless pending and jekyll.environment == 'production' %}
 {% assign A = include.app %}
-{% if A and A != "" %}{% assign heading = L.notify_title_app | replace: '%app', A.title %}{% assign tag = A.slug %}{% else %}{% assign heading = L.notify_title %}{% assign tag = 'all' %}{% endif %}
+{% if A and A != "" %}{% include app_i18n.html app=A %}{% assign heading = L.notify_title_app | replace: '%app', atitle %}{% assign tag = A.slug %}{% else %}{% assign heading = L.notify_title %}{% assign tag = 'all' %}{% endif %}
 <section class="notify{% if include.compact %} notify-compact{% endif %}" aria-labelledby="notify-h-{{ tag }}">
   <div class="notify-in">
     <div class="notify-text">
