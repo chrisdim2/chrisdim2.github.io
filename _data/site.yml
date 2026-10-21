@@ -32,8 +32,8 @@ el:
 
     με ονόματα
 
-    θεών.'
-  hero_text: Ημερολόγιο, κρατήσεις, σημειώσεις, φωτογραφίες, σάρωση εγγράφων. Φτιαγμένες
+    από τη μυθολογία.'
+  hero_text: Ημερολόγιο, σημειώσεις, φωτογραφίες, σάρωση εγγράφων. Φτιαγμένες
     μία μία, από έναν άνθρωπο, στην Ελλάδα.
   nav_apps: Εφαρμογές
   nav_press: Press Kit
@@ -75,12 +75,10 @@ el:
 en:
   home_title: dimakis — Apps for iPhone, iPad, Mac and Apple Watch
   eyebrow: iPhone and Mac
-  hero_title: 'Apps
+  hero_title: 'Apps named
 
-    with names
-
-    of gods.'
-  hero_text: Calendar, bookings, notes, photos, document scanning. Built one at a time,
+    after Greek myth.'
+  hero_text: Calendar, notes, photos, document scanning. Built one at a time,
     by one person, in Greece.
   nav_apps: Apps
   nav_press: Press Kit
