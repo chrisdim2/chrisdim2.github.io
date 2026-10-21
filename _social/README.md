@@ -9,7 +9,7 @@
 | `posts.md` | 10 αναρτήσεις: κείμενο Instagram/Facebook, κείμενο Threads, alt text, σύνδεσμοι |
 | `images/profile.png` | Εικόνα προφίλ 1080×1080 (ίδια παντού, αντέχει το κυκλικό κόψιμο) |
 | `images/facebook-cover.png` | Εξώφυλλο Facebook 1640×624 (το περιεχόμενο στο κέντρο, ώστε να μην κόβεται στο κινητό) |
-| `images/00-intro.jpg` … `09-*.jpg` | Εικόνες αναρτήσεων 1080×1350 (4:5) |
+| `images/00-intro.jpg` … `09-*.jpg` | Εικόνες αναρτήσεων 1080×1350 (4:5). Η `00-intro` είναι αιώνια (χωρίς εφαρμογές) |
 | `youtube.md` | Κανάλι YouTube: στήσιμο, κείμενα για τα 2 trailer, Shorts, οδηγοί, πρόγραμμα |
 | `shorts.yml`, `subtitles/` | Σενάρια των 9 Shorts και οι υπότιτλοί τους (αγγλικά, ελληνικά) |
 | `video/` | Trailer Chronos και Apollo για YouTube, με «Coming…» στην τελική κάρτα |

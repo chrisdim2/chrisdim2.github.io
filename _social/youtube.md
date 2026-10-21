@@ -39,11 +39,9 @@
 **Περιγραφή καναλιού** (όριο 1000):
 
 ```
-Apps named after Greek myth. Calendar, notes, photos and document scanning for iPhone, iPad, Mac and Apple Watch, built one at a time by one person, in Greece. Every app speaks 32 languages, and your data stays on your devices and in your own cloud.
+Apps made one at a time, by one person, in Greece.
 
 Here: short tips, how-to guides and launch news.
-
-Chronos, a calendar that goes beyond appointments, arrives in December. Apollo (family photo album) and Iris (photo companion for Mac) are coming soon.
 
 Get notified on launch day: https://dimakis.app/en/
 ```
@@ -51,11 +49,9 @@ Get notified on launch day: https://dimakis.app/en/
 **Μετάφραση στα ελληνικά:**
 
 ```
-Εφαρμογές με ονόματα από την ελληνική μυθολογία. Ημερολόγιο, σημειώσεις, φωτογραφίες και σάρωση εγγράφων για iPhone, iPad, Mac και Apple Watch, φτιαγμένες μία μία από έναν άνθρωπο, στην Ελλάδα. Κάθε εφαρμογή μιλά 32 γλώσσες, και τα δεδομένα σου μένουν στις συσκευές σου και στο δικό σου cloud.
+Εφαρμογές φτιαγμένες μία μία, από έναν άνθρωπο, στην Ελλάδα.
 
 Εδώ: σύντομες συμβουλές, οδηγοί και νέα για τις κυκλοφορίες.
-
-Το Chronos, ένα ημερολόγιο που δεν σταματά στα ραντεβού, έρχεται τον Δεκέμβριο. Το Apollo (οικογενειακό άλμπουμ) και το Iris (βοηθός φωτογραφιών για Mac) έρχονται σύντομα.
 
 Ειδοποίηση τη μέρα της κυκλοφορίας: https://dimakis.app/
 ```

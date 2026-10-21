@@ -3,24 +3,25 @@
 Κανόνας: αγγλικά πρώτα, μία ελληνική γραμμή. Δες «Social: γλώσσα και περιεχόμενο» στο `CLAUDE.md`.
 Εικόνα προφίλ (ίδια παντού): `images/profile.png`. Εξώφυλλο Facebook: `images/facebook-cover.png`.
 
+**Αιώνια κείμενα** (απόφαση 21/10/2026): τα βιογραφικά, τα εξώφυλλα και η εικόνα γνωριμίας δεν αναφέρουν εφαρμογές, αριθμούς, συσκευές, γλώσσες ή θέμα ονομάτων, γιατί αλλάζουν. Μιλούν μόνο για τον δημιουργό και τον τρόπο που φτιάχνονται οι εφαρμογές.
+
 ---
 
 ## Instagram (`dimakisapps`)
 
 Επεξεργασία προφίλ στην εφαρμογή Instagram.
 
-**Όνομα** (όριο 30, μετράει στην αναζήτηση, 27 χαρακτήρες):
+**Όνομα** (όριο 30, μετράει στην αναζήτηση, 26 χαρακτήρες):
 
 ```
-dimakis · iPhone & Mac apps
+dimakis · apps from Greece
 ```
 
-**Βιογραφικό** (όριο 150, 140 χαρακτήρες):
+**Βιογραφικό** (όριο 150, 99 χαρακτήρες):
 
 ```
-Apps for iPhone, iPad, Mac & Apple Watch
-Calendar, family photos & more · 32 languages
-Chronos arrives in December
+Apps made one at a time, by one person
+Tips, launches & behind the scenes
 🇬🇷 Φτιαγμένες στην Ελλάδα
 ```
 
@@ -43,10 +44,10 @@ Chronos arrives in December
 
 Παίρνει όνομα και εικόνα από το Instagram. Το βιογραφικό γράφεται χωριστά.
 
-**Βιογραφικό** (όριο 150, 129 χαρακτήρες):
+**Βιογραφικό** (όριο 150, 106 χαρακτήρες):
 
 ```
-Apps for iPhone, iPad, Mac & Apple Watch, built by one person in Greece. Tips, launches, behind the scenes.
+Apps made one at a time, by one person in Greece. Tips, launches, behind the scenes.
 🇬🇷 Γράφω και ελληνικά
 ```
 
@@ -58,20 +59,20 @@ Apps for iPhone, iPad, Mac & Apple Watch, built by one person in Greece. Tips, l
 
 **Κατηγορία:** «App Page». Δεύτερη, αν θέλεις: «Software».
 
-**Εισαγωγή / Intro** (όριο 101, 85 χαρακτήρες):
+**Εισαγωγή / Intro** (όριο 101, 78 χαρακτήρες):
 
 ```
-Apps for iPhone, iPad, Mac & Apple Watch, made in Greece 🇬🇷 Εφαρμογές από την Ελλάδα.
+Apps made one at a time, by one person, in Greece 🇬🇷 Εφαρμογές από την Ελλάδα.
 ```
 
 **Λεπτομέρειες / Περισσότερα για τη σελίδα** (εδώ χωράει πλήρες κείμενο):
 
 ```
-Apps named after Greek myth. Calendar, notes, photos and document scanning for iPhone, iPad, Mac and Apple Watch, built one at a time by one person, in Greece. Every app speaks 32 languages, and your data stays on your devices and in your own cloud.
+Apps made one at a time, by one person, in Greece.
 
-Chronos, a calendar that goes beyond appointments, arrives in December. Apollo (family photo album) and Iris (photo companion for Mac) are coming soon.
+Follow along for tips, behind the scenes and launch news. All the apps are at dimakis.app.
 
-🇬🇷 Εφαρμογές με ονόματα από την ελληνική μυθολογία. Ημερολόγιο, σημειώσεις, φωτογραφίες και σάρωση εγγράφων για iPhone, iPad, Mac και Apple Watch, φτιαγμένες μία μία από έναν άνθρωπο, στην Ελλάδα.
+🇬🇷 Εφαρμογές φτιαγμένες μία μία, από έναν άνθρωπο, στην Ελλάδα. Όλες οι εφαρμογές στο dimakis.app.
 ```
 
 **Ιστότοπος:** `https://dimakis.app/en/` (και `https://dimakis.app/` αν δέχεται δεύτερο)

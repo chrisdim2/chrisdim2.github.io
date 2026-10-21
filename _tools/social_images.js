@@ -70,48 +70,32 @@ function profile() {
 }
 
 function cover() {
-  const icons = ORDER.map((k) => `<img src="${url(`assets/icons/${k}.png`)}" alt="">`).join('');
+  // Αιώνιο: μόνο το λογότυπο και μία φράση. Καμία εφαρμογή, αριθμός ή συσκευή (αλλάζουν).
   return head(1640, 624, `
     .glow{background:radial-gradient(ellipse at 50% 30%,rgba(199,42,44,.16),rgba(16,24,32,0) 60%)}
     .in{position:absolute;left:50%;top:0;bottom:0;width:1060px;transform:translateX(-50%);
-      display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;padding-bottom:20px}
-    .logo{height:110px;width:auto}
-    p{font-family:"Inter";font-size:34px;font-weight:500;color:#A7B4BB;letter-spacing:-.01em}
-    .icons{display:flex;gap:26px;margin-top:6px}
-    .icons img{width:84px;height:84px;border-radius:19px;box-shadow:0 6px 20px rgba(0,0,0,.5)}
+      display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;padding-bottom:20px}
+    .logo{height:124px;width:auto}
+    p{font-family:"Inter";font-size:36px;font-weight:500;color:#A7B4BB;letter-spacing:-.01em}
   `) + `<div class="glow"></div><div class="in">
     <img class="logo" src="${url('assets/dimakis-logo-dark.svg')}">
-    <p>Apps for iPhone, iPad, Mac and Apple Watch</p>
-    <div class="icons">${icons}</div></div></body></html>`;
+    <p>Built one at a time, by one person, in Greece.</p></div></body></html>`;
 }
 
 function intro() {
-  const cards = ORDER.map((k) => {
-    const a = APPS[k];
-    // Χρυσά εμβλήματα (ίδια με το εξώφυλλο Facebook και το banner YouTube), όχι τα έγχρωμα εικονίδια.
-    return `<div class="card"><div class="emb"><img src="${url(`assets/logos/${k}-emblem.svg`)}"></div>
-      <b>${a.name}</b><span>${a.kind}</span><i>${a.status}</i></div>`;
-  }).join('');
+  // Αιώνιο: χωρίς κάρτες εφαρμογών, καταστάσεις, αριθμούς γλωσσών ή συσκευές.
   return head(1080, 1350, `
     .glow{background:radial-gradient(circle at 20% 8%,rgba(199,42,44,.20),rgba(16,24,32,0) 50%)}
     .top{position:absolute;left:80px;top:84px}
     .top img{height:62px}
-    h1{position:absolute;left:80px;right:80px;top:200px;font-size:84px;line-height:1.04;font-weight:600;letter-spacing:-.03em;text-wrap:balance}
-    .sub{position:absolute;left:80px;right:80px;top:400px;font-family:"Inter";font-size:34px;line-height:1.35;color:#A7B4BB;text-wrap:balance}
-    .grid{position:absolute;left:80px;right:80px;top:560px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-    .card{background:#1A2831;border:1px solid rgba(237,241,238,.10);border-radius:30px;padding:30px 26px;
-      display:flex;flex-direction:column;align-items:flex-start;gap:6px;height:330px}
-    .card .emb{width:104px;height:104px;border-radius:24px;margin-bottom:16px;display:flex;align-items:center;justify-content:center;
-      background:radial-gradient(circle at 50% 35%,#1F2B38,#121A23);box-shadow:0 6px 18px rgba(0,0,0,.45),inset 0 0 0 1px rgba(233,202,136,.10)}
-    .card .emb img{width:76px;height:76px}
-    .card b{font-size:36px;font-weight:600;letter-spacing:-.02em}
-    .card span{font-family:"Inter";font-size:22px;color:#A7B4BB;line-height:1.25}
-    .card i{font-style:normal;font-family:"Inter";font-size:19px;font-weight:600;color:#E9CA88;margin-top:auto}
+    h1{position:absolute;left:80px;right:80px;top:400px;font-size:110px;line-height:1.04;font-weight:600;letter-spacing:-.035em;text-wrap:balance}
+    .sub{position:absolute;left:80px;right:80px;top:850px;font-family:"Inter";font-size:38px;line-height:1.35;color:#A7B4BB;text-wrap:balance}
+    .url{position:absolute;left:80px;bottom:84px;font-family:"Inter";font-size:30px;font-weight:600;color:#E9CA88;letter-spacing:.01em}
   `) + `<div class="glow"></div>
     <div class="top"><img src="${url('assets/dimakis-logo-dark.svg')}"></div>
-    <h1>Apps for iPhone, iPad, Mac and Apple Watch.</h1>
-    <p class="sub">Made in Greece, for everyone. Each app speaks 32 languages.</p>
-    <div class="grid">${cards}</div></body></html>`;
+    <h1>Built one at a time, by one person, in Greece.</h1>
+    <p class="sub">Follow along for tips, behind the scenes and launch news.</p>
+    <div class="url">dimakis.app</div></body></html>`;
 }
 
 function post(p) {
@@ -160,20 +144,16 @@ function post(p) {
 
 // YouTube: banner 2560×1440 με το περιεχόμενο στη «ζώνη ασφαλείας» 1546×423 στο κέντρο (φαίνεται σε κάθε συσκευή).
 function ytBanner() {
-  const icons = ORDER.map((k) => `<img src="${url(`assets/icons/${k}.png`)}" alt="">`).join('');
   return head(2560, 1440, `
     .glow{background:radial-gradient(ellipse at 50% 42%,rgba(199,42,44,.16),rgba(16,24,32,0) 45%)}
     .safe{position:absolute;left:507px;top:508px;width:1546px;height:423px;
-      display:flex;align-items:center;justify-content:center;gap:56px}
-    .logo{height:104px;width:auto}
-    .txt{display:flex;flex-direction:column;gap:22px}
-    p{font-family:"Inter";font-size:34px;font-weight:500;color:#A7B4BB;letter-spacing:-.01em}
-    .icons{display:flex;gap:18px}
-    .icons img{width:68px;height:68px;border-radius:15px;box-shadow:0 6px 18px rgba(0,0,0,.5)}
-    .sep{width:2px;height:190px;background:rgba(237,241,238,.14)}
+      display:flex;align-items:center;justify-content:center;gap:60px}
+    .logo{height:120px;width:auto}
+    p{font-family:"Inter";font-size:42px;line-height:1.3;font-weight:500;color:#A7B4BB;letter-spacing:-.01em}
+    .sep{width:2px;height:170px;background:rgba(237,241,238,.14)}
   `) + `<div class="glow"></div><div class="safe">
     <img class="logo" src="${url('assets/dimakis-logo-dark.svg')}"><div class="sep"></div>
-    <div class="txt"><p>Apps for iPhone, iPad, Mac and Apple Watch</p><div class="icons">${icons}</div></div>
+    <p>Built one at a time,<br>by one person, in Greece.</p>
   </div></body></html>`;
 }
 
