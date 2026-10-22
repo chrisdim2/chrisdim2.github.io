@@ -39,12 +39,12 @@
   Βλ. το git ιστορικό (commits `1144f6f`, `5a5a51a`, `6b74fdf`) για λογότυπο, έμβλημα και χρώματα (πράσινο φασκόμηλου `#3F6B4D`).
 ## Οικογένεια Chronos και σειρά εφαρμογών (αποφάσεις 21/10/2026)
 
-Οι εφαρμογές στο site (η σειρά είναι η σειρά κυκλοφορίας, πεδίο `order` στο `apps.yml`, ο χρήστης την αλλάζει όποτε θέλει):
+Οι εφαρμογές στο site, με τη σειρά που φαίνονται (πεδίο `order` στο `apps.yml`, ο χρήστης την αλλάζει όποτε θέλει). **Το Chronos είναι η ναυαρχίδα και μένει πρώτο**, με δεύτερο το Chronos Γιορτές (απόφαση 22/10), μετά οι υπόλοιπες με τη σειρά κυκλοφορίας:
 
 | # | Εφαρμογή | Υπότιτλος (EN) | Συσκευές | Κατάσταση |
 |---|---|---|---|---|
-| 1 | **Chronos Γιορτές** (EN: **Chronos Celebrations**) | Name Days & Birthdays | iPhone, iPad | δωρεάν, Νοέμβριος |
-| 2 | Chronos Calendar | Calendar | iPhone, iPad, Mac, Watch | Δεκέμβριος |
+| 1 | Chronos Calendar | Calendar | iPhone, iPad, Mac, Watch | Δεκέμβριος (ναυαρχίδα) |
+| 2 | **Chronos Γιορτές** (EN: **Chronos Celebrations**) | Name Days & Birthdays | iPhone, iPad | δωρεάν, Νοέμβριος |
 | 3 | Apollo | Cloud Photo Gallery | iPhone, iPad, Mac | σε ανάπτυξη |
 | 4 | Iris | EXIFeditor | Mac | σε ανάπτυξη |
 | 5 | Argus | PDF & Doc Scanner | iPhone, iPad (όχι Mac, απόφαση 21/10) | σε ανάπτυξη |

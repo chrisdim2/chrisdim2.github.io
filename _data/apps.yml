@@ -18,7 +18,7 @@ list:
   logo_size: [648, 141]
   emblem: /assets/logos/chronos-emblem.svg
   og_image: /assets/og/chronos.jpg
-  order: 2
+  order: 1
   platforms: [iphone, ipad, mac, watch]
   has_legal: true
   support_email: chronos@dimakis.app
@@ -314,7 +314,7 @@ list:
   logo_size: [662, 141]
   emblem: /assets/logos/giortes-emblem.svg
   og_image: /assets/og/giortes.jpg
-  order: 1
+  order: 2
   platforms: [iphone, ipad]
   has_legal: false
   support_email: giortes@dimakis.app
