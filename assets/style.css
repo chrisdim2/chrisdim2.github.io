@@ -106,12 +106,9 @@ h1,h2,h3{letter-spacing:-.025em;font-weight:600}
 .stage::before{content:"";position:absolute;inset:-14% -10% -8% -10%;z-index:-1;pointer-events:none;
   background:radial-gradient(50% 55% at 42% 45%, rgba(255,184,77,.20), transparent 70%),
              radial-gradient(28% 40% at 76% 70%, rgba(225,75,65,.22), transparent 70%)}
-/* Η λάμψη παίρνει το χρώμα της εφαρμογής (--glow από το accent του apps.yml) */
+/* Η λάμψη παίρνει το χρώμα της εφαρμογής (--glow από το accent του apps.yml): μία πλατιά, απαλή, πίσω από όλες τις συσκευές */
 .stage[style*="--glow"]::before{
-  background:radial-gradient(50% 55% at 42% 45%, color-mix(in srgb, var(--glow) 24%, transparent), transparent 70%),
-             radial-gradient(28% 40% at 76% 70%, color-mix(in srgb, var(--glow) 26%, transparent), transparent 70%)}
-.stage.no-mac[style*="--glow"]::before{
-  background:radial-gradient(45% 55% at 50% 50%, color-mix(in srgb, var(--glow) 26%, transparent), transparent 72%)}
+  background:radial-gradient(ellipse closest-side at 50% 54%, color-mix(in srgb, var(--glow) 17%, transparent), transparent)}
 .stage-sm{margin:0 auto;max-width:520px}
 .stage-link{display:block;text-decoration:none}
 
