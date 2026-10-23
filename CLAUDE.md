@@ -28,6 +28,10 @@
   φράσεις και κείμενα οθόνης από την εφαρμογή (fixtures, screenshots), ό,τι δείχνουν επαληθεύεται στον κώδικα πριν μπει. Χωρίς JS ή με
   `prefers-reduced-motion` δείχνουν στατικά το πρώτο αποτέλεσμα. Υπάρχουν: `demo-quickadd` (Chronos, Γρήγορη προσθήκη, προσομοίωση) και `demo-views` (Chronos, εναλλαγή όψεων με τα screenshots της γκαλερί), `demo-weather` (Chronos, Καιρός: Αθήνα/Λονδίνο και Θερμοκρασία/Βροχή/Άνεμος· δείγμα δεδομένων, τα mm και km/h είναι ενδεικτικά). CSS στο τέλος του `assets/style.css`.
 - `_layouts/default.html`: `<title>`, canonical, hreflang (x-default → αγγλικά), Smart App Banner, footer, κουμπί «πάνω».
+- **Κρυφή λίστα «Οι εφαρμογές μας» για τις εφαρμογές** (23/10/2026): `/in-app/apps.json` (σταθερό σχήμα, `version: 1`) και `/in-app/apps/` (ίδια λίστα για έλεγχο ή WebView, `?lang=el|en`).
+  Βγαίνουν από το `_data/apps.yml` (`in-app/apps.json`, `in-app/apps.html`): αλλάζεις την εφαρμογή ΜΙΑ φορά εκεί και αλλάζουν όλες. Χωρίς σύνδεσμο από το site, `sitemap: false`, `noindex`·
+  δεν είναι μυστικό (το GitHub Pages δεν έχει κωδικό). Εφαρμογές με `planned: true` δεν μπαίνουν. Κάθε εφαρμογή πρέπει να αγνοεί άγνωστα πεδία και να κρατά αντίγραφο της τελευταίας λίστας για χρήση χωρίς δίκτυο.
+  Νέα πεδία μόνο προστίθενται, δεν αλλάζουν όνομα ή τύπο. Οι εφαρμογές (Swift) δεν έχουν συνδεθεί ακόμα· ο κώδικας τους γράφεται στα δικά τους repos.
 - `_includes/jsonld.html`, `notify.html` (φόρμα Brevo), `press-zip.html`, `app_i18n.html` (όνομα και λογότυπο εφαρμογής ανά γλώσσα).
 - `sitemap.xml` και `robots.txt`: δικά μας Liquid (όχι jekyll-sitemap, γιατί δεν γράφει hreflang).
 - `_posts/`: άρθρα, ένα αρχείο ανά γλώσσα, με `lang`, `alt` (η άλλη γλώσσα), `app`, `permalink`.

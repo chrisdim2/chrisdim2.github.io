@@ -1,0 +1,42 @@
+---
+layout: null
+permalink: /in-app/apps.json
+sitemap: false
+---
+{%- comment -%}
+Η λίστα «Οι εφαρμογές μας» για τις ίδιες τις εφαρμογές (οθόνη μέσα στην εφαρμογή). Μία πηγή: _data/apps.yml.
+Δεν υπάρχει σύνδεσμος προς αυτό από το site και δεν μπαίνει στο sitemap. Δεν είναι μυστικό (το GitHub Pages δεν έχει πρόσβαση με κωδικό),
+απλώς δεν φαίνεται. Εφαρμογές με planned: true δεν μπαίνουν (δεν προωθούμε ό,τι μπορεί να μην γίνει).
+Το σχήμα είναι σταθερό (version): νέα πεδία μπορούν να προστεθούν, τα υπάρχοντα δεν αλλάζουν όνομα ή τύπο. Οι εφαρμογές πρέπει να αγνοούν άγνωστα πεδία
+και να κρατούν αντίγραφο της τελευταίας λίστας για χρήση χωρίς δίκτυο.
+{%- endcomment -%}
+{%- assign apps = site.data.apps.list | where_exp: "a", "a.planned != true" | sort: "order" -%}
+{
+  "version": 1,
+  "generated": {{ site.time | date_to_xmlschema | jsonify }},
+  "apps": [
+{%- for a in apps %}
+{%- assign name_en = a.title_en | default: a.title %}
+{%- assign full_el = a.full_name | default: a.title %}
+{%- assign full_en = a.full_name_en | default: a.full_name | default: a.title %}
+{%- assign store = a.appstore_url %}
+{%- if store == "" and a.appstore_id != "" %}{% capture store %}https://apps.apple.com/app/id{{ a.appstore_id }}{% endcapture %}{% endif %}
+    {
+      "slug": {{ a.slug | jsonify }},
+      "order": {{ a.order }},
+      "family": {{ a.family | jsonify }},
+      "name": { "el": {{ a.title | jsonify }}, "en": {{ name_en | jsonify }} },
+      "fullName": { "el": {{ full_el | jsonify }}, "en": {{ full_en | jsonify }} },
+      "kind": { "el": {{ a.kind_el | jsonify }}, "en": {{ a.kind_en | jsonify }} },
+      "tagline": { "el": {{ a.tagline_el | jsonify }}, "en": {{ a.tagline_en | jsonify }} },
+      "status": { "el": {{ a.status_el | jsonify }}, "en": {{ a.status_en | jsonify }} },
+      "released": {% if a.appstore_id != "" %}true{% else %}false{% endif %},
+      "platforms": {{ a.platforms | jsonify }},
+      "accent": {{ a.accent | jsonify }},
+      "icon": {{ a.icon | absolute_url | jsonify }},
+      "url": { "el": {{ '/' | append: a.slug | append: '/' | absolute_url | jsonify }}, "en": {{ '/en/' | append: a.slug | append: '/' | absolute_url | jsonify }} },
+      "appStoreURL": {{ store | default: "" | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+{%- endfor %}
+  ]
+}
