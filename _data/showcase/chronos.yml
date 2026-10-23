@@ -6,6 +6,7 @@
 demos:
   - quickadd
   - views
+  - weather
 
 stage:
   wide: /assets/screens/chronos/mac/el/chronos-mac-01-month.webp

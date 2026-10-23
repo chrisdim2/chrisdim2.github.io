@@ -26,7 +26,7 @@
 - **Διαδραστικά mockups** (απόφαση 23/10/2026): `_includes/demo-<όνομα>.html`, ενεργοποιούνται με `demos:` στο `_data/showcase/<app>.yml`
   και μπαίνουν μετά τη γκαλερί της σελίδας (`_layouts/app.html`). Είναι προσομοιώσεις με το χέρι, όχι ο πραγματικός κώδικας της εφαρμογής:
   φράσεις και κείμενα οθόνης από την εφαρμογή (fixtures, screenshots), ό,τι δείχνουν επαληθεύεται στον κώδικα πριν μπει. Χωρίς JS ή με
-  `prefers-reduced-motion` δείχνουν στατικά το πρώτο αποτέλεσμα. Υπάρχουν: `demo-quickadd` (Chronos, Γρήγορη προσθήκη, προσομοίωση) και `demo-views` (Chronos, εναλλαγή όψεων με τα screenshots της γκαλερί). CSS στο τέλος του `assets/style.css`.
+  `prefers-reduced-motion` δείχνουν στατικά το πρώτο αποτέλεσμα. Υπάρχουν: `demo-quickadd` (Chronos, Γρήγορη προσθήκη, προσομοίωση) και `demo-views` (Chronos, εναλλαγή όψεων με τα screenshots της γκαλερί), `demo-weather` (Chronos, Καιρός: Αθήνα/Λονδίνο και Θερμοκρασία/Βροχή/Άνεμος· δείγμα δεδομένων, τα mm και km/h είναι ενδεικτικά). CSS στο τέλος του `assets/style.css`.
 - `_layouts/default.html`: `<title>`, canonical, hreflang (x-default → αγγλικά), Smart App Banner, footer, κουμπί «πάνω».
 - `_includes/jsonld.html`, `notify.html` (φόρμα Brevo), `press-zip.html`, `app_i18n.html` (όνομα και λογότυπο εφαρμογής ανά γλώσσα).
 - `sitemap.xml` και `robots.txt`: δικά μας Liquid (όχι jekyll-sitemap, γιατί δεν γράφει hreflang).
