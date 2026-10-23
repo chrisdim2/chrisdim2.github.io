@@ -2,6 +2,10 @@
 # Οι εικόνες βγαίνουν από το CalendarApp/Marketing (screenshots/<γλώσσα>/.../plain). Το βίντεο: video/<γλώσσα>_site_web.mp4.
 # src: ελληνικό UI, src_en: αγγλικό UI. only: el = εμφανίζεται μόνο στην ελληνική σελίδα (λειτουργίες μόνο για Ελλάδα).
 
+# demos: διαδραστικά mockups από _includes/demo-<όνομα>.html, μετά τη γκαλερί.
+demos:
+  - quickadd
+
 stage:
   wide: /assets/screens/chronos/mac/el/chronos-mac-01-month.webp
   wide_en: /assets/screens/chronos/mac/en/chronos-mac-01-month.webp

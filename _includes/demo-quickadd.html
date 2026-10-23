@@ -1,0 +1,151 @@
+{% comment %}
+Διαδραστικό mockup: «Γρήγορη προσθήκη» του Chronos σε iPhone. Δεν είναι πραγματικός αναλυτής φράσεων:
+οι φράσεις είναι από τα fixtures της εφαρμογής (CalendarApp/Scripts/quickadd/fixtures.json) και τα αποτελέσματά τους
+είναι γραμμένα εδώ με το χέρι. Οι ημερομηνίες (αύριο, μεθαύριο, Παρασκευή) υπολογίζονται από τη σημερινή.
+Κείμενα οθόνης: από τα screenshots της εφαρμογής (αγγλικά και ελληνικά).
+Ο ίδιος κώδικας εμφανίζει στατικά την πρώτη φράση όταν δεν υπάρχει JS ή όταν ο χρήστης θέλει λιγότερη κίνηση.
+{% endcomment %}
+{% assign el = false %}{% if page.lang == 'el' %}{% assign el = true %}{% endif %}
+<section class="block demo" id="demo-quickadd" aria-labelledby="demo-quickadd-h">
+  <div class="demo-text">
+    <h2 id="demo-quickadd-h">{% if el %}Γράψε το όπως το λες{% else %}Type it the way you'd say it{% endif %}</h2>
+    <p>{% if el %}Στη Γρήγορη προσθήκη γράφεις τι, πότε και πού, και το Chronos καταλαβαίνει την ημερομηνία και την ώρα. Δοκίμασε μια φράση:{% else %}In Quick Add you write what, when and where, and Chronos picks out the date and time. Try a phrase:{% endif %}</p>
+    <div class="demo-chips" role="group" aria-label="{% if el %}Φράσεις για δοκιμή{% else %}Example phrases{% endif %}">
+      {% if el %}
+      <button type="button" class="demo-chip" data-i="0" aria-pressed="true">Οδοντίατρος αύριο στις 18:00</button>
+      <button type="button" class="demo-chip" data-i="1" aria-pressed="false">Δείπνο Παρασκευή στις 20:00</button>
+      <button type="button" class="demo-chip" data-i="2" aria-pressed="false">Γυμναστήριο μεθαύριο 7 το πρωί</button>
+      {% else %}
+      <button type="button" class="demo-chip" data-i="0" aria-pressed="true">Dentist tomorrow at 6pm</button>
+      <button type="button" class="demo-chip" data-i="1" aria-pressed="false">Dinner Friday at 8pm</button>
+      <button type="button" class="demo-chip" data-i="2" aria-pressed="false">Lunch with Anna tomorrow at noon</button>
+      {% endif %}
+    </div>
+    <p class="demo-note">{% if el %}Απλοποιημένη προσομοίωση της οθόνης. Τίποτα δεν αποθηκεύεται.{% else %}A simplified simulation of the screen. Nothing is saved.{% endif %}</p>
+  </div>
+
+  <figure class="demo-device" aria-label="{% if el %}Προσομοίωση της Γρήγορης προσθήκης στο iPhone{% else %}Simulation of Quick Add on iPhone{% endif %}">
+    <div class="stage no-mac has-phone demo-stage" style="--glow:{{ app.accent }}">
+      <div class="iph">
+        <div class="iph-screen">
+          <div class="qa" aria-hidden="true">
+            <div class="qa-top">
+              <span class="qa-time">{% if el %}9:41{% else %}09:41{% endif %}</span>
+              <span class="qa-status"><i></i><i></i><i></i></span>
+            </div>
+            <div class="qa-sheet">
+              <div class="qa-nav">
+                <span class="qa-pill">{% if el %}Άκυρο{% else %}Cancel{% endif %}</span>
+                <b>{% if el %}Γρήγορη προσθήκη{% else %}Quick Add{% endif %}</b>
+                <span class="qa-pill qa-continue">{% if el %}Συνέχεια{% else %}Continue{% endif %}</span>
+              </div>
+              <div class="qa-field"><span class="qa-typed"></span><span class="qa-caret"></span></div>
+              <p class="qa-hint">{% if el %}Γράψε τι, πότε και πού. Στο επόμενο βήμα βλέπεις το γεγονός και το διορθώνεις πριν την αποθήκευση.{% else %}Type what, when, and where. In the next step, you’ll see the event and can correct it before saving.{% endif %}</p>
+              <div class="qa-card">
+                <b class="qa-title"></b>
+                <div class="qa-when">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9h18M8 2.5v3M16 2.5v3"/><path d="M8 13h.01M12 13h.01M16 13h.01M8 17h.01M12 17h.01M16 17h.01" stroke-width="2.2"/></svg>
+                  <span><span class="qa-date"></span><span class="qa-hours"></span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </figure>
+</section>
+<script>
+(function(){
+  var root = document.getElementById('demo-quickadd');
+  if (!root) return;
+  var el = {% if el %}true{% else %}false{% endif %};
+  var locale = el ? 'el-GR' : 'en-GB';
+  var dash = el ? ' – ' : '–';
+  // [κείμενο, είδος]: title, day, time. day: +N μέρες ή 'fri'. time: ώρα έναρξης (διάρκεια 1 ώρα, όπως στην εφαρμογή).
+  var phrases = el ? [
+    { seg: [['Οδοντίατρος ','title'],['αύριο ','day',1],['στις 18:00','time',18]] },
+    { seg: [['Δείπνο ','title'],['Παρασκευή ','day','fri'],['στις 20:00','time',20]] },
+    { seg: [['Γυμναστήριο ','title'],['μεθαύριο ','day',2],['7 το πρωί','time',7]] }
+  ] : [
+    { seg: [['Dentist ','title'],['tomorrow ','day',1],['at 6pm','time',18]] },
+    { seg: [['Dinner ','title'],['Friday ','day','fri'],['at 8pm','time',20]] },
+    { seg: [['Lunch with Anna ','title'],['tomorrow ','day',1],['at noon','time',12]] }
+  ];
+  var q = function(s){ return root.querySelector(s); };
+  var typed = q('.qa-typed'), caret = q('.qa-caret'), card = q('.qa-card'), cont = q('.qa-continue');
+  var title = q('.qa-title'), date = q('.qa-date'), hours = q('.qa-hours');
+  var chips = root.querySelectorAll('.demo-chip');
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  function dayLabel(d){
+    var t = new Date(); t.setHours(0,0,0,0);
+    if (d === 'fri') t.setDate(t.getDate() + (5 - t.getDay() + 7) % 7);
+    else t.setDate(t.getDate() + d);
+    var s = new Intl.DateTimeFormat(locale, { weekday:'long', day:'numeric', month:'long', year:'numeric' }).format(t);
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
+  // Τι «έχει καταλάβει» η οθόνη όταν έχουν γραφτεί n χαρακτήρες.
+  function render(p, n){
+    var full = p.seg.map(function(s){ return s[0]; }).join('');
+    typed.textContent = full.slice(0, n);
+    var left = n, ti = '', dy = null, tm = null;
+    p.seg.forEach(function(s){
+      var part = s[0].slice(0, Math.max(left, 0)), done = left >= s[0].length;
+      left -= s[0].length;
+      if (s[1] === 'title') ti += part;
+      else if (s[1] === 'day' && done) dy = s[2];
+      else if (s[1] === 'time' && done) tm = s[2];
+    });
+    ti = ti.trim();
+    card.classList.toggle('on', ti.length > 0);
+    cont.classList.toggle('on', ti.length > 0);
+    title.textContent = ti;
+    date.textContent = dy !== null ? dayLabel(dy) : '';
+    hours.textContent = tm !== null ? pad(tm) + ':00' + dash + pad(tm + 1) + ':00' : '';
+    card.classList.toggle('has-date', dy !== null);
+    card.classList.toggle('has-hours', tm !== null);
+  }
+  function mark(i){
+    chips.forEach(function(c, k){ c.setAttribute('aria-pressed', k === i); });
+  }
+
+  var run = 0, current = 0, manual = false, visible = false;
+  function wait(ms, id){ return new Promise(function(r){ setTimeout(function(){ r(id === run); }, ms); }); }
+  async function play(i){
+    var id = ++run, p = phrases[i];
+    var len = p.seg.reduce(function(a, s){ return a + s[0].length; }, 0);
+    current = i; mark(i);
+    caret.classList.add('typing');
+    render(p, 0);
+    if (!await wait(450, id)) return;
+    for (var n = 1; n <= len; n++){
+      render(p, n);
+      if (!await wait(48 + Math.random() * 40, id)) return;
+    }
+    caret.classList.remove('typing');
+    if (manual) return;
+    if (!await wait(2600, id)) return;
+    play((i + 1) % phrases.length);
+  }
+  function still(i){ run++; current = i; mark(i); caret.classList.remove('typing'); render(phrases[i], 999); }
+
+  chips.forEach(function(c){
+    c.addEventListener('click', function(){
+      var i = +c.dataset.i;
+      manual = true;
+      if (reduce) still(i); else play(i);
+    });
+  });
+
+  still(0);
+  if (!reduce && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(es){
+      var v = es[0].isIntersecting;
+      if (v && !visible){ visible = true; if (!manual) play(0); }
+      else if (!v && visible){ visible = false; run++; caret.classList.remove('typing'); still(current); }
+    }, { threshold: .5 }).observe(q('.demo-device'));
+  }
+})();
+</script>
