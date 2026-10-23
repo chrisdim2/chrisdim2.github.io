@@ -637,3 +637,14 @@ a.family-card:hover{transform:translateY(-3px);border-color:rgba(237,241,238,.28
   .qa-card,.qa-pill,.demo-chip{transition:none}
   .qa-caret.typing{animation:none}
 }
+
+/* demo-views: screenshots που εναλλάσσονται μέσα στη συσκευή */
+.demo-flip .demo-text{order:2}
+.demo-flip{grid-template-columns:minmax(0,340px) minmax(0,1fr)}
+.demo-device .iph-screen > img{position:absolute;inset:0;opacity:0;transition:opacity .5s ease}
+.demo-device .iph-screen > img.is-on{opacity:1}
+@media (max-width:760px){
+  .demo-flip{grid-template-columns:1fr}
+  .demo-flip .demo-text{order:0}
+}
+@media (prefers-reduced-motion:reduce){.demo-device .iph-screen > img{transition:none}}

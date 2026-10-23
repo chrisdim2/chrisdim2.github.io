@@ -1,0 +1,71 @@
+{% comment %}
+Διαδραστικό mockup: οι όψεις του Chronos σε iPhone. Χρησιμοποιεί τα screenshots της γκαλερί (assets/screens/chronos/iphone),
+δεν υπάρχει προσομοίωση λογικής. Εναλλάσσεται μόνο του όταν φαίνεται και σταματά μόλις πατήσει ο χρήστης κάποια όψη.
+Με prefers-reduced-motion δεν εναλλάσσεται μόνο του.
+{% endcomment %}
+{% assign el = false %}{% if page.lang == 'el' %}{% assign el = true %}{% endif %}
+{% assign lg = page.lang %}
+<section class="block demo demo-flip" id="demo-views" aria-labelledby="demo-views-h">
+  <div class="demo-text">
+    <h2 id="demo-views-h">{% if el %}Άλλαξε όψη με ένα άγγιγμα{% else %}Switch views in a tap{% endif %}</h2>
+    <p>{% if el %}Μήνας, εβδομάδα, ημέρα, έτος ή λίστα: το ίδιο ημερολόγιο, όπως σε βολεύει εκείνη τη στιγμή. Διάλεξε όψη:{% else %}Month, week, day, year or list: the same calendar, the way you need it right now. Pick a view:{% endif %}</p>
+    <div class="demo-chips" role="group" aria-label="{% if el %}Όψεις{% else %}Views{% endif %}">
+      <button type="button" class="demo-chip" data-i="0" aria-pressed="true">{% if el %}Μήνας{% else %}Month{% endif %}</button>
+      <button type="button" class="demo-chip" data-i="1" aria-pressed="false">{% if el %}Εβδομάδα{% else %}Week{% endif %}</button>
+      <button type="button" class="demo-chip" data-i="2" aria-pressed="false">{% if el %}Ημέρα{% else %}Day{% endif %}</button>
+      <button type="button" class="demo-chip" data-i="3" aria-pressed="false">{% if el %}Έτος{% else %}Year{% endif %}</button>
+      <button type="button" class="demo-chip" data-i="4" aria-pressed="false">{% if el %}Λίστα{% else %}List{% endif %}</button>
+    </div>
+    <p class="demo-note demo-cap" aria-live="polite">{% if el %}Μήνας και λίστα γεγονότων, σε μία οθόνη{% else %}Month and agenda on one screen{% endif %}</p>
+  </div>
+
+  <figure class="demo-device" aria-label="{% if el %}Οι όψεις του Chronos στο iPhone{% else %}Chronos views on iPhone{% endif %}">
+    <div class="stage no-mac has-phone demo-stage" style="--glow:{{ app.accent }}">
+      <div class="iph">
+        <div class="iph-screen">
+          <img src="{{ '/assets/screens/chronos/iphone/' | append: lg | append: '/chronos-iphone-01-home.webp' | relative_url }}" alt="" class="is-on">
+          <img src="{{ '/assets/screens/chronos/iphone/' | append: lg | append: '/chronos-iphone-02-week.webp' | relative_url }}" alt="" loading="lazy">
+          <img src="{{ '/assets/screens/chronos/iphone/' | append: lg | append: '/chronos-iphone-03-day.webp' | relative_url }}" alt="" loading="lazy">
+          <img src="{{ '/assets/screens/chronos/iphone/' | append: lg | append: '/chronos-iphone-04-year.webp' | relative_url }}" alt="" loading="lazy">
+          <img src="{{ '/assets/screens/chronos/iphone/' | append: lg | append: '/chronos-iphone-05-list.webp' | relative_url }}" alt="" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </figure>
+</section>
+<script>
+(function(){
+  var root = document.getElementById('demo-views');
+  if (!root) return;
+  var el = {% if el %}true{% else %}false{% endif %};
+  var caps = el ? [
+    'Μήνας και λίστα γεγονότων, σε μία οθόνη', 'Εβδομάδα με πρόγνωση καιρού', 'Ημέρα, ώρα με την ώρα',
+    'Ολόκληρο το έτος με μια ματιά', 'Λίστα γεγονότων'
+  ] : [
+    'Month and agenda on one screen', 'Week view with the forecast', 'Day view, hour by hour',
+    'The whole year at a glance', 'Event list'
+  ];
+  var imgs = root.querySelectorAll('.iph-screen img');
+  var chips = root.querySelectorAll('.demo-chip');
+  var cap = root.querySelector('.demo-cap');
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cur = 0, timer = null, manual = false;
+
+  function show(i){
+    cur = i;
+    imgs.forEach(function(m, k){ m.classList.toggle('is-on', k === i); });
+    chips.forEach(function(c, k){ c.setAttribute('aria-pressed', k === i); });
+    cap.textContent = caps[i];
+  }
+  function start(){ if (!timer && !manual && !reduce) timer = setInterval(function(){ show((cur + 1) % imgs.length); }, 2800); }
+  function stop(){ clearInterval(timer); timer = null; }
+
+  chips.forEach(function(c){
+    c.addEventListener('click', function(){ manual = true; stop(); show(+c.dataset.i); });
+  });
+  if ('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){ es[0].isIntersecting ? start() : stop(); }, { threshold: .5 })
+      .observe(root.querySelector('.demo-device'));
+  }
+})();
+</script>

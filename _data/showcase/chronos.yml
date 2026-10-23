@@ -5,6 +5,7 @@
 # demos: διαδραστικά mockups από _includes/demo-<όνομα>.html, μετά τη γκαλερί.
 demos:
   - quickadd
+  - views
 
 stage:
   wide: /assets/screens/chronos/mac/el/chronos-mac-01-month.webp
