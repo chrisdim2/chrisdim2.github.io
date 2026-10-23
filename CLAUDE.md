@@ -33,6 +33,15 @@
 - `_posts/`: άρθρα, ένα αρχείο ανά γλώσσα, με `lang`, `alt` (η άλλη γλώσσα), `app`, `permalink`.
 - `admin/config.yml`: Decap CMS. Κάθε νέο πεδίο στα `_data` μπαίνει κι εδώ, αλλιώς το CMS το σβήνει.
 
+## Νομικά κείμενα εφαρμογών
+
+- `chronos/privacy-*.html`, `terms-*.html`: Chronos (η πηγή είναι στο repo της εφαρμογής, αντιγράφεται εδώ χειροκίνητα).
+- `giortes/privacy-el|en.html`, `terms-el|en.html` (23/10/2026): Chronos Γιορτές. **Η πηγή αλήθειας είναι ΕΔΩ, στο site**: η εφαρμογή τα φορτώνει
+  από `https://dimakis.app/giortes/…` και κρατά αντίγραφο στο bundle μόνο για offline. Αλλαγή κειμένου: άλλαξε εδώ (και την «Τελευταία ενημέρωση»
+  και στα τέσσερα), push, και μετά `scripts/sync-legal.sh` στο repo `~/Developer/GiortesApp` για το αντίγραφο του bundle.
+  App Store Connect: Privacy Policy URL `https://dimakis.app/giortes/privacy-en.html`, Support URL `https://dimakis.app/giortes/`.
+  ΠΡΟΣΧΕΔΙΟ: θέλουν νομικό έλεγχο πριν το App Store. Email επικοινωνίας `giortes@dimakis.app`.
+
 ## Εφαρμογές: αποφάσεις 20/10/2026
 
 - **Hermes (αλληλογραφία) ακυρώθηκε, δεν θα φτιαχτεί ποτέ.** Αφαιρέθηκε από το site (σελίδες, `apps.yml`, εικόνες, `_tools/social_images.js`,
