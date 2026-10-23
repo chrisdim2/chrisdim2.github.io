@@ -21,12 +21,21 @@ sitemap: false
   header p{margin:8px 0 0;color:var(--ink2);font-size:19px}
   ul{list-style:none;margin:0 auto;padding:6px 16px;max-width:560px;background:var(--card);border-radius:22px}
   li+li{border-top:1px solid var(--line)}
-  a{display:flex;gap:14px;align-items:center;padding:14px 0;color:inherit;text-decoration:none}
-  img{width:64px;height:64px;border-radius:15px;flex:none}
+  li{display:flex;gap:14px;align-items:center;padding:14px 0}
+  li>img{width:64px;height:64px;border-radius:15px;flex:none}
+  .tx{flex:1;min-width:0}
   b{display:block;font-weight:600}
-  span{display:block;color:var(--ink2);font-size:15px}
+  .tx>span{display:block;color:var(--ink2);font-size:15px}
   small{display:block;color:var(--ink2);font-size:13px;margin-top:2px}
+  .act{display:flex;flex-direction:column;gap:7px;flex:none}
+  .btn{display:flex;align-items:center;justify-content:center;gap:6px;min-width:96px;height:30px;padding:0 12px;border-radius:999px;
+    font-size:13px;font-weight:600;white-space:nowrap;text-decoration:none;color:#007aff;background:rgba(0,122,255,.12)}
+  .btn svg{width:14px;height:14px;flex:none}
+  .btn.store.on{color:#fff;background:#007aff}
+  .btn[aria-disabled="true"]{color:#a1a1a6;background:rgba(142,142,147,.16);pointer-events:none}
   .pf{display:flex;gap:12px;margin-top:6px;color:var(--ink2)}
+  .btn svg{fill:none;stroke:currentColor;stroke-width:1.6}
+  .btn svg.ap{fill:currentColor;stroke:none}
   .pf svg{width:20px;height:20px;fill:rgba(142,142,147,.3);stroke:#8e8e93;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 </style>
 </head>
@@ -56,19 +65,25 @@ sitemap: false
   fetch('/in-app/apps.json').then(function(r){ return r.json(); }).then(function(d){
     var ul = document.getElementById('apps');
     d.apps.forEach(function(a){
-      var li = document.createElement('li'), l = document.createElement('a');
-      l.href = a.released && a.appStoreURL ? a.appStoreURL : a.url[lang];
-      l.innerHTML = '<img alt=""><div><b></b><span></span><div class="pf"></div><small></small></div>';
-      l.querySelector('img').src = a.icon;
-      l.querySelector('b').textContent = a.name[lang];
-      l.querySelector('span').textContent = a.kind[lang];
-      var pf = l.querySelector('.pf');
+      var li = document.createElement('li');
+      li.innerHTML = '<img alt=""><div class="tx"><b></b><span></span><div class="pf"></div><small></small></div>' +
+        '<div class="act"><a class="btn site"></a><a class="btn store"></a></div>';
+      li.querySelector('img').src = a.icon;
+      li.querySelector('b').textContent = a.name[lang];
+      li.querySelector('.tx>span').textContent = a.kind[lang];
+      var pf = li.querySelector('.pf');
       a.platforms.forEach(function(p){
         if (!icons[p]) return;
         pf.insertAdjacentHTML('beforeend', '<svg viewBox="0 0 24 24" role="img" aria-label="' + labels[p] + '"><title>' + labels[p] + '</title>' + icons[p] + '</svg>');
       });
-      l.querySelector('small').textContent = a.released ? '' : a.status[lang];
-      li.appendChild(l); ul.appendChild(li);
+      li.querySelector('small').textContent = a.released ? '' : a.status[lang];
+      var site = li.querySelector('.site'), store = li.querySelector('.store');
+      site.href = a.url[lang];
+      site.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3.2 3 3.2 15 0 18M12 3c-3.2 3-3.2 15 0 18"/></svg>' + (lang === 'el' ? 'Στο site' : 'Website');
+      store.innerHTML = '<svg class="ap" viewBox="0 0 17 20" aria-hidden="true"><path d="M14.06 10.62c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.51 1.25-2.58-.03-.01-2.4-.92-2.42-3.65zM11.79 3.87c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.6-2.66 1.37-.58.67-1.09 1.75-.95 2.79 1.01.08 2.04-.51 2.67-1.27z"/></svg>App Store';
+      if (a.released && a.appStoreURL) { store.href = a.appStoreURL; store.classList.add('on'); }
+      else store.setAttribute('aria-disabled', 'true');
+      ul.appendChild(li);
     });
   });
 })();
