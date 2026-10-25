@@ -316,7 +316,7 @@ list:
   og_image: /assets/og/giortes.jpg
   order: 2
   platforms: [iphone, ipad]
-  has_legal: false
+  has_legal: true
   support_email: giortes@dimakis.app
   appstore_url: ''
   appstore_id: ''
