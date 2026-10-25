@@ -50,7 +50,7 @@
   Γραμματοσειρά: πρώτα `font-family` συστήματος και μετά, ΜΟΝΟ του, `font: -apple-system-body` (Dynamic Type)· σε λίστα με άλλες γραμματοσειρές
   είναι άκυρο και βγαίνει Times.
 - Οι σύνδεσμοι στη σελίδα της εφαρμογής εμφανίζονται με `has_legal: true` στο `_data/apps.yml` (αλλιώς γράφει «Θα δημοσιευτούν…»).
-- **Chronos:** τα HTML που υπάρχουν ακόμα στο repo της εφαρμογής (`LegalDocumentView`) είναι παλιό αντίγραφο και θα αφαιρεθούν· αλλάζει μόνο εδώ.
+- **Chronos:** τα αντίγραφα αφαιρέθηκαν από την εφαρμογή (25/10/2026, έκδοση 2.4.58)· ανοίγει `https://dimakis.app/chronos/…` σε Safari (iOS) ή μέσα στις Ρυθμίσεις (macOS).
 - **Γιορτές:** App Store Connect: Privacy Policy URL `https://dimakis.app/giortes/privacy-en.html`, Support URL `https://dimakis.app/giortes/`.
   ΠΡΟΣΧΕΔΙΟ: θέλουν νομικό έλεγχο πριν το App Store. Email επικοινωνίας `giortes@dimakis.app`.
 
