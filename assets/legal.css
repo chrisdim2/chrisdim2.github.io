@@ -1,6 +1,16 @@
+/*
+ * Κοινό stylesheet για ΟΛΑ τα νομικά κείμενα των εφαρμογών (Πολιτική Απορρήτου, Όροι Χρήσης, el/en):
+ * chronos/, apollo/, iris/, giortes/ και κάθε νέα εφαρμογή. Ευαγγέλιο 5.2 (dimakis-standards): ποτέ αντίγραφα
+ * του στυλ μέσα στις σελίδες. Γραμματοσειρά συστήματος με Dynamic Type (6.1, 6.4), φωτεινό και σκούρο θέμα.
+ */
 :root { color-scheme: light dark; }
 body {
-  font: -apple-system-body, -apple-system, system-ui, sans-serif;
+  /* Πρώτα γραμματοσειρά συστήματος για κάθε browser, μετά Dynamic Type σε Safari/iOS. Το -apple-system-body
+     γίνεται δεκτό ΜΟΝΟ μόνο του: σε λίστα («-apple-system-body, -apple-system, …») πετιέται όλη η δήλωση
+     και βγαίνει Times. Οι άλλοι browsers το αγνοούν και κρατούν τις δύο πρώτες γραμμές. */
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 17px;
+  font: -apple-system-body;
   line-height: 1.6; margin: 0 auto; padding: 20px 18px 60px;
   max-width: 46em; color: #111; background: #fff;
   -webkit-text-size-adjust: 100%;
@@ -22,4 +32,4 @@ th { background: #f4f4f5; }
 code { background: #f4f4f5; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
 ul { padding-left: 1.3em; }
 li { margin: .35em 0; }
-a { color: #0a84ff; }
+.todo { color: #b30000; font-weight: 600; }
