@@ -7,6 +7,8 @@
 
 ## Πώς δουλεύουμε
 
+- **Κοινοί κανόνες** όλων των εφαρμογών (και των νομικών του site): `~/Developer/dimakis-standards/ΕΥΑΓΓΕΛΙΟ.md` (repo `chrisdim2/dimakis-standards`).
+  Διάβασέ το πριν από αλλαγή· εδώ μπαίνει μόνο ό,τι είναι ειδικό για το site, ποτέ αντίγραφο των κανόνων.
 - Στην αρχή κάθε session `git pull`, στο τέλος commit. Ο ίδιος φάκελος αλλάζει και από άλλες sessions.
 - Δουλειά σε νέο branch. **Push στο main μόνο με ρητή έγκριση του χρήστη**, κάθε φορά.
   Πριν από την έγκριση, προεπισκόπηση με `jekyll serve` (ρύθμιση «site» στο `.claude/launch.json`).
@@ -39,11 +41,17 @@
 
 ## Νομικά κείμενα εφαρμογών
 
-- `chronos/privacy-*.html`, `terms-*.html`: Chronos (η πηγή είναι στο repo της εφαρμογής, αντιγράφεται εδώ χειροκίνητα).
-- `giortes/privacy-el|en.html`, `terms-el|en.html` (23/10/2026): Chronos Γιορτές. **Η πηγή αλήθειας είναι ΕΔΩ, στο site**: η εφαρμογή τα ανοίγει
-  από `https://dimakis.app/giortes/…` σε παράθυρο Safari, **χωρίς αντίγραφο στο bundle** (25/10/2026, `dimakis-standards`, Ευαγγέλιο 5.1). Αλλαγή κειμένου: άλλαξε εδώ
-  (και την «Τελευταία ενημέρωση» και στα τέσσερα) και push· η εφαρμογή (`~/Developer/NamedaysApp`) δεν χρειάζεται καμία αλλαγή.
-  App Store Connect: Privacy Policy URL `https://dimakis.app/giortes/privacy-en.html`, Support URL `https://dimakis.app/giortes/`.
+Οι κανόνες είναι στο `dimakis-standards` (Ευαγγέλιο 5.1, 5.2, 6.1, 6.4)· εδώ μόνο τα ειδικά του site.
+
+- **Πηγή αλήθειας είναι ΠΑΝΤΑ το site**, για κάθε εφαρμογή: `<slug>/privacy-el|en.html` και `<slug>/terms-el|en.html`. Οι εφαρμογές τα ανοίγουν
+  από εδώ σε παράθυρο Safari, **χωρίς κανένα αντίγραφο μέσα στην εφαρμογή**. Αλλαγή κειμένου: άλλαξε εδώ (και την «Τελευταία ενημέρωση» και
+  στα τέσσερα) και push· η εφαρμογή δεν χρειάζεται καμία αλλαγή.
+- **Στυλ:** όλες οι σελίδες φορτώνουν μόνο το `/assets/legal.css` (25/10/2026). Ποτέ `<style>` μέσα στη σελίδα ή δικό της αρχείο ανά εφαρμογή.
+  Γραμματοσειρά: πρώτα `font-family` συστήματος και μετά, ΜΟΝΟ του, `font: -apple-system-body` (Dynamic Type)· σε λίστα με άλλες γραμματοσειρές
+  είναι άκυρο και βγαίνει Times.
+- Οι σύνδεσμοι στη σελίδα της εφαρμογής εμφανίζονται με `has_legal: true` στο `_data/apps.yml` (αλλιώς γράφει «Θα δημοσιευτούν…»).
+- **Chronos:** τα HTML που υπάρχουν ακόμα στο repo της εφαρμογής (`LegalDocumentView`) είναι παλιό αντίγραφο και θα αφαιρεθούν· αλλάζει μόνο εδώ.
+- **Γιορτές:** App Store Connect: Privacy Policy URL `https://dimakis.app/giortes/privacy-en.html`, Support URL `https://dimakis.app/giortes/`.
   ΠΡΟΣΧΕΔΙΟ: θέλουν νομικό έλεγχο πριν το App Store. Email επικοινωνίας `giortes@dimakis.app`.
 
 ## Εφαρμογές: αποφάσεις 20/10/2026
