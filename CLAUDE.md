@@ -164,6 +164,7 @@
 
 ## Εκκρεμότητες
 
+- **Γιορτές: υλικό κυκλοφορίας (26/10/2026, Ευαγγέλιο 9).** Η σελίδα έχει screenshots iPhone και iPad (οριζόντιο) σε webp, branch `giortes-page` (δεν έχει μπει στο main). Λείπουν: (1) `app-store` iPhone και iPad με τίτλους (σύνθεση όπως `CalendarApp/Marketing/tools/shots.py` και `ipad_shots.py`, φόντο με `tint #FBE9E9` και `accent #B91C1C`), (2) press kit (`SOURCES` στο `_tools/press_kits.rb`, `ready: true`, `--upload`), (3) βίντεο (3 App Preview 886×1920, site, site_web, poster), (4) διαδραστικό mockup (π.χ. αναζήτηση ονόματος → ημερομηνία γιορτής, επαφές που γιορτάζουν· κείμενα επαληθευμένα στον κώδικα του NamedaysKit), (5) φάκελος `NamedaysApp/Marketing/` με `ΔΙΑΒΑΣΕ_ΜΕ.md` (οι ωμές εικόνες είναι προσωρινά στο `~/Library/Caches/dimakis-giortes-shots/`, επαφές επίδειξης `demo-contacts.vcf`), (6) `ΥΠΟΒΟΛΗ_APP_STORE.md`. Το «Σαν σήμερα» δεν έχει screenshot γιατί η 26/10 έβγαζε σεισμό και επίθεση· να ληφθεί σε ήπια μέρα. Ολόκληρη η διαδικασία και η λίστα ελέγχου: `dimakis-standards/ΕΥΑΓΓΕΛΙΟ.md` κεφάλαιο 9.
 - **Social**: μία ανάρτηση κάθε 2 ημέρες, 18:00, προγραμματισμένη από πριν στο Meta Business Suite και στο Threads
   (πίνακας και ροή στο `_social/README.md`). Μέχρι 4/11 υπάρχει περιεχόμενο. Κάθε Δευτέρα 08:52 μια αυτόματη εργασία
   του Claude («Αναρτήσεις της εβδομάδας») γράφει τις επόμενες σε branch, ο χρήστης εγκρίνει, και μια συνεδρία
