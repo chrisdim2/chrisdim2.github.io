@@ -2,6 +2,7 @@
 Διαδραστικό mockup: ο Καιρός του Chronos σε iPhone (WeatherDetailView). Προσομοίωση με δείγμα δεδομένων:
 οι τιμές Αθήνας και Λονδίνου είναι από τα screenshots της γκαλερί, τα mm βροχής και τα km/h ανέμου είναι ενδεικτικά.
 Η Θερμοκρασία / Βροχή / Άνεμος είναι οι τρεις προβολές της εφαρμογής (ForecastMetric). Χωρίς JS μένει το screenshot.
+Το ΜΕΓΑΛΟ εικονίδιο είναι τα PNG της εφαρμογής (Assets.xcassets/Weather/wx_clear_day, wx_rain), στατικά και σε διπλό μέγεθος, όπως στο WeatherDetailView (RealisticWeatherIcon, scaleEffect 2.0). Η βροχή κινείται όπως στην εφαρμογή (RainView): 70 λεπτές λευκές γραμμές σε όλη την οθόνη, ΟΧΙ πάνω στο εικονίδιο. Τα μικρά εικονίδια των ωρών είναι δικά μας σχέδια (στην εφαρμογή SF Symbols).
 {% endcomment %}
 {% assign el = false %}{% if page.lang == 'el' %}{% assign el = true %}{% endif %}
 <section class="block demo" id="demo-weather" aria-labelledby="demo-weather-h">
@@ -26,6 +27,7 @@
         <div class="iph-screen">
           <img class="wx-fallback" src="{{ '/assets/screens/chronos/iphone/' | append: page.lang | append: '/chronos-iphone-07-weather.webp' | relative_url }}" alt="{% if el %}Η οθόνη Καιρός του Chronos{% else %}The Weather screen in Chronos{% endif %}" loading="lazy">
           <div class="wx" aria-hidden="true" hidden></div>
+          <div class="wx-fx" aria-hidden="true" hidden></div>
         </div>
       </div>
     </div>
@@ -36,6 +38,7 @@
   var root = document.getElementById('demo-weather');
   if (!root) return;
   var el = {% if el %}true{% else %}false{% endif %};
+  var base = {{ '/assets/screens/chronos/weather/' | relative_url | jsonify }};
   var T = el ? {
     title:'Καιρός', close:'Κλείσιμο', cur:'Τρέχουσα', today:'Σήμερα', hourly:'Ωριαία', days:'Επόμενες μέρες',
     metrics:['Θερμοκρασία','Βροχή','Άνεμος'], rainUnit:'% · χλστ.', windUnit:'km/h', bf:'Μποφόρ', windWord:'Άνεμος'
@@ -69,10 +72,8 @@
       [0,60,120,180,240,300].map(function(a){ return '<path d="M26 3.5v3" transform="rotate('+a+' 26 15)"/>'; }).join('') + '</g>' + svg.cloud(-1, 8, .9, '#fff') + '</svg>'; },
     rain: function(s){ return '<svg viewBox="0 0 40 40" width="'+s+'" height="'+s+'">' + svg.cloud(1, 1, .95, '#e9eef5') +
       '<g stroke="#7f8cf5" stroke-width="2.2" stroke-linecap="round"><path class="wx-d1" d="M13 31l-2 5"/><path class="wx-d2" d="M21 31l-2 5"/><path class="wx-d3" d="M29 31l-2 5"/></g></svg>'; },
-    hero: function(kind){
-      if (kind === 'sun') return svg.sun(110);
-      return '<svg viewBox="0 0 120 90" width="120" height="90"><g class="wx-cloud">' + svg.cloud(4, 6, 2.5, '#f3f6fa') + '</g>' +
-        '<g stroke="#8d8bf2" stroke-width="3.4" stroke-linecap="round"><path class="wx-d1" d="M40 70l-3 9"/><path class="wx-d2" d="M62 70l-3 9"/><path class="wx-d3" d="M84 70l-3 9"/></g></svg>'; },
+    // Το μεγάλο εικονίδιο είναι τα PNG της εφαρμογής (wx_clear_day, wx_rain), στατικά, σε διπλό μέγεθος (scaleEffect 2.0 των 120pt), όχι ζωγραφισμένο SVG.
+    hero: function(kind){ return '<img src="'+base+(kind === 'sun' ? 'wx-clear-day.webp' : 'wx-rain.webp')+'" alt="" width="240" height="240">'; },
     arrow: function(deg, c){ return '<svg viewBox="0 0 12 12" width="9" height="9" style="transform:rotate('+deg+'deg)"><path d="M6 1l4.6 9.4L6 8.4 1.4 10.4z" fill="'+(c||'#fff')+'"/></svg>'; }
   };
   var bfColor = function(b){ return b < 3 ? '#8cd9ff' : '#66e09e'; };
@@ -101,8 +102,8 @@
     var legend = metric === 1 ? T.rainUnit : metric === 2 ? T.windUnit : '';
     var d = s.day;
     wx.className = 'wx wx-sky-' + s.sky;
+    fx.hidden = s.sky !== 'rain';
     wx.innerHTML =
-      '<div class="wx-rain"></div>' +
       '<div class="wx-time">'+(el ? '9:41' : '09:41')+'</div>' +
       '<div class="wx-sheet">' +
         '<div class="wx-nav"><b>'+T.title+'</b><span class="wx-close">'+T.close+'</span></div>' +
@@ -126,7 +127,13 @@
   function start(){ if (!timer && !manual) timer = setInterval(function(){ setMetric((metric + 1) % 3); }, 3200); }
   function stop(){ clearInterval(timer); timer = null; }
 
-  wx.hidden = false; fb.hidden = true;
+  // Βροχή όπως στην εφαρμογή (RainView): 70 λεπτές λευκές γραμμές σε όλη την οθόνη, τυχαία θέση, καθυστέρηση 0–1,2″, διάρκεια 0,5–0,9″, μήκος 12–22pt.
+  var fx = root.querySelector('.wx-fx'), drops = '';
+  for (var i = 0; i < 70; i++){
+    drops += '<i style="left:'+(Math.random() * 100).toFixed(1)+'%;height:calc(var(--u)*'+(12 + Math.random() * 10).toFixed(1)+');animation-duration:'+(.5 + Math.random() * .4).toFixed(2)+'s;animation-delay:'+(Math.random() * 1.2).toFixed(2)+'s"></i>';
+  }
+  fx.innerHTML = drops;
+  wx.hidden = false; fb.hidden = true; fx.hidden = true;
   render();
   sceneBtns.forEach(function(b){ b.addEventListener('click', function(){ manual = true; stop(); scene = +b.dataset.scene; render(); }); });
   metricBtns.forEach(function(b){ b.addEventListener('click', function(){ manual = true; stop(); setMetric(+b.dataset.metric); }); });
