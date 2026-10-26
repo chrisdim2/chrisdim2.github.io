@@ -1,0 +1,40 @@
+# Παρουσίαση του Chronos Γιορτές (iPhone και iPad): σύνθεση συσκευών και γκαλερί ανά συσκευή.
+# Οι εικόνες είναι screenshots από τον προσομοιωτή (iPhone 17 Pro Max, ανοιχτό θέμα, 26/10/2026) με φανταστικές επαφές επίδειξης
+# (ωμές εικόνες: ~/Library/Caches/dimakis-giortes-shots/, επαφές: demo-contacts.vcf). Μετατροπή σε 780×1694 webp με PIL.
+# src: ελληνικό UI, src_en: αγγλικό UI. Το iPad δεν έχει ακόμα screenshots (το stage δείχνει το εικονίδιο).
+# Σαν σήμερα: δεν μπήκε screenshot, τα γεγονότα της ημέρας βγαίνουν από τη Wikipedia και δεν ελέγχονται (την 26/10 έβγαζαν σεισμό και επίθεση).
+
+stage:
+  phone: /assets/screens/giortes/iphone/el/giortes-iphone-01-today.webp
+  phone_en: /assets/screens/giortes/iphone/en/giortes-iphone-01-today.webp
+
+groups:
+  - id: iphone
+    device: phone
+    label_el: iPhone
+    label_en: iPhone
+    shots:
+      - src: /assets/screens/giortes/iphone/el/giortes-iphone-01-today.webp
+        src_en: /assets/screens/giortes/iphone/en/giortes-iphone-01-today.webp
+        el: 'Όλη η μέρα με μια ματιά'
+        en: 'Your whole day at a glance'
+      - src: /assets/screens/giortes/iphone/el/giortes-iphone-02-celebrating.webp
+        src_en: /assets/screens/giortes/iphone/en/giortes-iphone-02-celebrating.webp
+        el: 'Ποιοι από τις επαφές σου γιορτάζουν σήμερα'
+        en: 'Which of your contacts celebrate today'
+      - src: /assets/screens/giortes/iphone/el/giortes-iphone-03-birthdays.webp
+        src_en: /assets/screens/giortes/iphone/en/giortes-iphone-03-birthdays.webp
+        el: 'Γενέθλια με ηλικία και ζώδιο'
+        en: 'Birthdays with age and zodiac sign'
+      - src: /assets/screens/giortes/iphone/el/giortes-iphone-04-holidays.webp
+        src_en: /assets/screens/giortes/iphone/en/giortes-iphone-04-holidays.webp
+        el: 'Αργίες Ελλάδας και Κύπρου, με υπολογισμό του Πάσχα'
+        en: 'Greek and Cypriot holidays, with an Easter calculator'
+      - src: /assets/screens/giortes/iphone/el/giortes-iphone-05-search.webp
+        src_en: /assets/screens/giortes/iphone/en/giortes-iphone-05-search.webp
+        el: 'Γράψε ένα όνομα και δες πότε γιορτάζει'
+        en: 'Type a name and see when it is celebrated'
+      - src: /assets/screens/giortes/iphone/el/giortes-iphone-06-worlddays.webp
+        src_en: /assets/screens/giortes/iphone/en/giortes-iphone-06-worlddays.webp
+        el: 'Παγκόσμιες ημέρες του ΟΗΕ και της UNESCO'
+        en: 'World days of the UN and UNESCO'

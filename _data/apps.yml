@@ -323,8 +323,8 @@ list:
   price: ''
   ready: false
   schema_category: LifestyleApplication
-  description_el: 'Chronos Γιορτές: γιορτές και γενέθλια για iPhone και iPad, έρχεται τον Νοέμβριο, από το dimakis.'
-  description_en: 'Chronos Celebrations: name days and birthdays for iPhone and iPad, coming in November, by dimakis.'
+  description_el: 'Chronos Γιορτές: εορτολόγιο, επαφές που γιορτάζουν, γενέθλια και αργίες για iPhone και iPad, έρχεται τον Νοέμβριο, από το dimakis.'
+  description_en: 'Chronos Celebrations: name days, contacts’ birthdays and holidays for Greece and Cyprus on iPhone and iPad, coming in November, by dimakis.'
   kind_el: Γιορτές και γενέθλια
   kind_en: Name days & birthdays
   tagline_el: Μην ξεχάσεις ποτέ μια γιορτή.
@@ -333,8 +333,32 @@ list:
   origin_en: Part of the Chronos family.
   status_el: Έρχεται τον Νοέμβριο
   status_en: Coming in November
-  features_el: []
-  features_en: []
+  features_el:
+    - 'Εορτολόγιο κάθε μέρας: όλα τα ονόματα που γιορτάζουν και οι άγιοι της ημέρας'
+    - Δείχνει ποιοι από τις επαφές σου γιορτάζουν σήμερα, με κουμπί για να τους πάρεις τηλέφωνο
+    - Γενέθλια επαφών, με ηλικία και ζώδιο, πρώτα οι πιο κοντινοί
+    - Ειδοποίηση «Σήμερα γιορτάζουν» για γιορτές και για γενέθλια, με ώρα της επιλογής σου και δεύτερη υπενθύμιση
+    - Ένδειξη πάνω στο εικονίδιο με το πόσοι γιορτάζουν ή έχουν γενέθλια σήμερα
+    - 'Σαν σήμερα: ιστορικά γεγονότα της ημέρας, φάση σελήνης και ζώδιο'
+    - Αργίες Ελλάδας και Κύπρου, και υπολογισμός του Πάσχα (Ορθόδοξο και Καθολικό)
+    - Παγκόσμιες ημέρες του ΟΗΕ, της UNESCO και του ΠΟΥ, με αναζήτηση
+    - Γράφεις ένα όνομα και βλέπεις πότε γιορτάζει
+    - Οι επαφές σου μένουν στη συσκευή σου
+    - Εικονίδιο μπλε ή κόκκινο, φωτεινό ή σκούρο θέμα, και γλώσσα της εφαρμογής ανεξάρτητη από το iPhone
+    - Δωρεάν, χωρίς αγορές
+  features_en:
+    - 'A name day calendar for every day: all the names celebrated and the saints of the day'
+    - Shows which of your contacts celebrate today, with a button to call them
+    - Contacts’ birthdays, with age and zodiac sign, the nearest first
+    - A “name days today” notification for name days and for birthdays, at a time you choose, with an optional second reminder
+    - A badge on the icon showing how many people celebrate or have a birthday today
+    - 'On this day: historic events, the moon phase and the zodiac sign'
+    - Holidays for Greece and Cyprus, and an Easter calculator (Orthodox and Catholic)
+    - World days of the UN, UNESCO and the WHO, with search
+    - Type a name and see when it is celebrated
+    - Your contacts stay on your device
+    - A blue or red icon, light or dark theme, and an app language separate from your iPhone’s
+    - Free, with no purchases
   screenshots: []
 - slug: roster
   family: chronos
