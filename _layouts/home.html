@@ -63,7 +63,7 @@ layout: default
         {% else %}
         <span class="app-status">{% if page.lang == 'el' %}{{ app.status_el }}{% else %}{{ app.status_en }}{% endif %}</span>
         {% endif %}
-        {% include langs-badge.html %}
+        {% include langs-badge.html app=app %}
         <a class="btn btn-quiet" href="{{ base | append: app.slug | append: '/' | relative_url }}">{{ atitle }} &rarr;</a>
       </div>
     </div>
