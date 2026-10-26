@@ -1,0 +1,143 @@
+{% comment %}
+Διαδραστικό mockup: η Αναζήτηση ονόματος του Chronos Γιορτές σε iPhone (SanSimeraView → searchNames). Προσομοίωση με δείγμα ονομάτων:
+τα ονόματα και οι ημερομηνίες είναι από το NamedaysKit (fixed_namedays.json, μόνο ονόματα με σταθερή ημερομηνία, χωρίς κινητές εορτές),
+τα λατινικά κατά ΕΛΟΤ 743 όπως στην εφαρμογή (GreekLatin.swift). Κανόνες αναζήτησης όπως στην εφαρμογή: τουλάχιστον 2 γράμματα, από την αρχή του ονόματος,
+χωρίς τόνους, ελληνικά ή λατινικά, ταξινόμηση κατά όνομα και ημερομηνία. Οι αργίες της αρχικής είναι από τα screenshots της γκαλερί. Χωρίς JS μένει το screenshot.
+{% endcomment %}
+{% assign el = false %}{% if page.lang == 'el' %}{% assign el = true %}{% endif %}
+<section class="block demo" id="demo-names" aria-labelledby="demo-names-h">
+  <div class="demo-text">
+    <h2 id="demo-names-h">{% if el %}Γράψε ένα όνομα, δες πότε γιορτάζει{% else %}Type a name, see when it is celebrated{% endif %}</h2>
+    <p>{% if el %}Η αναζήτηση βρίσκει το όνομα από τα πρώτα γράμματα, χωρίς τόνους, και δείχνει την ημέρα που γιορτάζει. Δοκίμασε ένα όνομα ή γράψε δικό σου στο πεδίο της οθόνης:{% else %}Search finds a name from its first letters, ignoring accents, and shows the day it is celebrated. Try a name, or type your own in the field on the screen:{% endif %}</p>
+    <div class="demo-chips" role="group" aria-label="{% if el %}Ονόματα{% else %}Names{% endif %}">
+      <button type="button" class="demo-chip" data-q="0" aria-pressed="true">{% if el %}Ελένη{% else %}Eleni{% endif %}</button>
+      <button type="button" class="demo-chip" data-q="1" aria-pressed="false">{% if el %}Δημήτρης{% else %}Dimitris{% endif %}</button>
+      <button type="button" class="demo-chip" data-q="2" aria-pressed="false">{% if el %}Χρήστος{% else %}Christos{% endif %}</button>
+      <button type="button" class="demo-chip" data-q="3" aria-pressed="false">{% if el %}Μαρία{% else %}Maria{% endif %}</button>
+    </div>
+    <p class="demo-note">{% if el %}Απλοποιημένη προσομοίωση με δείγμα ονομάτων. Η εφαρμογή έχει ολόκληρο το εορτολόγιο, και τις κινητές εορτές που αλλάζουν κάθε χρονιά με το Πάσχα.{% else %}A simplified simulation with a sample of names. The app has the whole name day calendar, including the movable feasts that change every year with Easter.{% endif %}</p>
+  </div>
+
+  <figure class="demo-device" aria-label="{% if el %}Προσομοίωση της αναζήτησης ονόματος στο iPhone{% else %}Simulation of the name search on iPhone{% endif %}">
+    <div class="stage no-mac has-phone demo-stage" style="--glow:{{ app.accent }}">
+      <div class="iph">
+        <div class="iph-screen">
+          <img class="nm-fallback" src="{{ '/assets/screens/giortes/iphone/' | append: page.lang | append: '/giortes-iphone-05-search.webp' | relative_url }}" alt="{% if el %}Η αναζήτηση ονόματος στις Γιορτές{% else %}The name search in Celebrations{% endif %}" loading="lazy">
+          <div class="nm" hidden>
+            <div class="nm-time">9:41</div>
+            <div class="nm-top"><span class="nm-pill" aria-hidden="true"><i>&lsaquo;</i><i>&rsaquo;</i></span><b>{% if el %}26 Οκτωβρίου{% else %}October 26{% endif %}</b><span class="nm-gear" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="8" fill="none" stroke="#000" stroke-width="2.4" stroke-dasharray="3.2 2.6"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="#000" stroke-width="2"/></svg></span></div>
+            <div class="nm-year" aria-hidden="true"><i>&lsaquo;</i><b>2026</b><i>&rsaquo;</i></div>
+            <label class="nm-field"><svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.8" fill="none" stroke="#8a8a8e" stroke-width="2"/><path d="M13 13l4.5 4.5" stroke="#8a8a8e" stroke-width="2" stroke-linecap="round"/></svg><input type="text" inputmode="search" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="{% if el %}Όνομα{% else %}Name{% endif %}" placeholder="{% if el %}Όνομα, π.χ. Ελένη{% else %}Name, e.g. Helen{% endif %}"><button type="button" class="nm-clear" aria-label="{% if el %}Καθαρισμός{% else %}Clear{% endif %}" hidden>&times;</button></label>
+            <div class="nm-body" aria-live="polite"></div>
+            <div class="nm-tabs" aria-hidden="true">
+              <span class="nm-tabbar">
+                <span><svg viewBox="0 0 24 24"><path d="M4 10h16v10H4zM3 7h18v3H3zM12 7v13M12 7c-3-4-6-1-4 0M12 7c3-4 6-1 4 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>{% if el %}Γιορτάζουν{% else %}Name days{% endif %}</span>
+                <span><svg viewBox="0 0 24 24"><path d="M5 20h14v-6H5zM6 14v-3h12v3M12 11V7M12 3v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>{% if el %}Γενέθλια{% else %}Birthdays{% endif %}</span>
+                <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>{% if el %}Σαν σήμερα{% else %}On this day{% endif %}</span>
+                <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 12h16M12 4c3 3 3 13 0 16M12 4c-3 3-3 13 0 16" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>{% if el %}Παγκόσμιες{% else %}World days{% endif %}</span>
+              </span>
+              <span class="nm-search-btn"><svg viewBox="0 0 20 20" width="22" height="22"><circle cx="8.5" cy="8.5" r="5.8" fill="none" stroke="#0a84ff" stroke-width="2.2"/><path d="M13 13l4.5 4.5" stroke="#0a84ff" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </figure>
+</section>
+<script>
+(function(){
+  var root = document.getElementById('demo-names');
+  if (!root) return;
+  var el = {% if el %}true{% else %}false{% endif %};
+  var T = el ? { hol:'Αργίες 2026', where:'Ελλάδα', none:'Δεν βρέθηκε όνομα' }
+             : { hol:'2026 holidays', where:'Greece', none:'No name found' };
+  var HOL = el ? [['1 Ιαν','Πρωτοχρονιά'],['6 Ιαν','Θεοφάνεια'],['23 Φεβ','Καθαρά Δευτέρα'],['25 Μαρ','Εθνική Επέτειος'],['12 Απρ','Πάσχα']]
+               : [['Jan 1','New Year’s Day'],['Jan 6','Epiphany'],['Feb 23','Clean Monday'],['Mar 25','Independence Day'],['Apr 12','Easter']];
+  // [ελληνικά, λατινικά, [[μέρα, μήνας], …]]: NamedaysKit, σταθερές ημερομηνίες.
+  var NAMES = [
+    ['Ελένη','Eleni',[[21,5]]],
+    ['Κωνσταντίνος','Konstantinos',[[21,5]]],
+    ['Δημήτρης','Dimitris',[[28,5],[26,10]]],
+    ['Δήμητρα','Dimitra',[[26,10]]],
+    ['Ανδρέας','Andreas',[[30,11]]],
+    ['Κατερίνα','Katerina',[[25,11]]],
+    ['Σοφία','Sofia',[[17,9]]],
+    ['Χρήστος','Christos',[[25,12]]],
+    ['Χαράλαμπος','Charalampos',[[10,2]]],
+    ['Αθανάσιος','Athanasios',[[18,1]]],
+    ['Βασίλης','Vasilis',[[1,1]]],
+    ['Ιωάννης','Ioannis',[[7,1]]],
+    ['Γιάννης','Giannis',[[7,1]]],
+    ['Μαρία','Maria',[[15,8],[21,11]]],
+    ['Παναγιώτης','Panagiotis',[[15,8]]],
+    ['Ευαγγελία','Evangelia',[[25,3]]],
+    ['Σταύρος','Stavros',[[14,9]]],
+    ['Αντώνης','Antonis',[[17,1]]],
+    ['Σπύρος','Spyros',[[12,12]]],
+    ['Αλέξανδρος','Alexandros',[[30,8]]],
+    ['Πέτρος','Petros',[[29,6]]],
+    ['Παύλος','Pavlos',[[29,6]]]
+  ];
+  var CHIPS = el ? ['Ελένη','Δημήτρης','Χρήστος','Μαρία'] : ['Eleni','Dimitris','Christos','Maria'];
+  var fold = function(s){ return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/ς/g,'σ'); };
+  var fmt = new Intl.DateTimeFormat(el ? 'el-GR' : 'en-US', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
+  var screen = root.querySelector('.nm'), fb = root.querySelector('.nm-fallback');
+  var input = root.querySelector('input'), body = root.querySelector('.nm-body'), clearBtn = root.querySelector('.nm-clear');
+  var chipBtns = root.querySelectorAll('[data-q]');
+
+  function search(q){
+    var f = fold(q), out = [];
+    NAMES.forEach(function(n){
+      var viaGreek = fold(n[0]).indexOf(f) === 0, viaLatin = fold(n[1]).indexOf(f) === 0;
+      if (!viaGreek && !viaLatin) return;
+      var shown = el ? n[0] : n[1], hit = (el ? viaGreek : viaLatin) ? q.length : 0;
+      n[2].forEach(function(d){ out.push({ name: shown, hit: hit, m: d[1], d: d[0] }); });
+    });
+    out.sort(function(a, b){ return a.name === b.name ? (a.m - b.m || a.d - b.d) : a.name.localeCompare(b.name, el ? 'el' : 'en'); });
+    return out;
+  }
+  function render(){
+    var q = input.value.trim();
+    clearBtn.hidden = !input.value;
+    if (q.length < 2){
+      body.innerHTML = '<div class="nm-hol"><b>'+T.hol+'</b><small>'+T.where+'</small></div>' +
+        HOL.map(function(h, i){ return '<div class="nm-row nm-h'+(i === 4 ? ' nm-bold' : '')+'"><span>'+h[0]+'</span><span>'+h[1]+'</span></div>'; }).join('');
+      return;
+    }
+    var r = search(q);
+    if (!r.length){ body.innerHTML = '<div class="nm-empty"><b>'+T.none+'</b></div>'; return; }
+    body.innerHTML = '<div class="nm-res">' + r.map(function(x){
+      var date = fmt.format(new Date(2026, x.m - 1, x.d));
+      return '<div class="nm-row"><b><em>'+x.name.slice(0, x.hit)+'</em>'+x.name.slice(x.hit)+'</b><small>'+date+'</small></div>';
+    }).join('') + '</div>';
+  }
+  function setQuery(q){
+    input.value = q; render();
+    chipBtns.forEach(function(b){ b.setAttribute('aria-pressed', CHIPS[+b.dataset.q] === q); });
+  }
+
+  var manual = false, timer = null, idx = 0;
+  function stop(){ clearTimeout(timer); timer = null; }
+  function type(word, k, done){
+    if (manual) return;
+    setQuery(word.slice(0, k));
+    if (k < word.length) timer = setTimeout(function(){ type(word, k + 1, done); }, 170);
+    else timer = setTimeout(done, 2600);
+  }
+  function next(){ if (manual) return; idx = (idx + 1) % CHIPS.length; type(CHIPS[idx], 0, next); }
+  function start(){ if (!timer && !manual){ type(CHIPS[idx], 0, next); } }
+
+  screen.hidden = false; fb.hidden = true;
+  setQuery(CHIPS[0]);
+  var interact = function(){ manual = true; stop(); };
+  input.addEventListener('focus', interact);
+  input.addEventListener('input', function(){ interact(); chipBtns.forEach(function(b){ b.setAttribute('aria-pressed', false); }); render(); });
+  clearBtn.addEventListener('click', function(){ interact(); setQuery(''); input.focus(); });
+  chipBtns.forEach(function(b){ b.addEventListener('click', function(){ interact(); setQuery(CHIPS[+b.dataset.q]); }); });
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(es){ es[0].isIntersecting ? start() : stop(); }, { threshold: .5 })
+      .observe(root.querySelector('.demo-device'));
+  }
+})();
+</script>

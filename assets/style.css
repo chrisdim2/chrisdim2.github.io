@@ -709,3 +709,46 @@ a.family-card:hover{transform:translateY(-3px);border-color:rgba(237,241,238,.28
   .wx-h,.wx-d1,.wx-d2,.wx-d3,.wx-rays,.wx-cloud,.wx.wx-sky-rain .wx-rain{animation:none}
   .wx-seg button,.wx-bar u,.wx-sheet{transition:none}
 }
+
+/* demo-names: αναζήτηση ονόματος (iOS, φωτεινό). 1u = 1pt σε οθόνη 390pt */
+.nm-fallback[hidden],.nm[hidden]{display:none}
+.nm{--u:.2564cqw;position:absolute;inset:0;overflow:hidden;background:#f2f2f7;color:#000;
+  font-family:-apple-system,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif}
+.nm-time{position:absolute;left:calc(var(--u)*54);top:calc(var(--u)*21);font-weight:600;font-size:calc(var(--u)*17)}
+.nm-top{position:absolute;left:calc(var(--u)*14);right:calc(var(--u)*14);top:calc(var(--u)*58);display:flex;align-items:center;justify-content:space-between}
+.nm-top > b{color:#0a84ff;font-weight:600;font-size:calc(var(--u)*17)}
+.nm-pill{display:flex;gap:calc(var(--u)*18);background:#fff;border-radius:999px;padding:calc(var(--u)*8) calc(var(--u)*18);box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.nm-pill i,.nm-year i{font-style:normal;font-size:calc(var(--u)*26);line-height:.8}
+.nm-gear{display:grid;place-items:center;width:calc(var(--u)*40);height:calc(var(--u)*40);background:#fff;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.nm-gear svg{width:calc(var(--u)*22);height:calc(var(--u)*22)}
+.nm-year{position:absolute;left:calc(var(--u)*12);right:calc(var(--u)*12);top:calc(var(--u)*112);display:flex;align-items:center;justify-content:space-between;color:#0a84ff}
+.nm-year b{font-size:calc(var(--u)*26);font-weight:700}
+.nm-field{position:absolute;left:calc(var(--u)*14);right:calc(var(--u)*14);top:calc(var(--u)*152);display:flex;align-items:center;gap:calc(var(--u)*8);
+  background:#e3e3e8;border-radius:calc(var(--u)*12);padding:0 calc(var(--u)*10);height:calc(var(--u)*38)}
+.nm-field svg{flex:none;width:calc(var(--u)*17);height:calc(var(--u)*17)}
+.nm-field input{flex:1;min-width:0;border:0;outline:0;background:none;font:inherit;font-size:calc(var(--u)*17);color:#000;padding:0}
+.nm-field input::placeholder{color:#8a8a8e}
+.nm-field:focus-within{box-shadow:0 0 0 calc(var(--u)*2) #0a84ff}
+.nm-clear{flex:none;width:calc(var(--u)*20);height:calc(var(--u)*20);border:0;border-radius:50%;background:#8a8a8e;color:#fff;font:inherit;font-size:calc(var(--u)*15);line-height:1;cursor:pointer;padding:0}
+.nm-clear[hidden]{display:none}
+.nm-body{position:absolute;left:calc(var(--u)*14);right:calc(var(--u)*14);top:calc(var(--u)*204);bottom:calc(var(--u)*92);overflow:hidden;
+  mask:linear-gradient(#000 85%,transparent)}
+.nm-row{display:flex;flex-direction:column;gap:calc(var(--u)*2);padding:calc(var(--u)*9) 0;border-bottom:1px solid rgba(0,0,0,.1);animation:nm-in .25s ease both}
+.nm-row b{font-weight:400;font-size:calc(var(--u)*19)}
+.nm-row em{font-style:normal;font-weight:700;color:#0a84ff}
+.nm-row small{font-size:calc(var(--u)*13.5);color:#6c6c70}
+.nm-hol{display:flex;justify-content:space-between;align-items:baseline;padding:calc(var(--u)*6) 0 calc(var(--u)*4);color:#6c6c70}
+.nm-hol b{font-size:calc(var(--u)*20);font-weight:700}
+.nm-hol small{font-size:calc(var(--u)*14);color:#0a84ff}
+.nm-row.nm-h{flex-direction:row;gap:calc(var(--u)*20);align-items:baseline;color:#a0a0a5}
+.nm-row.nm-h span{font-size:calc(var(--u)*17)}
+.nm-row.nm-h span:first-child{width:calc(var(--u)*62);flex:none}
+.nm-row.nm-bold span:last-child{font-weight:700}
+.nm-empty{text-align:center;padding-top:calc(var(--u)*120);color:#000;font-size:calc(var(--u)*20)}
+.nm-tabs{position:absolute;left:calc(var(--u)*12);right:calc(var(--u)*12);bottom:calc(var(--u)*14);display:flex;gap:calc(var(--u)*8);align-items:center}
+.nm-tabbar{flex:1;display:flex;justify-content:space-around;background:rgba(255,255,255,.92);border-radius:999px;padding:calc(var(--u)*7) calc(var(--u)*4);box-shadow:0 4px 16px rgba(0,0,0,.1)}
+.nm-tabbar span{display:flex;flex-direction:column;align-items:center;gap:calc(var(--u)*1);font-size:calc(var(--u)*9.2);color:#1c1c1e;white-space:nowrap}
+.nm-tabbar svg{width:calc(var(--u)*22);height:calc(var(--u)*22)}
+.nm-search-btn{flex:none;display:grid;place-items:center;width:calc(var(--u)*52);height:calc(var(--u)*52);background:#fff;border-radius:50%;box-shadow:0 4px 16px rgba(0,0,0,.1)}
+@keyframes nm-in{from{opacity:0;transform:translateY(calc(var(--u)*4))}}
+@media (prefers-reduced-motion:reduce){.nm-row{animation:none}}

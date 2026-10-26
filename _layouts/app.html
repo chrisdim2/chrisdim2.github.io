@@ -191,7 +191,7 @@ layout: default
   })();
   </script>
 
-  {% for d in sc.demos %}{% if d == 'quickadd' %}{% include demo-quickadd.html %}{% endif %}{% if d == 'views' %}{% include demo-views.html %}{% endif %}{% if d == 'weather' %}{% include demo-weather.html %}{% endif %}{% endfor %}
+  {% for d in sc.demos %}{% if d == 'quickadd' %}{% include demo-quickadd.html %}{% endif %}{% if d == 'views' %}{% include demo-views.html %}{% endif %}{% if d == 'weather' %}{% include demo-weather.html %}{% endif %}{% if d == 'names' %}{% include demo-names.html %}{% endif %}{% endfor %}
 
   {% elsif app.screenshots and app.screenshots.size > 0 %}
   <section class="gallery">

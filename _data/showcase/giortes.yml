@@ -5,6 +5,10 @@
 # Βίντεο: video_work/clips/<γλώσσα>.mp4 (εγγραφή simctl) → render (Marketing/tools) → web 2 Mbps → assets/video/giortes-<γλώσσα>.mp4.
 # Σαν σήμερα: δεν μπήκε screenshot, τα γεγονότα της ημέρας βγαίνουν από τη Wikipedia και δεν ελέγχονται (την 26/10 έβγαζαν σεισμό και επίθεση).
 
+# demos: διαδραστικά mockups από _includes/demo-<όνομα>.html, μετά τη γκαλερί.
+demos:
+  - names
+
 stage:
   ipad: /assets/screens/giortes/ipad/el/giortes-ipad-01-today.webp
   ipad_en: /assets/screens/giortes/ipad/en/giortes-ipad-01-today.webp
