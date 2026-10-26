@@ -321,10 +321,22 @@ list:
   appstore_url: ''
   appstore_id: ''
   price: ''
-  ready: false
+  ready: true
   schema_category: LifestyleApplication
   description_el: 'Chronos Γιορτές: εορτολόγιο, επαφές που γιορτάζουν, γενέθλια και αργίες για iPhone και iPad, έρχεται τον Νοέμβριο, από το dimakis.'
   description_en: 'Chronos Celebrations: name days, contacts’ birthdays and holidays for Greece and Cyprus on iPhone and iPad, coming in November, by dimakis.'
+  press_long_el: |
+    Το Chronos Γιορτές είναι ένα εορτολόγιο για iPhone και iPad, φτιαγμένο για την Ελλάδα και την Κύπρο. Δείχνει για κάθε μέρα τους αγίους και τα ονόματα που γιορτάζουν, και ποιες από τις επαφές σου γιορτάζουν σήμερα, με κουμπί για να τους πάρεις τηλέφωνο.
+
+    Βλέπει τα γενέθλια των επαφών σου με ηλικία και ζώδιο, πρώτα τα πιο κοντινά, και σε ειδοποιεί «Σήμερα γιορτάζουν» για γιορτές και γενέθλια, με ώρα της επιλογής σου. Έχει «Σαν σήμερα» με ιστορικά γεγονότα, φάση σελήνης, αργίες Ελλάδας και Κύπρου με υπολογισμό του Πάσχα, παγκόσμιες ημέρες του ΟΗΕ και της UNESCO, και αναζήτηση: γράφεις ένα όνομα και βλέπεις πότε γιορτάζει.
+
+    Οι επαφές μένουν στη συσκευή σου. Η εφαρμογή είναι δωρεάν, χωρίς αγορές, και είναι μέλος της οικογένειας Chronos.
+  press_long_en: |
+    Chronos Celebrations is a name day calendar for iPhone and iPad, made for Greece and Cyprus. For every day it shows the saints and the names that are celebrated, and which of your contacts celebrate today, with a button to call them.
+
+    It lists your contacts' birthdays with age and zodiac sign, the nearest first, and notifies you when someone celebrates a name day or a birthday, at a time you choose. It also has On this day with historic events, the moon phase, holidays for Greece and Cyprus with an Easter calculator, world days of the UN and UNESCO, and a search: type a name and see when it is celebrated.
+
+    Your contacts stay on your device. The app is free, with no purchases, and is part of the Chronos family.
   kind_el: Γιορτές και γενέθλια
   kind_en: Name days & birthdays
   tagline_el: Μην ξεχάσεις ποτέ μια γιορτή.

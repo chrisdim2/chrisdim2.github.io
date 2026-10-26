@@ -58,6 +58,22 @@ SOURCES = {
       ["Plain", "Mac", "PhotoApp/Marketing/screenshots/{lang}/mac/plain"],
     ],
   },
+  "giortes" => {
+    "icons" => {
+      "light" => "NamedaysApp/Icons/Giortes-Blue-Light.png",
+      "dark" => "NamedaysApp/Icons/Giortes-Blue-Dark.png",
+      "red" => "NamedaysApp/Icons/Giortes-Red-Light.png",
+      "red-dark" => "NamedaysApp/Icons/Giortes-Red-Dark.png",
+    },
+    "shots" => [
+      ["App Store", "iPhone", "NamedaysApp/Marketing/screenshots/{lang}/app-store"],
+      ["App Store", "iPad", "NamedaysApp/Marketing/screenshots/{lang}/ipad/app-store"],
+      ["App Store", "iPad landscape", "NamedaysApp/Marketing/screenshots/{lang}/ipad-landscape/app-store"],
+      ["Plain", "iPhone", "NamedaysApp/Marketing/screenshots/{lang}/plain"],
+      ["Plain", "iPad", "NamedaysApp/Marketing/screenshots/{lang}/ipad/plain"],
+      ["Plain", "iPad landscape", "NamedaysApp/Marketing/screenshots/{lang}/ipad-landscape/plain"],
+    ],
+  },
   "iris" => {
     "icons" => { "light" => "EXIFeditor/EXIFeditor/Assets.xcassets/AppIcon.appiconset/Iris-1024.png" },
     "shots" => [
@@ -143,7 +159,8 @@ apps.each do |app|
   summary[slug] = {}
 
   { "el" => "Greek", "en" => "English" }.each do |lang, lang_name|
-    folder = "#{name.gsub(/[^\w&-]+/, ' ').strip.gsub(' ', '-')}-Press-Kit-#{lang.upcase}"
+    # Όνομα φακέλου ASCII: το ελληνικό «Chronos Γιορτές» θα έβγαινε «Chronos», άρα το αγγλικό όνομα.
+    folder = "#{(app['full_name_en'] || name).gsub(/[^\w&-]+/, ' ').strip.gsub(' ', '-')}-Press-Kit-#{lang.upcase}"
     file = "#{slug}-press-kit-#{lang}.zip"
     zip_path = File.join(out_dir, file)
     shots = 0

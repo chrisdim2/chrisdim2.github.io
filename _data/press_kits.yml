@@ -26,3 +26,12 @@ iris:
     file: https://github.com/chrisdim2/chrisdim2.github.io/releases/download/press-kit/iris-press-kit-en.zip
     bytes: 13235347
     screenshots: 14
+giortes:
+  el:
+    file: https://github.com/chrisdim2/chrisdim2.github.io/releases/download/press-kit/giortes-press-kit-el.zip
+    bytes: 11170189
+    screenshots: 31
+  en:
+    file: https://github.com/chrisdim2/chrisdim2.github.io/releases/download/press-kit/giortes-press-kit-en.zip
+    bytes: 11169914
+    screenshots: 31
