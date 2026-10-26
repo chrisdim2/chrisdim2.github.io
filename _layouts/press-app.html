@@ -42,7 +42,7 @@ layout: default
     <dl class="kit-facts">
       <div><dt>{{ T.fact_developer }}</dt><dd>{{ site.data.site.owner_name | default: 'dimakis' }}</dd></div>
       <div><dt>{{ T.fact_platforms }}</dt><dd>{% for p in app.platforms %}{% case p %}{% when 'iphone' %}iPhone{% when 'ipad' %}iPad{% when 'mac' %}Mac{% when 'watch' %}Apple Watch{% endcase %}{% unless forloop.last %}, {% endunless %}{% endfor %}</dd></div>
-      <div><dt>{{ T.fact_languages }}</dt><dd>{{ site.data.languages.size }}</dd></div>
+      <div><dt>{{ T.fact_languages }}</dt><dd>{% assign want = app.languages %}{% if want %}{{ want.size }}{% else %}{{ site.data.languages.size }}{% endif %}</dd></div>
       <div><dt>{{ T.fact_price }}</dt><dd>{% if app.price and app.price != "" %}{{ app.price }} €{% else %}{{ T.fact_price_tba }}{% endif %}</dd></div>
       <div><dt>{{ T.fact_release }}</dt><dd>{{ status }}</dd></div>
       <div><dt>{{ T.fact_website }}</dt><dd><a href="{{ base | append: app.slug | append: '/' | relative_url }}">dimakis.app{{ base | append: app.slug | append: '/' }}</a></dd></div>

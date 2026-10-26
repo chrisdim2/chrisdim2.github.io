@@ -32,6 +32,7 @@ collections:
               - { name: og_image_en, label: Εικόνα κοινοποίησης στα αγγλικά (μόνο αν διαφέρει), widget: string, required: false }
               - { name: order, label: Σειρά, widget: number, value_type: int }
               - { name: platforms, label: Συσκευές, widget: select, multiple: true, required: false, options: [{ label: iPhone, value: iphone }, { label: iPad, value: ipad }, { label: Mac, value: mac }, { label: Apple Watch, value: watch }, { label: Web, value: web }] }
+              - { name: languages, label: "Γλώσσες της εφαρμογής (κωδικοί, π.χ. el, en· κενό = όλες)", widget: list, required: false, field: { name: code, label: Κωδικός, widget: string } }
               - { name: icon, label: Εικονίδιο, widget: image, required: false }
               - { name: kind_el, label: Κατηγορία, widget: string }
               - { name: kind_en, label: Category (EN), widget: string }

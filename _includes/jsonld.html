@@ -23,7 +23,7 @@
   "image": {{ A.icon | absolute_url | jsonify }},
   "operatingSystem": {{ os | jsonify }},
   "applicationCategory": {{ A.schema_category | default: 'UtilitiesApplication' | jsonify }},
-  "inLanguage": {{ site.data.languages | map: "code" | jsonify }},
+  "inLanguage": {% if A.languages %}{{ A.languages | jsonify }}{% else %}{{ site.data.languages | map: "code" | jsonify }}{% endif %},
   {% if store and store != "" %}"installUrl": {{ store | jsonify }},
   "downloadUrl": {{ store | jsonify }},
   {% endif %}{% if A.price and A.price != "" %}"offers": {

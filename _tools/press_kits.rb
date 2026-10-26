@@ -119,7 +119,7 @@ def readme(app, name, owner, langs, press_email)
 
     Developer: #{owner}
     Συσκευές: #{platforms}
-    Γλώσσες: #{langs.size}
+    Γλώσσες: #{(app['languages'] || langs).size}
     Τιμή: #{price.('el')}
     Κυκλοφορία: #{app['status_el']}
     Σελίδα: https://dimakis.app/#{app['slug']}/
@@ -140,7 +140,7 @@ def readme(app, name, owner, langs, press_email)
 
     Developer: #{owner}
     Platforms: #{platforms}
-    Languages: #{langs.size}
+    Languages: #{(app['languages'] || langs).size}
     Price: #{price.('en')}
     Release: #{app['status_en']}
     Website: https://dimakis.app/en/#{app['slug']}/

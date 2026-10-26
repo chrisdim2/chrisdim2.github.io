@@ -2,6 +2,7 @@
 # appstore_id: ο αριθμός της εφαρμογής στο App Store (π.χ. 6740000000)· ενεργοποιεί το Smart App Banner στο Safari.
 # price: τιμή σε ευρώ (π.χ. '4.99' ή '0')· μπαίνει στο JSON-LD μόνο όταν δεν είναι κενή.
 # ready: true = η εφαρμογή είναι έτοιμη (εμφανίζεται στο Press Kit).
+# languages: προαιρετική λίστα κωδικών γλωσσών (π.χ. [el, en]) όταν η εφαρμογή δεν έχει και τις 32 (Ευαγγέλιο 1.3)· κενό = όλες οι γλώσσες του _data/languages.yml.
 # full_name: το πλήρες όνομα (όπως στο App Store)· μπαίνει στον τίτλο της σελίδας, στο JSON-LD και στο Press Kit.
 # description_el/en: meta description της σελίδας και σύντομη περιγραφή στο Press Kit.
 list:
@@ -316,6 +317,7 @@ list:
   og_image: /assets/og/giortes.jpg
   order: 2
   platforms: [iphone, ipad]
+  languages: [el, en]
   has_legal: true
   support_email: giortes@dimakis.app
   appstore_url: ''

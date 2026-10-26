@@ -29,9 +29,9 @@ iris:
 giortes:
   el:
     file: https://github.com/chrisdim2/chrisdim2.github.io/releases/download/press-kit/giortes-press-kit-el.zip
-    bytes: 11170189
+    bytes: 11170187
     screenshots: 31
   en:
     file: https://github.com/chrisdim2/chrisdim2.github.io/releases/download/press-kit/giortes-press-kit-en.zip
-    bytes: 11169914
+    bytes: 11169912
     screenshots: 31

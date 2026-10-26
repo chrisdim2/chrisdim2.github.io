@@ -29,7 +29,7 @@ layout: default
       {% else %}
       <span class="app-status">{% if page.lang == 'el' %}{{ app.status_el }}{% else %}{{ app.status_en }}{% endif %}</span>
       {% endif %}
-      {% include langs-badge.html %}
+      {% include langs-badge.html app=app %}
       <a class="btn btn-quiet" href="{{ base | relative_url }}#apps">{{ L.back }}</a>
     </div>
   </header>
@@ -240,11 +240,12 @@ layout: default
   {% endif %}
   {% unless store and store != "" or app.planned %}{% include notify.html app=app compact=true %}{% endunless %}
 
+  {% assign want = app.languages %}{% assign LL = site.data.languages %}{% if want %}{% assign LL = site.data.languages | where_exp: 'l', 'want contains l.code' %}{% endif %}
   <section class="block">
     <h2>{{ L.languages_title }}</h2>
-    <p>{{ L.languages_text | replace: '%n', site.data.languages.size }}</p>
+    <p>{{ L.languages_text | replace: '%n', LL.size }}</p>
     <ul class="lang-list">
-      {% for lg in site.data.languages %}<li lang="{{ lg.code }}"{% if lg.rtl %} dir="rtl"{% endif %}>{{ lg.name }}</li>{% endfor %}
+      {% for lg in LL %}<li lang="{{ lg.code }}"{% if lg.rtl %} dir="rtl"{% endif %}>{{ lg.name }}</li>{% endfor %}
     </ul>
   </section>
 
