@@ -1,0 +1,99 @@
+{% comment %}
+Διαδραστικό mockup: το ταξίδι «Κρήτη» στο Apollo (TripDetailView, Trip.totalCost, Trip.averageStars) σε iPhone. Προσομοίωση με τα δεδομένα του screenshot της γκαλερί:
+18–24 Σεπτεμβρίου 2026, 7 μέρες και 6 νύχτες, έξοδα (Ξενοδοχείο στα Χανιά 640, Πτήσεις 312, Ενοικίαση αυτοκινήτου 185, Φαγητό 420), πτήσεις Αθήνα → Χανιά (A3 322) και Ηράκλειο → Αθήνα (A3 327),
+βαθμολογίες μελών (Χρήστος 5, Μαρία 5, Νεφέλη 4). Το σύνολο είναι το άθροισμα των εξόδων και ο μέσος όρος αστεριών ο μέσος όρος των βαθμολογιών (έγκυρες 1–5), όπως στην εφαρμογή·
+με το πάτημα ενός αστεριού αλλάζει η βαθμολογία του μέλους (Trip.setStars: ξανά το ίδιο αστέρι την αφαιρεί). Τα ονόματα μελών είναι δείγμα. Χωρίς JS μένει το screenshot.
+{% endcomment %}
+{% assign el = false %}{% if page.lang == 'el' %}{% assign el = true %}{% endif %}
+<section class="block demo" id="demo-trips" aria-labelledby="demo-trips-h">
+  <div class="demo-text">
+    <h2 id="demo-trips-h">{% if el %}Κάθε ταξίδι, με έξοδα και βαθμολογίες{% else %}Every trip, with costs and ratings{% endif %}</h2>
+    <p>{% if el %}Το Apollo βρίσκει τα ταξίδια από τις φωτογραφίες σου, και εσύ προσθέτεις έξοδα, πτήσεις και βαθμολογίες από τα μέλη της οικογένειας. Δες το ταξίδι στην Κρήτη και πάτησε τα αστέρια:{% else %}Apollo finds trips from your photos, and you add costs, flights and ratings from the family members. Look at the trip to Crete and tap the stars:{% endif %}</p>
+    <div class="demo-chips" role="group" aria-label="{% if el %}Ενότητα{% else %}Section{% endif %}">
+      <button type="button" class="demo-chip" data-s="0" aria-pressed="true">{% if el %}Έξοδα{% else %}Expenses{% endif %}</button>
+      <button type="button" class="demo-chip" data-s="1" aria-pressed="false">{% if el %}Βαθμολογίες{% else %}Ratings{% endif %}</button>
+      <button type="button" class="demo-chip" data-s="2" aria-pressed="false">{% if el %}Πώς πήγες{% else %}How you got there{% endif %}</button>
+    </div>
+    <p class="demo-note">{% if el %}Απλοποιημένη προσομοίωση με δείγμα δεδομένων. Δεν αποθηκεύεται τίποτα. Η εφαρμογή υπολογίζει το σύνολο και τον μέσο όρο από όσα εσύ καταχωρείς.{% else %}A simplified simulation with sample data. Nothing is saved. The app works out the total and the average from what you enter.{% endif %}</p>
+  </div>
+
+  <figure class="demo-device" aria-label="{% if el %}Προσομοίωση της οθόνης ταξιδιού του Apollo στο iPhone{% else %}Simulation of Apollo’s trip screen on iPhone{% endif %}">
+    <div class="stage no-mac has-phone demo-stage" style="--glow:{{ app.accent }}">
+      <div class="iph">
+        <div class="iph-screen">
+          <img class="ap-fallback" src="{{ '/assets/screens/apollo/iphone/' | append: page.lang | append: '/apollo-iphone-10-trip-detail.webp' | relative_url }}" alt="{% if el %}Το ταξίδι στην Κρήτη στο Apollo{% else %}The trip to Crete in Apollo{% endif %}" loading="lazy">
+          <div class="ap" hidden>
+            <div class="ap-time">9:41</div>
+            <div class="ap-top"><span class="ap-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M15 5l-7 7 7 7" fill="none" stroke="#000" stroke-width="2.600" stroke-linecap="round" stroke-linejoin="round"/></svg></span><b>{% if el %}Κρήτη{% else %}Crete{% endif %}</b><span class="ap-ico" aria-hidden="true"></span></div>
+            <div class="ap-body ap-trip" aria-live="polite"></div>
+            {% include apollo-tabs.html active=3 %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </figure>
+</section>
+<script>
+(function(){
+  var root = document.getElementById('demo-trips');
+  if (!root) return;
+  var el = {% if el %}true{% else %}false{% endif %};
+  var map = {{ '/assets/screens/apollo/demo/' | relative_url | jsonify }} + (el ? 'trip-map-el.webp' : 'trip-map-en.webp');
+  var T = el ? { dates:'18–24 Σεπτεμβρίου 2026', dur:'7 μέρες, 6 νύχτες · 6 στοιχεία', total:'Σύνολο', of:'από 5', how:'Πώς πήγες', hint:'Όρισε ποιος είσαι στις Ρυθμίσεις → Μέλη για να βαθμολογήσεις.',
+                exp:[['Ξενοδοχείο στα Χανιά', 640], ['Πτήσεις', 312], ['Ενοικίαση αυτοκινήτου', 185], ['Φαγητό', 420]],
+                fl:[['Αθήνα → Χανιά', 'A3 322 · 18 Σεπ 2026'], ['Ηράκλειο → Αθήνα', 'A3 327 · 24 Σεπ 2026']], mem:['Χρήστος', 'Μαρία', 'Νεφέλη'] }
+             : { dates:'18–24 September 2026', dur:'7 days, 6 nights · 6 items', total:'Total', of:'of 5', how:'How you got there', hint:'Set who you are in Settings → Members to rate.',
+                exp:[['Hotel in Chania', 640], ['Flights', 312], ['Car rental', 185], ['Food', 420]],
+                fl:[['Athens → Chania', 'A3 322 · 18 Sep 2026'], ['Heraklion → Athens', 'A3 327 · 24 Sep 2026']], mem:['Chris', 'Maria', 'Nefeli'] };
+  var stars = [5, 5, 4];   // Τα αστέρια ανά μέλος: αλλάζουν με το πάτημα.
+  var fmt = new Intl.NumberFormat(el ? 'el-GR' : 'en-US', { maximumFractionDigits: 0 });
+  var fmtAvg = new Intl.NumberFormat(el ? 'el-GR' : 'en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+  var screen = root.querySelector('.ap'), fb = root.querySelector('.ap-fallback');
+  var body = root.querySelector('.ap-trip'), chipBtns = root.querySelectorAll('[data-s]');
+  var section = 0;
+  function starRow(n, k){
+    var out = '';
+    for (var i = 1; i <= 5; i++) out += '<button type="button" class="ap-star' + (i <= n ? ' on' : '') + '" data-m="' + k + '" data-v="' + i + '" aria-label="' + T.mem[k] + ': ' + i + '" tabindex="-1">&#9733;</button>';
+    return out;
+  }
+  function avg(){
+    var s = stars.filter(function(v){ return v >= 1 && v <= 5; });
+    return s.length ? s.reduce(function(a, b){ return a + b; }, 0) / s.length : null;
+  }
+  function render(){
+    var a = avg();
+    var total = T.exp.reduce(function(s, e){ return s + e[1]; }, 0);
+    var head = '<div class="ap-map"><img src="' + map + '" alt=""></div>' +
+      '<div class="ap-tm"><span>' + T.dates + '<small>' + T.dur + '</small></span><span class="ap-avg">' + (a === null ? '' : '<b>' + '&#9733;'.repeat(Math.round(a)) + '&#9734;'.repeat(5 - Math.round(a)) + '</b><small>' + fmtAvg.format(a) + ' ' + T.of + '</small>') + '</span></div>';
+    var rows;
+    if (section === 0){
+      rows = '<div class="ap-list">' + T.exp.map(function(e){ return '<div class="ap-r"><span>' + e[0] + '</span><b>' + fmt.format(e[1]) + '€</b></div>'; }).join('') +
+        '<div class="ap-r ap-t"><span>' + T.total + '</span><b>' + fmt.format(total) + '€</b></div></div>';
+    } else if (section === 1){
+      rows = '<div class="ap-mem">' + T.mem.map(function(n, k){ return '<div class="ap-m"><span class="nt-av">' + n.charAt(0) + '</span><b>' + n + '</b><span class="ap-stars">' + starRow(stars[k], k) + '</span></div>'; }).join('') + '</div><p class="ap-sm">' + T.hint + '</p>';
+    } else {
+      rows = '<h5>' + T.how + '</h5><div class="ap-list">' + T.fl.map(function(f){ return '<div class="ap-r ap-f"><span><b>' + f[0] + '</b><small>' + f[1] + '</small></span></div>'; }).join('') + '</div>';
+    }
+    body.innerHTML = head + rows;
+    chipBtns.forEach(function(b, k){ b.setAttribute('aria-pressed', k === section); });
+  }
+  var manual = false, timer = null;
+  function stop(){ clearInterval(timer); timer = null; }
+  function start(){ if (!timer && !manual) timer = setInterval(function(){ section = (section + 1) % 3; render(); }, 3400); }
+  screen.hidden = false; fb.hidden = true;
+  render();
+  chipBtns.forEach(function(b){ b.addEventListener('click', function(){ manual = true; stop(); section = +b.dataset.s; render(); }); });
+  body.addEventListener('click', function(e){
+    var b = e.target.closest('.ap-star'); if (!b) return;
+    manual = true; stop();
+    var k = +b.dataset.m, v = +b.dataset.v;
+    stars[k] = stars[k] === v ? 0 : v;   // Trip.setStars: ξανά το ίδιο αστέρι αφαιρεί τη βαθμολογία
+    render();
+  });
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(es){ es[0].isIntersecting ? start() : stop(); }, { threshold: .5 })
+      .observe(root.querySelector('.demo-device'));
+  }
+})();
+</script>

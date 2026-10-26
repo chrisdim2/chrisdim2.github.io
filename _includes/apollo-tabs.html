@@ -1,0 +1,12 @@
+{% comment %}
+Κάτω μπάρα του Apollo για τα mockups (demo-search, demo-albums, demo-trips). include.active: 0 Timeline, 1 Άλμπουμ, 2 Χάρτης, 3 Ταξίδια, 4 Ρυθμίσεις.
+Τα ονόματα των καρτελών είναι από τα screenshots της γκαλερί.
+{% endcomment %}
+{% assign el = false %}{% if page.lang == 'el' %}{% assign el = true %}{% endif %}
+<div class="ap-tabs" aria-hidden="true"><span class="ap-tabbar">
+  <span{% if include.active == 0 %} class="on"{% endif %}><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="10" r="1.6" fill="currentColor"/><path d="M4 17l5-4 4 3 3-2 4 3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Timeline</span>
+  <span{% if include.active == 1 %} class="on"{% endif %}><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2.5" fill="currentColor"/></svg>{% if el %}Άλμπουμ{% else %}Albums{% endif %}</span>
+  <span{% if include.active == 2 %} class="on"{% endif %}><svg viewBox="0 0 24 24"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2zM9 4v14M15 6v14" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/></svg>{% if el %}Χάρτης{% else %}Map{% endif %}</span>
+  <span{% if include.active == 3 %} class="on"{% endif %}><svg viewBox="0 0 24 24"><path d="M3 15l7-2-3-8h2l6 7 6-2c1-.3 2 .4 1.200 1.300-.4.500-1 .700-2 .900l-6 2-4 5H8l1.500-5.500-3 .8z" fill="currentColor"/></svg>{% if el %}Ταξίδια{% else %}Trips{% endif %}</span>
+  <span{% if include.active == 4 %} class="on"{% endif %}><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.500" fill="none" stroke="currentColor" stroke-width="3.400" stroke-dasharray="3.600 2.400"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>{% if el %}Ρυθμίσεις{% else %}Settings{% endif %}</span>
+</span></div>

@@ -1,0 +1,110 @@
+{% comment %}
+Διαδραστικό mockup: η αναζήτηση του Apollo («τι δείχνει η φωτογραφία», PhotoSearch.swift και PhotoConcepts.swift) σε iPhone. Προσομοίωση με δείγμα 8 φωτογραφιών:
+οι φωτογραφίες και οι ομάδες μηνών είναι από το screenshot της γκαλερί (αναζήτηση «πουλιά»: Οκτώβριος 2026 με 3, Σεπτέμβριος 2026 με 5). Κανόνες όπως στην εφαρμογή:
+η σύγκριση αγνοεί τόνους και πεζά/κεφαλαία· «πουλί/πουλιά/bird/birds» είναι έννοια της ανάλυσης (PhotoConcepts), το «toucan» πιάνεται απευθείας (ταυτότητα της Apple),
+και ο μήνας με το έτος ταιριάζει στην ημερομηνία της φωτογραφίας (PhotoSearch). Ποια φωτογραφία είναι ποιο πουλί, και ποιες έχουν την ετικέτα «toucan», είναι δική μας απλούστευση: ΜΟΝΟ η πρώτη. Χωρίς JS μένει το screenshot.
+{% endcomment %}
+{% assign el = false %}{% if page.lang == 'el' %}{% assign el = true %}{% endif %}
+<section class="block demo" id="demo-search" aria-labelledby="demo-search-h">
+  <div class="demo-text">
+    <h2 id="demo-search-h">{% if el %}Γράψε τι ψάχνεις, όχι πού το έβαλες{% else %}Type what you are looking for, not where you put it{% endif %}</h2>
+    <p>{% if el %}Η έξυπνη ανάλυση, μόνο μέσα στη συσκευή, καταλαβαίνει τι δείχνει κάθε φωτογραφία. Γράφεις «πουλιά» και τις βρίσκει, και ψάχνει και με μήνα και έτος. Δοκίμασε ένα ερώτημα ή γράψε δικό σου στο πεδίο:{% else %}Smart analysis, on your device only, understands what each photo shows. Type “birds” and it finds them, and it also searches by month and year. Try a query, or type your own in the field:{% endif %}</p>
+    <div class="demo-chips" role="group" aria-label="{% if el %}Ερώτημα{% else %}Query{% endif %}">
+      <button type="button" class="demo-chip" data-q="0" aria-pressed="true">{% if el %}πουλιά{% else %}birds{% endif %}</button>
+      <button type="button" class="demo-chip" data-q="1" aria-pressed="false">toucan</button>
+      <button type="button" class="demo-chip" data-q="2" aria-pressed="false">{% if el %}Οκτώβριος 2026{% else %}October 2026{% endif %}</button>
+    </div>
+    <p class="demo-note">{% if el %}Απλοποιημένη προσομοίωση με δείγμα 8 φωτογραφιών. Η εφαρμογή ψάχνει σε όλη τη βιβλιοθήκη σου, και στους τίτλους, στα μέρη και στο κείμενο μέσα στις φωτογραφίες.{% else %}A simplified simulation with a sample of 8 photos. The app searches your whole library, and also titles, places and text inside photos.{% endif %}</p>
+  </div>
+
+  <figure class="demo-device" aria-label="{% if el %}Προσομοίωση της αναζήτησης του Apollo στο iPhone{% else %}Simulation of Apollo’s search on iPhone{% endif %}">
+    <div class="stage no-mac has-phone demo-stage" style="--glow:{{ app.accent }}">
+      <div class="iph">
+        <div class="iph-screen">
+          <img class="ap-fallback" src="{{ '/assets/screens/apollo/iphone/' | append: page.lang | append: '/apollo-iphone-02-search-ai.webp' | relative_url }}" alt="{% if el %}Η αναζήτηση «πουλιά» στο Apollo{% else %}The “birds” search in Apollo{% endif %}" loading="lazy">
+          <div class="ap" hidden>
+            <div class="ap-time">9:41</div>
+            <div class="ap-top"><b>Apollo</b></div>
+            <label class="ap-field"><svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.8" fill="none" stroke="#8a8a8e" stroke-width="2"/><path d="M13 13l4.500 4.500" stroke="#8a8a8e" stroke-width="2" stroke-linecap="round"/></svg><input type="text" inputmode="search" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="{% if el %}Αναζήτηση{% else %}Search{% endif %}"><button type="button" class="ap-clear" aria-label="{% if el %}Καθαρισμός{% else %}Clear{% endif %}" hidden>&times;</button></label>
+            <div class="ap-body" aria-live="polite"></div>
+            {% include apollo-tabs.html active=0 %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </figure>
+</section>
+<script>
+(function(){
+  var root = document.getElementById('demo-search');
+  if (!root) return;
+  var el = {% if el %}true{% else %}false{% endif %};
+  var base = {{ '/assets/screens/apollo/demo/' | relative_url | jsonify }};
+  var T = el ? { none:'Καμία φωτογραφία', hint:'Γράψε ό,τι θυμάσαι: «πουλιά», έναν μήνα, ένα έτος' }
+             : { none:'No photos found', hint:'Type what you remember: “birds”, a month, a year' };
+  // [αρχείο, έτος, μήνας, έννοιες της ανάλυσης]
+  var PH = [
+    ['bird-toucan', 2026, 10, ['bird', 'toucan']], ['bird-parrot', 2026, 10, ['bird']], ['bird-woodpecker', 2026, 10, ['bird']],
+    ['sep-1', 2026, 9, ['bird']], ['sep-2', 2026, 9, ['bird']], ['sep-3', 2026, 9, ['bird']], ['sep-4', 2026, 9, ['bird']], ['sep-5', 2026, 9, ['bird']]
+  ];
+  var CONCEPT = { bird: ['πουλι', 'πουλια', 'πτηνο', 'πτηνα', 'bird', 'birds'], toucan: ['toucan', 'toucans'] };
+  var MONTH = el ? ['Ιανουάριος','Φεβρουάριος','Μάρτιος','Απρίλιος','Μάιος','Ιούνιος','Ιούλιος','Αύγουστος','Σεπτέμβριος','Οκτώβριος','Νοέμβριος','Δεκέμβριος']
+                 : ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var MONTH_BOTH = [['ιανουαριος','january'],['φεβρουαριος','february'],['μαρτιος','march'],['απριλιος','april'],['μαιος','may'],['ιουνιος','june'],['ιουλιος','july'],['αυγουστος','august'],['σεπτεμβριος','september'],['οκτωβριος','october'],['νοεμβριος','november'],['δεκεμβριος','december']];
+  // Όπως το PhotoSearch.normalize: πεζά, χωρίς τόνους, τελικό ς → σ.
+  var norm = function(s){ return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ς/g, 'σ').replace(/[.,;:()\-]/g, ' ').replace(/\s+/g, ' ').trim(); };
+  function matches(p, tok){
+    if (/^\d{4}$/.test(tok)) return String(p[1]) === tok;
+    if (MONTH_BOTH[p[2] - 1].some(function(n){ return norm(n).indexOf(tok) === 0; })) return true;
+    return p[3].some(function(c){ return CONCEPT[c].some(function(w){ return w.indexOf(tok) === 0; }); });
+  }
+  var screen = root.querySelector('.ap'), fb = root.querySelector('.ap-fallback');
+  var input = root.querySelector('input'), body = root.querySelector('.ap-body'), clearBtn = root.querySelector('.ap-clear');
+  var chipBtns = root.querySelectorAll('[data-q]');
+  var CHIPS = el ? ['πουλιά', 'toucan', 'Οκτώβριος 2026'] : ['birds', 'toucan', 'October 2026'];
+  function groupHtml(list){
+    var out = '', key = '';
+    list.forEach(function(p){
+      var k = p[1] * 100 + p[2];
+      if (k !== key){ if (out) out += '</div>'; out += '<h4>' + MONTH[p[2] - 1] + ' ' + p[1] + '</h4><div class="ap-grid">'; key = k; }
+      out += '<img src="' + base + p[0] + '.webp" alt="" loading="lazy">';
+    });
+    return out + '</div>';
+  }
+  function render(){
+    var q = norm(input.value);
+    clearBtn.hidden = !input.value;
+    if (!q){ body.innerHTML = '<p class="ap-hint">' + T.hint + '</p>'; return; }
+    var toks = q.split(' ');
+    var r = PH.filter(function(p){ return toks.every(function(t){ return matches(p, t); }); });
+    body.innerHTML = r.length ? groupHtml(r) : '<p class="ap-hint"><b>' + T.none + '</b></p>';
+  }
+  function setQuery(q){
+    input.value = q; render();
+    chipBtns.forEach(function(b){ b.setAttribute('aria-pressed', CHIPS[+b.dataset.q] === q); });
+  }
+  var manual = false, timer = null, idx = 0;
+  function stop(){ clearTimeout(timer); timer = null; }
+  function type(word, k, done){
+    if (manual) return;
+    setQuery(word.slice(0, k));
+    if (k < word.length) timer = setTimeout(function(){ type(word, k + 1, done); }, 150);
+    else timer = setTimeout(done, 3000);
+  }
+  function next(){ if (manual) return; idx = (idx + 1) % CHIPS.length; type(CHIPS[idx], 0, next); }
+  function start(){ if (!timer && !manual) type(CHIPS[idx], 0, next); }
+
+  screen.hidden = false; fb.hidden = true;
+  setQuery(CHIPS[0]);
+  var interact = function(){ manual = true; stop(); };
+  input.addEventListener('focus', interact);
+  input.addEventListener('input', function(){ interact(); chipBtns.forEach(function(b){ b.setAttribute('aria-pressed', false); }); render(); });
+  clearBtn.addEventListener('click', function(){ interact(); setQuery(''); input.focus(); });
+  chipBtns.forEach(function(b){ b.addEventListener('click', function(){ interact(); setQuery(CHIPS[+b.dataset.q]); }); });
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(es){ es[0].isIntersecting ? start() : stop(); }, { threshold: .5 })
+      .observe(root.querySelector('.demo-device'));
+  }
+})();
+</script>

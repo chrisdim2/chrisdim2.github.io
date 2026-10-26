@@ -1,0 +1,76 @@
+{% comment %}
+Διαδραστικό mockup: η καρτέλα «Άλμπουμ» του Apollo (AlbumsView.swift, AlbumCard.swift, MegaFolderCard) σε iPhone. Προσομοίωση με δείγμα 6 ετών:
+τα εξώφυλλα και το πλήθος στοιχείων κάθε έτους είναι από το screenshot της γκαλερί (2026: 16, 2025: 6, 2024: 2, 2023: 2, 2021: 1, 2018: 1).
+Κανόνες όπως στην εφαρμογή: ένα άλμπουμ ανά έτος, με νεότερα πρώτα· ο χρήστης μπορεί να ενώσει έτη σε «φάκελο» (MegaFolder), που δείχνει το εξώφυλλο του νεότερου έτους,
+έχει όνομα «από–έως» (displayName) και εικονίδιο στοίβας, και μπαίνει στη θέση του νεότερου έτους του (sortYear). Το πλήθος στοιχείων του φακέλου δεν εμφανίζεται εδώ. Χωρίς JS μένει το screenshot.
+{% endcomment %}
+{% assign el = false %}{% if page.lang == 'el' %}{% assign el = true %}{% endif %}
+<section class="block demo demo-flip" id="demo-albums" aria-labelledby="demo-albums-h">
+  <div class="demo-text">
+    <h2 id="demo-albums-h">{% if el %}Ένα άλμπουμ για κάθε χρονιά{% else %}An album for every year{% endif %}</h2>
+    <p>{% if el %}Οι φωτογραφίες σου μπαίνουν μόνες τους σε άλμπουμ ανά έτος, με εξώφυλλο της επιλογής σου. Όταν τα χρόνια πολλαπλασιάζονται, ένωσέ τα σε φάκελο. Δοκίμασε:{% else %}Your photos file themselves into one album per year, with a cover you choose. When the years pile up, merge them into a folder. Try it:{% endif %}</p>
+    <div class="demo-chips" role="group" aria-label="{% if el %}Οργάνωση{% else %}Layout{% endif %}">
+      <button type="button" class="demo-chip" data-m="0" aria-pressed="true">{% if el %}Ένα άλμπουμ ανά έτος{% else %}One album per year{% endif %}</button>
+      <button type="button" class="demo-chip" data-m="1" aria-pressed="false">{% if el %}Φάκελος 2023–2025{% else %}Folder 2023–2025{% endif %}</button>
+      <button type="button" class="demo-chip" data-m="2" aria-pressed="false">{% if el %}Φάκελος 2018–2024{% else %}Folder 2018–2024{% endif %}</button>
+    </div>
+    <p class="demo-note">{% if el %}Απλοποιημένη προσομοίωση με δείγμα 6 ετών. Στην εφαρμογή ορίζεις εσύ ποια έτη ενώνονται και ποιο είναι το εξώφυλλο κάθε έτους.{% else %}A simplified simulation with a sample of 6 years. In the app you decide which years merge and which photo is each year’s cover.{% endif %}</p>
+  </div>
+
+  <figure class="demo-device" aria-label="{% if el %}Προσομοίωση της καρτέλας Άλμπουμ του Apollo στο iPhone{% else %}Simulation of Apollo’s Albums tab on iPhone{% endif %}">
+    <div class="stage no-mac has-phone demo-stage" style="--glow:{{ app.accent }}">
+      <div class="iph">
+        <div class="iph-screen">
+          <img class="ap-fallback" src="{{ '/assets/screens/apollo/iphone/' | append: page.lang | append: '/apollo-iphone-08-albums.webp' | relative_url }}" alt="{% if el %}Τα άλμπουμ ανά έτος στο Apollo{% else %}The albums by year in Apollo{% endif %}" loading="lazy">
+          <div class="ap" hidden>
+            <div class="ap-time">9:41</div>
+            <div class="ap-top ap-top-r"><span class="ap-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" fill="none" stroke="#0a84ff" stroke-width="2"/></svg></span></div>
+            <div class="ap-body ap-albums" aria-live="polite"></div>
+            {% include apollo-tabs.html active=1 %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </figure>
+</section>
+<script>
+(function(){
+  var root = document.getElementById('demo-albums');
+  if (!root) return;
+  var el = {% if el %}true{% else %}false{% endif %};
+  var base = {{ '/assets/screens/apollo/demo/' | relative_url | jsonify }};
+  var T = el ? { title:'Άλμπουμ', items:function(n){ return n + (n === 1 ? ' στοιχείο' : ' στοιχεία'); } }
+             : { title:'Albums', items:function(n){ return n + (n === 1 ? ' item' : ' items'); } };
+  var YEARS = [[2026, 16], [2025, 6], [2024, 2], [2023, 2], [2021, 1], [2018, 1]];
+  var MERGES = [null, [2023, 2025], [2018, 2024]];   // MegaFolder.years (από–έως)
+  var STACK = '<span class="ap-stack"><svg viewBox="0 0 24 24" width="12" height="12"><path d="M5 7h14M7 4h10M4 10h16v10H4z" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg></span>';
+  var screen = root.querySelector('.ap'), fb = root.querySelector('.ap-fallback');
+  var body = root.querySelector('.ap-albums'), chipBtns = root.querySelectorAll('[data-m]');
+  function card(img, name, sub, folder){
+    return '<div class="ap-card"><img src="' + base + 'cover-' + img + '.webp" alt="">' + (folder ? STACK : '') +
+      '<span><b>' + name + '</b>' + (sub ? '<small>' + sub + '</small>' : '') + '</span></div>';
+  }
+  function render(i){
+    var m = MERGES[i], items = [];
+    YEARS.forEach(function(y){
+      if (m && y[0] >= m[0] && y[0] <= m[1]) return;
+      items.push({ sort: y[0], html: card(y[0], y[0], T.items(y[1]), false) });
+    });
+    if (m) items.push({ sort: m[1], html: card(m[1], m[0] + '–' + m[1], '', true) });
+    items.sort(function(a, b){ return b.sort - a.sort; });   // νεότερα πρώτα, ο φάκελος στη θέση του νεότερου έτους του
+    body.innerHTML = '<h3>' + T.title + '</h3><div class="ap-agrid">' + items.map(function(x){ return x.html; }).join('') + '</div>';
+    chipBtns.forEach(function(b, k){ b.setAttribute('aria-pressed', k === i); });
+  }
+  var idx = 0, manual = false, timer = null;
+  function stop(){ clearInterval(timer); timer = null; }
+  function start(){ if (!timer && !manual) timer = setInterval(function(){ idx = (idx + 1) % MERGES.length; render(idx); }, 3600); }
+  screen.hidden = false; fb.hidden = true;
+  render(0);
+  chipBtns.forEach(function(b){ b.addEventListener('click', function(){ manual = true; stop(); idx = +b.dataset.m; render(idx); }); });
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(es){ es[0].isIntersecting ? start() : stop(); }, { threshold: .5 })
+      .observe(root.querySelector('.demo-device'));
+  }
+})();
+</script>

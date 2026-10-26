@@ -2,6 +2,12 @@
 # Οι εικόνες βγαίνουν από το PhotoApp/Marketing (screenshots/<γλώσσα>/.../plain): iPhone σε ανοιχτό,
 # iPad και Mac σε σκούρο θέμα, φωτογραφίες επίδειξης με πουλιά. src: ελληνικό UI, src_en: αγγλικό. Βίντεο: video/<γλώσσα>_site_web.mp4.
 
+# demos: διαδραστικά mockups από _includes/demo-<όνομα>.html, μετά τη γκαλερί.
+demos:
+  - search
+  - albums
+  - trips
+
 stage:
   wide: /assets/screens/apollo/mac/el/apollo-mac-01-timeline.webp
   wide_en: /assets/screens/apollo/mac/en/apollo-mac-01-timeline.webp
