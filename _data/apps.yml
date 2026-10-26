@@ -3,6 +3,7 @@
 # price: τιμή σε ευρώ (π.χ. '4.99' ή '0')· μπαίνει στο JSON-LD μόνο όταν δεν είναι κενή.
 # ready: true = η εφαρμογή είναι έτοιμη (εμφανίζεται στο Press Kit).
 # languages: προαιρετική λίστα κωδικών γλωσσών (π.χ. [el, en]) όταν η εφαρμογή δεν έχει και τις 32 (Ευαγγέλιο 1.3)· κενό = όλες οι γλώσσες του _data/languages.yml.
+# god_el/en: ενότητα «Η μορφή πίσω από το όνομα» (3 με 4 προτάσεις με δικά μας λόγια)· god_wiki_el/en: σύνδεσμος «Περισσότερα». Οι εφαρμογές της οικογένειας Chronos χωρίς god_* παραπέμπουν στη σελίδα του Chronos.
 # full_name: το πλήρες όνομα (όπως στο App Store)· μπαίνει στον τίτλο της σελίδας, στο JSON-LD και στο Press Kit.
 # description_el/en: meta description της σελίδας και σύντομη περιγραφή στο Press Kit.
 list:
@@ -48,6 +49,10 @@ list:
   tagline_en: Your time, under control.
   origin_el: Από τον Χρόνο, την προσωποποίηση του χρόνου στην ελληνική μυθολογία.
   origin_en: Named after Chronos, the personification of time in Greek mythology.
+  god_el: 'Ο Χρόνος είναι η προσωποποίηση του χρόνου στην ελληνική μυθολογία. Στην αρχαιότητα τον ταύτιζαν συχνά με τον Κρόνο, τον Τιτάνα που κυβέρνησε στη Χρυσή Εποχή πριν από τον Δία· από αυτή την ταύτιση βγήκε αργότερα ο «Πατέρας Χρόνος» με το δρεπάνι. Τα δύο ονόματα ακούγονται σχεδόν ίδια, όμως η λέξη «χρόνος» δεν θεωρείται απαραίτητα συγγενής με το όνομα του Κρόνου. Το Chronos μετρά τον χρόνο σου: ό,τι έχεις να θυμηθείς, με τη σειρά που έρχεται. Ολόκληρη η οικογένεια εφαρμογών φέρει το όνομά του.'
+  god_en: 'Chronos is the personification of time in Greek mythology. In antiquity he was often identified with Cronus, the Titan who ruled in the Golden Age before Zeus, and that identification later gave us “Father Time” with his scythe. The two names sound almost the same, but the word chronos (“time”) is not thought to be related to the name Cronus. The app keeps your time: everything you need to remember, in the order it comes. The whole family of apps carries his name.'
+  god_wiki_el: https://el.wikipedia.org/wiki/Χρόνος_(μυθολογία)
+  god_wiki_en: https://en.wikipedia.org/wiki/Chronos
   status_el: Έρχεται τον Δεκέμβριο
   status_en: Coming in December
   suite:
@@ -108,6 +113,10 @@ list:
   tagline_en: Your wisdom, organised.
   origin_el: Από την Αθηνά, τη θεά της σοφίας και της στρατηγικής σκέψης.
   origin_en: Named after Athena, goddess of wisdom and strategic thought.
+  god_el: 'Η Αθηνά γεννήθηκε από το κεφάλι του Δία, ολόκληρη και οπλισμένη. Θεά της σοφίας, της τέχνης και της στρατηγικής σκέψης, ήταν η προστάτισσα της Αθήνας· η κουκουβάγια και η ελιά είναι τα σύμβολά της. Η σοφία είναι γνώση που κρατιέται οργανωμένη, και το Athena φυλάει τις σημειώσεις και τους πίνακές σου.'
+  god_en: 'Athena was born from the head of Zeus, fully grown and armed. The goddess of wisdom, crafts and strategic thinking, she was the protector of Athens, and the owl and the olive tree are her symbols. Wisdom is knowledge kept in order, and Athena keeps your notes and tables.'
+  god_wiki_el: https://el.wikipedia.org/wiki/Αθηνά
+  god_wiki_en: https://en.wikipedia.org/wiki/Athena
   status_el: Σε ανάπτυξη
   status_en: In development
   features_el:
@@ -166,6 +175,10 @@ list:
   tagline_en: Light on your memories.
   origin_el: Από τον Απόλλωνα, τον θεό του φωτός και της ομορφιάς.
   origin_en: Named after Apollo, god of light and beauty.
+  god_el: 'Ο Απόλλων ήταν γιος του Δία και της Λητούς και δίδυμος αδελφός της Άρτεμης. Θεός της μουσικής, της ποίησης, της μαντικής και της θεραπείας, είχε στους Δελφούς ένα από τα πιο φημισμένα μαντεία του αρχαίου κόσμου. Σε μεταγενέστερους αιώνες συνδέθηκε με το φως και τον ήλιο. Η φωτογραφία σημαίνει «γράφω με φως», και το Apollo φυλάει τις φωτογραφίες σου.'
+  god_en: 'Apollo was the son of Zeus and Leto and the twin brother of Artemis. The god of music, poetry, prophecy and healing, he had at Delphi one of the most famous oracles of the ancient world. In later centuries he came to be linked with light and the sun. “Photography” means “writing with light”, and Apollo keeps your photos.'
+  god_wiki_el: https://el.wikipedia.org/wiki/Απόλλων
+  god_wiki_en: https://en.wikipedia.org/wiki/Apollo
   status_el: Έρχεται σύντομα
   status_en: Coming soon
   suite:
@@ -227,6 +240,10 @@ list:
   tagline_en: It records everything.
   origin_el: Από τον Άργο Πανόπτη, τον γίγαντα με τα εκατό μάτια.
   origin_en: Named after Argus Panoptes, the giant with a hundred eyes.
+  god_el: 'Ο Άργος ο Πανόπτης («αυτός που τα βλέπει όλα») ήταν γίγαντας με πολλά μάτια, εκατό λέει η παράδοση. Η Ήρα τον έβαλε φύλακα της Ιούς, αλλά ο Ερμής τον κοίμισε με τη μουσική του και τον σκότωσε· ο μύθος λέει ότι η Ήρα έβαλε τα μάτια του στην ουρά του παγωνιού. Το Argus «βλέπει» κάθε σελίδα και την κάνει ψηφιακή.'
+  god_en: 'Argus Panoptes (“the all-seeing”) was a giant with many eyes, a hundred according to tradition. Hera set him to guard Io, but Hermes lulled him to sleep with music and killed him, and the myth says Hera placed his eyes on the peacock’s tail. Argus “sees” every page and turns it into a digital one.'
+  god_wiki_el: https://el.wikipedia.org/wiki/Άργος_ο_Πανόπτης
+  god_wiki_en: https://en.wikipedia.org/wiki/Argus_Panoptes
   status_el: Σε ανάπτυξη
   status_en: In development
   features_el: []
@@ -269,6 +286,10 @@ list:
   tagline_en: Gets your photos ready before they join Apollo.
   origin_el: Από την Ίριδα, τη θεά του ουράνιου τόξου που ένωνε ουρανό και γη· έτσι κι αυτή ενώνει τις φωτογραφίες σου με το Apollo.
   origin_en: Named after Iris, goddess of the rainbow who connected sky and earth — connecting your photos to Apollo, in much the same way.
+  god_el: 'Η Ίριδα ήταν η αγγελιαφόρος των θεών και η προσωποποίηση του ουράνιου τόξου. Κόρη του Θαύμαντα και της Ηλέκτρας, στον Όμηρο μεταφέρει τα μηνύματα του Δία και της Ήρας. Το ουράνιο τόξο ήταν ο δρόμος της ανάμεσα στον ουρανό και στη γη. Το Iris ετοιμάζει τις φωτογραφίες σου πριν φτάσουν στο Apollo.'
+  god_en: 'Iris was the messenger of the gods and the personification of the rainbow. A daughter of Thaumas and Electra, she carries the messages of Zeus and Hera in Homer. The rainbow was her road between heaven and earth. Iris gets your photos ready before they reach Apollo.'
+  god_wiki_el: https://el.wikipedia.org/wiki/Ίρις_(μυθολογία)
+  god_wiki_en: https://en.wikipedia.org/wiki/Iris_(mythology)
   status_el: Έρχεται σύντομα
   status_en: Coming soon
   suite:

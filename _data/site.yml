@@ -50,6 +50,9 @@ el:
   legal_todo: Θα δημοσιευτούν πριν από την υποβολή της εφαρμογής στο App Store.
   features_title: Τι κάνει
   origin_title: Το όνομα
+  god_title: Η μορφή πίσω από το όνομα
+  god_more: Περισσότερα στη Wikipedia
+  god_family: Η ιστορία του ονόματος Chronos, στη σελίδα του Chronos
   status_soon: Μόλις κυκλοφορήσει, ο σύνδεσμος του App Store θα εμφανιστεί εδώ.
   download: Λήψη από το App Store
   back: Όλες οι εφαρμογές
@@ -98,6 +101,9 @@ en:
   legal_todo: Will be published before the app is submitted to the App Store.
   features_title: What it does
   origin_title: The name
+  god_title: The figure behind the name
+  god_more: More on Wikipedia
+  god_family: The story of the name Chronos, on the Chronos page
   status_soon: Once released, the App Store link will appear here.
   download: Download on the App Store
   back: All apps

@@ -254,6 +254,20 @@ layout: default
     <p class="origin-note">{% if page.lang == 'el' %}{{ app.origin_el }}{% else %}{{ app.origin_en }}{% endif %}</p>
   </section>
 
+  {% assign god = app.god_el %}{% assign god_wiki = app.god_wiki_el %}
+  {% if page.lang == 'en' %}{% assign god = app.god_en %}{% assign god_wiki = app.god_wiki_en %}{% endif %}
+  {% if god and god != "" %}
+  <section class="block god" id="god">
+    <h2>{{ L.god_title }}</h2>
+    <p class="origin-note">{{ god }}</p>
+    {% if god_wiki and god_wiki != "" %}<p class="god-more"><a href="{{ god_wiki }}" rel="noopener">{{ L.god_more }} &rarr;</a></p>{% endif %}
+  </section>
+  {% elsif app.family == 'chronos' and app.slug != 'chronos' %}
+  <section class="block god">
+    <p class="god-more"><a href="{{ base | append: 'chronos/' | relative_url }}#god">{{ L.god_family }} &rarr;</a></p>
+  </section>
+  {% endif %}
+
   {% assign app_posts = site.posts | where: "lang", page.lang | where: "app", app.slug %}
   {% if app_posts.size > 0 %}
   <section class="block">

@@ -752,3 +752,8 @@ a.family-card:hover{transform:translateY(-3px);border-color:rgba(237,241,238,.28
 .nm-search-btn{flex:none;display:grid;place-items:center;width:calc(var(--u)*52);height:calc(var(--u)*52);background:#fff;border-radius:50%;box-shadow:0 4px 16px rgba(0,0,0,.1)}
 @keyframes nm-in{from{opacity:0;transform:translateY(calc(var(--u)*4))}}
 @media (prefers-reduced-motion:reduce){.nm-row{animation:none}}
+
+/* ενότητα «Η μορφή πίσω από το όνομα» (_layouts/app.html) */
+.god .origin-note{max-width:62ch}
+.god-more{margin:14px 0 0;font-family:var(--util);font-size:15px}
+.god-more a{color:var(--app,var(--berry))}
