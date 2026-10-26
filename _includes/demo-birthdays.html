@@ -1,0 +1,117 @@
+{% comment %}
+Διαδραστικό mockup: η καρτέλα «Γενέθλια» του Chronos Γιορτές σε iPhone (BirthdaysTabView, ContactBirthdays.swift). Προσομοίωση με φανταστικές επαφές:
+οι κανόνες είναι της εφαρμογής: λίστα από σήμερα και μετά, με σειρά ημερών και ονόματος, ηλικία = έτος της επόμενης επετείου μείον έτος γέννησης, ζώδιο με μήνα/μέρα
+(ZodiacSign.of), κείμενο «Δευ 26 Οκτ · σήμερα / αύριο / σε Χ ημέρες» (στην εφαρμογή από το RelativeDateTimeFormatter, εδώ από το Intl.RelativeTimeFormat με την ίδια διατύπωση).
+Οι ημερομηνίες της πρώτης «σήμερα» (26 Οκτ 2026) συμφωνούν με το screenshot της γκαλερί. Χωρίς JS μένει το screenshot.
+{% endcomment %}
+{% assign el = false %}{% if page.lang == 'el' %}{% assign el = true %}{% endif %}
+<section class="block demo demo-flip" id="demo-birthdays" aria-labelledby="demo-birthdays-h">
+  <div class="demo-text">
+    <h2 id="demo-birthdays-h">{% if el %}Τα γενέθλια που έρχονται{% else %}Birthdays coming up{% endif %}</h2>
+    <p>{% if el %}Οι επαφές με γενέθλια, πρώτα οι πιο κοντινές, με την ηλικία που γίνονται και το ζώδιό τους. Άλλαξε την ημερομηνία «σήμερα» και δες πώς αλλάζει η λίστα:{% else %}Your contacts’ birthdays, the nearest first, with the age they are turning and their zodiac sign. Change “today” and watch the list update:{% endif %}</p>
+    <div class="demo-chips" role="group" aria-label="{% if el %}Σήμερα{% else %}Today{% endif %}">
+      <button type="button" class="demo-chip" data-t="0" aria-pressed="true">{% if el %}Σήμερα: 26 Οκτωβρίου{% else %}Today: October 26{% endif %}</button>
+      <button type="button" class="demo-chip" data-t="1" aria-pressed="false">{% if el %}Σήμερα: 1 Δεκεμβρίου{% else %}Today: December 1{% endif %}</button>
+      <button type="button" class="demo-chip" data-t="2" aria-pressed="false">{% if el %}Σήμερα: 1 Μαρτίου{% else %}Today: March 1{% endif %}</button>
+    </div>
+    <p class="demo-note">{% if el %}Απλοποιημένη προσομοίωση με φανταστικές επαφές. Η εφαρμογή διαβάζει τις δικές σου επαφές μόνο μέσα στη συσκευή και δεν τις στέλνει πουθενά.{% else %}A simplified simulation with made-up contacts. The app reads your own contacts only on your device and never sends them anywhere.{% endif %}</p>
+  </div>
+
+  <figure class="demo-device" aria-label="{% if el %}Προσομοίωση της οθόνης Γενέθλια στο iPhone{% else %}Simulation of the Birthdays screen on iPhone{% endif %}">
+    <div class="stage no-mac has-phone demo-stage" style="--glow:{{ app.accent }}">
+      <div class="iph">
+        <div class="iph-screen">
+          <img class="nm-fallback" src="{{ '/assets/screens/giortes/iphone/' | append: page.lang | append: '/giortes-iphone-03-birthdays.webp' | relative_url }}" alt="{% if el %}Η οθόνη Γενέθλια στις Γιορτές{% else %}The Birthdays screen in Celebrations{% endif %}" loading="lazy">
+          <div class="nm bd" hidden>
+            <div class="nm-time">9:41</div>
+            <div class="nm-top"><span class="nm-pill" aria-hidden="true"><i>&lsaquo;</i><i>&rsaquo;</i></span><b class="bd-title"></b><span class="nm-gear" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="8" fill="none" stroke="#000" stroke-width="2.4" stroke-dasharray="3.2 2.6"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="#000" stroke-width="2"/></svg></span></div>
+            <div class="bd-list" aria-live="polite"></div>
+            {% include giortes-tabs.html active=1 %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </figure>
+</section>
+<script>
+(function(){
+  var root = document.getElementById('demo-birthdays');
+  if (!root) return;
+  var el = {% if el %}true{% else %}false{% endif %};
+  // [όνομα, επώνυμο, έτος γέννησης, μήνας, μέρα]: φανταστικές επαφές.
+  var CONTACTS = [
+    ['Δημήτρης','Παπαδόπουλος',1985,3,14],
+    ['Δήμητρα','Κυριακίδου',1991,7,22],
+    ['Δημήτρης','Αντωνίου',1978,12,9],
+    ['Ελένη','Αθανασίου',1990,10,26],
+    ['Νίκος','Γεωργίου',1988,10,28],
+    ['Σοφία','Λάμπρου',1995,10,31],
+    ['Γιώργος','Ιωάννου',1979,11,3],
+    ['Κατερίνα','Μαυρίδου',1992,11,8],
+    ['Αλέξανδρος','Στεφάνου',2001,11,12],
+    ['Άννα','Παναγιώτου',1983,12,2],
+    ['Νέστορας','Μαρκόπουλος',1996,2,17],
+    ['Αναστασία','Βλάχου',1987,6,5],
+    ['Μιχάλης','Σταύρου',1976,5,20],
+    ['Ανδρέας','Δημητρίου',1969,8,2],
+    ['Φίλιππος','Ράλλης',1999,9,30]
+  ];
+  var TODAYS = [[26, 10], [1, 12], [1, 3]];   // [μέρα, μήνας] του 2026
+  var ZN = el ? ['Κριός','Ταύρος','Δίδυμοι','Καρκίνος','Λέων','Παρθένος','Ζυγός','Σκορπιός','Τοξότης','Αιγόκερως','Υδροχόος','Ιχθύες']
+              : ['Aries','Taurus','Gemini','Cancer','Leo','Virgo','Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces'];
+  var ZS = ['♈','♉','♊','♋','♌','♍','♎','♏','♐','♑','♒','♓'];
+  // ZodiacSign.of: μήνας*100 + μέρα.
+  function zodiac(m, d){
+    var k = m * 100 + d;
+    var i = k >= 321 && k <= 419 ? 0 : k >= 420 && k <= 520 ? 1 : k >= 521 && k <= 620 ? 2 : k >= 621 && k <= 722 ? 3 : k >= 723 && k <= 822 ? 4 :
+            k >= 823 && k <= 922 ? 5 : k >= 923 && k <= 1022 ? 6 : k >= 1023 && k <= 1121 ? 7 : k >= 1122 && k <= 1221 ? 8 :
+            (k >= 1222 || k <= 119) ? 9 : k >= 120 && k <= 218 ? 10 : 11;
+    return ZS[i] + '︎ ' + ZN[i];
+  }
+  var loc = el ? 'el-GR' : 'en-US';
+  var fWhen = new Intl.DateTimeFormat(loc, { weekday:'short', month:'short', day:'numeric' });
+  var fTitle = new Intl.DateTimeFormat(loc, { day:'numeric', month:'long' });
+  var rel = new Intl.RelativeTimeFormat(loc, { numeric:'auto', style:'long' });
+  var DAY = 86400000;
+  var screen = root.querySelector('.nm'), fb = root.querySelector('.nm-fallback');
+  var title = root.querySelector('.bd-title'), list = root.querySelector('.bd-list');
+  var chipBtns = root.querySelectorAll('[data-t]');
+  var CAKE = '<svg viewBox="0 0 24 24" width="15" height="15"><path d="M5 20h14v-6H5zM6 14v-3h12v3M12 11V7M12 3v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>';
+
+  function items(today){
+    var y = today.getFullYear();
+    return CONTACTS.map(function(c){
+      var next = new Date(y, c[3] - 1, c[4]);
+      if (next < today) next = new Date(y + 1, c[3] - 1, c[4]);
+      return { name: c[0] + ' ' + c[1], date: next, days: Math.round((next - today) / DAY), age: next.getFullYear() - c[2], m: c[3], d: c[4] };
+    }).sort(function(a, b){ return a.days - b.days || a.name.localeCompare(b.name, el ? 'el' : 'en'); });
+  }
+  function when(it){
+    var d = fWhen.format(it.date);
+    d = d.charAt(0).toUpperCase() + d.slice(1);
+    return d + ' · ' + (it.days === 0 ? (el ? 'Σήμερα' : 'Today') : rel.format(it.days, 'day'));
+  }
+  function render(i){
+    var t = TODAYS[i], today = new Date(2026, t[1] - 1, t[0]);
+    title.textContent = fTitle.format(today);
+    list.innerHTML = items(today).map(function(it){
+      return '<div class="bd-row"><span class="nt-av">'+it.name.charAt(0)+'</span><span class="bd-main"><b>'+it.name+'</b><small'+(it.days === 0 ? ' class="now"' : '')+'>'+when(it)+'</small></span>' +
+        '<span class="bd-side"><b>'+CAKE+' '+it.age+'</b><small>'+zodiac(it.m, it.d)+'</small></span></div>';
+    }).join('');
+    chipBtns.forEach(function(b, k){ b.setAttribute('aria-pressed', k === i); });
+  }
+
+  var idx = 0, manual = false, timer = null;
+  function stop(){ clearInterval(timer); timer = null; }
+  function start(){ if (!timer && !manual) timer = setInterval(function(){ idx = (idx + 1) % TODAYS.length; render(idx); }, 3600); }
+
+  screen.hidden = false; fb.hidden = true;
+  render(0);
+  chipBtns.forEach(function(b){ b.addEventListener('click', function(){ manual = true; stop(); idx = +b.dataset.t; render(idx); }); });
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(es){ es[0].isIntersecting ? start() : stop(); }, { threshold: .5 })
+      .observe(root.querySelector('.demo-device'));
+  }
+})();
+</script>

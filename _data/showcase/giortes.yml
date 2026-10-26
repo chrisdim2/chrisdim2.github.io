@@ -7,6 +7,8 @@
 
 # demos: διαδραστικά mockups από _includes/demo-<όνομα>.html, μετά τη γκαλερί.
 demos:
+  - today
+  - birthdays
   - names
 
 stage:
