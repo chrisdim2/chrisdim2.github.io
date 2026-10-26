@@ -2,6 +2,7 @@
 # Οι εικόνες είναι screenshots από τον προσομοιωτή (iPhone 17 Pro Max, ανοιχτό θέμα, 26/10/2026) με φανταστικές επαφές επίδειξης
 # (ωμές εικόνες: ~/Library/Caches/dimakis-giortes-shots/, επαφές: demo-contacts.vcf). Μετατροπή σε 780×1694 webp με PIL.
 # src: ελληνικό UI, src_en: αγγλικό UI. iPad: iPad Pro 13″ M5 οριζόντιο (2752×2064 → 1600×1200 webp), όπως το Chronos.
+# Βίντεο: video_work/clips/<γλώσσα>.mp4 (εγγραφή simctl) → render (Marketing/tools) → web 2 Mbps → assets/video/giortes-<γλώσσα>.mp4.
 # Σαν σήμερα: δεν μπήκε screenshot, τα γεγονότα της ημέρας βγαίνουν από τη Wikipedia και δεν ελέγχονται (την 26/10 έβγαζαν σεισμό και επίθεση).
 
 stage:
@@ -65,3 +66,14 @@ groups:
         src_en: /assets/screens/giortes/ipad/en/giortes-ipad-05-worlddays.webp
         el: 'Παγκόσμιες ημέρες του ΟΗΕ και της UNESCO'
         en: 'World days of the UN and UNESCO'
+  - id: video
+    device: video
+    label_el: Βίντεο
+    label_en: Video
+    video:
+      src: /assets/video/giortes-el.mp4
+      src_en: /assets/video/giortes-en.mp4
+      poster: /assets/screens/giortes/video/giortes-poster-el.webp
+      poster_en: /assets/screens/giortes/video/giortes-poster-en.webp
+      el: 'Το Chronos Γιορτές σε δράση'
+      en: 'Chronos Celebrations in action'
