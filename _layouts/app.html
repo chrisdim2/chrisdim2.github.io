@@ -191,7 +191,7 @@ layout: default
   })();
   </script>
 
-  {% for d in sc.demos %}{% if d == 'quickadd' %}{% include demo-quickadd.html %}{% endif %}{% if d == 'views' %}{% include demo-views.html %}{% endif %}{% if d == 'weather' %}{% include demo-weather.html %}{% endif %}{% if d == 'names' %}{% include demo-names.html %}{% endif %}{% if d == 'search' %}{% include demo-search.html %}{% endif %}{% if d == 'albums' %}{% include demo-albums.html %}{% endif %}{% if d == 'trips' %}{% include demo-trips.html %}{% endif %}{% if d == 'today' %}{% include demo-today.html %}{% endif %}{% if d == 'birthdays' %}{% include demo-birthdays.html %}{% endif %}{% endfor %}
+  {% for d in sc.demos %}{% if d == 'quickadd' %}{% include demo-quickadd.html %}{% endif %}{% if d == 'views' %}{% include demo-views.html %}{% endif %}{% if d == 'weather' %}{% include demo-weather.html %}{% endif %}{% if d == 'names' %}{% include demo-names.html %}{% endif %}{% if d == 'shift' %}{% include demo-shift.html %}{% endif %}{% if d == 'rename' %}{% include demo-rename.html %}{% endif %}{% if d == 'privacy' %}{% include demo-privacy.html %}{% endif %}{% if d == 'search' %}{% include demo-search.html %}{% endif %}{% if d == 'albums' %}{% include demo-albums.html %}{% endif %}{% if d == 'trips' %}{% include demo-trips.html %}{% endif %}{% if d == 'today' %}{% include demo-today.html %}{% endif %}{% if d == 'birthdays' %}{% include demo-birthdays.html %}{% endif %}{% endfor %}
 
   {% elsif app.screenshots and app.screenshots.size > 0 %}
   <section class="gallery">

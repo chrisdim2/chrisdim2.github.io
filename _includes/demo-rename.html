@@ -1,0 +1,102 @@
+{% comment %}
+Διαδραστικό mockup: η «Μετονομασία» του Iris (RenameView.swift, MetaCore/RenameEngine.swift) σε Mac. Προσομοίωση με 8 αρχεία από το screenshot της γκαλερί
+(στο screenshot είναι 29, εδώ οι πρώτοι 8). Κανόνες όπως στην εφαρμογή: όνομα = πρόθεμα + αριθμός με αρχικά μηδενικά (Ψηφία) + επίθεμα· ο αριθμός ξεκινά από το «Έναρξη» και
+αυξάνεται κατά «Βήμα»· η αρίθμηση ακολουθεί τη σειρά ταξινόμησης (Όνομα ή Ημερομηνία) και αφορά ΟΛΑ τα αρχεία της λίστας· «Πρώτο όνομα» από το baseName. Δεν περιλαμβάνονται:
+η συνέχεια από φάκελο, ο έλεγχος διπλοτύπων και οι κεφαλαίες καταλήξεις. Χωρίς JS μένει το screenshot.
+{% endcomment %}
+{% assign el = false %}{% if page.lang == 'el' %}{% assign el = true %}{% endif %}
+<section class="block demo demo-wide" id="demo-rename" aria-labelledby="demo-rename-h">
+  <div class="demo-text">
+    <h2 id="demo-rename-h">{% if el %}Μετονομασία με αρίθμηση και προεπισκόπηση{% else %}Rename with numbering and a preview{% endif %}</h2>
+    <p>{% if el %}Όρισε πρόθεμα, επίθεμα, αριθμό έναρξης, ψηφία και βήμα, και δες πριν από κάθε αλλαγή πώς θα γίνει κάθε όνομα. Άλλαξε τα πεδία ή διάλεξε ένα έτοιμο μοτίβο:{% else %}Set a prefix, suffix, start number, digits and step, and see how every name will turn out before anything changes. Edit the fields or pick a ready pattern:{% endif %}</p>
+    <div class="demo-chips" role="group" aria-label="{% if el %}Έτοιμα μοτίβα{% else %}Ready patterns{% endif %}">
+      <button type="button" class="demo-chip" data-p="0" aria-pressed="true">2026 (001)</button>
+      <button type="button" class="demo-chip" data-p="1" aria-pressed="false">{% if el %}Πουλί_0100{% else %}Bird_0100{% endif %}</button>
+      <button type="button" class="demo-chip" data-p="2" aria-pressed="false">{% if el %}Ταξίδι 5, 10, 15…{% else %}Trip 5, 10, 15…{% endif %}</button>
+    </div>
+    <p class="demo-note">{% if el %}Απλοποιημένη προσομοίωση με 8 δείγμα αρχεία. Δεν μετονομάζεται τίποτα. Η εφαρμογή ελέγχει επίσης για διπλότυπα και συνεχίζει την αρίθμηση από τον φάκελο που ήδη έχεις.{% else %}A simplified simulation with 8 sample files. Nothing is renamed. The app also checks for duplicates and continues the numbering from the folder you already have.{% endif %}</p>
+  </div>
+
+  <figure class="demo-win" aria-label="{% if el %}Προσομοίωση της μετονομασίας στο Iris για Mac{% else %}Simulation of renaming in Iris for Mac{% endif %}">
+    <img class="ir-fallback" src="{{ '/assets/screens/iris/mac/' | append: page.lang | append: '/iris-mac-06-rename.webp' | relative_url }}" alt="{% if el %}Η μετονομασία στο Iris{% else %}Renaming in Iris{% endif %}" loading="lazy">
+    {% include iris-win.html tab=1 %}
+  </figure>
+</section>
+<script>
+(function(){
+  var root = document.getElementById('demo-rename');
+  if (!root) return;
+  var el = {% if el %}true{% else %}false{% endif %};
+  var I = window.IRIS, win = root.querySelector('.ir'), fb = root.querySelector('.ir-fallback');
+  var T = el ? { count:'8 αρχεία στη λίστα', note:'Η μετονομασία αφορά ΟΛΑ τα αρχεία της λίστας, όχι μόνο τα επιλεγμένα. Η σειρά αρίθμησης καθορίζεται από την ταξινόμηση παρακάτω (Όνομα/Ημερομηνία).',
+                 pat:'Μοτίβο', prefix:'Πρόθεμα', suffix:'Επίθεμα', start:'Έναρξη', digits:'Ψηφία', step:'Βήμα', first:'Πρώτο όνομα: ', prev:'Προεπισκόπηση', changes:' αλλαγές', order:'Σειρά αρίθμησης', name:'Όνομα', date:'Ημερομηνία' }
+             : { count:'8 files in the list', note:'Renaming applies to ALL files in the list, not just the selected ones. Files are numbered in the sort order below (Name/Date).',
+                 pat:'Pattern', prefix:'Prefix', suffix:'Suffix', start:'Start', digits:'Digits', step:'Step', first:'First file: ', prev:'Preview', changes:' changes', order:'Numbering Order', name:'Name', date:'Date' };
+  var PRESETS = [{ p:'2026 (', s:')', st:1, d:3, k:1 }, { p:el ? 'Πουλί_' : 'Bird_', s:'', st:100, d:4, k:1 }, { p:el ? 'Ταξίδι ' : 'Trip ', s:'', st:5, d:2, k:5 }];
+  var S = { p:'2026 (', s:')', st:1, d:3, k:1, order:'date' };
+  var side = win.querySelector('.ir-files'), main = win.querySelector('.ir-main');
+  var names = I.FILES.map(function(f){ return f[0]; });
+
+  // RenamePattern.baseName: πρόθεμα + αριθμός με μηδενικά μέχρι τα «ψηφία» + επίθεμα.
+  function base(n){ return S.p + I.pad(n, S.d) + S.s; }
+  // Σειρά αρίθμησης: ημερομηνία (και μετά όνομα) ή όνομα.
+  function sorted(){
+    var idx = names.map(function(_, i){ return i; });
+    idx.sort(function(a, b){
+      if (S.order === 'date'){
+        var da = I.toDate(I.FILES[a][1]) - I.toDate(I.FILES[b][1]); if (da) return da;
+      }
+      return names[a].localeCompare(names[b], 'en', { numeric: false });
+    });
+    return idx;
+  }
+  function renderSide(){
+    I.renderFiles(el, side, I.FILES.map(function(f, i){ return { name: f[0], date: f[1], loc: !!f[2], sel: i === 2 }; }));
+  }
+  function field(label, key, w, num){
+    return '<label><small>' + label + '</small><input type="' + (num ? 'number' : 'text') + '"' + (num ? ' min="' + (key === 'd' || key === 'k' ? 1 : 0) + '"' : '') + ' value="' + String(S[key]).replace(/"/g, '&quot;') + '" data-k="' + key + '" style="width:calc(var(--u)*' + w + ')" aria-label="' + label + '" autocomplete="off" spellcheck="false"></label>';
+  }
+  function rows(){
+    var order = sorted(), out = [];
+    order.forEach(function(i, k){
+      var n = S.st + k * S.k;
+      out.push('<div class="ir-pv"><span>' + names[i] + '</span><i>&rarr;</i><b>' + base(n) + '.jpg</b></div>');
+    });
+    return out.join('');
+  }
+  function renderMain(keep){
+    main.innerHTML =
+      '<div class="ir-h1"><b>' + T.count + '</b></div><p class="ir-sm">' + T.note + '</p><hr>' +
+      '<h4><b class="abc">Abc</b> ' + T.pat + '</h4>' +
+      '<div class="ir-fields">' + field(T.prefix, 'p', 200) + field(T.suffix, 's', 90) + field(T.start, 'st', 130, true) + field(T.digits, 'd', 120, true) + field(T.step, 'k', 120, true) + '</div>' +
+      '<p class="ir-sm ir-first">' + T.first + base(S.st) + '</p><hr>' +
+      '<div class="ir-pvh"><h4>' + T.prev + '</h4><small>8' + T.changes + '</small></div>' +
+      '<div class="ir-order"><span>' + T.order + '</span><button type="button" data-o="name"' + (S.order === 'name' ? ' class="on"' : '') + '>' + T.name + '</button><button type="button" data-o="date"' + (S.order === 'date' ? ' class="on"' : '') + '>' + T.date + '</button></div>' +
+      '<div class="ir-prev">' + rows() + '</div>';
+  }
+  function refresh(){   // μόνο η προεπισκόπηση και το «πρώτο όνομα»: τα πεδία δεν ξαναχτίζονται όσο πληκτρολογείς
+    main.querySelector('.ir-first').textContent = T.first + base(S.st);
+    main.querySelector('.ir-prev').innerHTML = rows();
+  }
+  main.addEventListener('input', function(e){
+    var i = e.target.closest('input[data-k]'); if (!i) return;
+    var k = i.dataset.k;
+    if (k === 'p' || k === 's') S[k] = i.value;
+    else S[k] = Math.max(k === 'd' || k === 'k' ? 1 : 0, parseInt(i.value, 10) || (k === 'd' || k === 'k' ? 1 : 0));
+    root.querySelectorAll('[data-p]').forEach(function(b){ b.setAttribute('aria-pressed', false); });
+    refresh();
+  });
+  main.addEventListener('click', function(e){
+    var o = e.target.closest('[data-o]'); if (!o) return;
+    S.order = o.dataset.o; renderMain();
+  });
+  root.querySelectorAll('[data-p]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var p = PRESETS[+b.dataset.p]; S.p = p.p; S.s = p.s; S.st = p.st; S.d = p.d; S.k = p.k;
+      root.querySelectorAll('[data-p]').forEach(function(x){ x.setAttribute('aria-pressed', x === b); });
+      renderMain();
+    });
+  });
+  win.hidden = false; fb.hidden = true; renderSide(); renderMain();
+})();
+</script>

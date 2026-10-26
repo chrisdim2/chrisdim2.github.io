@@ -1,0 +1,44 @@
+{% comment %}
+Παράθυρο του Iris για τα mockups (demo-shift, demo-rename, demo-privacy): αριστερά η λίστα αρχείων (σκούρα), δεξιά ο χώρος της κάθε επίδειξης (.ir-main).
+Η λίστα είναι 8 αρχεία από το screenshot της γκαλερί (ονόματα, ημερομηνίες, μικρογραφίες). include.tab: 0 Metadata, 1 Renaming. Χωρίς JS μένει το screenshot.
+{% endcomment %}
+{% assign el = false %}{% if page.lang == 'el' %}{% assign el = true %}{% endif %}
+<div class="ir" hidden>
+  <div class="ir-side">
+    <div class="ir-lights" aria-hidden="true"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div>
+    <div class="ir-tools" aria-hidden="true"><span>+</span><span>&minus;</span><span>&#8635;</span><button type="button" class="ir-undo" aria-label="{% if el %}Αναίρεση{% else %}Undo{% endif %}" disabled>&#8630;</button></div>
+    <div class="ir-path" aria-hidden="true">/Users/Home/Pictures/Birds</div>
+    <div class="ir-sort" aria-hidden="true"><span>{% if el %}Ταξινόμηση{% else %}Sort{% endif %}</span><b>{% if el %}Όνομα{% else %}Name{% endif %}</b><b class="on">{% if el %}Ημερομηνία{% else %}Date{% endif %}</b></div>
+    <div class="ir-files"></div>
+  </div>
+  <div class="ir-pane">
+    <div class="ir-title" aria-hidden="true">Iris</div>
+    <div class="ir-seg" aria-hidden="true"><b{% if include.tab == 0 %} class="on"{% endif %}>Metadata</b><b{% if include.tab == 1 %} class="on"{% endif %}>{% if el %}Μετονομασία{% else %}Renaming{% endif %}</b></div>
+    <div class="ir-main"></div>
+  </div>
+</div>
+<script>
+window.IRIS = window.IRIS || (function(){
+  var base = {{ '/assets/screens/iris/demo/' | relative_url | jsonify }};
+  var FILES = [
+    ['20170923_200400000_iOS.jpg', [2017, 9, 23, 12, 0], 1], ['20210924_200500000_iOS.jpg', [2019, 9, 24, 12, 0], 0],
+    ['20260723_195700000_iOS.jpg', [2020, 7, 23, 12, 0], 1], ['20260723_195800000_iOS 1 1.jpg', [2020, 7, 23, 12, 0], 1],
+    ['20260723_195800000_iOS 1.jpg', [2021, 7, 23, 12, 0], 1], ['20260723_195800000_iOS.jpg', [2021, 7, 23, 12, 0], 1],
+    ['20260820_195600000_iOS 1.jpg', [2022, 8, 20, 12, 0], 1], ['20260820_195700000_iOS 1.jpg', [2023, 8, 20, 12, 0], 1]
+  ];
+  var pad = function(n, w){ n = String(n); while (n.length < (w || 2)) n = '0' + n; return n; };
+  // Ώρα ρολογιού χωρίς ζώνη: κρατιέται ως UTC μόνο για την αριθμητική, όπως η ClockTime της εφαρμογής (η μετατόπιση γίνεται στο ημερολόγιο που θα γραφτεί).
+  var toDate = function(a){ return new Date(Date.UTC(a[0], a[1] - 1, a[2], a[3], a[4], a[5] || 0)); };
+  var fromDate = function(d){ return [d.getUTCFullYear(), d.getUTCMonth() + 1, d.getUTCDate(), d.getUTCHours(), d.getUTCMinutes(), d.getUTCSeconds()]; };
+  var fmt = function(a){ return a ? pad(a[2]) + '/' + pad(a[1]) + '/' + a[0] + ' ' + pad(a[3]) + ':' + pad(a[4]) : null; };
+  // rows: [{name, date (πίνακας ή null), loc (true/false), sel}]
+  function renderFiles(el, box, rows){
+    box.innerHTML = rows.map(function(r, i){
+      return '<div class="ir-f' + (r.sel ? ' sel' : '') + '"><img src="' + base + 'thumb-' + (i + 1) + '.webp" alt=""><span><b>' + r.name + '</b><small>' +
+        (r.date ? '<em>' + fmt(r.date) + '</em>' : '<em class="warn">' + (el ? 'χωρίς ημ/νία' : 'no date') + '</em>') +
+        (r.loc ? '<em>' + (el ? 'τοποθεσία' : 'location') + '</em>' : '<em class="warn">' + (el ? 'χωρίς τόπο' : 'no location') + '</em>') + '</small></span></div>';
+    }).join('');
+  }
+  return { base: base, FILES: FILES, pad: pad, toDate: toDate, fromDate: fromDate, fmt: fmt, renderFiles: renderFiles };
+})();
+</script>

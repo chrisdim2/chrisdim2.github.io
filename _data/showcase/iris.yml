@@ -2,6 +2,12 @@
 # Οι εικόνες βγαίνουν από το EXIFeditor/Marketing/Screenshots/compose.py (out/site/<γλώσσα>/).
 # src: ελληνικό UI, src_en: αγγλικό UI για την αγγλική σελίδα.
 
+# demos: διαδραστικά mockups από _includes/demo-<όνομα>.html, μετά τη γκαλερί.
+demos:
+  - privacy
+  - shift
+  - rename
+
 stage:
   wide: /assets/screens/iris/mac/el/iris-mac-01-overview.webp
   wide_en: /assets/screens/iris/mac/en/iris-mac-01-overview.webp

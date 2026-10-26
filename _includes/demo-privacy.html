@@ -1,0 +1,76 @@
+{% comment %}
+Διαδραστικό mockup: ο «Καθαρισμός για ιδιωτικότητα» του Iris σε Mac (MetadataEditorView, παράθυρο επιβεβαίωσης «Καθαρισμός όλων των metadata;»). Προσομοίωση με 6 επιλεγμένα αρχεία από το screenshot της γκαλερί.
+Το κείμενο του παραθύρου, τα κουμπιά («Καθαρισμός 6 αρχείων», «Άκυρο») και τα πεδία που σβήνονται (ημερομηνία λήψης, τοποθεσία, κάμερα και φακός, τίτλοι, λέξεις κλειδιά, μικρογραφίες· μένουν ο προσανατολισμός και τα χρώματα)
+είναι από την εφαρμογή. Οι τιμές κάμερας, φακού, τίτλου και λέξεων κλειδιών είναι ΔΕΙΓΜΑ (οι φωτογραφίες επίδειξης δεν έχουν τέτοια). Μετά τον καθαρισμό η λίστα δείχνει «χωρίς ημ/νία» και «χωρίς τόπο»,
+και το «Πριν» των κουμπιών τα επαναφέρει (στην εφαρμογή ο καθαρισμός ΔΕΝ αναιρείται). Χωρίς JS μένει το screenshot.
+{% endcomment %}
+{% assign el = false %}{% if page.lang == 'el' %}{% assign el = true %}{% endif %}
+<section class="block demo demo-wide" id="demo-privacy" aria-labelledby="demo-privacy-h">
+  <div class="demo-text">
+    <h2 id="demo-privacy-h">{% if el %}Καθάρισε τα metadata πριν μοιραστείς{% else %}Clean the metadata before you share{% endif %}</h2>
+    <p>{% if el %}Μια φωτογραφία κρύβει πού και πότε τραβήχτηκε, με ποια συσκευή, και κάθε τίτλο ή λέξη κλειδί. Με έναν καθαρισμό σβήνονται όλα, και η εικόνα μένει ίδια, χωρίς νέα συμπίεση. Πάτησε «Καθαρισμός όλων των metadata» στο παράθυρο:{% else %}A photo reveals where and when it was taken, on which device, and any title or keyword. One clean removes it all, and the image stays exactly the same, with no recompression. Press “Remove All Metadata” in the window:{% endif %}</p>
+    <div class="demo-chips" role="group" aria-label="{% if el %}Κατάσταση{% else %}State{% endif %}">
+      <button type="button" class="demo-chip" data-s="0" aria-pressed="true">{% if el %}Πριν{% else %}Before{% endif %}</button>
+      <button type="button" class="demo-chip" data-s="1" aria-pressed="false">{% if el %}Μετά τον καθαρισμό{% else %}After cleaning{% endif %}</button>
+    </div>
+    <p class="demo-note">{% if el %}Απλοποιημένη προσομοίωση με 8 δείγμα αρχεία και δείγμα τιμών. Δεν αλλάζει κανένα αρχείο. Στην εφαρμογή ο καθαρισμός ΔΕΝ αναιρείται, γι' αυτό ζητά επιβεβαίωση· το «Πριν» εδώ υπάρχει μόνο για την επίδειξη.{% else %}A simplified simulation with 8 sample files and sample values. No file is changed. In the app a clean can’t be undone, which is why it asks first; “Before” here is only for the demo.{% endif %}</p>
+  </div>
+
+  <figure class="demo-win" aria-label="{% if el %}Προσομοίωση του καθαρισμού για ιδιωτικότητα στο Iris για Mac{% else %}Simulation of Clean for Privacy in Iris for Mac{% endif %}">
+    <img class="ir-fallback" src="{{ '/assets/screens/iris/mac/' | append: page.lang | append: '/iris-mac-02-privacy.webp' | relative_url }}" alt="{% if el %}Ο καθαρισμός για ιδιωτικότητα στο Iris{% else %}Clean for Privacy in Iris{% endif %}" loading="lazy">
+    {% include iris-win.html tab=0 %}
+  </figure>
+</section>
+<script>
+(function(){
+  var root = document.getElementById('demo-privacy');
+  if (!root) return;
+  var el = {% if el %}true{% else %}false{% endif %};
+  var I = window.IRIS, win = root.querySelector('.ir'), fb = root.querySelector('.ir-fallback');
+  var T = el ? { sel:'6 επιλεγμένα', photos:'6 φωτογραφίες', title:'Καθαρισμός για ιδιωτικότητα', lead:'Πριν μοιραστείς φωτογραφίες ή βίντεο, σβήσε ό,τι αποκαλύπτουν για σένα: πού και πότε τραβήχτηκαν, με ποια συσκευή, και κάθε τίτλο ή λέξη κλειδί. Η εικόνα μένει ίδια, χωρίς νέα συμπίεση.',
+                 write:'ΕΓΓΡΑΦΗ ΣΤΑ ΑΡΧΕΙΑ', btn:'Καθαρισμός όλων των metadata', dlgT:'Καθαρισμός όλων των metadata;',
+                 dlg:'Θα σβηστούν μέσα από τα αρχεία η ημερομηνία λήψης, η τοποθεσία, η κάμερα και ο φακός, οι τίτλοι, οι λέξεις κλειδιά και οι μικρογραφίες. Μένουν μόνο ο προσανατολισμός και τα χρώματα. Τα Live Photos χωρίζονται σε φωτογραφία και βίντεο. ΔΕΝ αναιρείται.',
+                 ok:'Καθαρισμός 6 αρχείων', cancel:'Άκυρο', kept:'μένει',
+                 rows:[['Ημερομηνία λήψης', '23/07/2020 12:00'], ['Τοποθεσία', '40.725922, -8.206603'], ['Κάμερα και φακός', 'Δείγμα κάμερας · 6,8 mm'], ['Τίτλος', 'Οικογενειακό ταξίδι'], ['Λέξεις κλειδιά', 'οικογένεια, καλοκαίρι'], ['Μικρογραφία', 'ενσωματωμένη'], ['Προσανατολισμός', 'κανονικός'], ['Χρώματα', 'sRGB']] }
+             : { sel:'6 selected', photos:'6 photos', title:'Clean for Privacy', lead:'Before you share photos or videos, remove what they reveal about you: where and when they were taken, on which device, and any title or keyword. The image stays exactly the same, with no recompression.',
+                 write:'WRITE TO FILES', btn:'Remove All Metadata', dlgT:'Remove all metadata?',
+                 dlg:'The capture date, location, camera and lens, titles, keywords and thumbnails will be removed from inside the files. Only the orientation and colors are kept. Live Photos are split into a separate photo and video. This can’t be undone.',
+                 ok:'Remove from 6 Files', cancel:'Cancel', kept:'kept',
+                 rows:[['Capture date', '23/07/2020 12:00'], ['Location', '40.725922, -8.206603'], ['Camera and lens', 'Sample camera · 6.8 mm'], ['Title', 'Family trip'], ['Keywords', 'family, summer'], ['Thumbnail', 'embedded'], ['Orientation', 'normal'], ['Colors', 'sRGB']] };
+  var SEL = [2, 3, 4, 5, 6, 7], KEEP = [6, 7];      // οι δύο τελευταίες γραμμές (προσανατολισμός, χρώματα) δεν σβήνονται
+  var cleaned = false, dlg = false;
+  var side = win.querySelector('.ir-files'), main = win.querySelector('.ir-main'), undo = win.querySelector('.ir-undo');
+  var pane = win.querySelector('.ir-pane');
+
+  function renderSide(){
+    I.renderFiles(el, side, I.FILES.map(function(f, i){
+      var s = SEL.indexOf(i) >= 0;
+      return { name: f[0], date: s && cleaned ? null : f[1], loc: s && cleaned ? false : !!f[2], sel: s };
+    }));
+    undo.disabled = true;   // στην εφαρμογή ο καθαρισμός ΔΕΝ αναιρείται (το λέει το παράθυρο)· το «Πριν» των κουμπιών είναι μόνο για την επίδειξη
+  }
+  function renderMain(){
+    main.innerHTML =
+      '<div class="ir-h1"><b>' + T.sel + '</b><small>' + T.photos + '</small></div><hr>' +
+      '<div class="ir-kv">' + T.rows.map(function(r, i){
+        var gone = cleaned && KEEP.indexOf(i) < 0;
+        return '<div class="ir-r' + (gone ? ' gone' : '') + '"><span>' + r[0] + '</span><b>' + (gone ? '&mdash;' : r[1]) + '</b></div>'; }).join('') + '</div><hr>' +
+      '<h4><svg viewBox="0 0 24 24" width="22" height="22"><path d="M3 12s3.500-6 9-6 9 6 9 6-3.500 6-9 6-9-6-9-6z" fill="none" stroke="#000" stroke-width="2"/><path d="M4 4l16 16" stroke="#000" stroke-width="2"/></svg> ' + T.title + '</h4>' +
+      '<p class="ir-sm">' + T.lead + '</p>' +
+      '<div class="ir-box"><small>' + T.write + '</small><button type="button" class="ir-btn ir-clean" style="color:#c0261b">&#128065; ' + T.btn + '</button></div>' +
+      (dlg ? '<div class="ir-dim"></div><div class="ir-dlg" role="alertdialog" aria-label="' + T.dlgT + '"><b>' + T.dlgT + '</b><p>' + T.dlg + '</p><button type="button" class="ir-ok">' + T.ok + '</button><button type="button" class="ir-cancel">' + T.cancel + '</button></div>' : '');
+  }
+  function paint(){
+    renderSide(); renderMain();
+    root.querySelectorAll('[data-s]').forEach(function(b, k){ b.setAttribute('aria-pressed', (k === 1) === cleaned); });
+    pane.classList.toggle('dimmed', dlg);
+  }
+  main.addEventListener('click', function(e){
+    if (e.target.closest('.ir-clean')){ dlg = true; paint(); }
+    else if (e.target.closest('.ir-cancel')){ dlg = false; paint(); }
+    else if (e.target.closest('.ir-ok')){ dlg = false; cleaned = true; paint(); }
+  });
+  root.querySelectorAll('[data-s]').forEach(function(b){ b.addEventListener('click', function(){ cleaned = b.dataset.s === '1'; dlg = false; paint(); }); });
+  win.hidden = false; fb.hidden = true; paint();
+})();
+</script>

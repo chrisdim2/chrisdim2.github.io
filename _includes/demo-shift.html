@@ -1,0 +1,100 @@
+{% comment %}
+Διαδραστικό mockup: η «Μετατόπιση» ημερομηνίας του Iris (MetadataEditorView → AppModel.shiftDates, ClockTime.shift, DateShift) σε Mac. Προσομοίωση με 6 επιλεγμένα αρχεία από το screenshot της γκαλερί
+(23/07/2020 ×2, 23/07/2021 ×2, 20/08/2022, 20/08/2023, όλα 12:00). Κανόνες όπως στην εφαρμογή: κάθε αρχείο κρατά τη δική του ώρα, απλά μετακινημένη, και η σειρά και οι αποστάσεις μένουν ίδιες·
+οι χρόνια, μέρες, ώρες, λεπτά και δευτερόλεπτα προστίθενται στο ημερολόγιο της ζώνης που θα γραφτεί (εδώ ώρα ρολογιού, χωρίς ζώνη)· μηδενική μετατόπιση δίνει σφάλμα, η περιγραφή είναι «+1χρ 3η 2ω»·
+ο πίνακας αρχείων ενημερώνεται μετά τη μετατόπιση και η αναίρεση τα επαναφέρει. Οι ημερομηνίες 2017 και 2019 δεν είναι επιλεγμένες. Χωρίς JS μένει το screenshot.
+{% endcomment %}
+{% assign el = false %}{% if page.lang == 'el' %}{% assign el = true %}{% endif %}
+<section class="block demo demo-wide" id="demo-shift" aria-labelledby="demo-shift-h">
+  <div class="demo-text">
+    <h2 id="demo-shift-h">{% if el %}Διόρθωσε την ώρα σε πολλές φωτογραφίες μαζί{% else %}Fix the time on many photos at once{% endif %}</h2>
+    <p>{% if el %}Ρολόι σε λάθος ζώνη ώρας; Διάλεξε τα αρχεία και μετακίνησε την ώρα τους. Το κάθε αρχείο κρατά τη δική του ώρα, και η μεταξύ τους απόσταση δεν αλλάζει. Δοκίμασε μία μετατόπιση, πάτησε το κουμπί, και δες τη λίστα:{% else %}Camera clock on the wrong time zone? Pick the files and move their time. Each file keeps its own time, and the gaps between them stay the same. Try a shift, press the button, and watch the list:{% endif %}</p>
+    <div class="demo-chips" role="group" aria-label="{% if el %}Έτοιμες μετατοπίσεις{% else %}Quick shifts{% endif %}">
+      <button type="button" class="demo-chip" data-p="0">{% if el %}+2 ώρες{% else %}+2 hours{% endif %}</button>
+      <button type="button" class="demo-chip" data-p="1">{% if el %}+3 μέρες{% else %}+3 days{% endif %}</button>
+      <button type="button" class="demo-chip" data-p="2">{% if el %}+1 χρόνος, +30 λεπτά{% else %}+1 year, +30 minutes{% endif %}</button>
+    </div>
+    <p class="demo-note">{% if el %}Απλοποιημένη προσομοίωση με 8 δείγμα αρχεία. Δεν αλλάζει κανένα αρχείο. Στην εφαρμογή μπορείς να αναιρέσεις και να δεις το ιστορικό αλλαγών.{% else %}A simplified simulation with 8 sample files. No file is changed. In the app you can undo and see the change history.{% endif %}</p>
+  </div>
+
+  <figure class="demo-win" aria-label="{% if el %}Προσομοίωση της μετατόπισης ημερομηνίας στο Iris για Mac{% else %}Simulation of the date shift in Iris for Mac{% endif %}">
+    <img class="ir-fallback" src="{{ '/assets/screens/iris/mac/' | append: page.lang | append: '/iris-mac-05-shift.webp' | relative_url }}" alt="{% if el %}Η μετατόπιση ημερομηνίας στο Iris{% else %}The date shift in Iris{% endif %}" loading="lazy">
+    {% include iris-win.html tab=0 %}
+  </figure>
+</section>
+<script>
+(function(){
+  var root = document.getElementById('demo-shift');
+  if (!root) return;
+  var el = {% if el %}true{% else %}false{% endif %};
+  var I = window.IRIS, win = root.querySelector('.ir'), fb = root.querySelector('.ir-fallback');
+  var T = el ? { sel:'6 επιλεγμένα', photos:'6 φωτογραφίες', cap:'Ημερομηνία λήψης', shift:'Μετατόπιση', reset:'Μηδενισμός', write:'ΕΓΓΡΑΦΗ ΣΤΑ ΑΡΧΕΙΑ', del:'Διαγραφή ημερομηνίας',
+                 u:['Χρόνια','Μέρες','Ώρες','Λεπτά','Δευτ.'], ab:['χρ','η','ω','λ','δ'], zero:'Η μετατόπιση είναι μηδέν. Δώσε χρόνια, μέρες, ώρες ή λεπτά.',
+                 info:'Κάθε αρχείο κρατάει τη δική του ώρα και τη δική του ζώνη, απλά μετακινημένη. Η μεταξύ τους σειρά και απόσταση δεν αλλάζει, σε αντίθεση με το να βάλεις μία κοινή ημερομηνία σε όλα.',
+                 done:function(s){ return 'Κάθε αρχείο κρατάει τη δική του ώρα, απλά μετακινημένη κατά ' + s + '. Η σειρά μεταξύ τους δεν αλλάζει. Μπορείς να το αναιρέσεις.'; },
+                 btn:function(s){ return 'Μετατόπιση ' + s + ' σε 6 αρχεία'; } }
+             : { sel:'6 selected', photos:'6 photos', cap:'Capture Date', shift:'Shift', reset:'Reset', write:'WRITE TO FILES', del:'Delete Date',
+                 u:['Years','Days','Hours','Minutes','Seconds'], ab:['y','d','h','m','s'], zero:'The shift is zero. Enter some years, days, hours, or minutes.',
+                 info:'Each file keeps its own time and time zone, just shifted. Their order and the gaps between them stay the same — unlike setting one date for all of them.',
+                 done:function(s){ return 'Each file keeps its own time, just shifted by ' + s + '. Their order stays the same. You can undo this.'; },
+                 btn:function(s){ return 'Shift by ' + s + ' (6 files)'; } };
+  var SEL = [2, 3, 4, 5, 6, 7];            // τα 6 επιλεγμένα αρχεία (δείκτες στη λίστα)
+  var dates = I.FILES.map(function(f){ return f[1].slice(); });
+  var before = null, vals = [0, 0, 0, 0, 0];
+  var PRESETS = [[0, 0, 2, 0, 0], [0, 3, 0, 0, 0], [1, 0, 0, 30, 0]];
+  var side = win.querySelector('.ir-files'), main = win.querySelector('.ir-main'), undo = win.querySelector('.ir-undo');
+
+  // DateShift.describedShort: το πρόσημο από το πιο χοντρό πεδίο, μετά τα πεδία που δεν είναι μηδέν.
+  function describe(v){
+    var parts = [];
+    v.forEach(function(x, k){ if (x) parts.push(Math.abs(x) + T.ab[k]); });
+    return parts.length ? '+' + parts.join(' ') : '0';
+  }
+  function apply(a, v){
+    var d = I.toDate([a[0] + v[0], a[1], a[2], a[3], a[4], 0]);          // χρόνια (ημερολόγιο), μετά μέρες και ώρα
+    d = new Date(d.getTime() + ((v[1] * 24 + v[2]) * 60 + v[3]) * 60000 + v[4] * 1000);
+    return I.fromDate(d).slice(0, 5);
+  }
+  function renderSide(){
+    I.renderFiles(el, side, I.FILES.map(function(f, i){ return { name: f[0], date: f[2] || i === 1 ? dates[i] : dates[i], loc: !!f[2], sel: SEL.indexOf(i) >= 0 }; }));
+    undo.disabled = !before;
+  }
+  var msg = '';
+  function renderMain(){
+    var s = describe(vals), first = dates[SEL[0]];
+    var field = new Date(Date.UTC(first[0], first[1] - 1, first[2], first[3], first[4])).toLocaleString(el ? 'el-GR' : 'en-US', { timeZone: 'UTC', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: '2-digit', second: '2-digit' });
+    main.innerHTML =
+      '<div class="ir-h1"><b>' + T.sel + '</b><small>' + T.photos + '</small></div><hr>' +
+      '<h4><svg viewBox="0 0 24 24" width="22" height="22"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="#000" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="#000" stroke-width="2"/></svg> ' + T.cap + '</h4>' +
+      '<div class="ir-date">' + field + '</div>' +
+      '<div class="ir-sh"><span>' + T.shift + ' <b>' + (s === '0' ? '' : s) + '</b></span><button type="button" class="ir-reset">' + T.reset + '</button></div>' +
+      '<div class="ir-steps">' + T.u.map(function(u, k){ return '<label><small>' + u + '</small><input type="number" min="0" value="' + vals[k] + '" data-k="' + k + '" aria-label="' + u + '"></label>'; }).join('') + '</div>' +
+      '<p class="ir-sm">' + T.info + '</p>' +
+      '<div class="ir-box"><small>' + T.write + '</small><button type="button" class="ir-btn ir-go">&#8644; ' + T.btn(s) + '</button><div class="ir-btn ghost">&#128465; ' + T.del + '</div></div>' +
+      (msg ? '<p class="ir-msg">' + msg + '</p>' : '');
+  }
+  function paint(){ renderSide(); renderMain(); }
+  function setVals(v){ vals = v.slice(); msg = ''; paint(); }
+
+  main.addEventListener('input', function(e){
+    var i = e.target.closest('input[data-k]'); if (!i) return;
+    vals[+i.dataset.k] = Math.max(0, parseInt(i.value, 10) || 0);
+    var s = describe(vals);
+    root.querySelector('.ir-sh b').textContent = s === '0' ? '' : s;
+    root.querySelector('.ir-go').innerHTML = '&#8644; ' + T.btn(s);
+  });
+  main.addEventListener('click', function(e){
+    if (e.target.closest('.ir-reset')){ setVals([0, 0, 0, 0, 0]); return; }
+    if (e.target.closest('.ir-go')){
+      if (vals.every(function(x){ return !x; })){ msg = '<span class="err">' + T.zero + '</span>'; renderMain(); return; }
+      before = dates.map(function(d){ return d.slice(); });
+      SEL.forEach(function(i){ dates[i] = apply(dates[i], vals); });
+      msg = T.done(describe(vals)); paint();
+    }
+  });
+  undo.addEventListener('click', function(){ if (!before) return; dates = before; before = null; msg = ''; paint(); });
+  root.querySelectorAll('[data-p]').forEach(function(b){ b.addEventListener('click', function(){ setVals(PRESETS[+b.dataset.p]); }); });
+
+  win.hidden = false; fb.hidden = true; paint();
+})();
+</script>
