@@ -12,7 +12,7 @@
 | `images/profile.png` | Εικόνα καναλιού |
 | `images/youtube-banner.jpg` | Banner 2560×1440 (το περιεχόμενο στη ζώνη 1546×423, φαίνεται σε κινητό, υπολογιστή και TV) |
 | `images/youtube-watermark.png` | Υδατογράφημα 150×150 (Προσαρμογή → Branding → Υδατογράφημα βίντεο, «Τέλος βίντεο») |
-| `video/chronos-trailer-en.mp4`, `video/apollo-trailer-en.mp4` | Τα βίντεο του site με τελική κάρτα «Coming in December» / «Coming soon» αντί για «Available on the App Store» |
+| `video/chronos-trailer-en.mp4`, `video/apollo-trailer-en.mp4` | Τα βίντεο του site με την τελική κάρτα «Available on the App Store»· ανεβαίνουν ΜΟΝΟ μετά την κυκλοφορία (ποτέ «Coming…» μέσα σε βίντεο, εντολή Χρήστου 27/10/2026) |
 | `images/yt-thumb-*.jpg` | Μικρογραφίες 1280×720 για τους 3 οριζόντιους οδηγούς του Iris |
 | `images/yt-endcard-*.png` | Τελική κάρτα 1080×1920 για τα Shorts (τα τελευταία 3″) |
 | `shorts.yml` | Σενάρια των 9 Shorts: σκηνές, χρόνοι, κείμενο οθόνης, τι να εγγραφεί |
@@ -84,7 +84,7 @@ It also keeps what usually ends up scattered across notes and reminders: countdo
 
 Your data stays on your devices and in your own iCloud. 32 languages.
 
-Arrives in December. Get notified: https://dimakis.app/en/chronos/
+Coming soon. Get notified: https://dimakis.app/en/chronos/
 
 #Chronos #CalendarApp #iPhoneApps
 ```
@@ -100,7 +100,7 @@ Chronos: ημερολόγιο για iPhone, iPad, Mac και Apple Watch που
 
 Τα δεδομένα σου μένουν στις συσκευές σου και στο δικό σου iCloud. 32 γλώσσες.
 
-Έρχεται τον Δεκέμβριο. Ειδοποίηση: https://dimakis.app/chronos/
+Έρχεται σύντομα. Ειδοποίηση: https://dimakis.app/chronos/
 
 #Chronos #CalendarApp #iPhoneApps
 ```

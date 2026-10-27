@@ -69,8 +69,8 @@
 
 | # | Εφαρμογή | Υπότιτλος (EN) | Συσκευές | Κατάσταση |
 |---|---|---|---|---|
-| 1 | Chronos Calendar | Calendar | iPhone, iPad, Mac, Watch | Δεκέμβριος (ναυαρχίδα) |
-| 2 | **Chronos Γιορτές** (EN: **Chronos Celebrations**) | Name Days & Birthdays | iPhone, iPad | δωρεάν, Νοέμβριος |
+| 1 | Chronos Calendar | Calendar | iPhone, iPad, Mac, Watch | σύντομα (ναυαρχίδα) |
+| 2 | **Chronos Γιορτές** (EN: **Chronos Celebrations**) | Name Days & Birthdays | iPhone, iPad | δωρεάν, Δεκέμβριος |
 | 3 | Apollo | Cloud Photo Gallery | iPhone, iPad, Mac | σε ανάπτυξη |
 | 4 | Iris | EXIFeditor | Mac | σε ανάπτυξη |
 | 5 | Argus | PDF & Doc Scanner | iPhone, iPad (όχι Mac, απόφαση 21/10) | σε ανάπτυξη |
@@ -80,7 +80,7 @@
 | 9 | **Chronos Hospitality** | Stays & Bookings Management (Διαχείριση Καταλυμάτων και Κρατήσεων) | iPhone, iPad, Mac, Web | **σε σχεδιασμό** (planned) |
 
 - Το **Chronos Hospitality** είναι ο διάδοχος της Hestia (αφαιρέθηκε). Το **ΔΙΟΝΥΣΟΣ δεν υπάρχει πια**· η εφαρμογή «Γιορτές» είναι το **Chronos Γιορτές**.
-- Γιορτές: φτιάχνεται από έτοιμο κομμάτι του Chronos, **δωρεάν τον Νοέμβριο** ως δοκιμή πριν το Chronos του Δεκεμβρίου. Έχει και γενέθλια, άρα ο τίτλος δεν είναι «Name Day» (και ποτέ «Names Day»). Φάκελος `~/Developer/NamedaysApp`.
+- Γιορτές: φτιάχνεται από έτοιμο κομμάτι του Chronos, **δωρεάν τον Δεκέμβριο** ως δοκιμή πριν το Chronos (σύντομα). Έχει και γενέθλια, άρα ο τίτλος δεν είναι «Name Day» (και ποτέ «Names Day»). Φάκελος `~/Developer/NamedaysApp`.
 - Ελληνικά: «Chronos Γιορτές» (η λέξη «Γιορτές» μένει για την αναζήτηση στο App Store). Αγγλικά: «Chronos Celebrations». Στο `apps.yml` τα αγγλικά είναι τα προαιρετικά `title_en`, `full_name_en`, `logo_en`, `logo_size_en`, `og_image_en` (και στο `admin/config.yml`). Το `_includes/app_i18n.html` διαλέγει όνομα και λογότυπο ανά γλώσσα.
 - Εικονίδια: ημερολόγιο με χρωματιστή κορυφή και σύμβολο σε δύο τόνους (Chronos μπλε, Roster μοβ, Fleet πράσινο, Hospitality κυανό, Γιορτές κόκκινο). Φάκελοι `~/Developer/<App>/Icons/` (Light, Dark, Tinted + `Assets.xcassets` + `Source/` SVG). Σύμβολα: Roster χρονοδιάγραμμα, Fleet ταχύμετρο, Hospitality διάστημα διαμονής, Γιορτές δώρο.
 - Λογότυπα: `~/Developer/Logos/logos/{roster,fleet,hospitality,giortes,celebrations}` (έμβλημα χρυσό από γραμμές, «CHRONOS» και από κάτω το όνομα, στην Olympos). Χτίζονται από `Logos/tools/build.py` (δίγραμμο όνομα με `Word2`).
@@ -124,8 +124,9 @@
 - Οι εικόνες φτιάχνονται με `node _tools/social_images.js` (Playwright και Chromium, γραμματοσειρά Inter).
 - **YouTube** (`_social/youtube.md`): κανάλι επωνυμίας «dimakis», `@dimakisapps`, κάτω από το `dimakis.4home@gmail.com`.
   Αγγλικός τίτλος και περιγραφή με ελληνική μετάφραση στο Studio. Τα `*-el.mp4` όχι στο YouTube, μόνο στο Facebook.
-  Trailer με «Coming…» αντί για «Available on the App Store»: `python3 _tools/social_trailers.py`. Με την κυκλοφορία
-  ανεβαίνει το αρχικό `assets/video/<app>-en.mp4` ως νέο βίντεο. Shorts: σενάρια στο `_social/shorts.yml`,
+  **Ποτέ «Coming…», «Έρχεται…» ή μήνας κυκλοφορίας μέσα σε βίντεο, screenshots ή εικόνες** (εντολή Χρήστου 27/10/2026): παλιώνουν και ξαναφτιάχνονται.
+  Η κατάσταση κυκλοφορίας μένει ΜΟΝΟ σε κείμενα (`status_el/en` στο `apps.yml`, αναρτήσεις). Trailer: ανεβαίνει μόνο ΜΕΤΑ την κυκλοφορία, το
+  αρχικό `assets/video/<app>-en.mp4`· το `_tools/social_trailers.py` (τελική κάρτα «Coming…») δεν χρησιμοποιείται πια. Shorts: σενάρια στο `_social/shorts.yml`,
   υπότιτλοι με `ruby _tools/social_srt.rb`. Στο site τα βίντεο μένουν αυτοφιλοξενούμενα (όχι embed YouTube, για το απόρρητο).
 - Άλλοι λογαριασμοί (19/10): **TikTok** `@dimakisapps` (στο footer) και **X** `@dimakisapps` υπάρχουν.
   Το X μένει κράτηση ονόματος (μία καρφιτσωμένη ανάρτηση), **όχι στο footer** όσο δεν είναι ενεργό.

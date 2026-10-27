@@ -12,7 +12,7 @@
 | `images/00-intro.jpg` … `09-*.jpg` | Εικόνες αναρτήσεων 1080×1350 (4:5). Η `00-intro` είναι αιώνια (χωρίς εφαρμογές) |
 | `youtube.md` | Κανάλι YouTube: στήσιμο, κείμενα για τα 2 trailer, Shorts, οδηγοί, πρόγραμμα |
 | `shorts.yml`, `subtitles/` | Σενάρια των 9 Shorts και οι υπότιτλοί τους (αγγλικά, ελληνικά) |
-| `video/` | Trailer Chronos και Apollo για YouTube, με «Coming…» στην τελική κάρτα |
+| `video/` | Trailer Chronos και Apollo για YouTube· ανεβαίνουν μόνο μετά την κυκλοφορία (ποτέ «Coming…» μέσα σε βίντεο) |
 | `images/youtube-*`, `yt-*` | Banner, υδατογράφημα, μικρογραφίες, τελικές κάρτες Shorts |
 
 Οι εικόνες ξαναφτιάχνονται με `node _tools/social_images.js` (όλες) ή `node _tools/social_images.js 04-subscriptions`
@@ -78,7 +78,7 @@ Productivity, Calendar, Photography. Πρόταση: φωτογραφία του
   πρώτο σχόλιο του maker. Προγραμματισμός του launch μέσα από το Product Hunt.
 - Ημέρα launch: ξεκινά 00:01 ώρα Καλιφόρνιας (10:01 Ελλάδας). Ανάρτηση σε όλα τα social, απάντηση σε κάθε σχόλιο,
   όχι «ψηφίστε με» (το απαγορεύουν οι κανόνες).
-- Σειρά: Chronos (Δεκέμβριος), Iris, Apollo, με απόσταση εβδομάδων.
+- Σειρά: Chronos (σύντομα), Iris, Apollo, με απόσταση εβδομάδων.
 
 Το Instagram επιτρέπει 3 καρφιτσωμένες αναρτήσεις: Γνωριμία, Chronos, Apollo, μία από κάθε κύρια εφαρμογή.
 Οι εφαρμογές εναλλάσσονται, ώστε το πλέγμα του προφίλ να μη γεμίζει με το ίδιο χρώμα.
@@ -91,7 +91,7 @@ Productivity, Calendar, Photography. Πρόταση: φωτογραφία του
 - Behind the scenes: πώς πήρε το όνομά της κάθε εφαρμογή (το `origin_en` στο `_data/apps.yml`).
 - Αντίστροφη μέτρηση: «Chronos in 7 days», με το σύνδεσμο για την ειδοποίηση.
 - **Ημέρα κυκλοφορίας**: ανάρτηση και story με σύνδεσμο App Store, το κουμπί Facebook γίνεται «Χρήση εφαρμογής»,
-  το βιογραφικό του Instagram αλλάζει από «Chronos arrives in December» σε «Chronos is out now».
+  το βιογραφικό του Instagram αλλάζει από «Chronos is coming soon» σε «Chronos is out now».
   Ίδια μέρα με την καμπάνια του Brevo (`CLAUDE.md` → «Με την κυκλοφορία μιας εφαρμογής»).
 
 ## Μετά τη δημοσίευση

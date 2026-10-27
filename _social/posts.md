@@ -25,7 +25,7 @@ Six apps, six names of Greek gods 🍓
 
 I'm building apps for iPhone, iPad, Mac and Apple Watch, one at a time, here in Greece. Every app speaks 32 languages, and your data stays on your devices and in your own cloud.
 
-📅 Chronos, a calendar that goes beyond appointments: December
+📅 Chronos, a calendar that goes beyond appointments: coming soon
 🖼️ Apollo, a family photo album on the cloud you already use: coming soon
 🌈 Iris, a photo companion for Mac: coming soon
 🏡 Hestia, 📓 Athena and 📄 Argus: in the works
@@ -33,7 +33,7 @@ I'm building apps for iPhone, iPad, Mac and Apple Watch, one at a time, here in 
 Follow along for tips, behind the scenes and launch news. Get notified on launch day: dimakis.app (link in bio)
 
 🇬🇷
-Έξι εφαρμογές, έξι ονόματα θεών. Τις φτιάχνω μία μία, στην Ελλάδα, για iPhone, iPad, Mac και Apple Watch. Πρώτο το Chronos, τον Δεκέμβριο.
+Έξι εφαρμογές, έξι ονόματα θεών. Τις φτιάχνω μία μία, στην Ελλάδα, για iPhone, iPad, Mac και Apple Watch. Πρώτο το Chronos, σύντομα.
 
 #iPhoneApps #MacApps #AppleWatch #IndieDev #MadeInGreece
 ```
@@ -41,9 +41,9 @@ Follow along for tips, behind the scenes and launch news. Get notified on launch
 **Threads**
 
 ```
-Six apps, six names of Greek gods 🍓 I'm building apps for iPhone, iPad, Mac and Apple Watch, one at a time, in Greece. First up: Chronos, a calendar that goes beyond appointments, in December.
+Six apps, six names of Greek gods 🍓 I'm building apps for iPhone, iPad, Mac and Apple Watch, one at a time, in Greece. First up: Chronos, a calendar that goes beyond appointments, coming soon.
 
-🇬🇷 Έξι εφαρμογές για iPhone και Mac, φτιαγμένες στην Ελλάδα. Πρώτο το Chronos, τον Δεκέμβριο.
+🇬🇷 Έξι εφαρμογές για iPhone και Mac, φτιαγμένες στην Ελλάδα. Πρώτο το Chronos, σύντομα.
 
 https://dimakis.app/en/
 ```
@@ -70,10 +70,10 @@ In Chronos, a countdown gets a name, a date and a photo:
 
 Tip: for a trip, use a photo of the destination.
 
-Chronos arrives in December. Full guide: link in bio.
+Chronos is coming soon. Full guide: link in bio.
 
 🇬🇷
-Πόσες μέρες μένουν για τις διακοπές ή τα γενέθλια; Στο Chronos η αντίστροφη μέτρηση έχει φωτογραφία, ειδοποίηση και τη στέλνεις σε φίλο. Έρχεται τον Δεκέμβριο.
+Πόσες μέρες μένουν για τις διακοπές ή τα γενέθλια; Στο Chronos η αντίστροφη μέτρηση έχει φωτογραφία, ειδοποίηση και τη στέλνεις σε φίλο. Έρχεται σύντομα.
 
 #Countdown #iPhoneTips #CalendarApp #iOSApps #Chronos
 ```
@@ -81,7 +81,7 @@ Chronos arrives in December. Full guide: link in bio.
 **Threads**
 
 ```
-How many days until the holiday? Chronos counts down with a photo, reminds you ahead of time and lets you send the countdown to a friend. Arrives in December.
+How many days until the holiday? Chronos counts down with a photo, reminds you ahead of time and lets you send the countdown to a friend. Coming soon.
 
 🇬🇷 Αντίστροφη μέτρηση με φωτογραφία, που τη στέλνεις σε φίλο.
 
@@ -191,7 +191,7 @@ In Chronos you enter each one once:
 
 Tip: check the last 3 months of your card statement for repeating charges. There's usually one you forgot.
 
-Chronos arrives in December. Full guide: link in bio.
+Chronos is coming soon. Full guide: link in bio.
 
 🇬🇷
 Πόσα πληρώνεις τον χρόνο σε συνδρομές; Στο Chronos τις βλέπεις όλες μαζί, με υπενθύμιση πριν από κάθε χρέωση.
@@ -202,7 +202,7 @@ Chronos arrives in December. Full guide: link in bio.
 **Threads**
 
 ```
-Netflix, Spotify, iCloud, the gym, the app you forgot. Chronos puts every subscription in one list, with yearly totals and a reminder before each charge. Arrives in December.
+Netflix, Spotify, iCloud, the gym, the app you forgot. Chronos puts every subscription in one list, with yearly totals and a reminder before each charge. Coming soon.
 
 🇬🇷 Όλες οι συνδρομές σε μία λίστα, με υπενθύμιση πριν τη χρέωση.
 
@@ -312,7 +312,7 @@ In Chronos, every task gets its own card: service, oil, inspection, insurance, t
 
 Tip: the first time, enter the dates from your paperwork. After that, your iPhone remembers.
 
-Chronos arrives in December. Full guide: link in bio.
+Chronos is coming soon. Full guide: link in bio.
 
 🇬🇷
 ΚΤΕΟ, ασφάλεια, λάδια: στο Chronos κάθε εργασία έχει υπενθύμιση και ιστορικό, για να μη σου ξεφύγει ξανά.
@@ -323,7 +323,7 @@ Chronos arrives in December. Full guide: link in bio.
 **Threads**
 
 ```
-Service, inspection, insurance, tyres. Each on its own rhythm, each easy to forget. Chronos gives every task a card, a reminder and a full history. Arrives in December.
+Service, inspection, insurance, tyres. Each on its own rhythm, each easy to forget. Chronos gives every task a card, a reminder and a full history. Coming soon.
 
 🇬🇷 Υπενθύμιση για ΚΤΕΟ, service και ασφάλεια.
 

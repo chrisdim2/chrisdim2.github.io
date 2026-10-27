@@ -53,8 +53,8 @@ list:
   god_en: 'Chronos is the personification of time in Greek mythology. In antiquity he was often identified with Cronus, the Titan who ruled in the Golden Age before Zeus, and that identification later gave us “Father Time” with his scythe. The two names sound almost the same, but the word chronos (“time”) is not thought to be related to the name Cronus. The app keeps your time: everything you need to remember, in the order it comes. The whole family of apps carries his name.'
   god_wiki_el: https://el.wikipedia.org/wiki/Χρόνος_(μυθολογία)
   god_wiki_en: https://en.wikipedia.org/wiki/Chronos
-  status_el: Έρχεται τον Δεκέμβριο
-  status_en: Coming in December
+  status_el: Έρχεται σύντομα
+  status_en: Coming soon
   suite:
     title_el: 7 εφαρμογές σε 1
     title_en: 5 apps in 1
@@ -346,8 +346,8 @@ list:
   price: ''
   ready: true
   schema_category: LifestyleApplication
-  description_el: 'Chronos Γιορτές: εορτολόγιο, επαφές που γιορτάζουν, γενέθλια και αργίες για iPhone και iPad, έρχεται τον Νοέμβριο, από το dimakis.'
-  description_en: 'Chronos Celebrations: name days, contacts’ birthdays and holidays for Greece and Cyprus on iPhone and iPad, coming in November, by dimakis.'
+  description_el: 'Chronos Γιορτές: εορτολόγιο, επαφές που γιορτάζουν, γενέθλια και αργίες για iPhone και iPad, έρχεται τον Δεκέμβριο, από το dimakis.'
+  description_en: 'Chronos Celebrations: name days, contacts’ birthdays and holidays for Greece and Cyprus on iPhone and iPad, coming in December, by dimakis.'
   press_long_el: |
     Το Chronos Γιορτές είναι ένα εορτολόγιο για iPhone και iPad, φτιαγμένο για την Ελλάδα και την Κύπρο. Δείχνει για κάθε μέρα τους αγίους και τα ονόματα που γιορτάζουν, και ποιες από τις επαφές σου γιορτάζουν σήμερα, με κουμπί για να τους πάρεις τηλέφωνο.
 
@@ -366,8 +366,8 @@ list:
   tagline_en: Never miss a celebration.
   origin_el: Μέλος της οικογένειας Chronos.
   origin_en: Part of the Chronos family.
-  status_el: Έρχεται τον Νοέμβριο
-  status_en: Coming in November
+  status_el: Έρχεται τον Δεκέμβριο
+  status_en: Coming in December
   features_el:
     - 'Εορτολόγιο κάθε μέρας: όλα τα ονόματα που γιορτάζουν και οι άγιοι της ημέρας'
     - Δείχνει ποιοι από τις επαφές σου γιορτάζουν σήμερα, με κουμπί για να τους πάρεις τηλέφωνο

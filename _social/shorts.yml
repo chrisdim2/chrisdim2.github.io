@@ -19,7 +19,7 @@
     - {t: [12, 16], en: "A reminder up to a month before", el: "Υπενθύμιση έως και έναν μήνα πριν", shot: "Ρύθμιση ειδοποίησης"}
     - {t: [16, 20], en: "Birthdays show the age, every year", el: "Στα γενέθλια δείχνει την ηλικία, κάθε χρόνο", shot: "Η κάρτα «Emma's birthday, 36 years old»"}
     - {t: [20, 25], en: "Send it to a friend, with the same photo", el: "Στείλ' τη σε φίλο, με την ίδια φωτογραφία", shot: "Παρατεταμένο πάτημα στην κάρτα → Share → AirDrop ή Messages"}
-    - {t: [25, 28], en: "Chronos · Coming in December", el: "Chronos · Έρχεται τον Δεκέμβριο", shot: "Τελική κάρτα yt-endcard-chronos.png"}
+    - {t: [25, 28], en: "Chronos · dimakis.app/chronos", el: "Chronos · dimakis.app/chronos", shot: "Τελική κάρτα yt-endcard-chronos.png"}
 
 - id: 02-remove-location
   app: iris
@@ -61,7 +61,7 @@
     - {t: [8, 13], en: "In Chronos: all of them, with totals per month and year", el: "Στο Chronos: όλες, με σύνολα ανά μήνα και χρόνο", shot: "Chronos → Παρακολούθηση → Συνδρομές, τα σύνολα"}
     - {t: [13, 18], en: "A reminder before every charge", el: "Υπενθύμιση πριν από κάθε χρέωση", shot: "Ρύθμιση ειδοποίησης μιας συνδρομής (ημέρες πριν)"}
     - {t: [18, 22], en: "Renewals right in your calendar", el: "Οι ανανεώσεις μέσα στο ημερολόγιο", shot: "Ημερολόγιο με την ανανέωση δίπλα στα ραντεβού"}
-    - {t: [22, 25], en: "Chronos · Coming in December", el: "Chronos · Έρχεται τον Δεκέμβριο", shot: "Τελική κάρτα yt-endcard-chronos.png"}
+    - {t: [22, 25], en: "Chronos · dimakis.app/chronos", el: "Chronos · dimakis.app/chronos", shot: "Τελική κάρτα yt-endcard-chronos.png"}
 
 - id: 05-fix-photo-dates
   app: iris
@@ -104,7 +104,7 @@
     - {t: [8, 13], en: "Kilometres for oil and service", el: "Χιλιόμετρα για λάδια και service", shot: "Κάρτα «Oil change» με χιλιόμετρα"}
     - {t: [13, 18], en: "Log it when it's done. The next date is worked out", el: "Σημείωσέ το όταν γίνει. Η επόμενη ημερομηνία βγαίνει μόνη της", shot: "Καταγραφή εργασίας, νέα ημερομηνία"}
     - {t: [18, 22], en: "Full history, handy when you sell the car", el: "Πλήρες ιστορικό, χρήσιμο όταν πουλάς το αυτοκίνητο", shot: "Ιστορικό μιας κάρτας"}
-    - {t: [22, 25], en: "Chronos · Coming in December", el: "Chronos · Έρχεται τον Δεκέμβριο", shot: "Τελική κάρτα yt-endcard-chronos.png"}
+    - {t: [22, 25], en: "Chronos · dimakis.app/chronos", el: "Chronos · dimakis.app/chronos", shot: "Τελική κάρτα yt-endcard-chronos.png"}
 
 - id: 08-add-location
   app: iris
