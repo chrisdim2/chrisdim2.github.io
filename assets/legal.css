@@ -33,6 +33,8 @@ th { background: #f4f4f5; }
 @media (max-width: 600px) {
   table { display: block; overflow-x: auto; }
   th, td { padding: 7px 6px; }
+  /* Η πρώτη στήλη (σύντομες λέξεις) να μη στενεύει δίπλα σε στήλες με πολύ κείμενο. 5.5em: το μέγιστο που χωρά στα 375px. */
+  th:first-child, td:first-child { min-width: 5.5em; }
 }
 code { background: #f4f4f5; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
 ul { padding-left: 1.3em; }
