@@ -246,8 +246,26 @@ list:
   god_wiki_en: https://en.wikipedia.org/wiki/Argus_Panoptes
   status_el: Σε ανάπτυξη
   status_en: In development
-  features_el: []
-  features_en: []
+  features_el:
+    - 'Σαρώνεις με την κάμερα σάρωσης της Apple, ή εισάγεις από Φωτογραφίες και Αρχεία (εικόνες και PDF)'
+    - 'Βρίσκει μόνο του τις γωνίες της σελίδας· τις διορθώνεις με 8 λαβές και φακό, και ισιώνει την προοπτική'
+    - 'Διόρθωση παραμόρφωσης για σελίδες καμπυλωτές'
+    - 'Χρώμα και φωτεινότητα (αρχικό, βελτιωμένο, γκρι, ασπρόμαυρο) και μέγεθος σελίδας, με έτοιμα και δικά σου μεγέθη'
+    - 'Σβήσιμο σημείων της σελίδας, και σβήσιμο δαχτύλων που φαίνονται στη φωτογραφία'
+    - 'Υπογραφή και σχολιασμός με στυλό, μαρκαδόρο και κείμενο· οι υπογραφές σου μένουν στη συσκευή'
+    - 'Κείμενο της σελίδας και μετάφραση πάνω στη σελίδα, με το framework της Apple, στη συσκευή'
+    - 'Κοινή χρήση ως PDF ή εικόνα, σε τρία μεγέθη· οι αρχικές φωτογραφίες μένουν και κάθε αλλαγή αναιρείται'
+    - 'Φάκελοι και ετικέτες για τα έγγραφά σου, με μετονομασία και μετακίνηση'
+  features_en:
+    - 'Scan with Apple’s document camera, or import from Photos and Files (images and PDFs)'
+    - 'It finds the page corners by itself; you adjust them with 8 handles and a magnifier, and it straightens the perspective'
+    - 'Dewarp for curved pages'
+    - 'Colour and brightness (original, enhanced, grey, black and white) and page size, with ready-made and your own sizes'
+    - 'Erase parts of the page, and erase fingers that show in the photo'
+    - 'Sign and annotate with pen, highlighter and text; your signatures stay on your device'
+    - 'The text of the page and translation right on the page, with Apple’s framework, on your device'
+    - 'Share as PDF or image, in three sizes; the original photos are kept and every change can be undone'
+    - 'Folders and tags for your documents, with rename and move'
   screenshots: []
 - slug: iris
   title: Iris
