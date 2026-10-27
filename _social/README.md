@@ -12,7 +12,6 @@
 | `images/00-intro.jpg` … `09-*.jpg` | Εικόνες αναρτήσεων 1080×1350 (4:5). Η `00-intro` είναι αιώνια (χωρίς εφαρμογές) |
 | `youtube.md` | Κανάλι YouTube: στήσιμο, κείμενα για τα 2 trailer, Shorts, οδηγοί, πρόγραμμα |
 | `shorts.yml`, `subtitles/` | Σενάρια των 9 Shorts και οι υπότιτλοί τους (αγγλικά, ελληνικά) |
-| `video/` | Trailer Chronos και Apollo για YouTube· ανεβαίνουν μόνο μετά την κυκλοφορία (ποτέ «Coming…» μέσα σε βίντεο) |
 | `images/youtube-*`, `yt-*` | Banner, υδατογράφημα, μικρογραφίες, τελικές κάρτες Shorts |
 
 Οι εικόνες ξαναφτιάχνονται με `node _tools/social_images.js` (όλες) ή `node _tools/social_images.js 04-subscriptions`

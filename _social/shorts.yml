@@ -33,7 +33,7 @@
     - {t: [9, 13], en: "Many photos? Iris on Mac", el: "Πολλές φωτογραφίες; Iris στο Mac", shot: "Iris με φάκελο φωτογραφιών"}
     - {t: [13, 19], en: "Clean for Privacy removes all metadata: location, date, device", el: "Το Clean for Privacy σβήνει όλα τα μεταδεδομένα: τοποθεσία, ημερομηνία, συσκευή", shot: "Επιλογή αρχείων, Clean for Privacy, το παράθυρο «Remove all metadata?»"}
     - {t: [19, 23], en: "All on your Mac. Nothing is uploaded", el: "Όλα στο Mac σου. Τίποτα δεν ανεβαίνει", shot: "Το αποτέλεσμα: τα αρχεία χωρίς τοποθεσία"}
-    - {t: [23, 26], en: "Iris · Coming soon", el: "Iris · Έρχεται σύντομα", shot: "Τελική κάρτα yt-endcard-iris.png"}
+    - {t: [23, 26], en: "Iris · dimakis.app/iris", el: "Iris · dimakis.app/iris", shot: "Τελική κάρτα yt-endcard-iris.png"}
 
 - id: 03-trips
   app: apollo
@@ -47,7 +47,7 @@
     - {t: [8, 13], en: "Each trip: a map, its days and its photos", el: "Κάθε ταξίδι: χάρτης, μέρες και φωτογραφίες", shot: "Άνοιγμα ενός ταξιδιού (π.χ. Crete)"}
     - {t: [13, 17], en: "Distance and countries, per year", el: "Χιλιόμετρα και χώρες, ανά έτος", shot: "Στατιστικά"}
     - {t: [17, 22], en: "Boarding passes and ferry tickets, filed under the right trip", el: "Κάρτες επιβίβασης και εισιτήρια πλοίου, στο σωστό ταξίδι", shot: "Καρτέλα εισιτηρίων, σάρωση ή άνοιγμα ενός"}
-    - {t: [22, 25], en: "Apollo · Coming soon", el: "Apollo · Έρχεται σύντομα", shot: "Τελική κάρτα yt-endcard-apollo.png"}
+    - {t: [22, 25], en: "Apollo · dimakis.app/apollo", el: "Apollo · dimakis.app/apollo", shot: "Τελική κάρτα yt-endcard-apollo.png"}
 
 - id: 04-subscriptions
   app: chronos
@@ -75,7 +75,7 @@
     - {t: [8, 14], en: "Iris suggests the date from the file name", el: "Το Iris προτείνει ημερομηνία από το όνομα του αρχείου", shot: "IMG-20190814-WA0012.jpg → Get Date from File Name → 14 Αυγούστου 2019"}
     - {t: [14, 19], en: "Wrong camera clock? Shift them all at once", el: "Λάθος ρολόι; Μετατόπισε όλες μαζί", shot: "Επιλογή πολλών αρχείων, Shift +3 ώρες"}
     - {t: [19, 23], en: "Written inside the files. Every app sees it", el: "Γράφεται μέσα στα αρχεία. Το βλέπει κάθε εφαρμογή", shot: "Οι φωτογραφίες στη σωστή χρονιά"}
-    - {t: [23, 26], en: "Iris · Coming soon", el: "Iris · Έρχεται σύντομα", shot: "Τελική κάρτα yt-endcard-iris.png"}
+    - {t: [23, 26], en: "Iris · dimakis.app/iris", el: "Iris · dimakis.app/iris", shot: "Τελική κάρτα yt-endcard-iris.png"}
 
 - id: 06-cloud-albums
   app: apollo
@@ -90,7 +90,7 @@
     - {t: [12, 16], en: "Every photo with a location, on a map", el: "Κάθε φωτογραφία με τοποθεσία, σε χάρτη", shot: "Χάρτης"}
     - {t: [16, 21], en: "Search \"sea\" or \"dog\". Analysed on your device only", el: "Ψάξε «θάλασσα» ή «σκύλος». Η ανάλυση γίνεται μόνο στη συσκευή σου", shot: "Αναζήτηση «birds» με αποτελέσματα"}
     - {t: [21, 24], en: "pCloud · Dropbox · OneDrive · Box · WebDAV", el: "pCloud · Dropbox · OneDrive · Box · WebDAV", shot: "Οθόνη σύνδεσης cloud"}
-    - {t: [24, 27], en: "Apollo · Coming soon", el: "Apollo · Έρχεται σύντομα", shot: "Τελική κάρτα yt-endcard-apollo.png"}
+    - {t: [24, 27], en: "Apollo · dimakis.app/apollo", el: "Apollo · dimakis.app/apollo", shot: "Τελική κάρτα yt-endcard-apollo.png"}
 
 - id: 07-car-reminders
   app: chronos
@@ -118,7 +118,7 @@
     - {t: [7, 13], en: "Select them all, search for the place once", el: "Επίλεξέ τες όλες, ψάξε το μέρος μία φορά", shot: "Επιλογή όλων, αναζήτηση «Nafplio», καρφίτσα στον χάρτη"}
     - {t: [13, 18], en: "Written inside every file. Photos and videos", el: "Γράφεται μέσα σε κάθε αρχείο. Φωτογραφίες και βίντεο", shot: "Write to files, τα αρχεία πλέον με τοποθεσία"}
     - {t: [18, 21], en: "Every change can be undone", el: "Κάθε αλλαγή αναιρείται", shot: "Κουμπί αναίρεσης"}
-    - {t: [21, 24], en: "Iris · Coming soon", el: "Iris · Έρχεται σύντομα", shot: "Τελική κάρτα yt-endcard-iris.png"}
+    - {t: [21, 24], en: "Iris · dimakis.app/iris", el: "Iris · dimakis.app/iris", shot: "Τελική κάρτα yt-endcard-iris.png"}
 
 - id: 09-family-album
   app: apollo
@@ -132,4 +132,4 @@
     - {t: [8, 14], en: "Everyone sees the same covers, folders and trips", el: "Όλοι βλέπουν ίδια εξώφυλλα, φακέλους και ταξίδια", shot: "Δύο συσκευές δίπλα δίπλα με τα ίδια άλμπουμ"}
     - {t: [14, 19], en: "Rename a trip, and it changes for everyone", el: "Μετονόμασε ένα ταξίδι, και αλλάζει για όλους", shot: "Μετονομασία ταξιδιού στη μία συσκευή, εμφάνιση στην άλλη"}
     - {t: [19, 23], en: "Your photos never leave your own cloud", el: "Οι φωτογραφίες σου δεν φεύγουν ποτέ από το δικό σου cloud", shot: "Άλμπουμ, κύλιση"}
-    - {t: [23, 26], en: "Apollo · Coming soon", el: "Apollo · Έρχεται σύντομα", shot: "Τελική κάρτα yt-endcard-apollo.png"}
+    - {t: [23, 26], en: "Apollo · dimakis.app/apollo", el: "Apollo · dimakis.app/apollo", shot: "Τελική κάρτα yt-endcard-apollo.png"}

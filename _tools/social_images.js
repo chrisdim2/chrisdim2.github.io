@@ -2,6 +2,7 @@
 // Χρήση (από τη ρίζα του repo): node _tools/social_images.js [όνομα ...]
 // Χρειάζεται Playwright με Chromium και τη γραμματοσειρά Inter. Έξοδος: _social/images/.
 // Κείμενο πάνω στις εικόνες μόνο στα αγγλικά (το κείμενο σε εικόνα δεν μεταφράζεται αυτόματα).
+// ΠΟΤΕ κατάσταση κυκλοφορίας («Coming…», «Έρχεται…», μήνας) πάνω στις εικόνες: παλιώνει (Ευαγγέλιο 9.17).
 
 const { chromium } = require('playwright');
 const path = require('path');
@@ -12,11 +13,11 @@ const OUT = path.join(ROOT, '_social', 'images');
 const url = (p) => 'file://' + path.join(ROOT, p);
 
 const APPS = {
-  chronos: { name: 'Chronos', kind: 'Calendar', accent: '#2747B8', status: 'Coming in December' },
-  apollo: { name: 'Apollo', kind: 'Family photo album', accent: '#B07D0A', status: 'Coming soon' },
-  iris: { name: 'Iris', kind: 'Photo companion for Mac', accent: '#9A7240', status: 'Coming soon' },
-  athena: { name: 'Athena', kind: 'Notes & notebooks', accent: '#5B47D6', status: 'In development' },
-  argus: { name: 'Argus', kind: 'Document scanner', accent: '#4F5B67', status: 'In development' },
+  chronos: { name: 'Chronos', kind: 'Calendar', accent: '#2747B8' },
+  apollo: { name: 'Apollo', kind: 'Family photo album', accent: '#B07D0A' },
+  iris: { name: 'Iris', kind: 'Photo companion for Mac', accent: '#9A7240' },
+  athena: { name: 'Athena', kind: 'Notes & notebooks', accent: '#5B47D6' },
+  argus: { name: 'Argus', kind: 'Document scanner', accent: '#4F5B67' },
 };
 const ORDER = ['chronos', 'apollo', 'iris', 'athena', 'argus'];
 
@@ -138,7 +139,7 @@ function post(p) {
   `) + `<div class="glow"></div>
     <div class="top"><div class="app"><img src="${url(`assets/icons/${p.app}.png`)}"><div><b>${a.name}</b><span>${a.kind}</span></div></div>
       <div class="brand"><img src="${url('assets/dimakis-strawberry.svg')}">dimakis.app</div></div>
-    <div class="flow"><h1>${p.title}</h1><p class="sub">${p.sub}</p><span class="pill">${a.status}</span>
+    <div class="flow"><h1>${p.title}</h1><p class="sub">${p.sub}</p>
     ${device}</div></body></html>`;
 }
 
@@ -216,8 +217,7 @@ function ytEndcard(k) {
       font-family:"Inter";font-size:40px;font-weight:600;color:#EDF1EE}
     .brand img{width:56px;height:56px}
   `) + `<div class="glow"></div><div class="in">
-    <img class="icon" src="${url(`assets/icons/${k}.png`)}"><h1>${a.name}</h1><span class="kind">${a.kind}</span>
-    <span class="pill">${a.status}</span></div>
+    <img class="icon" src="${url(`assets/icons/${k}.png`)}"><h1>${a.name}</h1><span class="kind">${a.kind}</span></div>
     <div class="brand"><img src="${url('assets/dimakis-strawberry.svg')}">dimakis.app</div></body></html>`;
 }
 

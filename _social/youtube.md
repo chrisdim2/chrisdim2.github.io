@@ -12,15 +12,14 @@
 | `images/profile.png` | Εικόνα καναλιού |
 | `images/youtube-banner.jpg` | Banner 2560×1440 (το περιεχόμενο στη ζώνη 1546×423, φαίνεται σε κινητό, υπολογιστή και TV) |
 | `images/youtube-watermark.png` | Υδατογράφημα 150×150 (Προσαρμογή → Branding → Υδατογράφημα βίντεο, «Τέλος βίντεο») |
-| `video/chronos-trailer-en.mp4`, `video/apollo-trailer-en.mp4` | Τα βίντεο του site με την τελική κάρτα «Available on the App Store»· ανεβαίνουν ΜΟΝΟ μετά την κυκλοφορία (ποτέ «Coming…» μέσα σε βίντεο, εντολή Χρήστου 27/10/2026) |
+| `assets/video/chronos-en.mp4`, `assets/video/apollo-en.mp4` | Τα βίντεο του site, με τελική κάρτα που γράφει μόνο όνομα και σύνθημα (ποτέ κατάσταση κυκλοφορίας μέσα σε βίντεο, εντολή Χρήστου 27/10/2026)· ανεβαίνουν ως έχουν |
 | `images/yt-thumb-*.jpg` | Μικρογραφίες 1280×720 για τους 3 οριζόντιους οδηγούς του Iris |
 | `images/yt-endcard-*.png` | Τελική κάρτα 1080×1920 για τα Shorts (τα τελευταία 3″) |
 | `shorts.yml` | Σενάρια των 9 Shorts: σκηνές, χρόνοι, κείμενο οθόνης, τι να εγγραφεί |
 | `subtitles/*.srt` | Υπότιτλοι αγγλικά και ελληνικά για κάθε Short (`ruby _tools/social_srt.rb`) |
 
-Τα trailer ξαναφτιάχνονται με `python3 _tools/social_trailers.py`. **Με την κυκλοφορία** κάθε εφαρμογής ανεβαίνει
-ως νέο βίντεο το αρχικό `assets/video/<app>-en.mp4`, που λέει ήδη «Available on the App Store»
-(το YouTube δεν αλλάζει αρχείο σε βίντεο που έχει ανέβει), και το παλιό trailer γίνεται «Ιδιωτικό».
+Ξεχωριστά trailer δεν υπάρχουν πια (27/10/2026): ανεβαίνει το βίντεο του site. Επειδή το βίντεο δεν γράφει κατάσταση κυκλοφορίας,
+**με την κυκλοφορία** δεν χρειάζεται νέο ανέβασμα: αλλάζει μόνο η περιγραφή (σύνδεσμος App Store) και το καρφιτσωμένο σχόλιο.
 
 ---
 
@@ -70,7 +69,7 @@ Threads `https://www.threads.com/@dimakisapps` · Facebook `https://www.facebook
 
 ### Chronos
 
-**Αρχείο:** `video/chronos-trailer-en.mp4` · **Λίστα:** Chronos · **Μικρογραφία:** καρέ από το βίντεο (στα Shorts δεν ανεβαίνει δική μας)
+**Αρχείο:** `assets/video/chronos-en.mp4` · **Λίστα:** Chronos · **Μικρογραφία:** καρέ από το βίντεο (στα Shorts δεν ανεβαίνει δική μας)
 
 **Τίτλος** (όριο 100):
 ```
@@ -107,7 +106,7 @@ Chronos: ημερολόγιο για iPhone, iPad, Mac και Apple Watch που
 
 ### Apollo
 
-**Αρχείο:** `video/apollo-trailer-en.mp4` · **Λίστα:** Apollo
+**Αρχείο:** `assets/video/apollo-en.mp4` · **Λίστα:** Apollo
 
 **Τίτλος:**
 ```
@@ -186,4 +185,4 @@ Apollo: οι φωτογραφίες σου από pCloud, Dropbox και OneDriv
 | Στήσιμο | Κανάλι, branding, τα 2 trailer, σύνδεσμος στο `site.yml` |
 | Κάθε Τρίτη, 18:00 | Ένα Short με τη σειρά του `shorts.yml` (01 έως 09), μόλις υπάρχει εγγραφή. Ίδια μέρα ως Reel |
 | Νοέμβριος | Οι 3 οδηγοί του Iris, ένας ανά 10 ημέρες |
-| Κυκλοφορία Chronos | Νέο ανέβασμα του αρχικού `assets/video/chronos-en.mp4` με σύνδεσμο App Store, το παλιό trailer «Ιδιωτικό», Short κυκλοφορίας |
+| Κυκλοφορία Chronos | Αλλαγή περιγραφής του βίντεο με τον σύνδεσμο App Store, Short κυκλοφορίας |

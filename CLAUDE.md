@@ -125,8 +125,8 @@
 - **YouTube** (`_social/youtube.md`): κανάλι επωνυμίας «dimakis», `@dimakisapps`, κάτω από το `dimakis.4home@gmail.com`.
   Αγγλικός τίτλος και περιγραφή με ελληνική μετάφραση στο Studio. Τα `*-el.mp4` όχι στο YouTube, μόνο στο Facebook.
   **Ποτέ «Coming…», «Έρχεται…» ή μήνας κυκλοφορίας μέσα σε βίντεο, screenshots ή εικόνες** (εντολή Χρήστου 27/10/2026): παλιώνουν και ξαναφτιάχνονται.
-  Η κατάσταση κυκλοφορίας μένει ΜΟΝΟ σε κείμενα (`status_el/en` στο `apps.yml`, αναρτήσεις). Trailer: ανεβαίνει μόνο ΜΕΤΑ την κυκλοφορία, το
-  αρχικό `assets/video/<app>-en.mp4`· το `_tools/social_trailers.py` (τελική κάρτα «Coming…») δεν χρησιμοποιείται πια. Shorts: σενάρια στο `_social/shorts.yml`,
+  Η κατάσταση κυκλοφορίας μένει ΜΟΝΟ σε κείμενα (`status_el/en` στο `apps.yml`, αναρτήσεις). Ξεχωριστά trailer δεν υπάρχουν πια: στο YouTube
+  ανεβαίνει το `assets/video/<app>-en.mp4`, που έχει τελική κάρτα με όνομα και σύνθημα (ο `_tools/social_trailers.py` διαγράφηκε, 27/10/2026). Shorts: σενάρια στο `_social/shorts.yml`,
   υπότιτλοι με `ruby _tools/social_srt.rb`. Στο site τα βίντεο μένουν αυτοφιλοξενούμενα (όχι embed YouTube, για το απόρρητο).
 - Άλλοι λογαριασμοί (19/10): **TikTok** `@dimakisapps` (στο footer) και **X** `@dimakisapps` υπάρχουν.
   Το X μένει κράτηση ονόματος (μία καρφιτσωμένη ανάρτηση), **όχι στο footer** όσο δεν είναι ενεργό.
