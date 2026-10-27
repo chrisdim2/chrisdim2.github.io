@@ -53,7 +53,7 @@
 - Οι σύνδεσμοι στη σελίδα της εφαρμογής εμφανίζονται με `has_legal: true` στο `_data/apps.yml` (αλλιώς γράφει «Θα δημοσιευτούν…»).
 - **Chronos:** τα αντίγραφα αφαιρέθηκαν από την εφαρμογή (25/10/2026, έκδοση 2.4.58)· ανοίγει `https://dimakis.app/chronos/…` σε Safari (iOS) ή μέσα στις Ρυθμίσεις (macOS).
 - **Γιορτές:** App Store Connect: Privacy Policy URL `https://dimakis.app/giortes/privacy-en.html`, Support URL `https://dimakis.app/giortes/`.
-  ΠΡΟΣΧΕΔΙΟ: θέλουν νομικό έλεγχο πριν το App Store. Email επικοινωνίας `giortes@dimakis.app`.
+  Τελικά κείμενα (εντολή Χρήστου 27/10/2026, δεν είναι πια προσχέδιο), ημερομηνία 27/10/2026 και στα τέσσερα. Email επικοινωνίας `giortes@dimakis.app`.
 
 ## Εφαρμογές: αποφάσεις 20/10/2026
 
