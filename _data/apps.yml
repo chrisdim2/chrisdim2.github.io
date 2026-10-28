@@ -225,7 +225,7 @@ list:
   og_image: /assets/og/argus.jpg
   order: 5
   platforms: [iphone, ipad]
-  has_legal: false
+  has_legal: true
   support_email: argus@dimakis.app
   appstore_url: ''
   appstore_id: ''

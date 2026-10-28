@@ -52,6 +52,9 @@
   είναι άκυρο και βγαίνει Times.
 - Οι σύνδεσμοι στη σελίδα της εφαρμογής εμφανίζονται με `has_legal: true` στο `_data/apps.yml` (αλλιώς γράφει «Θα δημοσιευτούν…»).
 - **Chronos:** τα αντίγραφα αφαιρέθηκαν από την εφαρμογή (25/10/2026, έκδοση 2.4.58)· ανοίγει `https://dimakis.app/chronos/…` σε Safari (iOS) ή μέσα στις Ρυθμίσεις (macOS).
+- **Argus:** κείμενα 28/10/2026 στο `argus/` (privacy και terms, el/en), `has_legal: true`. Email `argus@dimakis.app`. Η εφαρμογή τα δείχνει όταν
+  το `AppInfo.hasLegal` του Argus γίνει `true`, μετά το push εδώ. Καλύπτουν: κάμερα, Φωτογραφίες (επιλογέας, μόνο προσθήκη), Αρχεία, OCR στη
+  συσκευή, λήψη γλωσσών OCR από το GitHub, Face ID για κλειδωμένους φακέλους, κωδικός PDF που δεν φυλάγεται, «Οι εφαρμογές μας».
 - **Γιορτές:** App Store Connect: Privacy Policy URL `https://dimakis.app/giortes/privacy-en.html`, Support URL `https://dimakis.app/giortes/`.
   Τελικά κείμενα (εντολή Χρήστου 27/10/2026, δεν είναι πια προσχέδιο), ημερομηνία 27/10/2026 και στα τέσσερα. Email επικοινωνίας `giortes@dimakis.app`.
 
