@@ -98,7 +98,7 @@ list:
   og_image: /assets/og/athena.jpg
   order: 6
   platforms: [iphone, ipad, mac, watch]
-  has_legal: false
+  has_legal: true
   support_email: athena@dimakis.app
   appstore_url: ''
   appstore_id: ''
