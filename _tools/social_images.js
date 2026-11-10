@@ -18,6 +18,7 @@ const APPS = {
   iris: { name: 'Iris', kind: 'Photo companion for Mac', accent: '#9A7240' },
   athena: { name: 'Athena', kind: 'Notes & notebooks', accent: '#5B47D6' },
   argus: { name: 'Argus', kind: 'Document scanner', accent: '#4F5B67' },
+  giortes: { name: 'Chronos Celebrations', kind: 'Name days & birthdays', accent: '#C72A2C' },
 };
 const ORDER = ['chronos', 'apollo', 'iris', 'athena', 'argus'];
 
@@ -50,6 +51,27 @@ const POSTS = [
   { file: '09-family-album', app: 'apollo', title: 'A family photo album, without iCloud.',
     sub: 'On the cloud your family already shares.',
     phone: 'assets/screens/apollo/iphone/en/apollo-iphone-08-albums.webp' },
+  { file: '10-weather', app: 'chronos', title: 'The weather, right next to your plans.',
+    sub: 'Hourly forecast, rain and wind, for every day and every event with a place.',
+    phone: 'assets/screens/chronos/iphone/en/chronos-iphone-07-weather.webp' },
+  { file: '11-photo-search', app: 'apollo', title: 'Type “birds”. Find every bird.',
+    sub: 'Search your cloud photos by what’s in them, where and when.',
+    phone: 'assets/screens/apollo/iphone/en/apollo-iphone-02-search-ai.webp' },
+  { file: '12-name-days', app: 'giortes', title: 'Never miss a Greek name day.',
+    sub: 'See which of your contacts celebrate today, and call them with one tap.',
+    phone: 'assets/screens/giortes/iphone/en/giortes-iphone-02-celebrating.webp', shift: 420 },
+  { file: '13-rename', app: 'iris', title: 'Rename a whole year of photos at once.',
+    sub: 'See every new name before it happens, and undo it if you change your mind.',
+    mac: 'assets/screens/iris/mac/en/iris-mac-06-rename.webp', crop: [748, 655, 600, 595] },
+  { file: '14-quick-add', app: 'chronos', title: 'Just type it the way you’d say it.',
+    sub: 'Chronos turns a sentence into an event, ready for you to check.',
+    phone: 'assets/screens/chronos/iphone/en/chronos-iphone-06-quickadd.webp' },
+  { file: '15-boarding-pass', app: 'apollo', title: 'Every boarding pass, in one place.',
+    sub: 'Scan a flight barcode or a ferry ticket PDF, and get a reminder before you leave.',
+    phone: 'assets/screens/apollo/iphone/en/apollo-iphone-12-flight.webp' },
+  { file: '16-name-chronos', app: 'chronos', title: 'Why is a calendar called Chronos?',
+    sub: 'In Greek, chronos simply means time.',
+    emblem: 'assets/logos/chronos-emblem.svg', word: 'ΧΡΟΝΟΣ' },
 ];
 
 const BASE_CSS = `
@@ -102,7 +124,10 @@ function intro() {
 function post(p) {
   const a = APPS[p.app];
   let device;
-  if (p.phone) {
+  if (p.emblem) {
+    // Ανάρτηση χωρίς screenshot (π.χ. «η ιστορία του ονόματος»): έμβλημα και η ελληνική λέξη.
+    device = `<div class="emblem"><img src="${url(p.emblem)}"><span>${p.word || ''}</span></div>`;
+  } else if (p.phone) {
     // shift: πόσα px της πηγής (πλάτος 780) κρύβονται από πάνω, για να φανεί το κάτω μέρος της οθόνης.
     const top = p.shift ? `style="margin-top:${-Math.round(p.shift * 572 / 780)}px"` : '';
     device = `<div class="phone"><div class="screen"><img src="${url(p.phone)}" ${top}></div></div>`;
@@ -136,6 +161,9 @@ function post(p) {
       box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 2px rgba(237,241,238,.14);background:#fff}
     .mac.bleed{align-self:flex-start}
     .mac img{position:absolute;max-width:none}
+    .emblem{align-self:center;margin-top:90px;display:flex;flex-direction:column;align-items:center;gap:56px}
+    .emblem img{width:520px;height:520px;object-fit:contain;filter:drop-shadow(0 20px 50px rgba(0,0,0,.5))}
+    .emblem span{font-size:96px;font-weight:600;letter-spacing:.32em;margin-right:-.32em;color:#E9CA88}
   `) + `<div class="glow"></div>
     <div class="top"><div class="app"><img src="${url(`assets/icons/${p.app}.png`)}"><div><b>${a.name}</b><span>${a.kind}</span></div></div>
       <div class="brand"><img src="${url('assets/dimakis-strawberry.svg')}">dimakis.app</div></div>

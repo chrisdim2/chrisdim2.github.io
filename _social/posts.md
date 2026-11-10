@@ -9,7 +9,8 @@
 - **Alt text**: Instagram → Ρυθμίσεις για προχωρημένους → Γράψτε εναλλακτικό κείμενο. Βοηθά την προσβασιμότητα και την αναζήτηση.
 
 Οι πρώτες ~125 χαρακτήρες είναι αυτό που φαίνεται πριν το «περισσότερα»: γι' αυτό η πρώτη γραμμή είναι πάντα αγγλική.
-Χαρακτηριστικά μόνο από τα άρθρα του site, τίποτα από το «Μένω στην Ελλάδα».
+Χαρακτηριστικά μόνο από τα άρθρα και τις σελίδες του site ή από τον κώδικα της εφαρμογής, τίποτα από το «Μένω στην Ελλάδα».
+Από την 10 και μετά, όπου υπάρχει διαδραστικό mockup, ο σύνδεσμος πάει σε αυτό (`#demo-…`): «Try it on our site».
 
 ---
 
@@ -412,3 +413,295 @@ https://dimakis.app/en/articles/family-photo-album-without-icloud/
 ```
 
 **Alt text:** Apollo albums on iPhone: colourful bird photos as covers for 2026, 2025, 2024 and 2023.
+
+---
+
+## 10 · Chronos: ο καιρός δίπλα στα γεγονότα
+
+**Εικόνα:** `images/10-weather.jpg`
+**Σύνδεσμοι:** https://dimakis.app/en/chronos/#demo-weather · https://dimakis.app/chronos/#demo-weather
+
+**Instagram / Facebook**
+
+```
+Picnic on Saturday? Your calendar knows the plan, but not the weather ☔
+
+In Chronos, the forecast sits right next to your events, in the day, week, month and list views:
+• hourly temperature, rain and wind
+• the weather where each event is, if it has an address
+• official weather warnings for your area
+• Apple Weather or MET Norway, you choose the source
+
+Tip: give your events an address as you type it. Chronos suggests real places, like Maps does.
+
+Chronos is coming soon. Try the weather screen on our site: link in bio.
+
+🇬🇷
+Ο καιρός δίπλα στα γεγονότα σου: ανά ώρα, βροχή, άνεμος και ο καιρός στο μέρος κάθε ραντεβού.
+
+#Weather #CalendarApp #iPhoneApps #iOSApps #Chronos
+```
+
+**Threads**
+
+```
+Your calendar knows you have a picnic on Saturday. Chronos also tells you it's going to rain: hourly forecast, rain and wind right next to your events, and the weather where each event takes place. Coming soon.
+
+🇬🇷 Ο καιρός δίπλα στα γεγονότα σου.
+
+https://dimakis.app/en/chronos/#demo-weather
+```
+
+**Alt text:** The Chronos weather screen on iPhone: London, 15 degrees with rain, high 18 and low 11, sunrise and sunset, and tabs for temperature, rain and wind.
+
+---
+
+## 11 · Apollo: αναζήτηση στις φωτογραφίες
+
+**Εικόνα:** `images/11-photo-search.jpg`
+**Σύνδεσμοι:** https://dimakis.app/en/apollo/#demo-search · https://dimakis.app/apollo/#demo-search
+
+**Instagram / Facebook**
+
+```
+Type "birds" and every bird shows up. Even if your photos aren't on iCloud 🐦
+
+Apple Photos can search by what's in a photo, but only for your Photos library. If your photos live on pCloud, Dropbox or a NAS, they're just files with names like IMG_4821.
+
+Apollo looks at them on your device and lets you search by:
+• what the photo shows: sea, dog, wedding, toucan
+• text inside the photo
+• place: "Crete" finds every town on the island
+• month and year
+
+Nothing is sent anywhere for the analysis, and nothing is copied off your cloud.
+
+Tip: search in English or in your own language, Apollo understands both.
+
+Apollo is coming soon. Try the search on our site: link in bio.
+
+🇬🇷
+Γράψε «πουλιά» και βρίσκεις όλα τα πουλιά, στις φωτογραφίες που έχεις στο δικό σου cloud. Η ανάλυση γίνεται στη συσκευή.
+
+#PhotoSearch #PhotoOrganization #pCloud #iPhoneApps #Apollo
+```
+
+**Threads**
+
+```
+Your cloud photos are named IMG_4821. Apollo looks at them on your device, so you can type "birds", "sea" or "Crete" and find them, without iCloud and without copying anything. Coming soon.
+
+🇬🇷 Αναζήτηση στις φωτογραφίες του cloud σου με το τι δείχνουν.
+
+https://dimakis.app/en/apollo/#demo-search
+```
+
+**Alt text:** Apollo on iPhone: a search for "birds" shows a toucan, a macaw and a woodpecker from October 2026, and more colourful birds from September.
+
+---
+
+## 12 · Chronos Γιορτές: ονομαστικές γιορτές
+
+**Εικόνα:** `images/12-name-days.jpg`
+**Σύνδεσμοι:** https://dimakis.app/en/giortes/ · https://dimakis.app/giortes/
+
+**Instagram / Facebook**
+
+```
+Got Greek friends? Then you know a name day can matter more than a birthday 🎉
+
+Chronos Celebrations shows, for every day, the names that are celebrated, and which of your contacts celebrate today, with a button to call them:
+• your contacts' birthdays too, with age and zodiac sign
+• a notification at the time you choose
+• type a name and see when it is celebrated
+• holidays for Greece and Cyprus, and On this day
+
+Your contacts stay on your device. It's free, with no purchases.
+
+Tip: add a second reminder, in case you miss the first one.
+
+Chronos Celebrations is coming in December, for iPhone and iPad. Link in bio.
+
+🇬🇷
+Ποιος γιορτάζει σήμερα; Οι Γιορτές σού δείχνουν ποιες επαφές σου γιορτάζουν ή έχουν γενέθλια, με κουμπί για τηλεφώνημα. Δωρεάν, τον Δεκέμβριο.
+
+#NameDay #Greece #GreekNames #Birthdays #ChronosCelebrations
+```
+
+**Threads**
+
+```
+In Greece, your name day can matter more than your birthday. Chronos Celebrations shows which of your contacts celebrate today, with a button to call them, plus their birthdays. Free, coming in December.
+
+🇬🇷 Ποιος γιορτάζει σήμερα, με ένα κουμπί για να τον πάρεις τηλέφωνο. Δωρεάν, τον Δεκέμβριο.
+
+https://dimakis.app/en/giortes/
+```
+
+**Alt text:** Chronos Celebrations on iPhone for 26 October: the saints of the day, the names celebrated (Dimitrios, Dimitra and more), and three contacts celebrating, each with a call button.
+
+---
+
+## 13 · Iris: μετονομασία φωτογραφιών
+
+**Εικόνα:** `images/13-rename.jpg`
+**Σύνδεσμοι:** https://dimakis.app/en/iris/#demo-rename · https://dimakis.app/iris/#demo-rename
+
+**Instagram / Facebook**
+
+```
+IMG_4821, 20230723_195800000_iOS 1.jpg, DSC0042… and they're all from the same year 📁
+
+Finder can rename many files at once, but it doesn't know when each photo was taken.
+
+In Iris on Mac you set a pattern once, like "2026 (001)":
+• numbered in the order the photos were taken
+• see every new name before anything changes
+• "Continue from folder": it finds the last number you used and carries on
+• a Live Photo keeps its photo and video together, under the same number
+• every rename can be undone
+
+Tip: keep the extensions lowercase (.jpg, not .JPG). Many clouds treat the two as different files, your Mac doesn't.
+
+Iris is coming soon. Try it on our site: link in bio.
+
+🇬🇷
+Δώσε στις φωτογραφίες μιας χρονιάς ονόματα με σειρά, όλες μαζί. Βλέπεις πρώτα τα νέα ονόματα και αναιρείς όποτε θες.
+
+#PhotoOrganization #MacApps #macOS #Photography #Iris
+```
+
+**Threads**
+
+```
+A year of photos named IMG_4821 and 20230723_iOS 1.jpg? Iris on Mac renames them all to "2026 (001)", "2026 (002)"… in the order they were taken. You see every new name first, and you can undo it. Coming soon.
+
+🇬🇷 Μετονομασία φωτογραφιών με σειρά λήψης, στο Mac.
+
+https://dimakis.app/en/iris/#demo-rename
+```
+
+**Alt text:** Iris on Mac: a preview list where camera file names become "2026 (001).jpg", "2026 (002).jpg" and so on, numbered by date.
+
+---
+
+## 14 · Chronos: Γρήγορη προσθήκη
+
+**Εικόνα:** `images/14-quick-add.jpg`
+**Σύνδεσμοι:** https://dimakis.app/en/chronos/#demo-quickadd · https://dimakis.app/chronos/#demo-quickadd
+
+**Instagram / Facebook**
+
+```
+"Lunch with Emma Friday at 1pm." That's all you should have to type ✍️
+
+On Mac, Calendar's Quick Event understands a sentence like that. On iPhone you still fill in title, date and time one by one.
+
+In Chronos you type it, or say it, the way you'd say it to a friend:
+• it works in all 32 of the app's languages, and finds the language from your sentence
+• dictation runs on your device
+• or take a photo of an invitation or a poster
+• you always see the event before it's saved, and can correct it
+
+Tip: you don't need the full date. "Tomorrow" or "the 15th" is enough.
+
+Chronos is coming soon. Try Quick Add on our site: link in bio.
+
+🇬🇷
+Γράψε «Οδοντίατρος αύριο στις 6» και το Chronos φτιάχνει το γεγονός. Το βλέπεις και το διορθώνεις πριν αποθηκευτεί.
+
+#Productivity #CalendarApp #iPhoneTips #iOSApps #Chronos
+```
+
+**Threads**
+
+```
+"Lunch with Emma Friday at 1pm." In Chronos that sentence becomes an event, in any of 32 languages, typed, dictated or read from a photo of an invitation. You check it before it's saved. Coming soon.
+
+🇬🇷 Γράψε το γεγονός όπως το λες.
+
+https://dimakis.app/en/chronos/#demo-quickadd
+```
+
+**Alt text:** Chronos Quick Add on iPhone: the text "Lunch with Emma Friday at 1pm" becomes an event on Friday, 9 October 2026, from 13:00 to 14:00.
+
+---
+
+## 15 · Apollo: κάρτες επιβίβασης και εισιτήρια πλοίου
+
+**Εικόνα:** `images/15-boarding-pass.jpg`
+**Σύνδεσμοι:** https://dimakis.app/en/apollo/ · https://dimakis.app/apollo/
+
+**Instagram / Facebook**
+
+```
+The boarding pass is in your email, the ferry ticket is a PDF somewhere, and you're at the gate ✈️⛴️
+
+Airlines can put your boarding pass in Apple Wallet. Ferry companies usually give you a PDF and nothing more.
+
+In Apollo, both go in one place:
+• boarding passes are read from the barcode, with the camera or a screenshot
+• ferry tickets are read from the PDF, even a return ticket with both journeys
+• a reminder the day before, and one three hours before you leave
+• add a boarding pass to Apple Wallet
+• once you're back, the journey moves to your archive, with distances and countries
+
+Tip: for ferries, use the PDF when you have it. A screenshot works too, but the PDF is read exactly.
+
+Apollo is coming soon. Link in bio.
+
+🇬🇷
+Κάρτες επιβίβασης και εισιτήρια πλοίου σε ένα μέρος, με υπενθύμιση την παραμονή και τρεις ώρες πριν.
+
+#Travel #BoardingPass #Ferry #TravelApps #Apollo
+```
+
+**Threads**
+
+```
+Flight barcode, ferry ticket PDF, return trips: Apollo reads them all, keeps them in one place, reminds you the day before and three hours before, and puts boarding passes in Apple Wallet. Coming soon.
+
+🇬🇷 Κάρτες επιβίβασης και εισιτήρια πλοίου, σε ένα μέρος.
+
+https://dimakis.app/en/apollo/
+```
+
+**Alt text:** Apollo on iPhone: Aegean flight A3 600 from Athens to London Heathrow on a map, Friday 20 November, 08:05 from Terminal A, gate A12, 4 hours 5 minutes, 2,427 km.
+
+---
+
+## 16 · Πίσω από το όνομα: Chronos
+
+**Εικόνα:** `images/16-name-chronos.jpg`
+**Σύνδεσμοι:** https://dimakis.app/en/chronos/#god · https://dimakis.app/chronos/#god
+
+**Instagram / Facebook**
+
+```
+Why is a calendar called Chronos? Because in Greek, chronos simply means time ⏳
+
+In Greek mythology Chronos is time itself. In antiquity he was often mixed up with Cronus, the Titan who ruled before Zeus, and that mix-up later gave us "Father Time" with his scythe. The two names sound almost the same, but they're not thought to be related.
+
+A calendar keeps your time: everything you need to remember, in the order it comes. So the name chose itself. And the apps that grew out of it, like Chronos Celebrations, carry it too.
+
+Every app here takes its name from Greek myth. Which one should we tell you about next?
+
+The full story: link in bio.
+
+🇬🇷
+Γιατί ένα ημερολόγιο λέγεται Chronos; Γιατί χρόνος σημαίνει… χρόνος. Η ιστορία του ονόματος και η σύγχυση με τον Κρόνο, στη σελίδα της εφαρμογής.
+
+#GreekMythology #Chronos #IndieDev #MadeInGreece #BehindTheScenes
+```
+
+**Threads**
+
+```
+Why is a calendar called Chronos? In Greek, chronos means time. In antiquity he was often mixed up with the Titan Cronus, and that gave us "Father Time" with his scythe. A calendar keeps your time, so the name chose itself.
+
+🇬🇷 Χρόνος σημαίνει χρόνος. Η ιστορία του ονόματος.
+
+https://dimakis.app/en/chronos/#god
+```
+
+**Alt text:** The gold Chronos emblem, a curved line inside a circle, above the Greek word ΧΡΟΝΟΣ, with the question "Why is a calendar called Chronos?".
