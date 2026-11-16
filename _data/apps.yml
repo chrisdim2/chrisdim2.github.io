@@ -342,9 +342,9 @@ list:
   full_name: Chronos Γιορτές
   title_en: Name Days
   full_name_en: Chronos Name Days
-  logo_en: /assets/logos/celebrations-lockup.svg
+  logo_en: /assets/logos/namedays-lockup.svg
   logo_size_en: [662, 141]
-  og_image_en: /assets/og/celebrations.jpg
+  og_image_en: /assets/og/namedays.jpg
   greek: ΓΙΟΡΤΕΣ
   icon: /assets/icons/giortes.png
   theme: light
