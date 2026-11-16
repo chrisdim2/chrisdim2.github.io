@@ -97,8 +97,8 @@
 
 | # | Εφαρμογή | Υπότιτλος (EN) | Συσκευές | Κατάσταση |
 |---|---|---|---|---|
-| 1 | Chronos Calendar | Calendar | iPhone, iPad, Mac, Watch | σύντομα (ναυαρχίδα) |
-| 2 | **Chronos Γιορτές** (EN: **Chronos Name Days**) | Calendar & birthdays | iPhone, iPad | δωρεάν, Δεκέμβριος |
+| 1 | Chronos Calendar | Calendar | iPhone, iPad, Mac, Watch | Δεκέμβριος (ναυαρχίδα) |
+| 2 | **Chronos Γιορτές** (EN: **Chronos Name Days**) | Calendar & birthdays | iPhone, iPad | δωρεάν, Νοέμβριος |
 | 3 | Apollo | Cloud Photo Gallery | iPhone, iPad, Mac | σε ανάπτυξη |
 | 4 | Iris | EXIFeditor | Mac | σε ανάπτυξη |
 | 5 | Argus | PDF & Doc Scanner | iPhone, iPad (όχι Mac, απόφαση 21/10) | σε ανάπτυξη |
@@ -108,7 +108,7 @@
 | 9 | **Chronos Hospitality** | Stays & Bookings Management (Διαχείριση Καταλυμάτων και Κρατήσεων) | iPhone, iPad, Mac, Web | **σε σχεδιασμό** (planned) |
 
 - Το **Chronos Hospitality** είναι ο διάδοχος της Hestia (αφαιρέθηκε). Το **ΔΙΟΝΥΣΟΣ δεν υπάρχει πια**· η εφαρμογή «Γιορτές» είναι το **Chronos Γιορτές**.
-- Γιορτές: φτιάχνεται από έτοιμο κομμάτι του Chronos, **δωρεάν τον Δεκέμβριο** ως δοκιμή πριν το Chronos (σύντομα). Έχει και γενέθλια, άρα ο τίτλος δεν είναι «Name Day» (και ποτέ «Names Day»). Φάκελος `~/Developer/NamedaysApp`.
+- Γιορτές: φτιάχνεται από έτοιμο κομμάτι του Chronos, **δωρεάν τον Νοέμβριο** ως δοκιμή πριν το Chronos (Δεκέμβριος· αλλαγή μηνών 16/11/2026, `status_el/en` στο `apps.yml`). Έχει και γενέθλια, άρα ο τίτλος δεν είναι «Name Day» (και ποτέ «Names Day»). Φάκελος `~/Developer/NamedaysApp`.
 - Ελληνικά: «Chronos Γιορτές» (η λέξη «Γιορτές» μένει για την αναζήτηση στο App Store). Αγγλικά: «Chronos Name Days» (16/11/2026: το «Chronos Celebrations» απορρίφθηκε στο App Store Connect ως ήδη σε χρήση· αγγλικός υπότιτλος «Calendar & birthdays»). Στο `apps.yml` τα αγγλικά είναι τα προαιρετικά `title_en`, `full_name_en`, `logo_en`, `logo_size_en`, `og_image_en` (και στο `admin/config.yml`). Το `_includes/app_i18n.html` διαλέγει όνομα και λογότυπο ανά γλώσσα.
 - Εικονίδια: ημερολόγιο με χρωματιστή κορυφή και σύμβολο σε δύο τόνους (Chronos μπλε, Roster μοβ, Fleet πράσινο, Hospitality κυανό, Γιορτές κόκκινο). Φάκελοι `~/Developer/<App>/Icons/` (Light, Dark, Tinted + `Assets.xcassets` + `Source/` SVG). Σύμβολα: Roster χρονοδιάγραμμα, Fleet ταχύμετρο, Hospitality διάστημα διαμονής, Γιορτές δώρο.
 - Λογότυπα: `~/Developer/Logos/logos/{roster,fleet,hospitality,giortes,namedays}` (έμβλημα χρυσό από γραμμές, «CHRONOS» και από κάτω το όνομα, στην Olympos). Χτίζονται από `Logos/tools/build.py` (δίγραμμο όνομα με `Word2`).
