@@ -18,7 +18,7 @@ const APPS = {
   iris: { name: 'Iris', kind: 'Photo companion for Mac', accent: '#9A7240' },
   athena: { name: 'Athena', kind: 'Notes & notebooks', accent: '#5B47D6' },
   argus: { name: 'Argus', kind: 'Document scanner', accent: '#4F5B67' },
-  giortes: { name: 'Chronos Celebrations', kind: 'Name days & birthdays', accent: '#C72A2C' },
+  giortes: { name: 'Chronos Name Days', kind: 'Calendar & birthdays', accent: '#C72A2C' },
 };
 const ORDER = ['chronos', 'apollo', 'iris', 'athena', 'argus'];
 
