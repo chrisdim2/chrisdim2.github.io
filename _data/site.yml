@@ -3,7 +3,7 @@ contact_email: support@dimakis.app
 # Email για δημοσιογράφους στο Press Kit (αν μείνει κενό, μπαίνει το contact_email).
 press_email: press@dimakis.app
 # Το ονοματεπώνυμό σου (όπως θα φαίνεται στο App Store). Μπαίνει ως δημιουργός στο JSON-LD όταν δεν είναι κενό.
-owner_name: ''
+owner_name: Christos Dimakis
 # Φόρμα «Ειδοποίησέ με» (Brevo). Στο Brevo: Contacts → Forms → νέα φόρμα με double opt-in,
 # και από τον κώδικα ενσωμάτωσης (Share → HTML) αντιγράφεις τη διεύθυνση του action="https://….sibforms.com/serve/…".
 # Φόρμα στο Brevo: «dimakis.app – Ειδοποίηση κυκλοφορίας» → λίστα #3, double opt-in.

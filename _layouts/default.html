@@ -121,6 +121,7 @@
       {% endif %}
       <a class="foot-mail" href="mailto:{{ site.data.site.contact_email }}">{{ site.data.site.contact_email }}</a>
       <p>{{ L.footer_note }}</p>
+      {% assign copy_year = site.time | date: '%Y' %}<p class="foot-tm">© 2026{% if copy_year != '2026' %}–{{ copy_year }}{% endif %} {{ site.data.site.owner_name | default: 'dimakis' }}</p>
       <p class="foot-tm">Apple, the Apple logo, iPhone and Mac are trademarks of Apple Inc. App Store is a service mark of Apple Inc.</p>
     </div>
   </div>
