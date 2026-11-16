@@ -3,6 +3,7 @@
 #
 #   ruby _tools/press_kits.rb            # φτιάχνει τα zip στο ~/Library/Caches/dimakis-press-kits/
 #   ruby _tools/press_kits.rb --upload   # και τα ανεβάζει στο GitHub Release «press-kit» (χρειάζεται gh)
+#   ruby _tools/press_kits.rb --only giortes:en   # μόνο μία εφαρμογή (και γλώσσα)· τα άλλα μένουν ως έχουν στο press_kits.yml
 #
 # Τα zip είναι μεγάλα (δεκάδες MB), γι' αυτό φιλοξενούνται στο GitHub Release και όχι στο repo.
 # Οι σύνδεσμοι μένουν ίδιοι σε κάθε νέο ανέβασμα. Μεγέθη και πλήθος εικόνων γράφονται στο
@@ -18,7 +19,7 @@ require "fileutils"
 require "tmpdir"
 
 ROOT = File.expand_path("..", __dir__)
-DEV = File.expand_path("..", ROOT) # ~/Developer
+DEV = ENV["DEV"] || File.expand_path("..", ROOT) # ~/Developer (σε worktree: DEV=~/Developer)
 REPO = "chrisdim2/chrisdim2.github.io"
 TAG = "press-kit"
 def src(path) = File.join(ROOT, path.sub(%r{\A/}, ""))
@@ -85,6 +86,7 @@ SOURCES = {
 }
 
 upload = ARGV.include?("--upload")
+only = ARGV.include?("--only") ? ARGV[ARGV.index("--only") + 1].to_s.split(":") : []
 apps = YAML.load_file(src("_data/apps.yml"))["list"].select { |a| a["ready"] }
 site = YAML.load_file(src("_data/site.yml"))
 langs = YAML.load_file(src("_data/languages.yml"))
@@ -95,7 +97,7 @@ DEVICE = { "iphone" => "iPhone", "ipad" => "iPad", "mac" => "Mac", "watch" => "A
 # Εκτός ~/Developer: ο φάκελος συγχρονίζεται με cloud, που «μπερδεύεται» με μεγάλα αρχεία που ξαναγράφονται.
 out_dir = File.join(Dir.home, "Library/Caches/dimakis-press-kits")
 FileUtils.mkdir_p(out_dir)
-summary = {}
+summary = only.empty? ? {} : (YAML.load_file(src("_data/press_kits.yml")) || {})
 built = []
 
 def readme(app, name, owner, langs, press_email)
@@ -154,11 +156,13 @@ end
 
 apps.each do |app|
   slug = app["slug"]
+  next if !only.empty? && only[0] != slug
   cfg = SOURCES[slug] or abort("Λείπει το SOURCES[#{slug}] στο script")
   name = app["full_name"] || app["title"]
-  summary[slug] = {}
+  summary[slug] ||= {}
 
   { "el" => "Greek", "en" => "English" }.each do |lang, lang_name|
+    next if only[1] && only[1] != lang
     # Όνομα φακέλου ASCII: το ελληνικό «Chronos Γιορτές» θα έβγαινε «Chronos», άρα το αγγλικό όνομα.
     folder = "#{(app['full_name_en'] || name).gsub(/[^\w&-]+/, ' ').strip.gsub(' ', '-')}-Press-Kit-#{lang.upcase}"
     file = "#{slug}-press-kit-#{lang}.zip"
@@ -173,10 +177,13 @@ apps.each do |app|
         FileUtils.cp(File.join(DEV, path), "#{base}/Icon/#{slug}-icon-1024#{suffix}.png")
       end
       FileUtils.cp(src(app["emblem"]), "#{base}/Logos/#{slug}-emblem.svg") if app["emblem"]
-      FileUtils.cp(src(app["logo"]), "#{base}/Logos/#{slug}-logo.svg") if app["logo"]
+      # Αγγλικό όνομα/λογότυπο/εικόνα όπου υπάρχουν (π.χ. Chronos Name Days αντί Chronos Γιορτές).
+      logo = (lang == "en" && app["logo_en"]) || app["logo"]
+      og = (lang == "en" && app["og_image_en"]) || app["og_image"]
+      FileUtils.cp(src(logo), "#{base}/Logos/#{slug}-logo.svg") if logo
       FileUtils.cp(src("/assets/dimakis-logo.svg"), "#{base}/Logos/dimakis-logo-light-background.svg")
       FileUtils.cp(src("/assets/dimakis-logo-dark.svg"), "#{base}/Logos/dimakis-logo-dark-background.svg")
-      FileUtils.cp(src(app["og_image"]), "#{base}/#{slug}-share-1200x630.jpg") if app["og_image"]
+      FileUtils.cp(src(og), "#{base}/#{slug}-share-1200x630.jpg") if og
 
       cfg["shots"].each do |kind, device, dir, prefix|
         d = File.join(DEV, dir.gsub("{lang}", lang))
@@ -198,7 +205,7 @@ apps.each do |app|
         shots += files.size
       end
 
-      File.write("#{base}/README.txt", readme(app, name, owner, langs, press_email))
+      File.write("#{base}/README.txt", readme(app, (lang == "en" && app["full_name_en"]) || name, owner, langs, press_email))
       FileUtils.rm_f(zip_path)
       Dir.chdir(tmp) { system("zip", "-q", "-r", "-X", zip_path, folder) or abort("zip failed") }
     end
