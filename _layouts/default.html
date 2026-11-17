@@ -70,10 +70,9 @@
 <link rel="icon" href="{{ '/assets/favicon-32.png' | relative_url }}" sizes="32x32">
 <link rel="icon" href="{{ '/assets/favicon-16.png' | relative_url }}" sizes="16x16">
 <link rel="apple-touch-icon" href="{{ '/assets/favicon-180.png' | relative_url }}">
-<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
-<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+{% comment %} Γραμματοσειρές από το ίδιο το site (assets/fonts.css), όχι από Google Fonts ή Fontshare: καμία κλήση σε τρίτους (πολιτική απορρήτου του site). {% endcomment %}
+<link rel="preload" href="{{ '/assets/fonts/general-sans-400.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ '/assets/fonts.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 <style>:root{ --berry: {{ site.data.site.accent }}; }{% if light %} html.light{ --bg: {{ share_app.tint | default: '#F6F7F9' }}; --app: {{ share_app.accent | default: '#16212B' }}; }{% endif %}</style>
 {% include jsonld.html app=share_app desc=page_desc %}
