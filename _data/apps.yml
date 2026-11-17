@@ -71,18 +71,18 @@ list:
       - {icon: /assets/icons/suite/6-eortologio.png, el: Εορτολόγιο, en: Name days, only: el}
       - {icon: /assets/icons/suite/7-antistrofi.png, el: Αντίστροφη μέτρηση, en: Countdown}
   features_el:
-    - Έξι όψεις ημερολογίου — Λίστα, Ημέρα, Εβδομάδα, Μήνας, Έτος, και συνδυαστική αρχική
+    - Έξι όψεις ημερολογίου: Λίστα, Ημέρα, Εβδομάδα, Μήνας, Έτος, και συνδυαστική αρχική
     - Αντίστροφη μέτρηση για γενέθλια, επετείους και ό,τι περιμένεις, με δυνατότητα να τη στείλεις σε φίλο
-    - Παρακολούθηση συντήρησης αυτοκινήτου — service, λάδια, ΚΤΕΟ, ασφάλεια, με πλήρες ιστορικό
+    - Παρακολούθηση συντήρησης αυτοκινήτου (service, λάδια, ΚΤΕΟ, ασφάλεια), με πλήρες ιστορικό
     - Υπενθυμίσεις φαρμάκων με έλεγχο πιθανών αλληλεπιδράσεων
     - Εφημερεύοντα φαρμακεία και νοσοκομεία κοντά σου, σε πραγματικό χρόνο
-    - Δάνεια, συντήρηση σπιτιού και συνδρομές — όλη η καθημερινότητα, σε ένα μέρος
+    - Δάνεια, συντήρηση σπιτιού και συνδρομές: όλη η καθημερινότητα, σε ένα μέρος
   features_en:
-    - Six calendar views — List, Day, Week, Month, Year, and a combined Home view
-    - Countdown for birthdays, anniversaries and anything you're waiting for — share it with a friend
-    - Car maintenance tracking — service, oil, MOT, insurance, with full history
+    - Six calendar views: List, Day, Week, Month, Year, and a combined Home view
+    - Countdown for birthdays, anniversaries and anything you're waiting for, and share it with a friend
+    - Car maintenance tracking (service, oil, MOT, insurance), with full history
     - Medication reminders with interaction checks
-    - Loans, home maintenance and subscriptions — your whole life admin, in one place
+    - Loans, home maintenance and subscriptions: your whole life admin, in one place
   screenshots: []
 - slug: athena
   title: Athena
@@ -120,18 +120,18 @@ list:
   status_el: Σε ανάπτυξη
   status_en: In development
   features_el:
-    - Οι σημειώσεις σου είναι απλά αρχεία Markdown μέσα στο δικό σου cloud — ανοίγουν με οποιοδήποτε εργαλείο
+    - Οι σημειώσεις σου είναι απλά αρχεία Markdown μέσα στο δικό σου cloud και ανοίγουν με οποιοδήποτε εργαλείο
     - Ιεραρχία σαν το OneNote, καθαρότητα σαν τις Σημειώσεις της Apple, views σαν το Trello
     - Πίνακες με τύπους (SUM, AVERAGE...) και υπολογισμοί μέσα στο κείμενο, σαν μίνι υπολογιστικό φύλλο
     - Ηχητικές σημειώσεις με μεταγραφή ομιλίας σε κείμενο, τοπικά στη συσκευή
-    - Σάρωση εγγράφων και OCR — το κείμενο μπαίνει αυτόματα στην αναζήτηση
+    - Σάρωση εγγράφων και OCR: το κείμενο μπαίνει αυτόματα στην αναζήτηση
     - Εισαγωγή από OneNote, Apple Notes και άλλα, ώστε να μη χάσεις τίποτα από ό,τι έχεις ήδη
   features_en:
-    - Your notes are plain Markdown files in your own cloud — they open in any tool
+    - Your notes are plain Markdown files in your own cloud, so they open in any tool
     - OneNote-style hierarchy, Apple Notes-style clarity, Trello-style views
     - Typed tables (SUM, AVERAGE...) and inline calculations, like a mini spreadsheet
     - Voice notes with on-device speech-to-text transcription
-    - Document scanning and OCR — text is instantly searchable
+    - Document scanning and OCR: text is instantly searchable
     - Import from OneNote, Apple Notes and more, so you don't lose what you already have
   screenshots: []
 - slug: apollo
@@ -193,21 +193,21 @@ list:
       - {icon: /assets/icons/suite/4-epexergasia.png, el: Επεξεργασία, en: Editing}
       - {icon: /assets/icons/suite/5-exif.png, el: EXIF, en: EXIF}
   features_el:
-    - Δεν αντιγράφει τις φωτογραφίες σου — δουλεύει απευθείας πάνω στο δικό σου cloud (pCloud, Dropbox, OneDrive κ.ά.)
+    - Δεν αντιγράφει τις φωτογραφίες σου: δουλεύει απευθείας πάνω στο δικό σου cloud (pCloud, Dropbox, OneDrive κ.ά.)
     - Άλμπουμ ανά έτος, χάρτης τοποθεσιών, αναζήτηση με πραγματικές ημερομηνίες και GPS από τα EXIF
-    - Έξυπνη ανάλυση μόνο στη συσκευή — γράψε «θάλασσα» ή «σκύλος» και τις βρίσκει, διαλέγει τα καλύτερα εξώφυλλα και βρίσκει τις διπλές
-    - Ταξίδια που βγαίνουν μόνα τους από τις φωτογραφίες σου — τα εντοπίζει, εσύ απλώς τα ονομάζεις
+    - Έξυπνη ανάλυση μόνο στη συσκευή: γράψε «θάλασσα» ή «σκύλος» και τις βρίσκει, διαλέγει τα καλύτερα εξώφυλλα και βρίσκει τις διπλές
+    - Ταξίδια που βγαίνουν μόνα τους από τις φωτογραφίες σου: τα εντοπίζει, εσύ απλώς τα ονομάζεις
     - Σάρωση καρτών επιβίβασης και ακτοπλοϊκών εισιτηρίων, με κάμερα ή PDF
     - Υπενθυμίσεις πριν από κάθε ταξίδι, και πλήρη στατιστικά χιλιομέτρων και χωρών
-    - Family mode — κοινά εξώφυλλα, φάκελοι και ταξίδια με όποιον μοιράζεται το ίδιο cloud
+    - Family mode: κοινά εξώφυλλα, φάκελοι και ταξίδια με όποιον μοιράζεται το ίδιο cloud
   features_en:
-    - Doesn't copy your photos — works directly on your own cloud (pCloud, Dropbox, OneDrive & more)
+    - Doesn't copy your photos: it works directly on your own cloud (pCloud, Dropbox, OneDrive & more)
     - Albums by year, a map of locations, search by real capture dates and GPS from EXIF
-    - Smart analysis, on your device only — type “sea” or “dog” to find them, best photos picked for covers, duplicates found
-    - Trips detected automatically from your photos — you just name them
+    - Smart analysis, on your device only: type “sea” or “dog” to find them, best photos picked for covers, duplicates found
+    - Trips detected automatically from your photos; you just name them
     - Scan boarding passes and ferry tickets, by camera or PDF
     - Reminders before every trip, plus full distance and country stats
-    - Family mode — shared covers, folders and trips with everyone on the same cloud
+    - Family mode: shared covers, folders and trips with everyone on the same cloud
   screenshots:
     - /assets/screens/apollo/mac/el/apollo-mac-01-timeline.webp
     - /assets/screens/apollo/iphone/el/apollo-iphone-01-timeline.webp
@@ -303,7 +303,7 @@ list:
   tagline_el: Ετοιμάζει τις φωτογραφίες σου πριν μπουν στο Apollo.
   tagline_en: Gets your photos ready before they join Apollo.
   origin_el: Από την Ίριδα, τη θεά του ουράνιου τόξου που ένωνε ουρανό και γη· έτσι κι αυτή ενώνει τις φωτογραφίες σου με το Apollo.
-  origin_en: Named after Iris, goddess of the rainbow who connected sky and earth — connecting your photos to Apollo, in much the same way.
+  origin_en: Named after Iris, goddess of the rainbow who connected sky and earth, and it connects your photos to Apollo in much the same way.
   god_el: 'Η Ίριδα ήταν η αγγελιαφόρος των θεών και η προσωποποίηση του ουράνιου τόξου. Κόρη του Θαύμαντα και της Ηλέκτρας, στον Όμηρο μεταφέρει τα μηνύματα του Δία και της Ήρας. Το ουράνιο τόξο ήταν ο δρόμος της ανάμεσα στον ουρανό και στη γη. Το Iris ετοιμάζει τις φωτογραφίες σου πριν φτάσουν στο Apollo.'
   god_en: 'Iris was the messenger of the gods and the personification of the rainbow. A daughter of Thaumas and Electra, she carries the messages of Zeus and Hera in Homer. The rainbow was her road between heaven and earth. Iris gets your photos ready before they reach Apollo.'
   god_wiki_el: https://el.wikipedia.org/wiki/Ίρις_(μυθολογία)

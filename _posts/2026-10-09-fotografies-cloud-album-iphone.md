@@ -3,6 +3,7 @@ lang: el
 alt: /en/articles/cloud-photos-as-albums-iphone/
 app: apollo
 title: 'Πώς βλέπω τις φωτογραφίες μου από το pCloud, το Dropbox ή το OneDrive σαν άλμπουμ'
+head_title: 'Φωτογραφίες pCloud, Dropbox και OneDrive σαν άλμπουμ | dimakis'
 description: 'Οι φωτογραφίες σου μένουν στο cloud που ήδη πληρώνεις, και στο iPhone, το iPad και το Mac τις βλέπεις σαν πραγματικό άλμπουμ, ανά έτος και σε χάρτη.'
 permalink: /articles/fotografies-cloud-album-iphone/
 ---

@@ -102,7 +102,7 @@ layout: default
     <button type="button" class="lb-btn lb-close" aria-label="{% if page.lang == 'el' %}Κλείσιμο{% else %}Close{% endif %}">&times;</button>
     <button type="button" class="lb-btn lb-prev" aria-label="{% if page.lang == 'el' %}Προηγούμενη{% else %}Previous{% endif %}">&larr;</button>
     <figure class="lb-fig">
-      <img src="" alt="">
+      <img alt="">
       <figcaption><span class="lb-cap"></span> <span class="lb-num"></span></figcaption>
     </figure>
     <button type="button" class="lb-btn lb-next" aria-label="{% if page.lang == 'el' %}Επόμενη{% else %}Next{% endif %}">&rarr;</button>
@@ -156,7 +156,7 @@ layout: default
     }
     function close(){
       lb.hidden = true;
-      lbImg.src = '';
+      lbImg.removeAttribute('src');
       document.documentElement.style.overflow = '';
       if (opener) opener.focus();
     }
@@ -200,7 +200,7 @@ layout: default
     {% endfor %}
   </section>
   <div class="lightbox" id="lightbox" hidden>
-    <img src="" alt="">
+    <img alt="">
   </div>
   <script>
   (function(){
@@ -216,12 +216,12 @@ layout: default
     });
     lb.addEventListener('click', function(){
       lb.hidden = true;
-      lbImg.src = '';
+      lbImg.removeAttribute('src');
     });
     document.addEventListener('keydown', function(e){
       if (e.key === 'Escape' && !lb.hidden) {
         lb.hidden = true;
-        lbImg.src = '';
+        lbImg.removeAttribute('src');
       }
     });
   })();

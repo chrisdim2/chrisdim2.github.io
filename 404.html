@@ -1,0 +1,33 @@
+---
+layout: default
+lang: el
+permalink: /404.html
+sitemap: false
+noindex: true
+title: Η σελίδα δεν βρέθηκε
+description: Η σελίδα δεν βρέθηκε. Page not found.
+---
+{% comment %}
+Σελίδα 404: το GitHub Pages τη δείχνει για κάθε διεύθυνση που δεν υπάρχει, σε όποια γλώσσα κι αν είναι ο επισκέπτης.
+Γι' αυτό είναι δίγλωσση. Όλοι οι σύνδεσμοι ξεκινούν από τη ρίζα (/…), γιατί η σελίδα μπορεί να φανεί σε οποιονδήποτε φάκελο.
+{% endcomment %}
+{% assign apps = site.data.apps.list | sort: "order" | where_exp: "a", "a.planned != true" %}
+<section class="hero hero-404">
+  <div class="hero-in">
+    <p class="eyebrow">404</p>
+    <h1 class="hero-h">Η σελίδα δεν βρέθηκε</h1>
+    <p class="hero-p">Ο σύνδεσμος μπορεί να είναι λάθος ή η σελίδα να μετακινήθηκε. Δες τις εφαρμογές ή γύρνα στην <a href="{{ '/' | relative_url }}">αρχική</a>.</p>
+    <p class="hero-p" lang="en">This page doesn’t exist. Try one of the apps below or go to the <a href="{{ '/en/' | relative_url }}" hreflang="en">home page</a>.</p>
+    <ul class="icon-row">
+      {% for app in apps %}
+      {% include app_i18n.html app=app %}
+      <li>
+        <a href="{{ '/' | append: app.slug | append: '/' | relative_url }}" title="{{ atitle }}">
+          {% if app.icon and app.icon != "" %}<img src="{{ app.icon | relative_url }}" alt="{{ atitle }}" width="64" height="64">{% endif %}
+          <span class="icon-name">{% if app.family %}{{ afull }}{% else %}{{ atitle }}{% endif %}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

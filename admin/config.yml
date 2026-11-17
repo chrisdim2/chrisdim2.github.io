@@ -34,6 +34,34 @@ collections:
               - { name: platforms, label: Συσκευές, widget: select, multiple: true, required: false, options: [{ label: iPhone, value: iphone }, { label: iPad, value: ipad }, { label: Mac, value: mac }, { label: Apple Watch, value: watch }, { label: Web, value: web }] }
               - { name: languages, label: "Γλώσσες της εφαρμογής (κωδικοί, π.χ. el, en· κενό = όλες)", widget: list, required: false, field: { name: code, label: Κωδικός, widget: string } }
               - { name: icon, label: Εικονίδιο, widget: image, required: false }
+              - { name: theme, label: "Θέμα σελίδας (light = ανοιχτό)", widget: select, options: [light, dark], required: false }
+              - { name: tint, label: "Χρώμα φόντου σελίδας (π.χ. #E5ECFC)", widget: string, required: false }
+              - { name: accent, label: "Χρώμα τόνου εφαρμογής (π.χ. #2747B8)", widget: string, required: false }
+              - { name: logo, label: "Λογότυπο (διαδρομή, π.χ. /assets/logos/chronos-lockup.svg)", widget: string, required: false }
+              - { name: logo_size, label: "Διαστάσεις λογότυπου [πλάτος, ύψος]", widget: list, required: false, field: { name: px, label: px, widget: number, value_type: int } }
+              - { name: emblem, label: "Έμβλημα (διαδρομή SVG)", widget: string, required: false }
+              - { name: og_image, label: "Εικόνα κοινοποίησης (διαδρομή, 1200×630)", widget: string, required: false }
+              - name: suite
+                label: "Ενότητα «N εφαρμογές σε 1» (μόνο όπου υπάρχει)"
+                widget: object
+                required: false
+                collapsed: true
+                fields:
+                  - { name: title_el, label: Τίτλος, widget: string, required: false }
+                  - { name: title_en, label: Title (EN), widget: string, required: false }
+                  - { name: lead_el, label: Εισαγωγή, widget: string, required: false }
+                  - { name: lead_en, label: Lead (EN), widget: string, required: false }
+                  - { name: bonus_en, label: "Σημείωση μόνο στα αγγλικά (Living in Greece?)", widget: string, required: false }
+                  - name: items
+                    label: Εικονίδια
+                    widget: list
+                    required: false
+                    summary: "{{fields.el}}"
+                    fields:
+                      - { name: icon, label: "Εικονίδιο (διαδρομή)", widget: string }
+                      - { name: el, label: Ελληνικά, widget: string }
+                      - { name: en, label: English, widget: string }
+                      - { name: only, label: "Μόνο σε μία γλώσσα (el)", widget: string, required: false }
               - { name: kind_el, label: Κατηγορία, widget: string }
               - { name: kind_en, label: Category (EN), widget: string }
               - { name: tagline_el, label: Ατάκα, widget: string }

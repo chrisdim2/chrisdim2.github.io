@@ -29,8 +29,13 @@ sitemap: false
 {%- endfor -%}
 {%- for f in site.static_files -%}
 {%- if f.extname == '.html' and f.path contains '/privacy-' or f.extname == '.html' and f.path contains '/terms-' %}
+{%- comment -%}Νομικά: το ίδιο κείμενο υπάρχει πάντα σε -el.html και -en.html (legal_check.rb).{%- endcomment -%}
+{%- if f.path contains '-el.html' -%}{%- assign l_el = f.path -%}{%- assign l_en = f.path | replace: '-el.html', '-en.html' -%}{%- else -%}{%- assign l_en = f.path -%}{%- assign l_el = f.path | replace: '-en.html', '-el.html' -%}{%- endif %}
   <url>
     <loc>{{ f.path | absolute_url | xml_escape }}</loc>
+    <xhtml:link rel="alternate" hreflang="el" href="{{ l_el | absolute_url | xml_escape }}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ l_en | absolute_url | xml_escape }}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ l_en | absolute_url | xml_escape }}"/>
   </url>
 {%- endif -%}
 {%- endfor %}

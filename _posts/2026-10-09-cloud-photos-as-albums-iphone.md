@@ -3,6 +3,7 @@ lang: en
 alt: /articles/fotografies-cloud-album-iphone/
 app: apollo
 title: 'How to browse your pCloud, Dropbox or OneDrive photos as albums'
+head_title: 'Browse pCloud, Dropbox or OneDrive photos as albums | dimakis'
 description: 'Keep your photos in the cloud you already pay for, and browse them on iPhone, iPad and Mac as a real album, by year and on a map.'
 permalink: /en/articles/cloud-photos-as-albums-iphone/
 ---
