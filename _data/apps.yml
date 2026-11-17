@@ -288,8 +288,8 @@ list:
   price: ''
   ready: true
   schema_category: PhotographyApplication
-  description_el: 'Εφαρμογή για Mac που διορθώνει ημερομηνία και τοποθεσία, γράφει τίτλους και λέξεις-κλειδιά, μετονομάζει αρχεία, βρίσκει διπλότυπες φωτογραφίες και τις καθαρίζει από τα metadata πριν τις μοιραστείς.'
-  description_en: 'A Mac app that fixes dates and locations, writes titles and keywords, renames files, finds duplicate photos and strips their metadata before you share them, all locally on your Mac.'
+  description_el: 'Στο Mac διορθώνει ημερομηνία και τοποθεσία φωτογραφιών, γράφει λέξεις-κλειδιά, μετονομάζει, βρίσκει διπλότυπα και σβήνει τα metadata πριν μοιραστείς.'
+  description_en: 'A Mac app that fixes photo dates and locations, adds keywords, renames files, finds duplicates and strips metadata before you share, all on your Mac.'
   press_long_el: |
     Το Iris είναι εφαρμογή για Mac που ετοιμάζει τις φωτογραφίες σου πριν μπουν στο αρχείο σου. Διορθώνει ημερομηνία λήψης και τοποθεσία, γράφει τίτλο, περιγραφή και λέξεις-κλειδιά, μετονομάζει μαζικά τα αρχεία και εντοπίζει τα διπλότυπα. Και πριν μοιραστείς μια φωτογραφία ή ένα βίντεο, ο Καθαρισμός για ιδιωτικότητα σβήνει με ένα κλικ τοποθεσία, ημερομηνία και συσκευή, χωρίς να αλλάξει η εικόνα.
 
