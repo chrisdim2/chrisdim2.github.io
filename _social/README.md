@@ -51,7 +51,7 @@
 | Τετ 18/11 | 13 Μετονομασία φωτογραφιών | Iris |  ✅ FB + IG + Threads |
 | Παρ 20/11 | 14 Γρήγορη προσθήκη | Chronos |  ✅ FB + IG + Threads |
 | Κυρ 22/11 | 15 Κάρτες επιβίβασης και εισιτήρια πλοίου | Apollo |  ✅ FB + IG + Threads |
-| Τρι 24/11 | 16 Πίσω από το όνομα: Chronos | Chronos |  ✅ FB + IG + Threads |
+| Τρι 24/11 | 16 Πίσω από το όνομα: Chronos | Chronos |  ⚠️ FB + IG: διόρθωση «Chronos Celebrations» → «Chronos Name Days» στο Meta Business Suite · ✅ Threads |
 
 ### Ροή κάθε εβδομάδας
 
