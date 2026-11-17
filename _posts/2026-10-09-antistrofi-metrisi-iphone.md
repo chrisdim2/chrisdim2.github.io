@@ -3,6 +3,7 @@ lang: el
 alt: /en/articles/countdown-iphone/
 app: chronos
 title: 'Αντίστροφη μέτρηση στο iPhone για γενέθλια, ταξίδια και ό,τι περιμένεις'
+head_title: 'Αντίστροφη μέτρηση στο iPhone για γενέθλια και ταξίδια'
 description: 'Πόσες μέρες μένουν για τις διακοπές, τον γάμο ή τα γενέθλια, με φωτογραφία, ειδοποίηση και κοινή χρήση με φίλους.'
 permalink: /articles/antistrofi-metrisi-iphone/
 ---

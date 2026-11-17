@@ -175,8 +175,8 @@ groups:
     label_el: Βίντεο
     label_en: Video
     video:
-      src: /assets/video/chronos-el.mp4
-      src_en: /assets/video/chronos-en.mp4
+      src: /assets/video/web/chronos-el.mp4
+      src_en: /assets/video/web/chronos-en.mp4
       poster: /assets/screens/chronos/video/chronos-poster-el.webp
       poster_en: /assets/screens/chronos/video/chronos-poster-en.webp
       el: 'Το Chronos σε δράση'

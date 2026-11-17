@@ -26,7 +26,7 @@ social:
   - { name: TikTok, url: 'https://www.tiktok.com/@dimakisapps' }
   - { name: LinkedIn, url: '' }
 el:
-  home_title: dimakis — Εφαρμογές για iPhone, iPad, Mac και Apple Watch
+  home_title: dimakis · Εφαρμογές για iPhone, iPad, Mac και Apple Watch
   eyebrow: iPhone και Mac
   hero_title: 'Εφαρμογές
 
@@ -80,7 +80,7 @@ el:
   article_draft: Πρόχειρο, δεν δημοσιεύεται ακόμα
   read_more: Διάβασε
 en:
-  home_title: dimakis — Apps for iPhone, iPad, Mac and Apple Watch
+  home_title: dimakis · Apps for iPhone, iPad, Mac and Apple Watch
   eyebrow: iPhone and Mac
   hero_title: 'Apps inspired
 

@@ -4,6 +4,7 @@ alt: /en/articles/myth-chronos/
 app: chronos
 series: myth
 title: 'Γιατί ένα ημερολόγιο λέγεται Chronos: Χρόνος, Κρόνος και Καιρός'
+head_title: 'Γιατί ένα ημερολόγιο λέγεται Chronos: Χρόνος, Κρόνος και Καιρός'
 description: 'Οι αρχαίοι Έλληνες είχαν δύο λέξεις για τον χρόνο. Η ιστορία πίσω από το όνομα του Chronos, από τον Πατέρα Χρόνο ως το άγαλμα του Καιρού.'
 permalink: /articles/mythos-chronos/
 ---

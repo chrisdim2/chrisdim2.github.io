@@ -3,6 +3,7 @@ lang: en
 alt: /articles/kteo-service-asfaleia-iphone/
 app: chronos
 title: 'How to get reminders for car service, inspections and insurance on iPhone'
+head_title: 'Car service, inspection and insurance reminders on iPhone'
 description: 'Never miss your car inspection, insurance renewal or oil change again, with reminders and a full history for each task.'
 permalink: /en/articles/car-service-reminders-iphone/
 ---

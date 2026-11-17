@@ -16,7 +16,7 @@ include.wide / include.ipad / include.phone / include.watch: εικόνες οθ
   <div class="mbp">
     <div class="mbp-lid">
       <div class="mbp-screen">
-        {% if include.wide %}<img src="{{ include.wide | relative_url }}" alt="{{ include.title }} — Mac" loading="lazy">{% else %}{{ blank_screen }}{% endif %}
+        {% if include.wide %}<img src="{{ include.wide | relative_url }}" alt="{{ include.title }} · Mac" loading="lazy">{% else %}{{ blank_screen }}{% endif %}
       </div>
     </div>
     <div class="mbp-base"></div>
@@ -25,14 +25,14 @@ include.wide / include.ipad / include.phone / include.watch: εικόνες οθ
   {% if has_ipad %}
   <div class="ipd">
     <div class="ipd-screen">
-      {% if include.ipad %}<img src="{{ include.ipad | relative_url }}" alt="{{ include.title }} — iPad" loading="lazy">{% else %}{{ blank_screen }}{% endif %}
+      {% if include.ipad %}<img src="{{ include.ipad | relative_url }}" alt="{{ include.title }} · iPad" loading="lazy">{% else %}{{ blank_screen }}{% endif %}
     </div>
   </div>
   {% endif %}
   {% if has_phone %}
   <div class="iph">
     <div class="iph-screen">
-      {% if include.phone %}<img src="{{ include.phone | relative_url }}" alt="{{ include.title }} — iPhone" loading="lazy">{% else %}{{ blank_screen }}{% endif %}
+      {% if include.phone %}<img src="{{ include.phone | relative_url }}" alt="{{ include.title }} · iPhone" loading="lazy">{% else %}{{ blank_screen }}{% endif %}
     </div>
   </div>
   {% endif %}
@@ -40,7 +40,7 @@ include.wide / include.ipad / include.phone / include.watch: εικόνες οθ
   <div class="wch">
     <div class="wch-case">
       <div class="wch-screen">
-        {% if include.watch %}<img src="{{ include.watch | relative_url }}" alt="{{ include.title }} — Apple Watch" loading="lazy">{% else %}{{ blank_screen }}{% endif %}
+        {% if include.watch %}<img src="{{ include.watch | relative_url }}" alt="{{ include.title }} · Apple Watch" loading="lazy">{% else %}{{ blank_screen }}{% endif %}
       </div>
     </div>
   </div>

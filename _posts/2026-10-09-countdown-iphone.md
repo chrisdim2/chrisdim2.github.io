@@ -3,6 +3,7 @@ lang: en
 alt: /articles/antistrofi-metrisi-iphone/
 app: chronos
 title: 'How to count down to birthdays, trips and anything you''re waiting for on iPhone'
+head_title: 'Countdown to birthdays and trips on iPhone | dimakis'
 description: 'How many days until the holiday, the wedding or the birthday, with a photo, a reminder and sharing with friends.'
 permalink: /en/articles/countdown-iphone/
 ---

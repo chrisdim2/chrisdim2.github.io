@@ -3,6 +3,7 @@ lang: el
 alt: /en/articles/car-service-reminders-iphone/
 app: chronos
 title: 'Υπενθύμιση για ΚΤΕΟ, service και ασφάλεια αυτοκινήτου στο iPhone'
+head_title: 'ΚΤΕΟ, service και ασφάλεια: υπενθυμίσεις στο iPhone | dimakis'
 description: 'Πώς να μη σου ξεφύγει ξανά το ΚΤΕΟ, η ασφάλεια ή η αλλαγή λαδιών, με υπενθυμίσεις και ιστορικό για κάθε αυτοκίνητο.'
 permalink: /articles/kteo-service-asfaleia-iphone/
 ---
