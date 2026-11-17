@@ -30,6 +30,8 @@ include.app: η εφαρμογή (προαιρετικό). Η επαφή απο�
       <input type="hidden" name="html_type" value="simple">
       <button type="submit" class="btn">{{ L.notify_button }}</button>
       <p class="notify-note" aria-live="polite">{{ L.notify_note }}</p>
+      {% if page.lang == 'el' %}{% assign privacy_url = '/privacy/' %}{% else %}{% assign privacy_url = '/en/privacy/' %}{% endif %}
+      <p class="notify-privacy"><a href="{{ privacy_url | relative_url }}">{{ L.notify_privacy | default: 'Privacy' }}</a></p>
     </form>
   </div>
 </section>

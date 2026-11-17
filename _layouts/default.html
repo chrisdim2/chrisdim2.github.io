@@ -111,6 +111,7 @@
       <ul class="foot-links" aria-label="{{ L.footer_more }}">
         {% if live_posts.size > 0 %}<li><a href="{{ home | append: 'articles/' | relative_url }}">{{ L.nav_articles }}</a></li>{% endif %}
         <li><a href="{{ home | append: 'press/' | relative_url }}">{{ L.nav_press }}</a></li>
+        <li><a href="{{ home | append: 'privacy/' | relative_url }}">{{ L.nav_privacy | default: 'Privacy' }}</a></li>
       </ul>
       {% assign socials = site.data.site.social | where_exp: "s", "s.url != ''" %}
       {% if socials.size > 0 %}

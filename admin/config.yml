@@ -153,6 +153,8 @@ collections:
               - { name: notify_placeholder, label: "Ειδοποίηση, παράδειγμα", widget: string, required: false }
               - { name: notify_button, label: "Ειδοποίηση, κουμπί", widget: string, required: false }
               - { name: notify_note, label: "Ειδοποίηση, σημείωση", widget: string, required: false }
+              - { name: notify_privacy, label: "Ειδοποίηση, σύνδεσμος απορρήτου", widget: string, required: false }
+              - { name: nav_privacy, label: "Υποσέλιδο, απόρρητο", widget: string, required: false }
               - { name: notify_success, label: "Ειδοποίηση, επιτυχία", widget: string, required: false }
               - { name: notify_error, label: "Ειδοποίηση, σφάλμα", widget: string, required: false }
               - { name: articles_title, label: "Άρθρα, τίτλος", widget: string, required: false }
@@ -203,6 +205,8 @@ collections:
               - { name: notify_placeholder, label: "Ειδοποίηση, παράδειγμα", widget: string, required: false }
               - { name: notify_button, label: "Ειδοποίηση, κουμπί", widget: string, required: false }
               - { name: notify_note, label: "Ειδοποίηση, σημείωση", widget: string, required: false }
+              - { name: notify_privacy, label: "Ειδοποίηση, σύνδεσμος απορρήτου", widget: string, required: false }
+              - { name: nav_privacy, label: "Υποσέλιδο, απόρρητο", widget: string, required: false }
               - { name: notify_success, label: "Ειδοποίηση, επιτυχία", widget: string, required: false }
               - { name: notify_error, label: "Ειδοποίηση, σφάλμα", widget: string, required: false }
               - { name: articles_title, label: "Άρθρα, τίτλος", widget: string, required: false }

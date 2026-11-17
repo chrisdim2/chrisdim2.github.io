@@ -72,6 +72,8 @@ el:
   notify_placeholder: όνομα@email.gr
   notify_button: Ειδοποίησέ με
   notify_note: Μπορείς να διαγραφείς με ένα κλικ, όποτε θέλεις.
+  notify_privacy: Πώς χειριζόμαστε το email σου
+  nav_privacy: Απόρρητο
   notify_success: 'Σχεδόν έτοιμο: άνοιξε το email που σου στείλαμε και πάτα «Επιβεβαίωση».'
   notify_error: 'Κάτι δεν πήγε καλά. Δοκίμασε ξανά σε λίγο.'
   articles_title: Άρθρα
@@ -124,6 +126,8 @@ en:
   notify_placeholder: name@email.com
   notify_button: Notify me
   notify_note: Unsubscribe with one click, any time.
+  notify_privacy: How we handle your email
+  nav_privacy: Privacy
   notify_success: 'Almost done: open the email we just sent you and tap “Confirm”.'
   notify_error: 'Something went wrong. Please try again shortly.'
   articles_title: Articles
