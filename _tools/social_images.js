@@ -72,6 +72,22 @@ const POSTS = [
   { file: '16-name-chronos', app: 'chronos', title: 'Why is a calendar called Chronos?',
     sub: 'In Greek, chronos simply means time.',
     emblem: 'assets/logos/chronos-emblem.svg', word: 'ΧΡΟΝΟΣ' },
+  // Σειρά «The myth behind the name» (_social/myth.md): μία την εβδομάδα, με τη σειρά του αρχείου.
+  { file: 'myth-apollo', app: 'apollo', title: 'Why is a photo app called Apollo?',
+    sub: 'In Greek, photography means writing with light.',
+    emblem: 'assets/logos/apollo-emblem.svg', word: 'ΑΠΟΛΛΩΝ' },
+  { file: 'myth-iris', app: 'iris', title: 'Your eye, a flower and a metal share one name.',
+    sub: 'All three come from Iris, the Greek goddess of the rainbow.',
+    emblem: 'assets/logos/iris-emblem.svg', word: 'ΙΡΙΣ' },
+  { file: 'myth-kairos', app: 'chronos', title: 'The Greeks had two words for time.',
+    sub: 'Chronos, the time you count. Kairos, the right moment.',
+    emblem: 'assets/logos/chronos-emblem.svg', word: 'ΚΑΙΡΟΣ' },
+  { file: 'myth-athena', app: 'athena', title: 'Why is the owl the bird of wisdom?',
+    sub: 'Because it was Athena’s.',
+    emblem: 'assets/logos/athena-emblem.svg', word: 'ΑΘΗΝΑ' },
+  { file: 'myth-argus', app: 'argus', title: 'Why does a peacock’s tail have eyes?',
+    sub: 'Because of Argus, the Greek giant who saw everything.',
+    emblem: 'assets/logos/argus-emblem.svg', word: 'ΑΡΓΟΣ' },
 ];
 
 const BASE_CSS = `

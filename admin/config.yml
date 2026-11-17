@@ -99,6 +99,7 @@ collections:
               - { name: features_title, label: Τίτλος χαρακτηριστικών, widget: string }
               - { name: origin_title, label: Τίτλος προέλευσης, widget: string }
               - { name: god_title, label: Τίτλος ενότητας για τη μορφή του ονόματος, widget: string }
+              - { name: god_story, label: Σύνδεσμος προς το άρθρο της σειράς «Ο μύθος πίσω από το όνομα», widget: string }
               - { name: god_more, label: Σύνδεσμος «Περισσότερα», widget: string }
               - { name: god_family, label: Παραπομπή στη σελίδα του Chronos, widget: string }
               - { name: status_soon, label: Κείμενο πριν την κυκλοφορία, widget: string }
@@ -148,6 +149,7 @@ collections:
               - { name: features_title, label: Features title, widget: string }
               - { name: origin_title, label: Origin title, widget: string }
               - { name: god_title, label: Figure behind the name title, widget: string }
+              - { name: god_story, label: Link to the myth article, widget: string }
               - { name: god_more, label: More link, widget: string }
               - { name: god_family, label: Link to the Chronos page, widget: string }
               - { name: status_soon, label: Pre-release text, widget: string }

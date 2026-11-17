@@ -682,7 +682,7 @@ Why is a calendar called Chronos? Because in Greek, chronos simply means time ‚è
 
 In Greek mythology Chronos is time itself. In antiquity he was often mixed up with Cronus, the Titan who ruled before Zeus, and that mix-up later gave us "Father Time" with his scythe. The two names sound almost the same, but they're not thought to be related.
 
-A calendar keeps your time: everything you need to remember, in the order it comes. So the name chose itself. And the apps that grew out of it, like Chronos Celebrations, carry it too.
+A calendar keeps your time: everything you need to remember, in the order it comes. So the name chose itself. And the apps that grew out of it, like Chronos Name Days, carry it too.
 
 Every app here takes its name from Greek myth. Which one should we tell you about next?
 

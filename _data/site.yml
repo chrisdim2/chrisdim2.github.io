@@ -51,6 +51,7 @@ el:
   features_title: Τι κάνει
   origin_title: Το όνομα
   god_title: Η μορφή πίσω από το όνομα
+  god_story: Όλη η ιστορία του ονόματος
   god_more: Περισσότερα στη Wikipedia
   god_family: Η ιστορία του ονόματος Chronos, στη σελίδα του Chronos
   status_soon: Μόλις κυκλοφορήσει, ο σύνδεσμος του App Store θα εμφανιστεί εδώ.
@@ -74,7 +75,7 @@ el:
   notify_success: 'Σχεδόν έτοιμο: άνοιξε το email που σου στείλαμε και πάτα «Επιβεβαίωση».'
   notify_error: 'Κάτι δεν πήγε καλά. Δοκίμασε ξανά σε λίγο.'
   articles_title: Άρθρα
-  articles_text: Οδηγοί και μικρές λύσεις για iPhone, iPad και Mac.
+  articles_text: Οδηγοί και μικρές λύσεις για iPhone, iPad και Mac, και οι ιστορίες πίσω από τα ονόματα.
   articles_empty: Τα πρώτα άρθρα έρχονται σύντομα.
   article_draft: Πρόχειρο, δεν δημοσιεύεται ακόμα
   read_more: Διάβασε
@@ -102,6 +103,7 @@ en:
   features_title: What it does
   origin_title: The name
   god_title: The figure behind the name
+  god_story: The full story of the name
   god_more: More on Wikipedia
   god_family: The story of the name Chronos, on the Chronos page
   status_soon: Once released, the App Store link will appear here.
@@ -125,7 +127,7 @@ en:
   notify_success: 'Almost done: open the email we just sent you and tap “Confirm”.'
   notify_error: 'Something went wrong. Please try again shortly.'
   articles_title: Articles
-  articles_text: Guides and small fixes for iPhone, iPad and Mac.
+  articles_text: Guides and small fixes for iPhone, iPad and Mac, and the stories behind the names.
   articles_empty: The first articles are coming soon.
   article_draft: Draft, not published yet
   read_more: Read

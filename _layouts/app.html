@@ -260,6 +260,8 @@ layout: default
   <section class="block god" id="god">
     <h2>{{ L.god_title }}</h2>
     <p class="origin-note">{{ god }}</p>
+    {% assign myth = site.posts | where: "lang", page.lang | where: "app", app.slug | where: "series", "myth" | first %}
+    {% if myth %}<p class="god-more"><a href="{{ myth.url | relative_url }}">{{ L.god_story }} &rarr;</a></p>{% endif %}
     {% if god_wiki and god_wiki != "" %}<p class="god-more"><a href="{{ god_wiki }}" rel="noopener">{{ L.god_more }} &rarr;</a></p>{% endif %}
   </section>
   {% elsif app.family == 'chronos' and app.slug != 'chronos' %}
