@@ -521,3 +521,58 @@ list:
   features_el: []
   features_en: []
   screenshots: []
+- slug: pluto
+  planned: true
+  title: Pluto
+  full_name: Pluto StatsApp
+  greek: ΠΛΟΥΤΩΝ
+  icon: /assets/icons/pluto.png
+  theme: light
+  tint: '#F6EEDB'
+  accent: '#9A6B00'
+  logo: /assets/logos/pluto-lockup.svg
+  logo_size: [505, 141]
+  og_image: /assets/og/pluto.jpg
+  order: 10
+  platforms: [iphone, mac]
+  languages: [el]
+  has_legal: true
+  support_email: pluto@dimakis.app
+  appstore_url: ''
+  appstore_id: ''
+  price: ''
+  ready: false
+  schema_category: UtilitiesApplication
+  description_el: 'Pluto: τα στατιστικά και οι κριτικές των εφαρμογών σου στο App Store, σε iPhone και Mac, κατευθείαν από την Apple και χωρίς δικούς μας διακομιστές, από το dimakis.'
+  description_en: 'Pluto: the App Store statistics and reviews of your apps on iPhone and Mac, straight from Apple and with no servers of ours, by dimakis.'
+  kind_el: Στατιστικά App Store
+  kind_en: App Store stats
+  tagline_el: Τα νούμερα των εφαρμογών σου, στο φως.
+  tagline_en: The numbers of your apps, in the light.
+  origin_el: Από τον Πλούτωνα, τον θεό του κάτω κόσμου και του πλούτου που κρύβεται κάτω από τη γη.
+  origin_en: Named after Pluto, god of the underworld and of the wealth hidden under the earth.
+  god_el: 'Ο Πλούτωνας ήταν ο άρχοντας του κάτω κόσμου. Το όνομά του συγχέεται συχνά με τον Πλούτο, τον θεό του πλούτου, επειδή τα μεταλλεύματα και οι σπόροι της σοδειάς βρίσκονται κάτω από τη γη. Το Pluto βγάζει στο φως τα νούμερα των εφαρμογών σου: λήψεις, χώρες, κριτικές.'
+  god_en: 'Pluto ruled the underworld. His name is often mixed up with Ploutos, the god of wealth, because minerals and the seeds of the harvest lie under the earth. This Pluto brings the numbers of your apps to light: downloads, countries, reviews.'
+  god_wiki_el: https://el.wikipedia.org/wiki/Άδης_(μυθολογία)
+  god_wiki_en: https://en.wikipedia.org/wiki/Pluto_(mythology)
+  status_el: Έρχεται σύντομα
+  status_en: Coming soon
+  features_el:
+    - Οι χθεσινές νέες λήψεις όλων των εφαρμογών σου, με γράφημα 30 ημερών και σύγκριση με την προηγούμενη περίοδο
+    - Λήψεις από την αρχή για κάθε εφαρμογή, από τις ετήσιες και ημερήσιες αναφορές της Apple (όχι ενεργές εγκαταστάσεις)
+    - Κριτικές όλων των εφαρμογών, με φίλτρα ανά εφαρμογή, αστέρια και χώρα, και απάντηση μέσα από την εφαρμογή με προεπισκόπηση
+    - Ειδοποίηση όταν έρχεται νέα κριτική
+    - 'Τι να κάνεις: απλοί κανόνες πάνω στα νούμερά σου δείχνουν πτώση λήψεων, κακές κριτικές που περιμένουν και χώρες που ανεβαίνουν'
+    - Σύνοψη κριτικών και πρόχειρο απάντησης με AI της Apple, στη συσκευή, όπου υποστηρίζεται
+    - Widget στο iPhone με τις χθεσινές λήψεις
+    - Χωρίς λογαριασμό και χωρίς δικούς μας διακομιστές: μιλά μόνο με την Apple και το κλειδί σου μένει στο iCloud Keychain
+  features_en:
+    - Yesterday’s new downloads for all your apps, with a 30-day chart and a comparison with the period before
+    - Downloads since the start for each app, from Apple’s yearly and daily reports (not active installs)
+    - Reviews of all your apps, filtered by app, stars and country, with replies from the app after a preview
+    - A notification when a new review arrives
+    - 'What to do: simple rules over your numbers point out drops in downloads, bad reviews waiting for an answer and countries that are rising'
+    - Review summary and reply drafts with Apple’s on-device AI, where supported
+    - An iPhone widget with yesterday’s downloads
+    - No account and no servers of ours: it talks only to Apple and your key stays in your iCloud Keychain
+  screenshots: []

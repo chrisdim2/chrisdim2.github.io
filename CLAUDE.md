@@ -71,6 +71,11 @@
   βίντεο YouTube/Vimeo/Dailymotion (φορτώνει ο player, ζητείται ο τίτλος), Share extension (iPhone/iPad), Safari Web Clipper (Mac), γλώσσες OCR από το GitHub, «Οι εφαρμογές μας».
   **Δεν** αναφέρουν OneDrive (υπάρχει στο `SyncKit`, όχι ακόμα στο `CloudService` της Athena): όταν μπει, αλλάζουν τα τέσσερα (όπως στον Argus). Δεν αναφέρουν Apple Watch (δεν υπάρχει target).
 
+- **Pluto (StatsApp):** σελίδες και κείμενα 18/11/2026 στο `pluto/` και `en/pluto/` (privacy και terms, el/en), `has_legal: true`. Email `pluto@dimakis.app`. Στο App Store Connect: Support και Marketing URL `https://dimakis.app/en/pluto/`, Privacy Policy URL `https://dimakis.app/pluto/privacy-en.html`.
+  Εγγραφή στο `apps.yml` με **`planned: true`** + `noindex` στις σελίδες: δεν φαίνεται στην αρχική, στο footer ούτε στις ενότητες ώσπου να αποφασίσει ο χρήστης να την προωθήσει (τότε `planned: false`, `ready: true`, `appstore_*`, `price`, `emblem`). Τα νομικά μπαίνουν πάντως στο sitemap, όπως των άλλων.
+  Γράφτηκαν από τον κώδικα (στο ΠΛΑΝΟ της εφαρμογής: `~/Developer/StatsApp/ΠΛΑΝΟ.md`). Καλύπτουν: κλειδί App Store Connect στο Keychain (συγχρονισμός iCloud Keychain), τοπική βάση με στατιστικά και κριτικές, widget μέσω App Group, αιτήματα **μόνο** προς `api.appstoreconnect.apple.com` και εικόνες εικονιδίων από `mzstatic.com` (χωρίς token), AI στη συσκευή (Foundation Models), ειδοποιήσεις μόνο ως άδεια, κριτικές πελατών (προσωπικά δεδομένα τρίτων), πληρωμένη εφάπαξ χωρίς αγορές μέσα στην εφαρμογή.
+  **Η εφαρμογή δεν συνδέεται στο dimakis.app** (παράκαμψη 4.5 «Οι εφαρμογές μας» και 4.13 κάρτα ενημέρωσης στο ΠΛΑΝΟ της). Αν προστεθούν στην εφαρμογή (τα χρειάζεται το Ευαγγέλιο για εφαρμογή στο store), αλλάζει η ενότητα 4 του privacy και στις δύο γλώσσες, το `PrivacyInfo.xcprivacy` και το App Privacy, στο ΙΔΙΟ commit.
+
 ### Πότε αλλάζουν τα νομικά (Ευαγγέλιο 5.4)
 
 Ένα νομικό κείμενο που δεν ταιριάζει με την εφαρμογή είναι χειρότερο από κανένα. **Κάθε αλλαγή της εφαρμογής που αγγίζει μία από τις παρακάτω γραμμές διορθώνει στο ΙΔΙΟ commit τα τέσσερα αρχεία της** (privacy και terms, el και en), την «Τελευταία ενημέρωση» και στα τέσσερα, και το `PrivacyInfo.xcprivacy` και το App Privacy στο App Store Connect (8.4):
