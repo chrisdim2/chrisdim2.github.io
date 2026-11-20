@@ -576,3 +576,18 @@ list:
     - An iPhone widget with yesterday’s downloads
     - No account and no servers of ours: it talks only to Apple and your key stays in your iCloud Keychain
   screenshots: []
+# ECU Data View: εφαρμογή ΧΩΡΙΣ σελίδα στο site (μόνο σελίδα υποστήριξης και νομικά στο /ecu/, 20/11/2026). Κρυφή: planned + noindex + εκτός sitemap.
+# Όταν αποφασιστεί να προωθηθεί: icon, logo, og_image, σελίδες el/en (όπως του Pluto), planned: false, ready: true, appstore_*.
+- slug: ecu
+  planned: true
+  title: ECU Data View
+  full_name: ECU Data View
+  order: 11
+  platforms: [iphone]
+  has_legal: true
+  support_email: support@dimakis.app
+  appstore_url: ''
+  appstore_id: ''
+  price: '0'
+  ready: false
+  schema_category: UtilitiesApplication
