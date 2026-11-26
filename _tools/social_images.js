@@ -72,6 +72,24 @@ const POSTS = [
   { file: '16-name-chronos', app: 'chronos', title: 'Why is a calendar called Chronos?',
     sub: 'In Greek, chronos simply means time.',
     emblem: 'assets/logos/chronos-emblem.svg', word: 'ΧΡΟΝΟΣ' },
+  { file: '17-views', app: 'chronos', title: 'Six ways to see your time.',
+    sub: 'Home, day, week, month, year and list. Switch with one tap.',
+    phone: 'assets/screens/chronos/iphone/en/chronos-iphone-04-year.webp' },
+  { file: '18-inspector', app: 'iris', title: 'Everything your photo knows.',
+    sub: 'See every field, search it, and add a title and keywords that every app can read.',
+    mac: 'assets/screens/iris/mac/en/iris-mac-07-inspector.webp', crop: [745, 365, 700, 620] },
+  { file: '19-birthdays', app: 'giortes', title: 'Who’s next? Birthdays, closest first.',
+    sub: 'With age and zodiac sign, and a wish ready to send.',
+    phone: 'assets/screens/giortes/iphone/en/giortes-iphone-03-birthdays.webp' },
+  { file: '20-name-search', app: 'giortes', title: 'Type a name. See when it’s celebrated.',
+    sub: 'In Greek or in Latin letters, with or without accents.',
+    phone: 'assets/screens/giortes/iphone/en/giortes-iphone-05-search.webp' },
+  // Πληρωμένη δοκιμή (_social/ads-giortes.md): ΜΟΝΟ για κοινό Ελλάδας και Κύπρου, άρα ελληνικό κείμενο στην εικόνα.
+  { file: 'ad-giortes-el', app: 'giortes', name: 'Chronos Γιορτές', kind: 'Εορτολόγιο και γενέθλια',
+    title: 'Ποιος γιορτάζει σήμερα;',
+    sub: 'Δες ποιοι από τις επαφές σου γιορτάζουν και στείλε ευχή με ένα πάτημα.',
+    pill: 'Δωρεάν, χωρίς αγορές',
+    phone: 'assets/screens/giortes/iphone/el/giortes-iphone-02-celebrating.webp', shift: 420 },
   // Σειρά «The myth behind the name» (_social/myth.md): μία την εβδομάδα, με τη σειρά του αρχείου.
   { file: 'myth-apollo', app: 'apollo', title: 'Why is a photo app called Apollo?',
     sub: 'In Greek, photography means writing with light.',
@@ -181,9 +199,9 @@ function post(p) {
     .emblem img{width:520px;height:520px;object-fit:contain;filter:drop-shadow(0 20px 50px rgba(0,0,0,.5))}
     .emblem span{font-size:96px;font-weight:600;letter-spacing:.32em;margin-right:-.32em;color:#E9CA88}
   `) + `<div class="glow"></div>
-    <div class="top"><div class="app"><img src="${url(`assets/icons/${p.app}.png`)}"><div><b>${a.name}</b><span>${a.kind}</span></div></div>
+    <div class="top"><div class="app"><img src="${url(`assets/icons/${p.app}.png`)}"><div><b>${p.name || a.name}</b><span>${p.kind || a.kind}</span></div></div>
       <div class="brand"><img src="${url('assets/dimakis-strawberry.svg')}">dimakis.app</div></div>
-    <div class="flow"><h1>${p.title}</h1><p class="sub">${p.sub}</p>
+    <div class="flow"><h1>${p.title}</h1><p class="sub">${p.sub}</p>${p.pill ? `<span class="pill">${p.pill}</span>` : ''}
     ${device}</div></body></html>`;
 }
 

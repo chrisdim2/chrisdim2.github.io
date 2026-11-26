@@ -705,3 +705,168 @@ https://dimakis.app/en/chronos/#god
 ```
 
 **Alt text:** The gold Chronos emblem, a curved line inside a circle, above the Greek word ΧΡΟΝΟΣ, with the question "Why is a calendar called Chronos?".
+
+---
+
+## 17 · Chronos: έξι όψεις
+
+**Εικόνα:** `images/17-views.jpg`
+**Σύνδεσμοι:** https://dimakis.app/en/chronos/#demo-views · https://dimakis.app/chronos/#demo-views
+
+**Instagram / Facebook**
+
+```
+Month, week, day, year, a list… and one screen that shows the month and your day together 📅
+
+Calendar on iPhone switches between day, month and year. Chronos has six views, each one a tap away:
+• Home: the month and your agenda on one screen
+• Week, with the forecast for every day
+• Day, hour by hour
+• Month
+• Year: the whole year at a glance
+• List: everything that's coming up
+
+Tip: you don't have to pick one. Use Year to plan, Home for today.
+
+Chronos is coming in December. Try the views on our site: link in bio.
+
+🇬🇷
+Μήνας, εβδομάδα, ημέρα, έτος, λίστα, και μια αρχική με τον μήνα και τα γεγονότα σου μαζί. Δοκίμασέ τες στο site μας.
+
+#CalendarApp #iPhone #Productivity #iOSApps #Chronos
+```
+
+**Threads**
+
+```
+Six views in Chronos: Home (month and agenda on one screen), Week with the forecast, Day, Month, Year and List. One tap to switch. Coming in December, and you can try the views on our site right now.
+
+🇬🇷 Έξι όψεις ημερολογίου, ένα άγγιγμα για να αλλάξεις.
+
+https://dimakis.app/en/chronos/#demo-views
+```
+
+**Alt text:** Chronos on iPhone in Year view: the months of 2026 in a grid of three columns, January to September visible.
+
+---
+
+## 18 · Iris: όλα όσα ξέρει μια φωτογραφία
+
+**Εικόνα:** `images/18-inspector.jpg`
+**Σύνδεσμοι:** https://dimakis.app/en/iris/ · https://dimakis.app/iris/
+
+**Instagram / Facebook**
+
+```
+One photo can carry dozens of hidden details: date, time zone, camera settings, GPS coordinates 🔍
+
+On a Mac, Preview shows some of them (Tools → Show Inspector). Iris shows all of them:
+• every field in the file, with a search
+• which photos are missing a date or a location
+• add a title, a description and keywords
+• they're saved to EXIF, IPTC and XMP together, because every app reads a different one
+• in videos too
+
+Tip: before you share a photo, look for Latitude and Longitude. If you'd rather they weren't there, Clean for Privacy removes all of it.
+
+Iris is coming soon, for Mac. Link in bio.
+
+🇬🇷
+Δες όλα όσα ξέρει μια φωτογραφία: ημερομηνία, ζώνη ώρας, συντεταγμένες. Και γράψε τίτλο και λέξεις-κλειδιά που διαβάζει κάθε εφαρμογή.
+
+#Photography #MacApps #macOS #EXIF #Iris
+```
+
+**Threads**
+
+```
+A photo knows more than you think: date, time zone, camera, GPS. Iris on Mac shows every field, lets you search them, finds photos with no date or location, and writes titles and keywords to EXIF, IPTC and XMP at once. Coming soon.
+
+🇬🇷 Όλα όσα ξέρει μια φωτογραφία, στο Mac.
+
+https://dimakis.app/en/iris/
+```
+
+**Alt text:** Iris on Mac: the Metadata panel with a search field and the fields of a photo, such as DateTimeOriginal 2020:07:23 12:00:00, OffsetTime +03:00 and a list of 30 more.
+
+---
+
+## 19 · Chronos Γιορτές: γενέθλια και «Send a Wish» (Αγίου Ανδρέα)
+
+**Εικόνα:** `images/19-birthdays.jpg`
+**Σύνδεσμοι:** https://dimakis.app/en/giortes/ · https://dimakis.app/giortes/
+**Πριν τον προγραμματισμό:** αν οι Γιορτές δεν έχουν βγει ακόμα στο App Store, η γραμμή «It's free…» γίνεται «Free, coming soon. Link in bio.» και στα ελληνικά «Δωρεάν, έρχεται σύντομα.». Ονόματα 30/11 από το `fixed_namedays.json` του NamedaysKit.
+
+**Instagram / Facebook**
+
+```
+Today every Andreas, Andriana and Androula in Greece is celebrating. Did you remember? 🎉
+
+Calendar on iPhone shows the birthdays saved in your contacts. Chronos Name Days puts name days and birthdays together:
+• birthdays closest first, with age and zodiac sign: "today", "in 2 days"
+• which of your contacts have a name day today
+• Send a Wish: pick a ready-made wish and send it by Viber, WhatsApp or Messages
+• a reminder at the time you choose, and a second one if you like
+• your contacts stay on your device
+
+It's free, with no purchases. Link in bio.
+
+🇬🇷
+Σήμερα γιορτάζουν ο Ανδρέας και η Ανδριάνα. Οι Γιορτές σού δείχνουν ποιοι από τις επαφές σου γιορτάζουν ή έχουν γενέθλια, και η ευχή είναι έτοιμη με ένα πάτημα. Δωρεάν.
+
+#NameDay #Birthdays #Greece #iPhone #ChronosNameDays
+```
+
+**Threads**
+
+```
+Today every Andreas in Greece is celebrating. Chronos Name Days shows which of your contacts have a name day or a birthday, closest first, and Send a Wish sends a ready-made wish by Viber, WhatsApp or Messages. Free.
+
+🇬🇷 Χρόνια πολλά στους Ανδρέες! Ποιοι από τις επαφές σου γιορτάζουν, με την ευχή έτοιμη.
+
+https://dimakis.app/en/giortes/
+```
+
+**Alt text:** Chronos Name Days on iPhone: a list of contacts' birthdays from 26 October, each with the date, "Today" or "in 2 days", the age and the zodiac sign.
+
+---
+
+## 20 · Chronos Γιορτές: αναζήτηση ονόματος (Βαρβάρα, Σάββας, Νικόλαος)
+
+**Εικόνα:** `images/20-name-search.jpg`
+**Σύνδεσμοι:** https://dimakis.app/en/giortes/#demo-names · https://dimakis.app/giortes/#demo-names
+**Πριν τον προγραμματισμό:** όπως στην 19, η γραμμή κατάστασης ανάλογα με το αν έχουν βγει. Ονόματα 4, 5 και 6/12 από το `fixed_namedays.json`. Είναι Παρασκευή, άρα «today» = Βαρβάρα, «tomorrow» = Σάββας, «Sunday» = Νικόλαος.
+**Πληρωμένη προώθηση:** ΟΧΙ αυτή η ανάρτηση (είναι αγγλική πρώτα)· για τη διαφήμιση στην Ελλάδα, το `ads-giortes.md`.
+
+**Instagram / Facebook**
+
+```
+Barbara today, Savvas tomorrow, Nikolaos on Sunday. Three name days in three days 🎈
+
+Not sure when someone celebrates? In Chronos Name Days you type the name and see the date:
+• Greek or Latin letters: Nikos or Νίκος
+• with or without accents
+• two letters are enough to start
+• then see which of your contacts celebrate, and Send a Wish
+
+Tip: in Greece, Nikolaos is one of the biggest name days of the year. Check your contacts on Saturday night, not Sunday afternoon.
+
+It's free, with no purchases. Link in bio.
+
+🇬🇷
+Σήμερα η Βαρβάρα, αύριο ο Σάββας, την Κυριακή ο Νίκος. Γράψε ένα όνομα στις Γιορτές και δες πότε γιορτάζει. Δωρεάν.
+
+#NameDay #Greece #GreekNames #Nikolaos #ChronosNameDays
+```
+
+**Threads**
+
+```
+Barbara today, Savvas tomorrow, Nikolaos on Sunday. In Chronos Name Days you type a name, in Greek or Latin letters, and see when it's celebrated, then send a wish to the contacts who celebrate. Free.
+
+🇬🇷 Τρεις γιορτές σε τρεις μέρες. Ποιος γιορτάζει από τις επαφές σου;
+
+https://dimakis.app/en/giortes/#demo-names
+```
+
+**Alt text:** Chronos Name Days on iPhone: the search field with "Dim" and the matching names, Dimitra, Dimitrakis, Dimitrios and more, each with the date it is celebrated.
