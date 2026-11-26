@@ -30,14 +30,14 @@ Contact: <a href="mailto:pluto@dimakis.app">pluto@dimakis.app</a>
 <h2>2. Where your data lives</h2>
 <ul>
   <li><strong>Your App Store Connect key.</strong> The Issuer ID, the Key ID, the contents of the .p8 file and the vendor number you enter are stored only in the Keychain of your device. If iCloud Keychain is turned on, Apple syncs them to your other devices (iPhone and Mac) under your Apple Account and Apple’s own privacy policy; we receive nothing. “Disconnect” in Settings deletes them from the Keychain, and from iCloud Keychain too.</li>
-  <li><strong>Statistics and reviews.</strong> Daily and yearly download figures, the list of your apps and your customers’ reviews (the star rating, title, text, nickname, country and date that Apple provides, and your own replies) are downloaded from Apple and stored in a database on your device only. Deleting the app deletes them.</li>
+  <li><strong>Statistics and reviews.</strong> Daily and yearly download figures, the list of your apps, their versions in the App Store (number, platform and state, for example “in review” or “rejected”, and the phased release), the TestFlight builds (version, build number, processing state and expiry date) and your customers’ reviews (the star rating, title, text, nickname, country and date that Apple provides, and your own replies) are downloaded from Apple and stored in a database on your device only. Deleting the app deletes them.</li>
   <li><strong>Widget (iPhone).</strong> A small summary of yesterday’s downloads is shared between the app and its widget on the same device, through an App Group. It does not leave the device.</li>
   <li><strong>Settings.</strong> Your choices (for example which AI features are on) are stored only on the device.</li>
 </ul>
 
 <h2>3. What the app uses</h2>
 <ul>
-  <li><strong>Notifications</strong> (if you allow them): a notification when a new review of one of your apps arrives. They are local notifications created on your device. There is no push server. To find new reviews while the app is closed, iOS may wake the app now and then in the background, and the app asks Apple for reviews as described in section 4.</li>
+  <li><strong>Notifications</strong> (if you allow them): a notification when a new review of one of your apps arrives, when one of their versions changes state in the App Store (in review, approved, rejected, released) and when a TestFlight build is ready, fails or is about to expire. They are local notifications created on your device. There is no push server. To find new reviews, versions and builds while the app is closed, iOS may wake the app now and then in the background, and the app asks Apple for them as described in section 4.</li>
   <li><strong>On-device AI</strong> (optional, you can turn it off in Settings): the summary of reviews and the draft of a reply use Apple’s Foundation Models framework on devices with Apple Intelligence. The review text is processed on the device and is not sent to us or to any other server. On other devices, and for languages the model does not support, the app uses built-in rules instead, with the same privacy.</li>
   <li><strong>Camera, Microphone, Location, Contacts, Photos</strong>: the app does not use them.</li>
 </ul>
