@@ -39,18 +39,20 @@ Contact: <a href="mailto:pluto@dimakis.app">pluto@dimakis.app</a>
 <ul>
   <li><strong>Notifications</strong> (if you allow them): a notification when a new review of one of your apps arrives, when one of their versions changes state in the App Store (in review, approved, rejected, released) when a TestFlight build is ready, fails or is about to expire, when an app gets its first download, a summary of the previous day (new downloads, purchases and reviews) and when an app’s downloads fall by more than 50%. Each kind has its own switch in the app’s Settings. They are local notifications created on your device. There is no push server. To find new reviews, versions, builds and sales reports while the app is closed, iOS may wake the app now and then in the background, and the app asks Apple for them as described in section 4.</li>
   <li><strong>On-device AI</strong> (optional, you can turn it off in Settings): the summary of reviews and the draft of a reply use Apple’s Foundation Models framework on devices with Apple Intelligence. The review text is processed on the device and is not sent to us or to any other server. On other devices, and for languages the model does not support, the app uses built-in rules instead, with the same privacy.</li>
+  <li><strong>Contact</strong> (Settings → Support): the button opens a message to pluto@dimakis.app in the mail app you have chosen. At the end of the message are the app version, the device model, the system version, the language and the time zone, to help with diagnosis, and you can see and delete them before sending. Nothing is sent unless you press Send yourself.</li>
   <li><strong>Camera, Microphone, Location, Contacts, Photos</strong>: the app does not use them.</li>
 </ul>
 
 <h2>4. Internet connection</h2>
 <p>
-The app connects to the internet only to talk to Apple, and only to the addresses below. Nothing is sent to us or to anyone else.
+The app connects to the internet only to talk to Apple and to our website, and only to the addresses below. None of your data is sent to us or to anyone else.
 </p>
 <ul>
   <li><strong>api.appstoreconnect.apple.com</strong>: the App Store Connect API. The app signs each request with a short-lived token made on your device from your key, and asks for your apps, your sales, download and subscription reports, your monthly financial reports, the performance metrics and diagnostics of your versions, the number of tester reports, the text of each app’s App Store page, and your customer reviews. When you send a reply to a review, the text of the reply is sent to this address, only after you have seen a preview and tapped Send. Apple handles these requests under its own privacy policy.</li>
   <li><strong>Apple’s image servers (mzstatic.com)</strong>: to show the icon of each of your apps, the app downloads it from Apple’s image servers, using the address Apple gives for the app’s latest build. This request carries no key, token or account information. As the server, Apple sees the IP address of your device.</li>
   <li><strong>itunes.apple.com</strong>: the public App Store search, for your apps’ ratings (average and count, including ratings without text). The request carries only the public numbers (Apple IDs) of your apps and the code of a country where they have downloads or reviews, at most once a day per country. It carries no key, token, account information or cookies. As the server, Apple sees the IP address of your device.</li>
-  <li><strong>Privacy Policy, Terms of Use and support</strong>: if you open them from the App Store page, they open in your browser from dimakis.app, hosted on GitHub Pages. The app itself does not connect to dimakis.app.</li>
+  <li><strong>dimakis.app</strong> (our website, hosted on GitHub Pages): when you open “Our apps” in Settings, the app downloads the list of our apps (names, icons, links) from there, with a plain file download. The request carries no key, token or data about you or your apps, and the last list is kept on your device so it also shows without a network.</li>
+  <li><strong>Privacy Policy, Terms of Use and support</strong>: from Settings (Support) they open in a Safari window inside the app (on the Mac, a web page inside the app), from dimakis.app. You open them yourself, and the page loads like any web page.</li>
 </ul>
 
 <h2>5. What we don’t do</h2>
