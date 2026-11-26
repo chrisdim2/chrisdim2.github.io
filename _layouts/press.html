@@ -20,7 +20,7 @@ layout: default
       <li>
         <a href="{{ base | append: 'press/' | append: app.slug | append: '/' | relative_url }}">
           <img src="{{ app.icon | relative_url }}" alt="" width="64" height="64" loading="lazy">
-          <span class="kit-card-t"><strong>{{ app.full_name | default: app.title }}</strong><span>{% if page.lang == 'el' %}{{ app.kind_el }}{% else %}{{ app.kind_en }}{% endif %}</span></span>
+          <span class="kit-card-t">{% include app_i18n.html app=app %}<strong>{{ afull }}</strong><span>{% if page.lang == 'el' %}{{ app.kind_el }}{% else %}{{ app.kind_en }}{% endif %}</span></span>
           <span class="kit-card-go" aria-hidden="true">&rarr;</span>
         </a>
         {% assign kits = site.data.press_kits[app.slug] %}

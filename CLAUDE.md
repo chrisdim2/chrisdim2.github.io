@@ -19,7 +19,7 @@
 
 ## Δομή
 
-- `_data/apps.yml`: όλες οι εφαρμογές. Πεδία: `full_name` (π.χ. «Chronos Calendar», μπαίνει στο `<title>`,
+- `_data/apps.yml`: όλες οι εφαρμογές. Πεδία: `full_name` (π.χ. «Chronos Ημερολόγιο», μπαίνει στο `<title>`,
   JSON-LD, Press Kit), `description_el/en` (meta description), `status_el/en`, `ready` (εμφανίζεται στο Press Kit),
   `appstore_id`/`appstore_url`/`price` (με την κυκλοφορία), `suite` (ενότητα «N εφαρμογές σε 1»), `press_long_el/en`.
   Σχόλια στην κορυφή του αρχείου.
@@ -112,7 +112,7 @@
 
 | # | Εφαρμογή | Υπότιτλος (EN) | Συσκευές | Κατάσταση |
 |---|---|---|---|---|
-| 1 | Chronos Calendar | Calendar | iPhone, iPad, Mac, Watch | Δεκέμβριος (ναυαρχίδα) |
+| 1 | Chronos Ημερολόγιο (EN: **Chronos: Calendar & Weather**) | Calendar | iPhone, iPad, Mac, Watch | Δεκέμβριος (ναυαρχίδα) |
 | 2 | **Chronos Γιορτές** (EN: **Chronos Name Days**) | Calendar & birthdays | iPhone, iPad | δωρεάν, Νοέμβριος |
 | 3 | Apollo | Cloud Photo Gallery | iPhone, iPad, Mac | σε ανάπτυξη |
 | 4 | Iris | EXIFeditor | Mac | σε ανάπτυξη |
@@ -128,7 +128,8 @@
 - Εικονίδια: ημερολόγιο με χρωματιστή κορυφή και σύμβολο σε δύο τόνους (Chronos μπλε, Roster μοβ, Fleet πράσινο, Hospitality κυανό, Γιορτές κόκκινο). Φάκελοι `~/Developer/<App>/Icons/` (Light, Dark, Tinted + `Assets.xcassets` + `Source/` SVG). Σύμβολα: Roster χρονοδιάγραμμα, Fleet ταχύμετρο, Hospitality διάστημα διαμονής, Γιορτές δώρο.
 - Λογότυπα: `~/Developer/Logos/logos/{roster,fleet,hospitality,giortes,namedays}` (έμβλημα χρυσό από γραμμές, «CHRONOS» και από κάτω το όνομα, στην Olympos). Χτίζονται από `Logos/tools/build.py` (δίγραμμο όνομα με `Word2`).
 - **Δεν προωθούμε εφαρμογές που μπορεί να μην υλοποιηθούν** (μάθημα από τον Hermes). Roster, Fleet, Hospitality έχουν στο `apps.yml` `planned: true` και `family: chronos`: δεν μπαίνουν στη γραμμή εικονιδίων, στις ενότητες της αρχικής, στο footer, στο sitemap, δεν έχουν φόρμα «Ειδοποίησέ με» και οι σελίδες τους έχουν `noindex`. Φαίνονται μόνο ως διακεκομμένες, μη κλικαρίσιμες κάρτες «Σε σχεδιασμό» στην ενότητα **«Η οικογένεια Chronos»** της αρχικής, με σημείωση ότι δεν υπάρχει ημερομηνία. Όταν μια εφαρμογή γίνει πραγματική: σβήνεις `planned`, αλλάζεις status και τα `noindex`/`sitemap: false` στις δύο σελίδες.
-- Στην αρχική οι εφαρμογές της οικογένειας φαίνονται με το πλήρες όνομα («Chronos Γιορτές», «Chronos Calendar», «Chronos Roster» κ.λπ.) και ανήκουν στην ενότητα της οικογένειας (πεδίο `family`).
+- **Όνομα Chronos = όπως στο App Store Connect** (26/11/2026, εντολή Χρήστου): ελληνικά «Chronos Ημερολόγιο» (`full_name`), αγγλικά «Chronos: Calendar & Weather» (`full_name_en`). Αν αλλάξει στο App Store Connect, αλλάζει και εδώ (και `press/chronos`, `en/press/chronos`). Τα zip του press kit του Chronos γράφουν ακόμα «Chronos Calendar» ώσπου να ξανατρέξει το `press_kits.rb --only chronos` (με την κυκλοφορία).
+- Στην αρχική οι εφαρμογές της οικογένειας φαίνονται με το πλήρες όνομα («Chronos Γιορτές», «Chronos Ημερολόγιο», «Chronos Roster» κ.λπ.) και ανήκουν στην ενότητα της οικογένειας (πεδίο `family`).
 - Σελίδες: slug `giortes`, `roster`, `fleet`, `hospitality`. Πεδίο `greek` (υδατογράφημα) = ελληνική λέξη (ΓΙΟΡΤΕΣ, ΒΑΡΔΙΕΣ, ΣΤΟΛΟΣ, ΦΙΛΟΞΕΝΙΑ). `platforms` δέχεται και `web`.
 - Emails υποστήριξης: `giortes@`, `roster@`, `fleet@`, `hospitality@` @dimakis.app (έτοιμα 21/10). **Προσωρινά**: οι ατάκες (`tagline`) και οι περιγραφές είναι προσχέδια· χωρίς λειτουργίες/screenshots ώσπου να υπάρχει κώδικας.
 - **Αποδεκτά ως έχουν (22/10, ο χρήστης είπε «ΟΚ»):** το «32 γλώσσες» σε εφαρμογές σε ανάπτυξη, και το λατινικό A που γράφεται «Λ» στα λογότυπα Olympos. Δεν αλλάζουν αν δεν το ζητήσει ο χρήστης. Στα δίκτυα τα live προφίλ τα αλλάζει ο χρήστης με τα αρχεία του `_social/`.
@@ -215,7 +216,6 @@
 
 ## Εκκρεμότητες
 
-- **ΕΠΕΙΓΟΝ, πριν την Τρίτη 24/11/2026 18:00: ανάρτηση 16 (Chronos, «Πίσω από το όνομα») στο Meta Business Suite.** Η προγραμματισμένη ανάρτηση Facebook και Instagram γράφει «like Chronos Celebrations»· να γίνει «like Chronos Name Days» (το «Celebrations» απορρίφθηκε 16/11). Το σωστό κείμενο είναι στο `_social/posts.md` (διορθώθηκε 17/11). Το Threads δεν έχει το όνομα, μένει ως έχει. Τη διόρθωση την κάνει ο χρήστης (login)· μετά σβήνεται αυτή η γραμμή.
 - **Γιορτές, αγγλικό όνομα «Chronos Name Days» (16/11/2026):** ξαναφτιάχτηκαν το λογότυπο (`Logos`, `tools/icons.py` κλειδί `namedays` = «CHRONOS» / «NAME DAYS», φάκελος `logos/namedays`, `assets/logos/namedays-lockup.svg`, `assets/og/namedays.jpg`) και το βίντεο `giortes-en.mp4` με poster (νέες κάρτες αρχής/τέλους, ίδιο σώμα, εργαλείο `NamedaysApp/Marketing/tools/recard.swift`). Press kit EN ξαναχτίστηκε τοπικά (`DEV=~/Developer ruby _tools/press_kits.rb --only giortes:en`, χρησιμοποιεί `logo_en`/`og_image_en` και αγγλικό όνομα στο README)· **δεν έχει ανέβει ακόμα** στο Release «press-kit» (`gh release upload press-kit ~/Library/Caches/dimakis-press-kits/giortes-press-kit-en.zip --clobber`, μαζί με το push του site). **Μένουν:** εικόνες social όπου φαίνεται το όνομα (το `_social/posts.md` είναι ιστορικό, δεν αλλάζει).
 - **Γιορτές: υλικό κυκλοφορίας (26/10/2026, Ευαγγέλιο 9).** Live στο site: σελίδα με screenshots iPhone και iPad (el/en), βίντεο, διαδραστικό mockup `demo-names`, press kit με τα zip ανεβασμένα στο Release «press-kit» (μόνο των Γιορτών· το `--upload` του script ανεβάζει ΟΛΑ και αλλάζει bytes/πλήθος στο `_data/press_kits.yml` για Chronos και Apollo, γιατί τα τοπικά αρχεία τους έχουν αλλάξει· αποφάσισε πρώτα αν θες νέο Chronos και Apollo). Στο repo των Γιορτών (`NamedaysApp/`): `Marketing/` (screenshots plain και app-store, εργαλεία βίντεο, `ΔΙΑΒΑΣΕ_ΜΕ.md`) και `ΥΠΟΒΟΛΗ_APP_STORE.md` (κείμενα και λίστα «πριν το Archive»). Γλώσσες: `languages: [el, en]` στο `apps.yml`. **Μένει:** (1) screenshot «Σαν σήμερα» σε ήπια μέρα (την 26/10 έβγαζε σεισμό και επίθεση)· (2) τα βήματα του `ΥΠΟΒΟΛΗ_APP_STORE.md` §11 (**Apple Developer: ατομικός λογαριασμός, πληρωμή 99 USD στις 13/11/2026, Apple Account `dimakis.home@gmail.com`, όνομα «Christos Dimakis», Enrollment ID 7QZZ4755H2· ενεργοποιήθηκε την ίδια μέρα, Individual, Team ID `2FNHMGKRUT` (μπήκε στο `project.yml` των Γιορτών)· η κάρτα έγραφε «CHRISTOS E. DIMAKIS»· μένει η δήλωση αναγνωριστικών στο portal**, μετά `appStoreID`, νομικός έλεγχος). Ολόκληρη η διαδικασία: `dimakis-standards/ΕΥΑΓΓΕΛΙΟ.md` κεφάλαιο 9.
 - **Κάθε εφαρμογή: screenshots, βίντεο και 3 mockups (27/10/2026, Ευαγγέλιο 9.16).** Κατάσταση: Chronos πλήρες (3 mockups)· Γιορτές 3 από 3 (λείπει μόνο το screenshot «Σαν σήμερα»)· Apollo 3 από 3 (πλήρες)· Iris 3 από 3 mockups, χωρίς βίντεο, screenshots μόνο Mac· Athena και Argus (σε ανάπτυξη): τίποτα από τα τρία. Τα Roster, Fleet, Hospitality (`planned`) εξαιρούνται. Κάθε mockup: `_includes/demo-<όνομα>.html` και `demos:` στο `_data/showcase/<app>.yml` (δες `demo-names.html` ως πρότυπο: δείγμα δεδομένων επαληθευμένο στον κώδικα, εναλλαγή el/en, στατικό screenshot χωρίς JS).

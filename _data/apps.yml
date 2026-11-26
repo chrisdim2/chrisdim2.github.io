@@ -10,7 +10,8 @@ list:
 - slug: chronos
   family: chronos
   title: Chronos
-  full_name: Chronos Calendar
+  full_name: Chronos Ημερολόγιο
+  full_name_en: 'Chronos: Calendar & Weather'
   greek: ΧΡΟΝΟΣ
   icon: /assets/icons/chronos.png
   theme: light
