@@ -744,11 +744,13 @@ a.family-card:hover{transform:translateY(-3px);border-color:rgba(237,241,238,.28
 .nm-row.nm-h span:first-child{width:calc(var(--u)*62);flex:none}
 .nm-row.nm-bold span:last-child{font-weight:700}
 .nm-empty{text-align:center;padding-top:calc(var(--u)*120);color:#000;font-size:calc(var(--u)*20)}
-.nm-tabs{position:absolute;left:calc(var(--u)*12);right:calc(var(--u)*12);bottom:calc(var(--u)*14);display:flex;gap:calc(var(--u)*8);align-items:center}
-.nm-tabbar{flex:1;display:flex;justify-content:space-around;background:rgba(255,255,255,.92);border-radius:999px;padding:calc(var(--u)*7) calc(var(--u)*4);box-shadow:0 4px 16px rgba(0,0,0,.1)}
-.nm-tabbar span{display:flex;flex-direction:column;align-items:center;gap:calc(var(--u)*1);font-size:calc(var(--u)*9.2);color:#1c1c1e;white-space:nowrap}
-.nm-tabbar svg{width:calc(var(--u)*22);height:calc(var(--u)*22)}
-.nm-search-btn{flex:none;display:grid;place-items:center;width:calc(var(--u)*52);height:calc(var(--u)*52);background:#fff;border-radius:50%;box-shadow:0 4px 16px rgba(0,0,0,.1)}
+.nm-tabs{position:absolute;left:calc(var(--u)*14);right:calc(var(--u)*14);bottom:calc(var(--u)*14);height:calc(var(--u)*58)}
+.nm-tabbar{position:absolute;inset:0;display:flex;align-items:center;background:rgba(255,255,255,.95);border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.12)}
+.nm-tabbar span{position:relative;flex:1;display:grid;place-items:center;color:#8a8a8e}
+.nm-tabbar span.nm-gap{flex:1.4}
+.nm-tabbar svg{width:calc(var(--u)*24);height:calc(var(--u)*24)}
+.nm-center{position:absolute;left:50%;top:calc(var(--u)*-16);transform:translateX(-50%);width:calc(var(--u)*64);height:calc(var(--u)*64);border-radius:50%;display:grid;place-items:center;color:#000;background:radial-gradient(circle at 50% 35%,#2fa5ff,#0a84ff);box-shadow:0 0 0 calc(var(--u)*5) rgba(255,255,255,.95),0 8px 22px rgba(10,132,255,.4)}
+.nm-center svg{width:calc(var(--u)*30);height:calc(var(--u)*30)}
 @keyframes nm-in{from{opacity:0;transform:translateY(calc(var(--u)*4))}}
 @media (prefers-reduced-motion:reduce){.nm-row{animation:none}}
 
@@ -759,6 +761,7 @@ a.family-card:hover{transform:translateY(-3px);border-color:rgba(237,241,238,.28
 
 /* demo-today και demo-birthdays (Γιορτές): μοιράζονται το κέλυφος .nm του demo-names */
 .nm-tabbar span.on{color:#0a84ff}
+.nm-tabbar span.on::before{content:"";position:absolute;left:50%;top:calc(var(--u)*-1);width:calc(var(--u)*6);height:calc(var(--u)*6);margin-left:calc(var(--u)*-3);border-radius:50%;background:#0a84ff}
 .nt-body{position:absolute;left:calc(var(--u)*14);right:calc(var(--u)*14);top:calc(var(--u)*108);bottom:calc(var(--u)*86);overflow:hidden;mask:linear-gradient(#000 88%,transparent)}
 .nt-week{text-align:center;color:#6c6c70;font-size:calc(var(--u)*17);letter-spacing:.06em;margin-top:calc(var(--u)*8)}
 .nt-day{text-align:center;color:#0a84ff;font-size:calc(var(--u)*92);font-weight:700;line-height:1.05}
@@ -779,7 +782,6 @@ a.family-card:hover{transform:translateY(-3px);border-color:rgba(237,241,238,.28
 .bd-main small.now{color:#0a84ff}
 .bd-side{display:flex;flex-direction:column;align-items:flex-end;gap:calc(var(--u)*2)}
 .bd-side b{display:flex;align-items:center;gap:calc(var(--u)*4);font-weight:600;font-size:calc(var(--u)*16)}
-.nm-tabbar span{flex:1}
 
 /* demo-search, demo-albums, demo-trips (Apollo): κέλυφος .ap, 1u = 1pt σε οθόνη 390pt */
 .ap-fallback[hidden],.ap[hidden]{display:none}

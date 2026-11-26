@@ -82,7 +82,7 @@ groups:
       - src: /assets/screens/chronos/iphone/el/chronos-iphone-15-onthisday.webp
         src_en: /assets/screens/chronos/iphone/en/chronos-iphone-15-onthisday.webp
         el: 'Σαν σήμερα: γιορτές και ιστορία'
-        en: 'On this day in history'
+        en: 'World days, and what happened on this day'
   - id: ipad
     device: wide
     label_el: iPad
